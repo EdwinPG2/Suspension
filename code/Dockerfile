@@ -53,8 +53,6 @@ RUN chmod -R 755 /var/www/storage
 
 RUN chmod -R 755 /var/www/storage/logs
 
-RUN chmod -R 755 /var/www/storage/logs/laravel.log
-
 WORKDIR /var/www
 
 
