@@ -13,7 +13,7 @@ services:
    - ./database/schemas/:/var/lib/mysql
   networks:
    suspensiones_dev_net:
-    ipv4_address: 173.25.100.19
+    ipv4_address: 173.21.100.19
  suspensiones-dev-1:
   build:
    context: ./
@@ -25,7 +25,7 @@ services:
    - ./code-dev/public:/var/www/html
   networks:
    suspensiones_dev_net:
-    ipv4_address: 173.25.100.20
+    ipv4_address: 173.21.100.20
   depends_on:
    - suspensiones-dev-db
 volumes:
@@ -38,4 +38,4 @@ networks:
    driver: default
    config:
     -
-     subnet: 173.25.100.0/24
+     subnet: 173.21.100.0/24
