@@ -13,8 +13,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-    <!-- scripts -->
-    @vite('resources/sass/app.css', 'resources/js/app.js')
+
 </head>
 <body>
     <div id="app">
