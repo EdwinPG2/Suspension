@@ -37,6 +37,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends apt-utils libzi
     ## Clean-up
     && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get install -y git-core curl build-essential openssl libssl-dev \
+    && git clone https://github.com/nodejs/node.git \
+    && cd node \
+    && ./configure \
+    && make \
+    && sudo make install
+
 RUN a2enmod rewrite
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
