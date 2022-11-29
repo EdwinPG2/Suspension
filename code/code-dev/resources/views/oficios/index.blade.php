@@ -49,7 +49,8 @@
                                 @endif
                                 
                                 <a href="{{ route('oficios.edit', $item->id_oficio) }}"
-                                    class="btn btn-primary"><i class=""></i>PDF</a>
+                                    class="btn btn-primary" target="_blank"><i class=""></i>PDF</a>
+
                             </td>
                         </tr>
                         @endif

@@ -6,6 +6,7 @@ use App\Models\RevisionOficio;
 use Illuminate\Http\Request;
 use App\Models\Oficio;
 use App\Models\OficioSuspencion;
+use App\Models\Controller\oficontroller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Suspension;
 

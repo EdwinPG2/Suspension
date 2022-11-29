@@ -64,7 +64,7 @@ class Oficio_SuspencionController extends Controller
 
        
 
-        alert()->success('Oficio guardado correctamentes!');
+        alert()->success('Oficio guardado correctamente!');
 
         return redirect()->route('oficios.index');
     

@@ -22,7 +22,6 @@
                         <th>Nombre</th>
                         <th>Especialidad</th>
                         <th>No.Telefono</th>
-                        <th>Especialidad</th>
                         <th>Opciones</th>
                     </thead>
                     <tbody>
@@ -32,7 +31,6 @@
                             <td>{{ $item->nombres }}</td>
                             <td>{{ $item->especialidad }}</td>
                             <td>{{ $item->telefono }}</td>
-                            <td>{{ $item->despecialidad->descripcion }}</td>
                             <td>
                                 <a href="{{ route ('medico.edit', $item->colegiado) }}"
                                 class="btn btn-warning"><i class="fas fa-edit"></i></a>
