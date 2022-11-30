@@ -18,9 +18,9 @@
             <div class="card-body">
                 <table id="dt-roles" class="table table-striped table-bordered dts">
                     <thead>
-                        <th>No</th>
-                        <th>Name</th>
-                        <th width="280px">Action</th>
+                        <th>No.</th>
+                        <th>Nombre</th>
+                        <th width="280px">Opciones</th>
                     </thead>
                     <tbody>
                         @foreach($roles as $item)
@@ -28,17 +28,15 @@
                             <td>{{ ++$i }}</td>
                             <td>{{ $item->name }}</td>
                             <td colspan="2">
-                                @can('role-edit')
                                     <a href="{{ route ('roles.edit', $item->id) }}"
                                     class="btn btn-warning" ><i class="fas fa-edit"></i></a>
-                                @endcan
-                                @can('role-delete')
+                                
                                     <form action="{{ route('roles.destroy',$item->id)}}" method="post" class="d-inline">
                                     @csrf
                                     {{method_field('DELETE')}}
                                         <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
                                     </form>
-                                @endcan
+                               
                             </td>
                         </tr>
                         @endforeach                

@@ -20,28 +20,25 @@
                     <thead>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>Descripcion</th>
-                        <th> Opciones </th>
+                        <th>Opciones </th>
                     </thead>
                     <tbody>
                         @foreach($especialidades as $item)
                         <tr class="text-center">
                             <td>{{ $item->id_especialidad }}</td>
                             <td>{{ $item->nombre_especialidad }}</td>
-                            <td>{{ $item->descripcion }}</td>
-                            <td colspan="2 flex justify-center">
-                                @can('especialidad-edit')
+                            <td>
                                     <a href="{{ route ('especialidades.edit', $item->id_especialidad) }}"
                                     class="btn btn-warning" ><i class="fas fa-edit"></i></a>
-                                @endcan
-                                @can('especialidad-delete')
+                                
                                     <form action="{{ route('especialidades.destroy',$item->id_especialidad)}}" method="post" class="d-inline">
                                     @csrf
                                     {{method_field('DELETE')}}
                                     <button class="btn btn-danger" type="submit" class="d-inline"><i class="fas fa-trash"></i></button>
                                     </form>
-                                @endcan
+                                
                             </td>
+                            
                         </tr>
                         @endforeach                
                     </tbody>

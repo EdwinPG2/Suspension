@@ -84,7 +84,7 @@ class Oficio extends Model
 	{
 		return $this->hasMany(RevisionOficio::class, 'id_oficio');
 	}
-	public function clinica_servicio()
+	public function dclinica_servicio()
 	{
 		return $this->belongsTo(ClinicaServicio::class, 'clinica_servicio');
 	}
