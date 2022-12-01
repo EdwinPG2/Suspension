@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Rol;
 
 class PermissionTableSeeder extends Seeder
 {
@@ -35,11 +36,7 @@ class PermissionTableSeeder extends Seeder
             'clinica-list',
             'clinica-create',
             'clinica-edit',
-            'formulario-delete',
-            'formulario-list',
-            'formulario-create',
-            'formulario-edit',
-            'formulario-delete',
+            'clinica-delete',
 
             'medico-list',
             'medico-create',
