@@ -17,7 +17,9 @@
                 <table id="dt-clinicas_servicios" class="table table-striped table-bordered dts">
                     <thead>
                         <th>Nombre</th>
-                        <th>Descripcion</th>
+                        <th>Correlativo</th>
+                        <th>Área</th>
+                        <th>Especialidad</th>
                         <th> Opciones </th>
                     </thead>
                     <tbody>
@@ -25,8 +27,8 @@
                         <tr class="text-center">
                             <td>{{ $item->nombre }}</td>
                             <td>{{ $item->descripcion }}</td>
-                            <td>{{ $item->especialidad-> nombre_especialidad }}</td>
-                            <td>{{ $item->area-> nombre }}</td>
+                            <td>{{ $item->area->nombre }}</td>
+                            <td>{{ $item->especialidad->nombre_especialidad }}</td>
                             <td colspan="2">
                                 <a href="{{ route ('clinicas_servicios.edit', $item-> id_clinica_servicio) }}"
                                 class="btn btn-warning" ><i class="fas fa-edit"></i></a>

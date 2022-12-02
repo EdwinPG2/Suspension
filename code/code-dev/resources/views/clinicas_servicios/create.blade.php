@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
 @section('titulo')
-<span>Nuevas clinicas servicios</span>
+<span>Nueva clinica/servicio</span>
 @endsection
 @section('contenido')
 <div class="row">
     <div class="col-lg-12 col-md-12 col-xs-12">
         <div class="card">
             <div class="card-header">
-                <h4>Agregar datos de clinicas servicios</h4>
+                <h4>Agregar datos de clinica/servicio</h4>
             </div>
             <div class="card-body">
                 <form action="{{ route('clinicas_servicios.store') }}" method="post">
@@ -16,21 +16,22 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
-                                <label for="nombre">Nombre</label>
-                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese nombre de clinicas/servicios">   
+                                <label for="nombre">Nombre (*)</label>
+                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese nombre de clinica/servicio" required maxlength="50">   
                             </div>
                         </div>
-                        <div class="col-lg-8 col-md-8">
+                        <div class="col-lg-2 col-md-2">
                             <div class="form-group">
-                                <label for="descripcion">Descripción</label>
-                                <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="Ingrese descripción de clinicas/servicios">   
+                                <label for="descripcion">Correlativo (*)</label>
+                                <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="-- --" required maxlength="20">   
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <div class="form-group">
-                            <label for="id_especialidad">Especialidad</label>
-                            <select class="form-control select2" name="id_especialidad" id="id_especialidad">
+                            <label for="id_especialidad">Especialidad (*)</label>
+                            <select class="form-control select2" name="id_especialidad" id="id_especialidad" required>
+                                <option value = "" disabled selected>--Seleccione especialidad --</option>
                                 @foreach($especialidades as  $item)
                                 <option value = "{{ $item->id_especialidad }}">{{ $item->nombre_especialidad }}</option>
                                 @endforeach   
@@ -39,8 +40,9 @@
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <div class="form-group">
-                            <label for="id_area">Area</label>
-                            <select name="id_area" id="id_area" class="form-control select2">
+                            <label for="id_area">Área (*)</label>
+                            <select name="id_area" id="id_area" class="form-control select2" required>
+                                <option value = "" disabled selected>--Seleccione área --</option>
                                 @foreach($areas as  $item)
                                 <option value="{{$item->id_area }}">{{$item->nombre }}</option>
                                 @endforeach   
@@ -60,4 +62,7 @@
         </div>
     </div>
 </div>
+<style>
+    input:invalid { border-color: red; } input , input:valid { border-color: #ccc; }
+</style>
 @endsection
