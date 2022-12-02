@@ -24,8 +24,6 @@
                         <th>Direccion</th>
                         <th>Genero</th>
                         <th>Fecha de Nacimiento</th>
-                        <th>IBM</th>
-                        <th>Tipo de Afiliado</th>
                         <th style="height: auto">Opciones</th>
                     </thead>
                     <tbody>
@@ -39,12 +37,7 @@
                             <td>{{ $item->direccion }}</td>
                             <td>{{ $item->genero }}</td>
                             <td>{{ $item->fecha_nacimiento }}</td>
-                            <td>{{ $item->ibm }}</td>
-                            <td>@foreach ($tipo as $item2 )
-                                @if($item2->Id_tipo_afiliado==$item->id_tipo_afiliado)
-                                {{$item2->nombre}}
-                                @endif
-                            @endforeach</td>
+
                             <td>
                                 <a href="{{ route ('afiliados.edit', $item->no_afiliado) }}"
                                 class="btn btn-warning"><i class="fas fa-edit"></i></a>

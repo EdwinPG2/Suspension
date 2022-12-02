@@ -62,22 +62,8 @@
                             <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" class="form-control" placeholder="">   
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-4">
-                        <div class="form-group">
-                            <label for="ibm">IBM</label>
-                            <input type="text" name="ibm" id="ibm" class="form-control" placeholder="">   
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4">
-                        <div class="form-group">
-                            <label for="id_tipo_afiliado">Tipo de afiliado</label>
-                            <select class="form-control" name="id_tipo_afiliado" id="id_tipo_afiliado">
-                                @foreach ($tipos as $item)
-                                    <option value = "{{$item->Id_tipo_afiliado}}">{{$item->nombre}}</option>
-                                @endforeach
-                            </select>   
-                        </div>
-                    </div>
+                    
+                    
                 </div>
                     <div class="row justify-content-between">
                         <button type="submit" class="btn btn-primary">GUARDAR</button>

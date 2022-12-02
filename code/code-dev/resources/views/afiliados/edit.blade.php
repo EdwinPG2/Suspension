@@ -71,28 +71,7 @@
                                 value="{{isset($afiliados->fecha_nacimiento)?$afiliados->fecha_nacimiento->toDateString():''}}">   
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4">
-                            <div class="form-group">
-                                <label for="ibm">IBM</label>
-                                <input type="text" name="ibm" id="ibm" class="form-control" placeholder=""
-                                value="{{isset($afiliados->ibm)?$afiliados->ibm:''}}">   
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                            <div class="form-group">
-                                <label for="id_tipo_afiliado">Tipo de afiliado</label>
-                                <select class="form-control" name="id_tipo_afiliado" id="id_tipo_afiliado">
-                                    
-                                    @foreach ($tipos as $item)
-                                        <option 
-                                        @if($afiliados->id_tipo_afiliado==$item->Id_tipo_afiliado)
-                                            selected="selected"
-                                            @endif
-                                        value = "{{$item->Id_tipo_afiliado}}">{{$item->nombre}}</option>
-                                    @endforeach
-                                </select>   
-                            </div>
-                        </div>
+                        
                     </div>
                     <div class="row justify-content-between">
                         <button type="submit" class="btn btn-primary">GUARDAR</button>
