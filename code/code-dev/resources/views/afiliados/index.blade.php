@@ -36,7 +36,7 @@
                             <td>{{ $item->telefono }}</td>
                             <td>{{ $item->direccion }}</td>
                             <td>{{ $item->genero }}</td>
-                            <td>{{ $item->fecha_nacimiento }}</td>
+                            <td>{{  date('d-m-Y', strtotime($item->fecha_nacimiento))}}</td>
 
                             <td>
                                 <a href="{{ route ('afiliados.edit', $item->no_afiliado) }}"
