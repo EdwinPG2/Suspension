@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('titulo')
-<span>Areas</span>
+<span>Área</span>
 @endsection
 @section('contenido')
 <div class="row">
@@ -9,7 +9,7 @@
         <div class="card mb-4">
             <div class="card-header">
                 <div class="row justify-content-between">
-                    <h4>Listado de areas</h4>
+                    <h4>Listado de áreas</h4>
                     @can('area-create')
                         <a type="button" class="btn btn-primary" href="{{route('areas.create')}}"><i class="fas fa-plus"></i>Nuevo</a>
                     @endcan
@@ -19,7 +19,7 @@
                 <table id="dt-areas" class="table table-striped table-bordered dts">
                     <thead>
                         <th>Nombre</th>
-                        <th>Descripcion</th>
+                        <th>Descripción</th>
                         <th>Opciones</th>
                     </thead>
                     <tbody>

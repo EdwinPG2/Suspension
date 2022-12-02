@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
 @section('titulo')
-<span>Editar Area</span>
+<span>Editar área</span>
 @endsection
 @section('contenido')
 <div class="row">
     <div class="col-lg-12 col-md-12 col-xs-12">
         <div class="card">
             <div class="card-header">
-                <h4>Editar datos de area</h4>
+                <h4>Editar datos de área</h4>
             </div>
             <div class="card-body">
                 <form action="{{ route('areas.update', $areas->id_area) }}" method="post">
