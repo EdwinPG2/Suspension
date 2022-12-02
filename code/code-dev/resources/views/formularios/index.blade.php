@@ -17,7 +17,7 @@
                 <table id="dt-formularios" class="table table-striped table-bordered dts">
                     <thead>
                         <th>Nombre</th>
-                        <th>Descripcion</th>
+                        <th>Descripción</th>
                         <th style="height: auto">Opciones</th>
                     </thead>
                     <tbody>
