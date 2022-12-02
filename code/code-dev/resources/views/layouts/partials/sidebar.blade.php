@@ -176,6 +176,9 @@
                 <a class="collapse-item" href="{{ url('dependencias') }}">
                     <i class="fas fa-id-card fa-fw"></i> Dependencias
                 </a>
+                <a class="collapse-item" href="{{ url('afiliados') }}">
+                    <i class="fas fa-id-card fa-fw"></i> Afiliados
+                </a>
                 
             </div>
         </div>  

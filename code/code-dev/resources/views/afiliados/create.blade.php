@@ -16,6 +16,12 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="form-group">
+                            <label for="no_afiliado">Numero de afiliacion</label>
+                            <input type="text" name="no_afiliado" id="no_afiliado" class="form-control" placeholder="">   
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2">
+                        <div class="form-group">
                             <label for="cui">Cui</label>
                             <input type="text" name="cui" id="cui" class="form-control" placeholder="">   
                         </div>

@@ -38,6 +38,7 @@ class AfiliadoController extends Controller
     public function store(Request $request)
     {
         validator::make($request->except('_token'), [
+            'no_afiliado' => 'required|max:11',
             'cui' => 'required|max:13',
             'nombre' => 'required|max:100',
             'apellidos' => 'required|max:100',
@@ -47,6 +48,7 @@ class AfiliadoController extends Controller
         ])->validate();
 
         $Afiliado = new Afiliado();
+        $Afiliado->no_afiliado = $request->get('no_afiliado');
         $Afiliado->cui = $request->get('cui');
         $Afiliado->nombre = $request->get('nombre');
         $Afiliado->apellidos = $request->get('apellidos');
@@ -82,6 +84,7 @@ class AfiliadoController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+            'no_afiliado' => 'required|max:11',
             'cui' => 'required|max:13',
             'nombre' => 'required|max:100',
             'apellidos' => 'required|max:100',
