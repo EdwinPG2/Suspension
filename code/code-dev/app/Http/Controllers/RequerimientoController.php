@@ -19,11 +19,6 @@ class RequerimientoController extends Controller
     {
         $oficios = Oficio::all();
         return view('rev_requerimientos.index', compact('oficios'));
-        /*$oficio = Oficio::all();
-        $afiliado = Afiliado::all();
-        $requerimientos = Requerimiento::all();
-
-        return view('rev_requerimientos/index', compact('requerimientos', 'oficio','afiliado'));*/
     }
 
     public function create()
@@ -91,17 +86,12 @@ class RequerimientoController extends Controller
         return redirect()->route('revreq.index');
     }
 
-    public function edit($id)
+    public function edit($id)//retorna la vista de las suspensiones en delegacion
     {
         $suspencion = Suspension::all();
         $ofisusp = OficioSuspencion::all();
         $oficios = Oficio::find($id);
         return view('rev_requerimientos.edit', compact('ofisusp', 'oficios', 'suspencion'));
-        /*$oficio = Oficio::all();
-        $afiliado = Afiliado::all();
-        $usuario = Usuario::all();
-        $requerimientos = Requerimiento::find($id);
-        return view('requerimientos.edit', compact('requerimientos', 'oficio', 'afiliado','usuario'));*/
     }
 
 

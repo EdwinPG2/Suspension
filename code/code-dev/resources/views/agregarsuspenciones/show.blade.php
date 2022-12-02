@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
 @section('titulo')
-<span>Seleccione Formularios</span>
+<span>Seleccione suspensiones</span>
 @endsection
 @section('contenido')
 <div class="row">
     <div class="col-lg-12 col-md-12 col-xs-12">
         <div class="card">
             <div class="card-header">
-                <h4>Agregar datos </h4>
+                <h4>Suspensiones disponibles:</h4>
             </div>
             <div class="card-body">
                 <form action="{{ route('agregarsuspenciones.store') }}" method="post">
@@ -40,7 +40,7 @@
                                     <input type="checkbox" name="id_suspension[]" id="{{$item2->id_suspension}}" value="{{$item2->id_suspension}}">
                                 </td>
                                 <td id="nombre">{{ $item2->no_afiliado}}</td>
-                                <td id="descripcion">{{ $item2->afiliado->nombre }}{{$item2->afiliado->apellidos}}</td>
+                                <td id="descripcion">{{ $item2->afiliado->nombre }} {{$item2->afiliado->apellidos}}</td>
                                 <td id="fecha_registro">{{$item2->fecha_registro}}</td>
                                 <td id="fecha_registro">{{$item2->estado}}</td>
                             </tr>

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('titulo')
-<span>Revision del Oficio con correlativo {{$oficios->correlativo}}</span>
+<span>Revision del oficio {{$oficios->correlativo}}</span>
 @endsection
 @section('contenido')
 <div class="row">
@@ -29,7 +29,7 @@
                     <tbody>
                         @foreach($ofisusp as $item)
                         @if($item->id_oficio == $oficios->id_oficio)
-                        @if($item->desuspension->estado=='Aceptado')
+                        @if($item->desuspension->estado!='Rechazado')
                             <tr class="table-active">
                                 <th scope="row">{{ $item->desuspension->id_suspension}}</th>
                                 <td>{{ $item->desuspension->estado }}</td>
@@ -39,8 +39,18 @@
                                 <td>{{ $item->desuspension->clinica_servicio->nombre}}</td>                            
                                 <td>{{ $item->desuspension->medico->nombres}}</td>
                                 
+
                                 <td align="center">
+
                                     @if($item->desuspension->estado == 'Aceptado')
+                                    <a href="{{ route ('req.show', $item->desuspension->id_suspension) }}"
+                                        class="btn btn-success"><i class="fas fa-check-circle"></i> Aceptada</a>
+                                        <br> <br>
+                                    <a href="{{ route ('revsusp.edit', $item->desuspension->id_suspension) }}"
+                                            class="btn btn-danger"><i class="fas fa-times-circle"></i> Rechazada</a>
+                                    @endif
+
+                                    @if($item->desuspension->estado == 'Validado')
                                     <a href="{{ route ('revsusp.show', $item->desuspension->id_suspension) }}"
                                         class="btn btn-success"><i class="fas fa-check-circle"></i> PAGO</a>
                                         <br> <br>

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('titulo')
-<span>Revision de Oficios</span>
+<span>Revisión de Oficios</span>
 @endsection
 @section('contenido')
 <div class="row">

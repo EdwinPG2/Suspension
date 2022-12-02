@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Oficio;
+use App\Models\Suspension;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,7 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home/index');
+        $suspenciones = Suspension::all();
+        $oficio = Oficio::all();
+        return view('home/index', compact('oficio', 'suspenciones'));
     }
 }
 

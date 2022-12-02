@@ -20,7 +20,7 @@
                         <th>Destinatario</th>
                         <th>Estado del Oficio</th>
                         <th>Correlativo</th>
-                        <th>OPCIONES</th>
+                        <th>Opciones</th>
                     </thead>
                     <tbody>
                         @foreach($oficios as $item)
@@ -31,8 +31,6 @@
                             <td>{{ $item->destinatario}}</td>
                             <td>{{ $item->estado}}</td>
                             <td>{{ $item->correlativo}}</td>
-                        
-                            
                             <td>
                                 <a href="{{ route ('revreq.edit', $item->id_oficio) }}"
                                         class="btn btn-info"><i class="fas fa-check-circle"></i> Detalles</a>

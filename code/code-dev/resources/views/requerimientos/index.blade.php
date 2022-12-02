@@ -32,10 +32,10 @@
                             <td>{{ $item->estado }}</td>
                             <td>{{ $item->observaciones }}</td>
                             <td>{{ $item->fecha_recepcion_regmed }}</td>
-                            <td>{{ $item->oficio-> id_oficio }}</td>
-                            <td>{{ $item->afiliado-> no_afiliado }}</td>
-                            <td>{{ $item->usuario-> nombres }}</td>
-                            <td>{{ $item->usuario-> nombres }}</td>
+                            <td>{{ $item->oficio->id_oficio }}</td>
+                            <td>{{ $item->afiliado->no_afiliado }}</td>
+                            <td>{{ $item->usuario->nombres }}</td>
+                            <td>{{ $item->usuario->nombres }}</td>
 
                             
                             <td colspan="2">

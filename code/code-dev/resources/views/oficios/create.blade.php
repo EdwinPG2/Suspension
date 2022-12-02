@@ -73,7 +73,7 @@
                             <div class="form-group">
                                 <label for="despedida">Despedida</label>
                                 <input type="text" name="despedida" id="despedida" class="form-control" rows="3" cols="50" placeholder="Ingrese una despedida"
-                                value="Sin mas que agregar me despido de su persona desenado éxitos en sus actividades diarias">   
+                                value="Sin mas que agregar me despido desenado éxitos en sus actividades diarias">   
                             </div>
                         </div>
                     </div>

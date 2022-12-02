@@ -22,7 +22,7 @@
                     <thead>
                         <th>Correlativo</th>
                         <th>Destinatario</th>
-                        <th>Clinica_servicio</th>
+                        <th>Clinica-Servicio</th>
                         <th>Fecha</th>
                         <th>Estado</th>
                         
@@ -35,7 +35,7 @@
                             <tr class="text-center">
                             <td>{{ $item->correlativo }}</td>
                             <td>{{ $item->destinatario }}</td>
-                            <td>{{ $item->clinica_servicio }}</td>
+                            <td>{{ $item->dclinica_servicio->nombre }}</td>
                             <td>{{ date('d-m-Y', strtotime($item->fecha)) }}</td>
                             <td>{{ $item->estado}}</td>
                             

@@ -21,7 +21,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RequerimientoController;
 use App\Http\Controllers\EditarOficioController;
 use App\Http\Controllers\RiesgoController;
-
+use App\Http\Controllers\ReqController;
 use App\Http\Controllers\DependenciaController;
 use App\Http\Controllers\ArchivoController;
 
@@ -82,7 +82,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::resource('/oficios', OficioController::class);
     Route::resource('/reportes', ReporteController::class);
-    
+    Route::resource('/req', ReqController::class);    
 
     Route::get('/export', [ExportController::class,'exportResult'])->name('reportes');
 
