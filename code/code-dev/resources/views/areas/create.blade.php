@@ -17,13 +17,13 @@
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
                                 <label for="nombre">Nombre</label>
-                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese nombre de area">   
+                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese nombre de área" required max="100">   
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-8">
                             <div class="form-group">
                                 <label for="descripcion">Descripción</label>
-                                <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="Ingrese descripción de area">   
+                                <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="Ingrese descripción de área" required max="100">   
                             </div>
                         </div>
                     </div>
@@ -38,4 +38,8 @@
         </div>
     </div>
 </div>
+
+<style>
+    input:invalid { border-color: rgb(255, 0, 0); } input , input:valid { border-color: #ccc; }
+</style>
 @endsection
