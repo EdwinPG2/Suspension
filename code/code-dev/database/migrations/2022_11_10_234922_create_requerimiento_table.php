@@ -14,7 +14,7 @@ class CreateRequerimientoTable extends Migration
     public function up()
     {
         Schema::create('requerimiento', function (Blueprint $table) {
-            $table->integer('id_requerimiento')->primary();
+            $table->integer('id_requerimiento',true);
             $table->string('no_requerimiento', 50);
             $table->date('fecha_requerimiento');
             $table->date('fecha_envio');
@@ -26,10 +26,10 @@ class CreateRequerimientoTable extends Migration
             $table->unsignedBigInteger('users_id_remitente');
             $table->unsignedBigInteger('users_id_responsable')->nullable();
             
-            $table->foreign('no_afiliado', 'fk_requerimiento_afiliado1')->references('no_afiliado')->on('afiliado');
-            $table->foreign('id_oficio', 'fk_requerimiento_oficio1')->references('id_oficio')->on('oficio');
-            $table->foreign('users_id_remitente', 'fk_requerimiento_users1')->references('id')->on('users');
-            $table->foreign('users_id_responsable', 'fk_requerimiento_users2')->references('id')->on('users');
+            $table->foreign('no_afiliado', 'fk_requerimiento_afiliado1')->references('no_afiliado')->on('afiliado')->onDelete('cascade');
+            $table->foreign('id_oficio', 'fk_requerimiento_oficio1')->references('id_oficio')->on('oficio')->onDelete('cascade');
+            $table->foreign('users_id_remitente', 'fk_requerimiento_users1')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('users_id_responsable', 'fk_requerimiento_users2')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

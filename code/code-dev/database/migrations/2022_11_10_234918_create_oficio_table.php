@@ -14,7 +14,7 @@ class CreateOficioTable extends Migration
     public function up()
     {
         Schema::create('oficio', function (Blueprint $table) {
-            $table->integer('id_oficio')->primary();
+            $table->integer('id_oficio',true);
             $table->string('destinatario', 50);
             $table->string('saludo', 250);
             $table->string('lugar', 50);
@@ -27,8 +27,8 @@ class CreateOficioTable extends Migration
             $table->unsignedBigInteger('users_id_revisor')->nullable();
             $table->date('fecha_revision')->nullable();
             
-            $table->foreign('users_id_creador', 'fk_oficio_users1')->references('id')->on('users');
-            $table->foreign('users_id_revisor', 'fk_oficio_users2')->references('id')->on('users');
+            $table->foreign('users_id_creador', 'fk_oficio_users1')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('users_id_revisor', 'fk_oficio_users2')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

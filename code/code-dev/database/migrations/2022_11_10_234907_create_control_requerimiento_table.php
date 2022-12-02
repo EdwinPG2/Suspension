@@ -14,7 +14,7 @@ class CreateControlRequerimientoTable extends Migration
     public function up()
     {
         Schema::create('control_requerimiento', function (Blueprint $table) {
-            $table->integer('id_control_requerimiento')->primary();
+            $table->integer('id_control_requerimiento',true);
             $table->string('codigo_requerimiento', 50);
             $table->date('fecha_registro');
             $table->string('url_pdf', 10000);
@@ -22,7 +22,7 @@ class CreateControlRequerimientoTable extends Migration
             $table->string('estado', 20);
             $table->unsignedBigInteger('users_id');
             
-            $table->foreign('users_id', 'fk_control_requerimiento_users1')->references('id')->on('users');
+            $table->foreign('users_id', 'fk_control_requerimiento_users1')->references('id')->on('users')->onDelete('cascade');;
         });
     }
 

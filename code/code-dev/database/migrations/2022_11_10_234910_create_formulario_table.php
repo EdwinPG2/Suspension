@@ -14,7 +14,7 @@ class CreateFormularioTable extends Migration
     public function up()
     {
         Schema::create('formulario', function (Blueprint $table) {
-            $table->integer('id_formulario')->primary();
+            $table->integer('id_formulario',true);
             $table->string('nombre', 100);
             $table->string('descripcion', 100);
         });

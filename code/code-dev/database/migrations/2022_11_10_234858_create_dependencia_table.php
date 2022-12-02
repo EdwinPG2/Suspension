@@ -14,7 +14,7 @@ class CreateDependenciaTable extends Migration
     public function up()
     {
         Schema::create('dependencia', function (Blueprint $table) {
-            $table->integer('id_dependencia')->primary();
+            $table->integer('id_dependencia',true);
             $table->string('nombre', 255)->nullable();
         });
     }

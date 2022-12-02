@@ -7,6 +7,9 @@ use App\Models\User;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
+#use DB;
+
+
 class CreateAdminUserSeeder extends Seeder
 {
     /**
@@ -16,15 +19,16 @@ class CreateAdminUserSeeder extends Seeder
      */
     public function run()
     {
+    
         $user = User::create([
-            'ibm' => '37732',
-            'name' => 'Daniel',
-            'apellido' => 'Velasquez',
-            'email' => 'ricardod.velasquez@igssgt.org',
-            'password' => bcrypt('Igss.2022'),
+            'ibm' => '1000269',
+            'name' => 'admin',
+            'apellido' => 'admin',
+            'email' => 'admin@igssgt.org',
+            'password' => bcrypt('Igssxela'),
         ]);
     
-        $role = Role::create(['name' => 'Administrador']);
+        $role = Role::create(['name' => 'Super Administrador']);
     
         $permissions = Permission::pluck('id','id')->all();
 
