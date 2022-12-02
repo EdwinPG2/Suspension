@@ -54,7 +54,7 @@
                             <div class="form-group">
                                 <label for="direccion">Direccion</label>
                                 <input type="text" name="direccion" id="direccion" class="form-control" placeholder=""
-                                value="{{isset($afiliados->direccion)?$afiliados->direccion:''}}" maxlength="50" placeholder="Quetzaltenango">   
+                                value="{{isset($afiliados->direccion)?$afiliados->direccion:''}}" maxlength="50" placeholder="-- --">   
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4">

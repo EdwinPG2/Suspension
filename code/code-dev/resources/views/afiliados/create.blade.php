@@ -47,7 +47,7 @@
                     <div class="col-lg-4 col-md-4">
                         <div class="form-group">
                             <label for="direccion">Direccion</label>
-                            <input type="text" name="direccion" id="direccion" class="form-control" maxlength="50" placeholder="Quetzaltenango">   
+                            <input type="text" name="direccion" id="direccion" class="form-control" maxlength="50" placeholder="-- --">   
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4">
