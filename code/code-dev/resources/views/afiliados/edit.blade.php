@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col-lg-2 col-md-2">
                             <div class="form-group">
-                                <label for="no_afiliado">Numero de afiliacion (*)</label>
+                                <label for="no_afiliado">Numero de afiliación (*)</label>
                                 <input type="text" name="no_afiliado" id="no_afiliado" class="form-control" placeholder="" 
                                 value="{{isset($afiliados->no_afiliado)?$afiliados->no_afiliado:''}}" placeholder="Ejemplo: 54321" required maxlength="15" pattern="[0-9]*" title="Ingrese solamente numeros">   
                             </div>
@@ -45,21 +45,21 @@
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
-                                <label for="telefono">Telefono (*)</label>
+                                <label for="telefono">Teléfono (*)</label>
                                 <input type="text" name="telefono" id="telefono"class="form-control" placeholder=""
                                 value="{{isset($afiliados->telefono)?$afiliados->telefono:''}}" placeholder="8765" required minlength="8" maxlength="15" pattern="[0-9]*" title="Ingrese solamente numeros">   
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
-                                <label for="direccion">Direccion</label>
+                                <label for="direccion">Dirección</label>
                                 <input type="text" name="direccion" id="direccion" class="form-control" placeholder=""
                                 value="{{isset($afiliados->direccion)?$afiliados->direccion:''}}" maxlength="50" placeholder="-- --">   
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
-                                <label for="genero">Genero</label>
+                                <label for="genero">Género</label>
                                 <select class="form-control" name="genero" id="genero">
                                     @if ($afiliados->genero=="Masculino")
                                     {

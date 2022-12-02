@@ -20,9 +20,9 @@
                         <th>CUI</th>
                         <th>Nombres</th>
                         <th>Apellidos</th>
-                        <th>Telefono</th>
-                        <th>Direccion</th>
-                        <th>Genero</th>
+                        <th>Teléfono</th>
+                        <th>Dirección</th>
+                        <th>Género</th>
                         <th>Fecha de Nacimiento</th>
                         <th style="height: auto">Opciones</th>
                     </thead>
