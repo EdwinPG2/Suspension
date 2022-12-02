@@ -43,8 +43,6 @@ class AfiliadoController extends Controller
             'nombre' => 'required|max:100',
             'apellidos' => 'required|max:100',
             'telefono' => 'required|max:15',
-            'direccion' => 'required|max:50',
-            'genero' => 'required|max:15'
         ])->validate();
 
         $Afiliado = new Afiliado();
@@ -89,8 +87,6 @@ class AfiliadoController extends Controller
             'nombre' => 'required|max:100',
             'apellidos' => 'required|max:100',
             'telefono' => 'required|max:15',
-            'direccion' => 'required|max:50',
-            'genero' => 'required|max:15'
         ]);
 
         $Afiliado = Afiliado::find($id);

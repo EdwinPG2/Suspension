@@ -16,50 +16,54 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="form-group">
-                            <label for="no_afiliado">Numero de afiliacion</label>
-                            <input type="text" name="no_afiliado" id="no_afiliado" class="form-control" placeholder="">   
+                            <label for="no_afiliado">Numero de afiliacion (*)</label>
+                            <input type="text" name="no_afiliado" id="no_afiliado" class="form-control" placeholder="Ejemplo: 54321" required maxlength="15" pattern="[0-9]*" title="Ingrese solamente numeros">   
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2">
                         <div class="form-group">
-                            <label for="cui">Cui</label>
-                            <input type="text" name="cui" id="cui" class="form-control" placeholder="">   
+                            <label for="cui">Cui (*)</label>
+                            <input type="text" name="cui" id="cui" class="form-control" placeholder="Ejemplo: 12345" required minlength="13" maxlength="13" pattern="[0-9]*" title="Ingrese solamente numeros">   
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-5">
                         <div class="form-group">
-                            <label for="nombre">Nombres</label>
-                            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="">   
+                            <label for="nombre">Nombres (*)</label>
+                            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ejemplo: Luis" required max="100">   
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-5">
                         <div class="form-group">
-                            <label for="apellidos">Apellidos</label>
-                            <input type="text" name="apellidos" id="apellidos" class="form-control" placeholder="">   
+                            <label for="apellidos">Apellidos (*)</label>
+                            <input type="text" name="apellidos" id="apellidos" class="form-control" placeholder="Ejemplo: Rodriguez" required max="100">   
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <div class="form-group">
-                            <label for="telefono">Telefono</label>
-                            <input type="text" name="telefono" id="telefono"class="form-control" placeholder="">   
+                            <label for="telefono">Telefono (*)</label>
+                            <input type="text" name="telefono" id="telefono"class="form-control" placeholder="8765" required minlength="8" maxlength="15" pattern="[0-9]*" title="Ingrese solamente numeros">   
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <div class="form-group">
                             <label for="direccion">Direccion</label>
-                            <input type="text" name="direccion" id="direccion" class="form-control" placeholder="">   
+                            <input type="text" name="direccion" id="direccion" class="form-control" placeholder="Quetzaltenango">   
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <div class="form-group">
                             <label for="genero">Genero</label>
-                            <input type="text" name="genero" id="genero" class="form-control" placeholder="M - F">   
+                            <select class="form-control" name="genero" id="genero">
+                                <option value="" disabled selected>-- --</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                            </select>  
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <div class="form-group">
-                            <label for="fecha_nacimiento">Fecha de nacimiento</label>
-                            <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" class="form-control" placeholder="">   
+                            <label for="fecha_nacimiento">Fecha de nacimiento (*)</label>
+                            <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" class="form-control" placeholder="" required>   
                         </div>
                     </div>
                     
@@ -74,4 +78,8 @@
         </div>
     </div>
 </div>
+
+<style>
+    input:invalid { border-color: red; } input , input:valid { border-color: #ccc; }
+</style>
 @endsection
