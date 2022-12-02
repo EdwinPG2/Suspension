@@ -14,7 +14,7 @@ class CreateTipoAfiliadoTable extends Migration
     public function up()
     {
         Schema::create('tipo_afiliado', function (Blueprint $table) {
-            $table->integer('Id_tipo_afiliado')->primary();
+            $table->integer('Id_tipo_afiliado',true);
             $table->string('nombre', 100);
             $table->string('descripcion', 250);
         });

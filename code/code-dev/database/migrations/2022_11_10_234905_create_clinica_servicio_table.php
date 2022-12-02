@@ -14,7 +14,7 @@ class CreateClinicaServicioTable extends Migration
     public function up()
     {
         Schema::create('clinica_servicio', function (Blueprint $table) {
-            $table->integer('id_clinica_servicio')->primary();
+            $table->integer('id_clinica_servicio',true);
             $table->string('nombre', 50);
             $table->string('descripcion', 250);
             $table->integer('id_especialidad');

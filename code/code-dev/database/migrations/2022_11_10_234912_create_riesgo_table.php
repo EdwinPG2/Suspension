@@ -14,7 +14,7 @@ class CreateRiesgoTable extends Migration
     public function up()
     {
         Schema::create('riesgo', function (Blueprint $table) {
-            $table->integer('id')->primary()->comment("Primary Key");
+            $table->integer('id',true)->comment("Primary Key");
             $table->string('nombre', 255);
             $table->string('descripcion', 255)->nullable();
         });

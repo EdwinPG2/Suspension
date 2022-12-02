@@ -14,7 +14,7 @@ class CreateOficioTable extends Migration
     public function up()
     {
         Schema::create('oficio', function (Blueprint $table) {
-            $table->integer('id_oficio')->primary();
+            $table->integer('id_oficio',true);
             $table->string('destinatario', 50);
             $table->string('saludo', 250);
             $table->string('lugar', 50);

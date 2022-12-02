@@ -14,7 +14,7 @@ class CreateRequerimientoTable extends Migration
     public function up()
     {
         Schema::create('requerimiento', function (Blueprint $table) {
-            $table->integer('id_requerimiento')->primary();
+            $table->integer('id_requerimiento',true);
             $table->string('no_requerimiento', 50);
             $table->date('fecha_requerimiento');
             $table->date('fecha_envio');

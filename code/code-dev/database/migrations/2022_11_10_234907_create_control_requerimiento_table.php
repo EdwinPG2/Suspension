@@ -14,7 +14,7 @@ class CreateControlRequerimientoTable extends Migration
     public function up()
     {
         Schema::create('control_requerimiento', function (Blueprint $table) {
-            $table->integer('id_control_requerimiento')->primary();
+            $table->integer('id_control_requerimiento',true);
             $table->string('codigo_requerimiento', 50);
             $table->date('fecha_registro');
             $table->string('url_pdf', 10000);

@@ -14,7 +14,7 @@ class CreateRevisionOficioTable extends Migration
     public function up()
     {
         Schema::create('revision_oficio', function (Blueprint $table) {
-            $table->integer('id_revision_oficio')->primary();
+            $table->integer('id_revision_oficio',true);
             $table->date('fecha_rev');
             $table->integer('id_oficio');
             $table->unsignedBigInteger('users_id');

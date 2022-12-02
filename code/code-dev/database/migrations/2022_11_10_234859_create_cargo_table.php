@@ -14,7 +14,7 @@ class CreateCargoTable extends Migration
     public function up()
     {
         Schema::create('cargo', function (Blueprint $table) {
-            $table->integer('id_cargo')->primary();
+            $table->integer('id_cargo',true);
             $table->string('nombre', 255)->nullable();
         });
     }

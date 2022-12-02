@@ -14,7 +14,7 @@ class CreateRevSuspTable extends Migration
     public function up()
     {
         Schema::create('rev_susp', function (Blueprint $table) {
-            $table->integer('id_rev_susp')->primary();
+            $table->integer('id_rev_susp',true);
             $table->string('observacion', 250)->nullable();
             $table->integer('id_suspension');
             $table->integer('id_revision_oficio');

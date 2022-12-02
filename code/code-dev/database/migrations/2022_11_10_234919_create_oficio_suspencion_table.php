@@ -14,7 +14,7 @@ class CreateOficioSuspencionTable extends Migration
     public function up()
     {
         Schema::create('oficio_suspencion', function (Blueprint $table) {
-            $table->integer('id_oficio_suspencion')->primary();
+            $table->integer('id_oficio_suspencion',true);
             $table->integer('id_oficio');
             $table->integer('id_suspension');
             $table->string('estado', 20);

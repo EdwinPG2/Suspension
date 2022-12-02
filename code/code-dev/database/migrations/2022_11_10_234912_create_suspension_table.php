@@ -14,7 +14,7 @@ class CreateSuspensionTable extends Migration
     public function up()
     {
         Schema::create('suspension', function (Blueprint $table) {
-            $table->integer('id_suspension')->primary();
+            $table->integer('id_suspension',true);
             $table->date('fecha_inicio_suspension');
             $table->date('fecha_fin_suspension');
             $table->date('fecha_alta');
