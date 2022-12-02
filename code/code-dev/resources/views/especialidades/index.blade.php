@@ -18,15 +18,16 @@
             <div class="card-body">
                 <table id="dt-especialidades" class="table table-striped table-bordered dts">
                     <thead>
-                        <th>ID</th>
                         <th>Nombre</th>
+                        <th>Descripción</th>
                         <th>Opciones </th>
                     </thead>
                     <tbody>
                         @foreach($especialidades as $item)
                         <tr class="text-center">
-                            <td>{{ $item->id_especialidad }}</td>
+                            
                             <td>{{ $item->nombre_especialidad }}</td>
+                            <td>{{ $item->descripcion }}</td>
                             <td>
                                     <a href="{{ route ('especialidades.edit', $item->id_especialidad) }}"
                                     class="btn btn-warning" ><i class="fas fa-edit"></i></a>

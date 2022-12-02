@@ -16,13 +16,13 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
-                                <label for="nombre">Nombre</label>
+                                <label for="nombre">Nombre (*)</label>
                                 <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese nombre de área" required max="100">   
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-8">
                             <div class="form-group">
-                                <label for="descripcion">Descripción</label>
+                                <label for="descripcion">Descripción (*)</label>
                                 <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="Ingrese descripción de área" required max="100">   
                             </div>
                         </div>
