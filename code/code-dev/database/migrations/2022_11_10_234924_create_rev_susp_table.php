@@ -19,8 +19,8 @@ class CreateRevSuspTable extends Migration
             $table->integer('id_suspension');
             $table->integer('id_revision_oficio');
             
-            $table->foreign('id_revision_oficio', 'fk_rev_susp_revision_oficio1')->references('id_revision_oficio')->on('revision_oficio');
-            $table->foreign('id_suspension', 'fk_rev_susp_suspension1')->references('id_suspension')->on('suspension');
+            $table->foreign('id_revision_oficio', 'fk_rev_susp_revision_oficio1')->references('id_revision_oficio')->on('revision_oficio')->onDelete('cascade');
+            $table->foreign('id_suspension', 'fk_rev_susp_suspension1')->references('id_suspension')->on('suspension')->onDelete('cascade');
         });
     }
 

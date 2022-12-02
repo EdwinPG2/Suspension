@@ -22,8 +22,8 @@ class CreateClinicaServicioTable extends Migration
             $table->integer('correlativo')->default(1);
             $table->integer('correlativo_rechazado')->default(1);
             
-            $table->foreign('id_area', 'fk_clinica/servicio_area1')->references('id_area')->on('area');
-            $table->foreign('id_especialidad', 'fk_clinica/servicio_especialidad1')->references('id_especialidad')->on('especialidad');
+            $table->foreign('id_area', 'fk_clinica/servicio_area1')->references('id_area')->on('area')->onDelete('cascade');
+            $table->foreign('id_especialidad', 'fk_clinica/servicio_especialidad1')->references('id_especialidad')->on('especialidad')->onDelete('cascade');
         });
     }
 

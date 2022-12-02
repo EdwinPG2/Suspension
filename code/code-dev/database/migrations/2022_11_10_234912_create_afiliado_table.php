@@ -28,9 +28,9 @@ class CreateAfiliadoTable extends Migration
             $table->integer('id_cargo')->nullable();
             $table->enum('colaborador', ['y', 'n'])->nullable();
             
-            $table->foreign('id_dependencia', 'afiliado_ibfk_1')->references('id_dependencia')->on('dependencia');
-            $table->foreign('id_cargo', 'afiliado_ibfk_2')->references('id_cargo')->on('cargo');
-            $table->foreign('id_tipo_afiliado', 'fk_afiliado_tipo_afiliado1')->references('Id_tipo_afiliado')->on('tipo_afiliado');
+            $table->foreign('id_dependencia', 'afiliado_ibfk_1')->references('id_dependencia')->on('dependencia')->onDelete('cascade');
+            $table->foreign('id_cargo', 'afiliado_ibfk_2')->references('id_cargo')->on('cargo')->onDelete('cascade');
+            $table->foreign('id_tipo_afiliado', 'fk_afiliado_tipo_afiliado1')->references('Id_tipo_afiliado')->on('tipo_afiliado')->onDelete('cascade');
         });
     }
 

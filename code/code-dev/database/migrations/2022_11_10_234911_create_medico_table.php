@@ -20,7 +20,7 @@ class CreateMedicoTable extends Migration
             $table->string('telefono', 11)->nullable();
             $table->integer('id_especialidad');
             
-            $table->foreign('id_especialidad', 'fk_medico_especialidad1')->references('id_especialidad')->on('especialidad');
+            $table->foreign('id_especialidad', 'fk_medico_especialidad1')->references('id_especialidad')->on('especialidad')->onDelete('cascade');
         });
     }
 

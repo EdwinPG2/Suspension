@@ -33,12 +33,12 @@ class CreateSuspensionTable extends Migration
             $table->dateTime('fecha_accidente');
             $table->integer('id_riesgo');
             
-            $table->foreign('no_afiliado', 'fk_suspension_afiliado1')->references('no_afiliado')->on('afiliado');
-            $table->foreign('id_clinica_servicio', 'fk_suspension_clinica/servicio1')->references('id_clinica_servicio')->on('clinica_servicio');
-            $table->foreign('medico_colegiado', 'fk_suspension_medico1')->references('colegiado')->on('medico');
-            $table->foreign('id_riesgo', 'fk_suspension_riesgo1')->references('id')->on('riesgo');
-            $table->foreign('users_id_registrador', 'fk_suspension_users1')->references('id')->on('users');
-            $table->foreign('users_id_revisor', 'fk_suspension_users2')->references('id')->on('users');
+            $table->foreign('no_afiliado', 'fk_suspension_afiliado1')->references('no_afiliado')->on('afiliado')->onDelete('cascade');
+            $table->foreign('id_clinica_servicio', 'fk_suspension_clinica/servicio1')->references('id_clinica_servicio')->on('clinica_servicio')->onDelete('cascade');
+            $table->foreign('medico_colegiado', 'fk_suspension_medico1')->references('colegiado')->on('medico')->onDelete('cascade');
+            $table->foreign('id_riesgo', 'fk_suspension_riesgo1')->references('id')->on('riesgo')->onDelete('cascade');
+            $table->foreign('users_id_registrador', 'fk_suspension_users1')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('users_id_revisor', 'fk_suspension_users2')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

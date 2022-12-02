@@ -22,7 +22,7 @@ class CreateControlRequerimientoTable extends Migration
             $table->string('estado', 20);
             $table->unsignedBigInteger('users_id');
             
-            $table->foreign('users_id', 'fk_control_requerimiento_users1')->references('id')->on('users');
+            $table->foreign('users_id', 'fk_control_requerimiento_users1')->references('id')->on('users')->onDelete('cascade');;
         });
     }
 

@@ -19,8 +19,8 @@ class CreateRevisionOficioTable extends Migration
             $table->integer('id_oficio');
             $table->unsignedBigInteger('users_id');
             
-            $table->foreign('id_oficio', 'fk_revision_oficio1')->references('id_oficio')->on('oficio');
-            $table->foreign('users_id', 'fk_revision_oficio_users1')->references('id')->on('users');
+            $table->foreign('id_oficio', 'fk_revision_oficio1')->references('id_oficio')->on('oficio')->onDelete('cascade');
+            $table->foreign('users_id', 'fk_revision_oficio_users1')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

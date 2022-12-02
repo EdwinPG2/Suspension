@@ -19,8 +19,8 @@ class CreateOficioSuspencionTable extends Migration
             $table->integer('id_suspension');
             $table->string('estado', 20);
             
-            $table->foreign('id_oficio', 'fk_oficio_suspencion_oficio1')->references('id_oficio')->on('oficio');
-            $table->foreign('id_suspension', 'fk_oficio_suspencion_suspension1')->references('id_suspension')->on('suspension');
+            $table->foreign('id_oficio', 'fk_oficio_suspencion_oficio1')->references('id_oficio')->on('oficio')->onDelete('cascade');
+            $table->foreign('id_suspension', 'fk_oficio_suspencion_suspension1')->references('id_suspension')->on('suspension')->onDelete('cascade');
         });
     }
 

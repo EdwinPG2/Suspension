@@ -19,8 +19,8 @@ class CreateFormularioSuspencionTable extends Migration
             $table->integer('id_suspension');
             $table->string('estado', 20);
             
-            $table->foreign('id_formulario', 'fk_formulario_suspencion_formulario1')->references('id_formulario')->on('formulario');
-            $table->foreign('id_suspension', 'fk_formulario_suspencion_suspension1')->references('id_suspension')->on('suspension');
+            $table->foreign('id_formulario', 'fk_formulario_suspencion_formulario1')->references('id_formulario')->on('formulario')->onDelete('cascade');
+            $table->foreign('id_suspension', 'fk_formulario_suspencion_suspension1')->references('id_suspension')->on('suspension')->onDelete('cascade');
         });
     }
 
