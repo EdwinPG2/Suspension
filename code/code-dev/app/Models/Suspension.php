@@ -86,7 +86,8 @@ class Suspension extends Model
 		'users_id_revisor',
 		'fecha_inicio_caso',
 		'fecha_accidente',
-		'id_riesgo'
+		'id_riesgo',
+		'pago'
 	];
 
 	public function afiliado()
