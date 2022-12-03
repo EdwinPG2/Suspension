@@ -14,7 +14,7 @@ class CreateFormularioSuspencionTable extends Migration
     public function up()
     {
         Schema::create('formulario_suspencion', function (Blueprint $table) {
-            $table->integer('id_suspencion',true);
+            $table->integer('id_formulario_suspencion',true);
             $table->integer('id_formulario');
             $table->integer('id_suspension');
             $table->string('estado', 20);
