@@ -8,7 +8,7 @@
     <div class="col-lg-12 col-md-12 col-xs-12">
         <div class="card">
             <div class="card-header">
-                <h4>Listado de formularios agregados a suspencion </h4>
+                <h4>Listado de formularios agregados a suspension </h4>
             </div>
             <div class="card-body">
                 <div class="row">
