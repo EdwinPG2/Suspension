@@ -212,11 +212,8 @@
                                 <div class="col-lg-4 col-md-4">
                                     <div class="form-group">
                                         <label for="dependencia">Seleccione dependencia</label>
-                                        <select class="form-control" name="dependencia" id="dependencia">
-                                            @foreach ($dependencias as $item)
-                                                <option value="{{ $item->id_dependencia }}">{{ $item->nombre }}</option>
-                                            @endforeach
-                                        </select>
+                                        <input type="text" name="dependencia" id="dependencia" class="form-control"
+                                            placeholder="">
                                     </div>
                                 </div>
                             </div>

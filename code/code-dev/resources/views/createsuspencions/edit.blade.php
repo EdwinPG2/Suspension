@@ -222,13 +222,8 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="dependencia">Seleccione dependencia</label>
-                                    <select class="form-control" name="dependencia" id="dependencia">
-                                        @foreach ($dependencias as $item)
-                                            <option value="{{ $item->id_dependencia }}"
-                                                @if ($suspencion->afiliado->id_dependencia == $item->id_dependencia) selected="select" @endif>
-                                                {{ $item->nombre }}</option>
-                                        @endforeach
-                                    </select>
+                                    <input type="text" name="dependencia" id="dependencia" class="form-control"
+                                            placeholder="" value="{{ isset($suspencion->afiliado->dependencia) ? $suspencion->afiliado->dependencia : '' }}">
                                 </div>
                             </div>
                         </div>
