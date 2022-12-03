@@ -32,7 +32,7 @@ class CreateSuspensionTable extends Migration
             $table->date('fecha_inicio_caso');
             $table->dateTime('fecha_accidente')->nullable();
             $table->integer('id_riesgo');
-            $table->string('pago',10);
+            $table->string('pago',10)->nullable();
             
             $table->foreign('no_afiliado', 'fk_suspension_afiliado1')->references('no_afiliado')->on('afiliado')->onDelete('cascade');
             $table->foreign('id_clinica_servicio', 'fk_suspension_clinica/servicio1')->references('id_clinica_servicio')->on('clinica_servicio')->onDelete('cascade');

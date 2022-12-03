@@ -55,7 +55,6 @@ class CreateSuspencionController extends Controller
             'no_afiliado' => 'required',
             'id_clinica_servicio' => 'required',
             'fecha_inicio_caso' => 'required',
-            'fecha_accidente' => 'required',
             'id_riesgo' => 'required',
             
             

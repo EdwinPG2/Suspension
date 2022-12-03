@@ -52,7 +52,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="id_riesgo">Seleccione riesgo</label>
-                                    <select class="form-control" name="id_riesgo" id="id_riesgo">
+                                    <select class="form-control" name="id_riesgo" id="id_riesgo" required>
                                         <option value="" disabled selected>-- --</option>
                                         @foreach ($riesgo as $item)
                                             <option value="{{ $item->id }}">{{ $item->nombre }}</option>
@@ -76,28 +76,28 @@
                                 <div class="form-group">
                                     <label for="fecha_inicio_caso">Fecha de inicio caso</label>
                                     <input type="date" name="fecha_inicio_caso" id="fecha_inicio_caso"
-                                        class="form-control" placeholder="">
+                                        class="form-control" placeholder="" required>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="fecha_inicio_suspension">Fecha de inicio de suspension</label>
                                     <input type="date" name="fecha_inicio_suspension" id="fecha_inicio_suspension"
-                                        class="form-control" placeholder="">
+                                        class="form-control" placeholder="" required>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="fecha_fin_suspension">Fecha de finalizacion de suspension</label>
                                     <input type="date" name="fecha_fin_suspension" id="fecha_fin_suspension"
-                                        class="form-control" placeholder="">
+                                        class="form-control" placeholder="" required>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="fecha_alta">Fecha de alta</label>
                                     <input type="date" name="fecha_alta" id="fecha_alta" class="form-control"
-                                        placeholder="">
+                                        placeholder="" required>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
@@ -132,7 +132,7 @@
                             <div class="col-lg-2 col-md-2">
                                 <div class="form-group">
                                     <input type="text" name="medico_colegiado" id="medico_colegiado"
-                                        class="form-control" placeholder="Ingrese un colegiado">
+                                        class="form-control" placeholder="Ingrese un colegiado" required maxlength="11" pattern="[0-9]*" title="Ingrese solamente numeros">
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2">
@@ -179,7 +179,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="id_clinica_servicio">Seleccione clinica/servicio</label>
-                                    <select class="form-control" name="id_clinica_servicio" id="id_clinica_servicio">
+                                    <select class="form-control" name="id_clinica_servicio" id="id_clinica_servicio" required>
                                         <option value="" disabled="disabled">-- Seleccione clinica/servicio</option>
 
                                     </select>
@@ -198,7 +198,7 @@
                                     <div class="form-group">
                                         <label for="nombre_medico">IBM</label>
                                         <input type="text" name="ibm" id="ibm" class="form-control"
-                                            placeholder="">
+                                            placeholder="" maxlength="11" pattern="[0-9]*" title="Ingrese solamente numeros">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
@@ -215,7 +215,7 @@
                                     <div class="form-group">
                                         <label for="dependencia">Ingrese dependencia</label>
                                         <input type="text" name="dependencia" id="dependencia" class="form-control"
-                                            placeholder="">
+                                            placeholder="" maxlength="50">
                                     </div>
                                 </div>
                             </div>
