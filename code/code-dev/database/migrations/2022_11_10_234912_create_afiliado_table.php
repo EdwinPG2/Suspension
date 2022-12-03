@@ -24,7 +24,7 @@ class CreateAfiliadoTable extends Migration
             $table->date('fecha_nacimiento');
             $table->string('ibm', 20)->nullable();
             $table->integer('id_tipo_afiliado')->nullable();
-            $table->string('dependencia')->nullable();
+            $table->string('dependencia',50)->nullable();
             $table->integer('id_cargo')->nullable();
             $table->enum('colaborador', ['y', 'n'])->nullable();
             
