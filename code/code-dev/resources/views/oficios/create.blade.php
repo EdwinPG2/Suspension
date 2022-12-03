@@ -41,7 +41,7 @@
                                 <div class="form-group">
                                     <label for="lugar">Lugar</label>
                                     <input type="text" name="lugar" id="lugar" class="form-control"
-                                        placeholder="Ingrese lugar" value="Quetzaltenango">
+                                        placeholder="Ingrese lugar" value="IGSS, Hospital General de Quetzaltenango">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
