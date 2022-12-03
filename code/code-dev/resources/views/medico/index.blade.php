@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('titulo')
-<span>MEDICOS</span>
+<span>MÉDICOS</span>
 @endsection
 @section('contenido')
 <div class="row">
@@ -9,7 +9,7 @@
         <div class="card mb-4">
             <div class="card-header">
                 <div class="row justify-content-between">
-                    <h4>Listado de medicos</h4>
+                    <h4>Listado de médicos</h4>
                         
                     <a type="button" class="btn btn-primary" href="{{route('medico.create')}}"><i class="fas fa-plus"></i>Nuevo</a>
                 
@@ -20,8 +20,8 @@
                     <thead>
                         <th>Colegiado</th>
                         <th>Nombre</th>
-                        <th>Especialidad</th>
-                        <th>No.Telefono</th>
+                        <th>Especialidad del médico</th>
+                        <th>Teléfono</th>
                         <th>Opciones</th>
                     </thead>
                     <tbody>
