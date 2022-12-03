@@ -38,8 +38,4 @@
         </div>
     </div>
 </div>
-
-<style>
-    input:invalid { border-color: rgb(255, 0, 0); } input , input:valid { border-color: #ccc; }
-</style>
 @endsection

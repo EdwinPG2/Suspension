@@ -39,7 +39,4 @@
         </div>
     </div>
 </div>
-<style>
-    input:invalid { border-color: red; } input , input:valid { border-color: #ccc; }
-</style>
 @endsection
