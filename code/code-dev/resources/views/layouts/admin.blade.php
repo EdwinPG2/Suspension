@@ -88,6 +88,9 @@
                 <div class="row">
                     <div class="col-sm-12">
                         @yield('contenido')
+                        <style>
+                            input:invalid { border-color: red; } input , input:valid { border-color: #ccc; }
+                        </style>
                     </div>
                 </div>
 
