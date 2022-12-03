@@ -9,15 +9,15 @@
         <div class="card mb-4">
             <div class="card-header">
                 <div class="row justify-content-between">
-                    <h4>Listado de Riesgos</h4>
+                    <h4>Listado de riesgos</h4>
                     <a type="button" class="btn btn-primary" href="{{ route('riesgos.create') }}"><i class="fas fa-plus"> </i> Nuevo</a>
                 </div>
             </div>
             <div class="card-body">
                 <table id="dt-riesgos" class="table table-striped table-bordered dts">
                     <thead>
-                        <th> Nombre de Riesgo </th>
-                        <th> Descripción de Riesgo </th>
+                        <th> Nombre de riesgo </th>
+                        <th> Descripción de riesgo </th>
                     </thead>
                     <tbody>
                         @foreach($riesgos as $item)

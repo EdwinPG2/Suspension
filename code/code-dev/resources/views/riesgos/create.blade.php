@@ -17,13 +17,13 @@
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
                                 <label for="nombre">Riesgo</label>
-                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese Riesgo">   
+                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese nombre de riesgo" required maxlength="100">   
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
                                 <label for="descripcion">Descripción</label>
-                                <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="Ingrese una Descripción">   
+                                <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="Ingrese una Descripción" maxlength="100">   
                             </div>
                         </div>
                         
@@ -39,4 +39,7 @@
         </div>
     </div>
 </div>
+<style>
+    input:invalid { border-color: red; } input , input:valid { border-color: #ccc; }
+</style>
 @endsection
