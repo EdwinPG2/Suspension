@@ -15,6 +15,39 @@
                         @method('put')
                         @csrf
                         <div class="card-header">
+                            <h4>Afiliado</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2">
+                                <div class="form-group">
+                                    <input type="text" name="no_afiliado" id="no_afiliado" class="form-control"
+                                        placeholder="Ingrese un numero" value="{{ $suspencion->no_afiliado }}">
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2">
+                                <div class="form-group">
+                                    <input type="button" id="btn_buscar_afiliado" name="btn_buscar"class="btn btn-primary"
+                                        href="" value="Buscar afiliado" onclick="buscarAfiliado()">
+
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre de afiliado</label>
+                                    <input type="text" name="nombre_afiliado" id="nombre_afiliado" class="form-control"
+                                        placeholder="" value="{{ $suspencion->afiliado->nombre }}" disabled>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <label for="apellidos">Apellido de afiliado</label>
+                                    <input type="text" name="apellidos_afiliado" id="apellidos_afiliado"
+                                        class="form-control" placeholder=""
+                                        value="{{ $suspencion->afiliado->apellidos }} "disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-header">
                             <h4>Riesgo</h4>
                         </div>
                         <div class="row">
@@ -31,8 +64,8 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="fecha_accidente">Fecha de accidente </label>
-                                    <input type="date" name="fecha_accidente" id="fecha_accidente"
-                                        class="form-control" value="{{date('Y-m-d', strtotime($suspencion->fecha_accidente))}}">
+                                    <input type="date" name="fecha_accidente" id="fecha_accidente" class="form-control"
+                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_accidente)) }}">
                                 </div>
                             </div>
                         </div>
@@ -44,28 +77,31 @@
                                 <div class="form-group">
                                     <label for="fecha_inicio_caso">Fecha de inicio caso</label>
                                     <input type="date" name="fecha_inicio_caso" id="fecha_inicio_caso"
-                                        class="form-control" value="{{date('Y-m-d', strtotime($suspencion->fecha_inicio_caso))}}">
+                                        class="form-control"
+                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_inicio_caso)) }}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="fecha_inicio_suspension">Fecha de inicio de suspencion</label>
                                     <input type="date" name="fecha_inicio_suspension" id="fecha_inicio_suspension"
-                                        class="form-control" value="{{date('Y-m-d', strtotime($suspencion->fecha_inicio_suspension))}}">
+                                        class="form-control"
+                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_inicio_suspension)) }}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="fecha_fin_suspension">Fecha de finalizacion de suspencion</label>
                                     <input type="date" name="fecha_fin_suspension" id="fecha_fin_suspension"
-                                        class="form-control" value="{{date('Y-m-d', strtotime($suspencion->fecha_fin_suspension))}}">
+                                        class="form-control"
+                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_fin_suspension)) }}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="fecha_alta">Fecha de alta</label>
                                     <input type="date" name="fecha_alta" id="fecha_alta" class="form-control"
-                                        value="{{date('Y-m-d', strtotime($suspencion->fecha_alta))}}">
+                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_alta)) }}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
@@ -91,40 +127,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-header">
-                            <h4>Afiliado</h4>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-2 col-md-2">
-                                <div class="form-group">
-                                    <input type="text" name="no_afiliado" id="no_afiliado" class="form-control"
-                                        placeholder="Ingrese un numero" value="{{ $suspencion->no_afiliado }}">
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-2">
-                                <div class="form-group">
-                                    <input type="button" id="btn_buscar_afiliado" name="btn_buscar"class="btn btn-primary"
-                                        href="" value="Buscar afiliado" onclick="buscarAfiliado()">
 
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="form-group">
-                                    <label for="nombre">Nombre de afiliado</label>
-                                    <input type="text" name="nombre_afiliado" id="nombre_afiliado"
-                                        class="form-control" placeholder="" value="{{ $suspencion->afiliado->nombre }}"
-                                        disabled>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="form-group">
-                                    <label for="apellidos">Apellido de afiliado</label>
-                                    <input type="text" name="apellidos_afiliado" id="apellidos_afiliado"
-                                        class="form-control" placeholder=""
-                                        value="{{ $suspencion->afiliado->apellidos }} "disabled>
-                                </div>
-                            </div>
-                        </div>
                         <div class="card-header">
                             <h4>Medico</h4>
                         </div>
@@ -138,8 +141,9 @@
                             </div>
                             <div class="col-lg-2 col-md-2">
                                 <div class="form-group">
-                                    <input type="button" id="btn_buscar_medico" name="btn_buscar"class="btn btn-primary"
-                                        href="" value="Buscar medico" onclick="buscarMedico()">
+                                    <input type="button" id="btn_buscar_medico"
+                                        name="btn_buscar"class="btn btn-primary" href="" value="Buscar medico"
+                                        onclick="buscarMedico()">
 
                                 </div>
                             </div>
@@ -223,7 +227,8 @@
                                 <div class="form-group">
                                     <label for="dependencia">Seleccione dependencia</label>
                                     <input type="text" name="dependencia" id="dependencia" class="form-control"
-                                            placeholder="" value="{{ isset($suspencion->afiliado->dependencia) ? $suspencion->afiliado->dependencia : '' }}">
+                                        placeholder=""
+                                        value="{{ isset($suspencion->afiliado->dependencia) ? $suspencion->afiliado->dependencia : '' }}">
                                 </div>
                             </div>
                         </div>

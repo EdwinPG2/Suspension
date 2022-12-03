@@ -14,6 +14,38 @@
                     <form action="{{ route('createsuspencions.store') }}" method="post">
                         @csrf
                         <div class="card-header">
+                            <h4>Afiliado</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2">
+                                <div class="form-group">
+                                    <input type="text" name="no_afiliado" id="no_afiliado" class="form-control"
+                                        placeholder="Ingrese un numero">
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2">
+                                <div class="form-group">
+                                    <input type="button" id="btn_buscar_afiliado" name="btn_buscar"class="btn btn-primary"
+                                        href="" value="Buscar afiliado" onclick="buscarAfiliado()">
+
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre de afiliado</label>
+                                    <input type="text" name="nombre_afiliado" id="nombre_afiliado" class="form-control"
+                                        placeholder="" value="" disabled>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <label for="apellidos">Apellido de afiliado</label>
+                                    <input type="text" name="apellidos_afiliado" id="apellidos_afiliado"
+                                        class="form-control" placeholder="" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-header">
                             <h4>Riesgo</h4>
                         </div>
                         <div class="row">
@@ -87,42 +119,11 @@
                                 <div class="form-group">
                                     <!--<label for="id_usuario_registrador">Usuario</label>  esto esta oculto-->
                                     <input type="hidden" name="id_usuario_registrador" id="id_usuario_registrador"
-                                        class="form-control" value="{{Auth::user()->id}}" readonly>
+                                        class="form-control" value="{{ Auth::user()->id }}" readonly>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-header">
-                            <h4>Afiliado</h4>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-2 col-md-2">
-                                <div class="form-group">
-                                    <input type="text" name="no_afiliado" id="no_afiliado" class="form-control"
-                                        placeholder="Ingrese un numero">
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-2">
-                                <div class="form-group">
-                                    <input type="button" id="btn_buscar_afiliado" name="btn_buscar"class="btn btn-primary"
-                                        href="" value="Buscar afiliado" onclick="buscarAfiliado()">
 
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="form-group">
-                                    <label for="nombre">Nombre de afiliado</label>
-                                    <input type="text" name="nombre_afiliado" id="nombre_afiliado"
-                                        class="form-control" placeholder="" value="" disabled>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="form-group">
-                                    <label for="apellidos">Apellido de afiliado</label>
-                                    <input type="text" name="apellidos_afiliado" id="apellidos_afiliado"
-                                        class="form-control" placeholder="" disabled>
-                                </div>
-                            </div>
-                        </div>
                         <div class="card-header">
                             <h4>Medico</h4>
                         </div>
