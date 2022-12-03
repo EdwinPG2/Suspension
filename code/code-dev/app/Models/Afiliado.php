@@ -44,7 +44,6 @@ class Afiliado extends Model
 	protected $casts = [
 		'no_afiliado' => 'int',
 		'id_tipo_afiliado' => 'int',
-		'id_dependencia' => 'int',
 		'id_cargo' => 'int'
 	];
 
@@ -62,14 +61,9 @@ class Afiliado extends Model
 		'fecha_nacimiento',
 		'ibm',
 		'id_tipo_afiliado',
-		'id_dependencia',
+		'dependencia',
 		'id_cargo'
 	];
-
-	public function dependencium()
-	{
-		return $this->belongsTo(Dependencium::class, 'id_dependencia');
-	}
 
 	public function cargo()
 	{
