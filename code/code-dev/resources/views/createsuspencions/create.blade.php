@@ -51,7 +51,7 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="id_riesgo">Seleccione riesgo</label>
+                                    <label for="id_riesgo">Seleccione riesgo (*)</label>
                                     <select class="form-control" name="id_riesgo" id="id_riesgo" required>
                                         <option value="" disabled selected>-- --</option>
                                         @foreach ($riesgo as $item)
@@ -62,7 +62,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_accidente">Fecha de accidente </label>
+                                    <label for="fecha_accidente">Fecha de accidente (*)</label>
                                     <input type="datetime-local" name="fecha_accidente" id="fecha_accidente"
                                         class="form-control" placeholder="">
                                 </div>
@@ -74,35 +74,35 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_inicio_caso">Fecha de inicio caso</label>
+                                    <label for="fecha_inicio_caso">Fecha de inicio caso (*)</label>
                                     <input type="date" name="fecha_inicio_caso" id="fecha_inicio_caso"
                                         class="form-control" placeholder="" required>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_inicio_suspension">Fecha de inicio de suspension</label>
+                                    <label for="fecha_inicio_suspension">Fecha de inicio de suspension (*)</label>
                                     <input type="date" name="fecha_inicio_suspension" id="fecha_inicio_suspension"
                                         class="form-control" placeholder="" required>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_fin_suspension">Fecha de finalizacion de suspension</label>
+                                    <label for="fecha_fin_suspension">Fecha de finalizacion de suspension (*)</label>
                                     <input type="date" name="fecha_fin_suspension" id="fecha_fin_suspension"
                                         class="form-control" placeholder="" required>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_alta">Fecha de alta</label>
+                                    <label for="fecha_alta">Fecha de alta (*)</label>
                                     <input type="date" name="fecha_alta" id="fecha_alta" class="form-control"
                                         placeholder="" required>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_registro">Fecha de registro </label>
+                                    <label for="fecha_registro">Fecha de registro (*)</label>
                                     <input type="datetime-local" name="fecha_registro" id="fecha_registro"
                                         class="form-control" placeholder="" value="{{ $ldate = date('Y-m-d H:i:s') }}"
                                         readonly>
@@ -144,7 +144,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="nombre_medico">Nombres de medico</label>
+                                    <label for="nombre_medico">Nombres de médico</label>
                                     <input type="text" name="nombre_medico" id="nombre_medico" class="form-control"
                                         placeholder="" value="" disabled>
                                 </div>
@@ -178,7 +178,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="id_clinica_servicio">Seleccione clinica/servicio</label>
+                                    <label for="id_clinica_servicio">Seleccione clinica/servicio (*)</label>
                                     <select class="form-control" name="id_clinica_servicio" id="id_clinica_servicio" required>
                                         <option value="" disabled="disabled">-- Seleccione clinica/servicio</option>
 

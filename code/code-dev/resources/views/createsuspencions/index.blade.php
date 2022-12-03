@@ -34,13 +34,14 @@
                         <tr class="text-center">
                             <td>{{$item->afiliado->no_afiliado}}</td>
                             <td>{{$item->afiliado->nombre}} {{$item->afiliado->apellidos}}</td>
-                            <td>{{ date('y-m-d', strtotime($item->fecha_inicio_caso)) }}</td>
-                            <td>{{ date('y-m-d', strtotime($item->fecha_inicio_suspension)) }}</td>
-                            <td>{{ date('y-m-d', strtotime($item->fecha_alta)) }}</td>
+                            <td>{{ date('d-m-Y', strtotime($item->fecha_inicio_caso)) }}</td>
+                            <td>{{ date('d-m-Y', strtotime($item->fecha_inicio_suspension)) }}</td>
+                            <td>{{ date('d-m-Y', strtotime($item->fecha_fin_suspension)) }}</td>
+                            <td>{{ date('d-m-Y', strtotime($item->fecha_alta)) }}</td>
                             <td>{{$item->clinica_servicio->nombre}}</td>
                             <td>{{ $item->observacion }}</td>
                             <td>{{ $item->estado }}</td>
-                            <td>{{ date('y-m-d', strtotime($item->fecha_registro))}}</td>
+                            <td>{{ date('d-m-Y', strtotime($item->fecha_registro))}}</td>
 
                             <td>
                                 <a href="{{ route ('agregarformularios.show', $item->id_suspension) }}"

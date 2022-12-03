@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('titulo')
-    <span>Editar suspencion</span>
+    <span>Editar suspension</span>
 @endsection
 @section('contenido')
     <div class="row" onload="javascript:show()">
@@ -21,7 +21,8 @@
                             <div class="col-lg-2 col-md-2">
                                 <div class="form-group">
                                     <input type="text" name="no_afiliado" id="no_afiliado" class="form-control"
-                                        placeholder="Ingrese un numero" value="{{ $suspencion->no_afiliado }}">
+                                        placeholder="Ingrese un numero" value="{{ $suspencion->no_afiliado }}" required
+                                        maxlength="11" pattern="[0-9]*" title="Ingrese solamente numeros">
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2">
@@ -53,8 +54,8 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="id_riesgo">Seleccione riesgo</label>
-                                    <select class="form-control" name="id_riesgo" id="id_riesgo">
+                                    <label for="id_riesgo">Seleccione riesgo (*)</label>
+                                    <select class="form-control" name="id_riesgo" id="id_riesgo" required>
                                         @foreach ($riesgo as $item)
                                             <option value="{{ $item->id }}">{{ $item->nombre }}</option>
                                         @endforeach
@@ -63,50 +64,50 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_accidente">Fecha de accidente </label>
+                                    <label for="fecha_accidente">Fecha de accidente</label>
                                     <input type="date" name="fecha_accidente" id="fecha_accidente" class="form-control"
                                         value="{{ date('Y-m-d', strtotime($suspencion->fecha_accidente)) }}">
                                 </div>
                             </div>
                         </div>
                         <div class="card-header">
-                            <h4>Suspencion</h4>
+                            <h4>Suspension</h4>
                         </div>
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_inicio_caso">Fecha de inicio caso</label>
+                                    <label for="fecha_inicio_caso">Fecha de inicio caso (*)</label>
                                     <input type="date" name="fecha_inicio_caso" id="fecha_inicio_caso"
                                         class="form-control"
-                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_inicio_caso)) }}">
+                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_inicio_caso)) }}" required>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_inicio_suspension">Fecha de inicio de suspencion</label>
+                                    <label for="fecha_inicio_suspension">Fecha de inicio de suspencion (*)</label>
                                     <input type="date" name="fecha_inicio_suspension" id="fecha_inicio_suspension"
                                         class="form-control"
-                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_inicio_suspension)) }}">
+                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_inicio_suspension)) }}" required>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_fin_suspension">Fecha de finalizacion de suspencion</label>
+                                    <label for="fecha_fin_suspension">Fecha de finalizacion de suspencion (*)</label>
                                     <input type="date" name="fecha_fin_suspension" id="fecha_fin_suspension"
                                         class="form-control"
-                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_fin_suspension)) }}">
+                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_fin_suspension)) }}" required>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_alta">Fecha de alta</label>
+                                    <label for="fecha_alta">Fecha de alta (*)</label>
                                     <input type="date" name="fecha_alta" id="fecha_alta" class="form-control"
-                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_alta)) }}">
+                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_alta)) }}" required>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_registro">Fecha de registro </label>
+                                    <label for="fecha_registro">Fecha de registro (*)</label>
                                     <input type="datetime-local" name="fecha_registro" id="fecha_registro"
                                         class="form-control" value="{{ $suspencion->fecha_registro }}" readonly>
                                 </div>
@@ -123,7 +124,7 @@
                                 <div class="form-group">
                                     <!--<label for="id_usuario_registrador">Usuario</label>  esto esta oculto-->
                                     <input type="hidden" name="id_usuario_registrador" id="id_usuario_registrador"
-                                        class="form-control" value="10" readonly>
+                                        class="form-control" value="{{$suspencion->users_id_registrador}}" readonly>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +137,7 @@
                                 <div class="form-group">
                                     <input type="text" name="medico_colegiado" id="medico_colegiado"
                                         class="form-control" placeholder="Ingrese un colegiado"
-                                        value="{{ $suspencion->medico_colegiado }}">
+                                        value="{{ $suspencion->medico_colegiado }}" required maxlength="11" pattern="[0-9]*" title="Ingrese solamente numeros">
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2">
@@ -149,7 +150,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="nombre_medico">Nombres de medico</label>
+                                    <label for="nombre_medico">Nombres de médico</label>
                                     <input type="text" name="nombre_medico" id="nombre_medico" class="form-control"
                                         placeholder="" value="{{ $suspencion->medico->nombres }}" disabled>
                                 </div>
@@ -162,7 +163,7 @@
 
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="areas">Seleccione area</label>
+                                    <label for="areas">Seleccione área</label>
                                     <select class="form-control" name="areas" id="areas"
                                         onclick="cargar_especialidad()">
 
@@ -186,8 +187,8 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="id_clinica_servicio">Seleccione clinica/servicio</label>
-                                    <select class="form-control" name="id_clinica_servicio" id="id_clinica_servicio">
+                                    <label for="id_clinica_servicio">Seleccione clinica/servicio (*)</label>
+                                    <select class="form-control" name="id_clinica_servicio" id="id_clinica_servicio" required>
                                         <option value="{{ $suspencion->clinica_servicio->id_clinica_servicio }}">
                                             {{ $suspencion->clinica_servicio->nombre }}</option>
 
