@@ -29,13 +29,13 @@
                     <div class="col-lg-5 col-md-5">
                         <div class="form-group">
                             <label for="nombre">Nombres (*)</label>
-                            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ejemplo: Luis" required max="100">   
+                            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ejemplo: Luis" required maxlength="100">   
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-5">
                         <div class="form-group">
                             <label for="apellidos">Apellidos (*)</label>
-                            <input type="text" name="apellidos" id="apellidos" class="form-control" placeholder="Ejemplo: Rodriguez" required max="100">   
+                            <input type="text" name="apellidos" id="apellidos" class="form-control" placeholder="Ejemplo: Rodriguez" required maxlength="100">   
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4">
