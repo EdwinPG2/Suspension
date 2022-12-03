@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('titulo')
-    <span>Nueva suspencion</span>
+    <span>Nueva suspension</span>
 @endsection
 @section('contenido')
     <div class="row">
@@ -20,7 +20,7 @@
                             <div class="col-lg-2 col-md-2">
                                 <div class="form-group">
                                     <input type="text" name="no_afiliado" id="no_afiliado" class="form-control"
-                                        placeholder="Ingrese un numero">
+                                        placeholder="Ingrese un numero" required maxlength="11" pattern="[0-9]*" title="Ingrese solamente numeros">
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2">
@@ -53,6 +53,7 @@
                                 <div class="form-group">
                                     <label for="id_riesgo">Seleccione riesgo</label>
                                     <select class="form-control" name="id_riesgo" id="id_riesgo">
+                                        <option value="" disabled selected>-- --</option>
                                         @foreach ($riesgo as $item)
                                             <option value="{{ $item->id }}">{{ $item->nombre }}</option>
                                         @endforeach
@@ -68,7 +69,7 @@
                             </div>
                         </div>
                         <div class="card-header">
-                            <h4>Suspencion</h4>
+                            <h4>Suspension</h4>
                         </div>
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
@@ -80,14 +81,14 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_inicio_suspension">Fecha de inicio de suspencion</label>
+                                    <label for="fecha_inicio_suspension">Fecha de inicio de suspension</label>
                                     <input type="date" name="fecha_inicio_suspension" id="fecha_inicio_suspension"
                                         class="form-control" placeholder="">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_fin_suspension">Fecha de finalizacion de suspencion</label>
+                                    <label for="fecha_fin_suspension">Fecha de finalizacion de suspension</label>
                                     <input type="date" name="fecha_fin_suspension" id="fecha_fin_suspension"
                                         class="form-control" placeholder="">
                                 </div>
@@ -155,10 +156,10 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="areas">Seleccione area</label>
+                                    <label for="areas">Seleccione área</label>
                                     <select class="form-control" name="areas" id="areas"
                                         onclick="cargar_especialidad()">
-                                        <option value="" disabled="disabled">-- Seleccione un area</option>
+                                        <option value="" disabled="disabled">-- Seleccione un área</option>
                                         @foreach ($areas as $item3)
                                             <option value="{{ $item3->id_area }}">{{ $item3->nombre }}</option>
                                         @endforeach
@@ -179,7 +180,7 @@
                                 <div class="form-group">
                                     <label for="id_clinica_servicio">Seleccione clinica/servicio</label>
                                     <select class="form-control" name="id_clinica_servicio" id="id_clinica_servicio">
-                                        <option value="" disabled="disabled">-- Seleccione especialidad</option>
+                                        <option value="" disabled="disabled">-- Seleccione clinica/servicio</option>
 
                                     </select>
                                 </div>
@@ -212,7 +213,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4">
                                     <div class="form-group">
-                                        <label for="dependencia">Seleccione dependencia</label>
+                                        <label for="dependencia">Ingrese dependencia</label>
                                         <input type="text" name="dependencia" id="dependencia" class="form-control"
                                             placeholder="">
                                     </div>

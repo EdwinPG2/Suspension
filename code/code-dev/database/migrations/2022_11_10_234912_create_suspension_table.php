@@ -30,7 +30,7 @@ class CreateSuspensionTable extends Migration
             $table->unsignedBigInteger('users_id_registrador');
             $table->unsignedBigInteger('users_id_revisor')->nullable();
             $table->date('fecha_inicio_caso');
-            $table->dateTime('fecha_accidente');
+            $table->dateTime('fecha_accidente')->nullable();
             $table->integer('id_riesgo');
             $table->string('pago',10);
             
