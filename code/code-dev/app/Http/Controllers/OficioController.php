@@ -48,16 +48,7 @@ class OficioController extends Controller
             'estado' => 'required|max:20',
             'users_id_creador' => 'required|max:11',
         ])->validate();
-        $bitacora_oficio = new BitacoraOficio();
-        $bitacora_oficio ->destinatario = $request->get('destinatario');
-        $bitacora_oficio ->saludo = $request->get('saludo');
-        $bitacora_oficio ->lugar = $request->get('lugar');
-        $bitacora_oficio ->correlativo = $request->get('correlativo');
-        $bitacora_oficio ->clinica_servicio = $request->get('clinica_servicio');
-        $bitacora_oficio ->fecha = $request->get('fecha');
-        $bitacora_oficio ->despedida = $request->get('despedida');
-        $bitacora_oficio ->estado = $request->get('estado');
-        $bitacora_oficio ->users_id_creador = $request->get('users_id_creador');
+
 
         $oficio = new Oficio();
         $oficio ->destinatario = $request->get('destinatario');
@@ -71,7 +62,7 @@ class OficioController extends Controller
         $oficio ->users_id_creador = $request->get('users_id_creador');
         
         $oficio->save();
-        $bitacora_oficio -> save();
+
 
         return redirect()->route('agregarsuspenciones.show',$oficio->id_oficio);
     }
