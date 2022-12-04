@@ -57,6 +57,12 @@
                                     <a href="{{ route ('revsusp.edit', $item->desuspension->id_suspension) }}"
                                             class="btn btn-danger"><i class="fas fa-times-circle"></i> PAGO</a>
                                     @endif
+
+                                    @if($item->desuspension->estado == 'Denegado')
+                                    <a href="{{ route ('req.create', $item->id_oficio_suspencion) }}"
+                                        class="btn btn-info"><i class="fas fa-edit"></i> Generar requerimiento</a>
+                                        
+                                    @endif
                                 </td>
                                 
                             </tr>

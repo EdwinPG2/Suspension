@@ -20,7 +20,9 @@ class ReqController extends Controller
      */
     public function index()
     {
-        //
+        $oficios = Oficio::all();
+        $requerimientos = Requerimiento::all();
+        return view('requerimientos.index', compact('oficios', 'requerimientos'));
     }
 
     /**

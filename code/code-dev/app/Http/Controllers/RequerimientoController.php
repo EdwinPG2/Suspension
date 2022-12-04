@@ -7,6 +7,7 @@ use App\Models\Oficio;
 use App\Models\Afiliado;
 use App\Models\BitacoraSuspension;
 use App\Models\Suspension;
+use App\Models\User;
 use App\Models\OficioSuspencion;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -25,7 +26,7 @@ class RequerimientoController extends Controller
     {
         $oficio = Oficio::all();
         $afiliado = Afiliado::all();
-        $usuario = Usuario::all();
+        $usuario = User::all();
         $requerimientos = Requerimiento::all();
 
         return view('requerimientos/create', compact('oficio','afiliado','usuario', 'requerimientos'));

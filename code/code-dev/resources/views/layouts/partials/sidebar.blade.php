@@ -89,11 +89,11 @@
                 
                 
                 <a class="collapse-item" href="{{ url('revofi') }}">
-                    <i class="fas fa-id-card fa-fw"></i> Revision oficios
+                    <i class="fas fa-id-card fa-fw"></i> Revisión oficios
                 </a>
                 
                 <a class="collapse-item" href="{{ url('revsusp') }}">
-                    <i class="fas fa-id-card fa-fw"></i> Revision suspension
+                    <i class="fas fa-id-card fa-fw"></i> Revisión suspensión
                 </a>
 
                 <a class="collapse-item" href="{{ url('formularios') }}">
@@ -160,7 +160,7 @@
                 </a>
                 
                 <a class="collapse-item" href="{{ url('clinicas_servicios') }}">
-                    <i class="fas fa-id-card fa-fw"></i> Clinicas_servicios
+                    <i class="fas fa-id-card fa-fw"></i> Clinicas/Servicios
                 </a>
                 
                 <a class="collapse-item" href="{{ url('formularios') }}">

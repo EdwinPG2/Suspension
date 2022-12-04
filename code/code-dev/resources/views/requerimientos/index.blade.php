@@ -16,12 +16,12 @@
             <div class="card-body">
                 <table id="dt-requerimientos" class="table table-striped table-bordered dts">
                     <thead>
-                        <th> Numero de requerimiento </th>
-                        <th> Fecha de Requerimiento </th>
+                        <th> Número de requerimiento </th>
+                        <th> Fecha de requerimiento </th>
                         <th> Fecha de envio </th>
                         <th> Estado </th>
                         <th> Observaciones </th>
-                        <th> Fecha Recepcion </th>
+                        <th> Fecha recepción </th>
                     </thead>
                     <tbody>
                         @foreach($requerimientos as $item)
@@ -32,10 +32,6 @@
                             <td>{{ $item->estado }}</td>
                             <td>{{ $item->observaciones }}</td>
                             <td>{{ $item->fecha_recepcion_regmed }}</td>
-                            <td>{{ $item->oficio->id_oficio }}</td>
-                            <td>{{ $item->afiliado->no_afiliado }}</td>
-                            <td>{{ $item->usuario->nombres }}</td>
-                            <td>{{ $item->usuario->nombres }}</td>
 
                             
                             <td colspan="2">
