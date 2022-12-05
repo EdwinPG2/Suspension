@@ -62,7 +62,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_accidente">Fecha de accidente (*)</label>
+                                    <label for="fecha_accidente">Fecha de accidente</label>
                                     <input type="datetime-local" name="fecha_accidente" id="fecha_accidente"
                                         class="form-control" placeholder="">
                                 </div>
