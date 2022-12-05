@@ -129,13 +129,11 @@ class CreateSuspencionController extends Controller
         $request->validate([
             'fecha_inicio_suspension' => 'date:d/m/Y',
             'fecha_fin_suspension' => 'date:d/m/Y',
-            'fecha_alta' => 'date:d/m/Y',
             'fecha_registro' => 'date:d/m/Y H:i:s',
             'estado' => 'required|max:20',
             'no_afiliado' => 'required',
             'id_clinica_servicio' => 'required',
             'fecha_inicio_caso' => 'required',
-            'fecha_accidente' => 'required',
             'id_riesgo' => 'required',
             
         ]);

@@ -216,6 +216,23 @@
         </div>  
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePre"
+            aria-expanded="true" aria-controls="collapseRev">
+            <i class="fas fa-money-bill-alt"></i>
+            <span>Historial</span>
+        </a>
+        <div id="collapsePre" class="collapse" aria-labelledby="headingPre" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                
+                <a class="collapse-item" href="{{ url('historial') }}">
+                    <i class="fas fa-id-card fa-fw"></i> Afiliado
+                </a>
+                
+            </div>
+        </div>  
+    </li>
+
 
     <!-- Divider -->
     <hr class="sidebar-divider">
