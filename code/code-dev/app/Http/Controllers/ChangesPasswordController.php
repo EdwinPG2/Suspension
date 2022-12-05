@@ -14,6 +14,7 @@ class ChangesPasswordController extends Controller
         $user = User::where('id',$id)->first();
         return view('auth/passwords/reset',compact('user'));
     }
+    
 
     public function update(Request $request,$id){
         $this->validate($request,[
