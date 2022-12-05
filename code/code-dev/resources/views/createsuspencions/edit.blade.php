@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('titulo')
-    <span>Editar suspension</span>
+    <span>Editar suspensión</span>
 @endsection
 @section('contenido')
     <div class="row" onload="javascript:show()">
@@ -71,7 +71,7 @@
                             </div>
                         </div>
                         <div class="card-header">
-                            <h4>Suspension</h4>
+                            <h4>Suspensión</h4>
                         </div>
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
@@ -84,7 +84,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_inicio_suspension">Fecha de inicio de suspencion (*)</label>
+                                    <label for="fecha_inicio_suspension">Fecha de inicio de suspensión (*)</label>
                                     <input type="date" name="fecha_inicio_suspension" id="fecha_inicio_suspension"
                                         class="form-control"
                                         value="{{ date('Y-m-d', strtotime($suspencion->fecha_inicio_suspension)) }}" required>
@@ -92,7 +92,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_fin_suspension">Fecha de finalizacion de suspencion (*)</label>
+                                    <label for="fecha_fin_suspension">Fecha de finalizacion de suspensión (*)</label>
                                     <input type="date" name="fecha_fin_suspension" id="fecha_fin_suspension"
                                         class="form-control"
                                         value="{{ date('Y-m-d', strtotime($suspencion->fecha_fin_suspension)) }}" required>
@@ -112,7 +112,6 @@
                                         class="form-control" value="{{ $suspencion->fecha_registro }}" readonly>
                                 </div>
                             </div>
-
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="estado">Estado</label>
@@ -128,9 +127,8 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="card-header">
-                            <h4>Medico</h4>
+                            <h4>Médico</h4>
                         </div>
                         <div class="row">
                             <div class="col-lg-2 col-md-2">
