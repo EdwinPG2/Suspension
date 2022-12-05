@@ -54,7 +54,10 @@ class OficioController extends Controller
         $oficio ->destinatario = $request->get('destinatario');
         $oficio ->saludo = $request->get('saludo');
         $oficio ->lugar = $request->get('lugar');
-        $oficio ->correlativo = $request->get('correlativo');
+
+        $clinica = ClinicaServicio::find($request->get('clinica_servicio'));
+        $oficio ->correlativo = $clinica->correlativo;
+        
         $oficio ->clinica_servicio = $request->get('clinica_servicio');
         $oficio ->fecha = $request->get('fecha');
         $oficio ->despedida = $request->get('despedida');
