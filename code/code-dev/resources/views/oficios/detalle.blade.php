@@ -17,10 +17,10 @@
                     <thead>
                         <th scope="col">Afiliado</th>
                         <th scope="col">Nombres y Apellidos</th>
+                        <th scope="col">Fecha accidente</th>
+                        <th scope="col">Fecha inicio caso</th>
+                        <th scope="col">Inicio y fin de la Suspension</th>
                         <th scope="col">Documentos</th>
-                        <th scope="col">Estado</th>
-                        <th scope="col">Fecha de Registro</th>
-                        <th scope="col">Inicio de la Suspension</th>
                         <th scope="col">Editar</th>
                         <th scope="col">Eliminar</th>
                         
@@ -32,6 +32,9 @@
                         <tr class="table-active">
                             <th scope="row">{{ $item->desuspension->no_afiliado}}</th>
                             <th scope="row">{{$item->desuspension->afiliado->nombre}} {{$item->desuspension->afiliado->apellidos}}</th>
+                            <td>{{ date('d-M-y', strtotime($item->desuspension->fecha_inicio_caso)) }}</td>
+                            <td>{{ date('d-M-y', strtotime($item->desuspension->fecha_accidente)) }}</td>
+                            <td>{{ date('d-M-y', strtotime($item->desuspension->fecha_inicio_suspension))}} --- {{date('d-M-y', strtotime($item->desuspension->fecha_fin_suspension)) }}</td>
                             <th scope="row">
                                 @foreach ($formularios as $item2 )
                                     @if ($item2->id_suspension == $item->id_suspension)
@@ -39,9 +42,6 @@
                                     @endif
                                 @endforeach
                             </th>
-                            <td>{{ $item->desuspension->estado }}</td>
-                            <td>{{ date('d-M-y', strtotime($item->desuspension->fecha_registro)) }}</td>
-                            <td>{{ date('d-M-y', strtotime($item->desuspension->fecha_inicio_suspension)) }}</td>
                             <td id="editar">
                                 <a href="{{ route ('agregarformularios.show', $item->id_suspension) }}"
                                     class="btn btn-warning">Formularios</a>
