@@ -12,7 +12,7 @@
             </div>
             <div class="card-body">
                 
-                <form action="{{ route('revreq.store') }}" method="post">
+                <form action="{{ route('revreq.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
 
                     <div class="row">
@@ -48,22 +48,20 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
-                                <label for="no_requerimiento">Número de requerimiento</label>
-                                <input type="text" name="no_requerimiento" id="no_requerimiento" class="form-control" placeholder="Número de correlativo automático" readonly>   
+                                <label for="no_requerimiento">Requerimiento no:</label>
+                                <input type="text" name="no_requerimiento" id="no_requerimiento"
+                                    class="form-control" placeholder="">
                             </div>
                         </div>
+
+                        
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
                                 <label for="fecha_requerimiento">Fecha de requerimiento</label>
                                 <input type="date" name="fecha_requerimiento" id="fecha_requerimiento" class="form-control" placeholder="">   
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4">
-                            <div class="form-group">
-                                <label for="fecha_envio">Fecha de envío</label>
-                                <input type="date" name="fecha_envio" id="fecha_envio" class="form-control" placeholder="" readonly>   
-                            </div>
-                        </div>
+                        
                         <div class="col-lg-8 col-md-8">
                             <div class="form-group">
                                 <label for="estado">Estado</label>
