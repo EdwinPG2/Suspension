@@ -12,7 +12,13 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link href="{{asset('libs/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
 
+
+    <!-- Custom styles for this template-->
+    <link href="{{asset('libs/css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <!-- Custom styles for this page -->
+    <link href="{{asset('libs/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 
 </head>
 <body>
