@@ -14,13 +14,7 @@
                     <form action="{{ route('oficios.store') }}" method="post">
                         @csrf
                         <div class="row">
-                            <div class="col-lg-4 col-md-4">
-                                <div class="form-group">
-                                    <label for="correlativo">Correlativo</label>
-                                    <input type="text" name="correlativo" id="correlativo" class="form-control"
-                                        placeholder="Ingrese correlativo de oficio">
-                                </div>
-                            </div>
+
                             <div class="col-lg-8 col-md-8">
                                 <div class="form-group">
                                     <label for="destinatario">Destinatario</label>
