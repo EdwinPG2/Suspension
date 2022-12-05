@@ -22,9 +22,9 @@ class CreateAdminUserSeeder extends Seeder
     
         $user = User::create([
             'ibm' => '1000269',
-            'name' => 'admin',
-            'apellido' => 'admin',
-            'email' => 'admin@igssgt.org',
+            'name' => 'Francisco Isaac',
+            'apellido' => 'López Martinez',
+            'email' => 'francicoi.lopez@igssgt.org',
             'password' => bcrypt('Igssxela'),
         ]);
     
