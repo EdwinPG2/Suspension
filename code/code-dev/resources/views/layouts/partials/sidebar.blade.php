@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class=" "><link href="{{ asset('img\descargar.jpg') }}" rel="icon" type="image/jpg"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Suspensión<sup>App</sup></div>
+        <div class="sidebar-brand-text mx-3">SICS</div>
     </a>
 
     <!-- Divider -->

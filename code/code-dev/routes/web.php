@@ -28,6 +28,8 @@ use App\Http\Controllers\ArchivoController;
 use App\Http\Controllers\FormularioSuspencionController;
 use App\Http\Controllers\FormularioSuspencionEditController;
 
+use App\Http\Controllers\ChangesPasswordController;
+
 use Illuminate\Support\Facades\Route;
 use Auth;
 
@@ -40,6 +42,9 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 #Route::resource('/home', HomeController::class);
+Route::get('/changes_password/{id}',[ChangesPasswordController::class, 'index'])->name('changes_password');
+Route::post('update_password/{id}',[ChangesPasswordController::class, 'update'])->name('update_password');
+Route::post('reset_password/{id}',[ChangesPasswordController::class, 'resetpass'])->name('reset_password');
 
 Route::get('oficios/pdf', [OficioController::class, 'pdf'] )->name('oficios.pdf');
 
