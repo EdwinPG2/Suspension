@@ -6,6 +6,8 @@ use App\Models\Bitacora;
 use App\Models\BitacoraOficio;
 use App\Models\BitacoraSuspension;
 use App\Models\Oficio;
+use App\Models\Area;
+use App\Models\Especialidad;
 use App\Models\ClinicaServicio;
 use App\Models\OficioSuspencion;
 use PDF;
@@ -27,12 +29,12 @@ class OficioController extends Controller
 
     public function create()
     {
-
-        $clinicas = ClinicaServicio::all();
+        $areas=Area::all();
+        $especialidads=Especialidad::all();
+        $clinicas_servicios = ClinicaServicio::all();
         $oficios = Oficio::all();
 
-        return view('oficios/create',compact('clinicas', 'oficios'));
-    
+        return view('oficios/create',compact('clinicas_servicios', 'oficios','areas','especialidads'));
     }
 
     public function store(Request $request)
@@ -41,8 +43,7 @@ class OficioController extends Controller
             'destinatario' => 'required|max:50',
             'saludo' => 'required|max:250',
             'lugar' => 'required|max:250',
-            'correlativo' => 'required|max:250',
-            'clinica_servicio' => 'required',
+            'id_clinica_servicio' => 'required',
             'fecha' => 'date:d/m/Y',
             'despedida' => 'required|max:250',
             'estado' => 'required|max:20',
@@ -55,10 +56,10 @@ class OficioController extends Controller
         $oficio ->saludo = $request->get('saludo');
         $oficio ->lugar = $request->get('lugar');
 
-        $clinica = ClinicaServicio::find($request->get('clinica_servicio'));
+        $clinica = ClinicaServicio::find($request->get('id_clinica_servicio'));
         $oficio ->correlativo = $clinica->correlativo;
         
-        $oficio ->clinica_servicio = $request->get('clinica_servicio');
+        $oficio ->clinica_servicio = $request->get('id_clinica_servicio');
         $oficio ->fecha = $request->get('fecha');
         $oficio ->despedida = $request->get('despedida');
         $oficio ->estado = $request->get('estado');
