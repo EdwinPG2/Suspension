@@ -20,8 +20,8 @@
                         <th>No afiliación</th>
                         <th>Nombres</th>
                         <th>Fecha de inicio caso</th>
-                        <th>Fecha de inicio suspension</th>
-                        <th>Fecha de fin suspension</th>
+                        <th>Fecha de inicio suspensión</th>
+                        <th>Fecha de fin suspensión</th>
                         <th>Fecha de alta</th>
                         <th>Clinica/Servicio</th>
                         <th>Observación</th>
