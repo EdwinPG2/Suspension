@@ -95,9 +95,9 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_alta">Fecha de alta (*)</label>
+                                    <label for="fecha_alta">Fecha de alta</label>
                                     <input type="date" name="fecha_alta" id="fecha_alta" class="form-control"
-                                        placeholder="" required>
+                                        placeholder="">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">

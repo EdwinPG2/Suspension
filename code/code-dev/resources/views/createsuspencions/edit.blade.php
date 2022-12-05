@@ -100,9 +100,9 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_alta">Fecha de alta (*)</label>
+                                    <label for="fecha_alta">Fecha de alta</label>
                                     <input type="date" name="fecha_alta" id="fecha_alta" class="form-control"
-                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_alta)) }}" required>
+                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_alta)) }}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">

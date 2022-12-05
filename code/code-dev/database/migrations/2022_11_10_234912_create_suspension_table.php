@@ -17,7 +17,7 @@ class CreateSuspensionTable extends Migration
             $table->integer('id_suspension',true);
             $table->date('fecha_inicio_suspension');
             $table->date('fecha_fin_suspension');
-            $table->date('fecha_alta');
+            $table->date('fecha_alta')->nullable();
             $table->dateTime('fecha_registro');
             $table->date('fecha_envio_prestacion')->nullable();
             $table->date('fecha_recibido_prestacione')->nullable();
