@@ -10,7 +10,7 @@ use App\Models\Suspension;
 use App\Models\User;
 use App\Models\OficioSuspencion;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Validator; 
 use Illuminate\Http\Request;
 
 class RequerimientoController extends Controller
@@ -25,11 +25,11 @@ class RequerimientoController extends Controller
     public function create()
     {
         $oficio = Oficio::all();
-        $afiliado = Afiliado::all();
+        $afiliados = Afiliado::all();
         $usuario = User::all();
         $requerimientos = Requerimiento::all();
 
-        return view('requerimientos/create', compact('oficio','afiliado','usuario', 'requerimientos'));
+        return view('requerimientos/create', compact('oficio','afiliados','usuario', 'requerimientos'));
     }
 
 
@@ -48,21 +48,32 @@ class RequerimientoController extends Controller
             'id_usuario_responsable' => 'required|max:100'*/
 
         ])->validate();
+        
 
-        $requerimiento = new Requerimiento();
-        $requerimiento->no_requerimiento = $request->get('no_requerimiento');
-        $requerimiento->fecha_requerimiento = $request->get('fecha_requerimiento');
-        $requerimiento->fecha_envio = $request->get('fecha_envio');
-        $requerimiento->estado = $request->get('estado');
-        $requerimiento->observaciones = $request->get('observaciones');
-        $requerimiento->fecha_recepcion_regmed = $request->get('fecha_recepcion_regmed');
-        $requerimiento->id_oficio = $request->get('id_oficio');
-        $requerimiento->no_afiliado = $request->get('no_afiliado');
-        $requerimiento->users_id_remitente = $request->get('id_usuario');
-        $requerimiento->users_id_responsable = $request->get('id_usuario');
+        try {
+            $requerimiento = new Requerimiento();
+            $requerimiento->no_requerimiento = $request->get('no_requerimiento');
+            $requerimiento->fecha_requerimiento = $request->get('fecha_requerimiento');
+            $requerimiento->fecha_envio = $request->get('fecha_envio');
+            $requerimiento->estado = $request->get('estado');
+            $requerimiento->observaciones = $request->get('observaciones');
+            $requerimiento->fecha_recepcion_regmed = $request->get('fecha_recepcion_regmed');
+            $requerimiento->id_oficio = $request->get('id_oficio');
+            $requerimiento->no_afiliado = $request->get('no_afiliado');
+            $requerimiento->users_id_remitente = $request->get('id_usuario');
+            if($request->hasFile('archivo'))
+            {
+                $archivo = $request->file('archivo');
+                $archivo->move(public_path().'/archivos/', $archivo->getClientOriginalName());
+                $requerimiento->archivo= $archivo->getClientOriginalName();
+            }
+                
+            $requerimiento->save();
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+        
 
-
-        $requerimiento->save();
 
         alert()->success('Requerimiento guardado correctamente');
 
