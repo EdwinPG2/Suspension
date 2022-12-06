@@ -21,6 +21,7 @@
                         <th> Fecha de envio </th>
                         <th> Estado </th>
                         <th> Observaciones </th>
+                        <th> Documento</th>
                         <th> Opciones</th>
                     </thead>
                     <tbody>
@@ -31,7 +32,7 @@
                             <td>{{ date('d-m-Y', strtotime($item->fecha_envio)) }}</td>
                             <td>{{ $item->estado }}</td>
                             <td>{{ $item->observaciones }}</td>
-                            
+                            <td><a href="archivos/{{$item->archivo}}" target="blank_">Ver documento</a></td>
                             <td colspan="2">
                                 <a href="{{ route ('requerimientos.edit', $item-> id_requerimiento) }}"
                                 class="btn btn-warning" ><i class="fas fa-edit"></i></a>
