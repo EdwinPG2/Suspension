@@ -63,7 +63,7 @@
         </a>
         <div id="collapseSeg" class="collapse" aria-labelledby="headingSus" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ url('#') }}">
+                <a class="collapse-item" href="{{ url('susp') }}">
                     <i class="fas fa-file-signature"></i> Suspensiones en secretaria
                 </a>
 
