@@ -42,19 +42,19 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 #Route::resource('/home', HomeController::class);
-Route::get('/changes_password/{id}',[ChangesPasswordController::class, 'index'])->name('changes_password');
-Route::post('update_password/{id}',[ChangesPasswordController::class, 'update'])->name('update_password');
-Route::post('reset_password/{id}',[ChangesPasswordController::class, 'resetpass'])->name('reset_password');
-
-Route::get('oficios/pdf', [OficioController::class, 'pdf'] )->name('oficios.pdf');
 
 Route::group(['middleware' => ['auth']], function() {
+    Route::get('/changes_password/{id}',[ChangesPasswordController::class, 'index'])->name('changes_password');
+    Route::post('update_password/{id}',[ChangesPasswordController::class, 'update'])->name('update_password');
+    Route::post('reset_password/{id}',[ChangesPasswordController::class, 'resetpass'])->name('reset_password');
+
     Route::resource('/especialidades', EspecialidadController::class);
     Route::resource('/areas', AreaController::class);
     Route::resource('/clinicas_servicios', ClinicaServicioController::class);
     Route::resource('usuarios', UserController::class);
     Route::resource('roles', RoleController::class);
 
+    Route::get('oficios/pdf', [OficioController::class, 'pdf'] )->name('oficios.pdf');
     route::resource('/ofisusp', Oficio_SuspencionController::class);
     Route::resource('/createsuspencions', CreateSuspencionController::class);
     Route::resource('/agregarformularios', FormularioSuspencionController::class);
