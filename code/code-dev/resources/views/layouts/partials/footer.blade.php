@@ -2,7 +2,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Return IGSS 2022</span>
+            <span>Copyright &copy; G#5 Universidad Mesoamericana 2022</span>
         </div>
     </div>
 </footer>

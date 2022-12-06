@@ -8,7 +8,7 @@
         <div class="col-lg-12 col-md-12 col-xs-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Agregar datos</h4>
+                    <h4>Listado de suspensiones</h4>
                 </div>
                 <div class="card-body">
                     <form id="myForm" action="{{ route('historial.store') }}" method="post">
