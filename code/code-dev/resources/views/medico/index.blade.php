@@ -10,9 +10,9 @@
             <div class="card-header">
                 <div class="row justify-content-between">
                     <h4>Listado de médicos</h4>
-                        
+                    @can('medico-create')
                     <a type="button" class="btn btn-primary" href="{{route('medico.create')}}"><i class="fas fa-plus"></i>Nuevo</a>
-                
+                    @endcan
                 </div>
             </div>
             <div class="card-body">
@@ -32,13 +32,17 @@
                             <td>{{ $item->especialidad }}</td>
                             <td>{{ $item->telefono }}</td>
                             <td>
+                                @can('medico-edit')
                                 <a href="{{ route ('medico.edit', $item->colegiado) }}"
                                 class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                 <form action="{{ route('medico.destroy',$item->colegiado)}} " method ="post" class="d-inline">
+                                @endcan
+                                @can('medico-delete')
                                 @csrf
                                 {{method_field('DELETE')}}
                                 <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
                                 </form>
+                                @endcan
                             </td>
                         </tr>
                         @endforeach                
