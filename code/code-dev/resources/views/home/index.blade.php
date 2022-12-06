@@ -53,7 +53,7 @@
                         <tbody>
                             
                             @foreach($suspenciones as $item2)
-                            @if($item2->estado == 'Aceptado'||$item2->estado == 'Rechazado'||$item2->estado == 'En revision')
+                            @if($item2->estado == 'Aceptado'||$item2->estado == 'Rechazado'||$item2->estado == 'En revisión')
                             <tr class="text-center">
                                 <td id="nombre">{{ $item2->no_afiliado}}</td>
                                 <td id="descripcion">{{ $item2->afiliado->nombre }} {{$item2->afiliado->apellidos}}</td>
