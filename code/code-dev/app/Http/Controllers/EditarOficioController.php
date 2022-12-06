@@ -53,7 +53,7 @@ class EditarOficioController extends Controller
     public function show($id)
     {
         $oficio = Oficio::find($id);
-        $oficio->estado='En revision';
+        $oficio->estado='En revisión';
         $oficio->users_id_revisor=Auth::user()->id;
 
         $ofi_susp = OficioSuspencion::where('id_oficio',$id)->get();

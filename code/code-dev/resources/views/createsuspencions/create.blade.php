@@ -20,7 +20,8 @@
                             <div class="col-lg-2 col-md-2">
                                 <div class="form-group">
                                     <input type="text" name="no_afiliado" id="no_afiliado" class="form-control"
-                                        placeholder="Ingrese un numero" required maxlength="11" pattern="[0-9]*" title="Ingrese solamente numeros">
+                                        placeholder="Ingrese un numero" required maxlength="11" pattern="[0-9]*"
+                                        title="Ingrese solamente numeros">
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2">
@@ -52,7 +53,8 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="id_riesgo">Seleccione riesgo (*)</label>
-                                    <select class="form-control" name="id_riesgo" id="id_riesgo" required>
+                                    <select class="form-control" name="id_riesgo" id="id_riesgo" required
+                                        onchange="javascript:showDate()">
                                         <option value="" disabled selected>-- --</option>
                                         @foreach ($riesgo as $item)
                                             <option value="{{ $item->id }}">{{ $item->nombre }}</option>
@@ -61,10 +63,12 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
-                                <div class="form-group">
-                                    <label for="fecha_accidente">Fecha de accidente</label>
-                                    <input type="datetime-local" name="fecha_accidente" id="fecha_accidente"
-                                        class="form-control" placeholder="">
+                                <div id="accidente" style="display:none;">
+                                    <div class="form-group">
+                                        <label for="fecha_accidente">Fecha de accidente</label>
+                                        <input type="datetime-local" name="fecha_accidente" id="fecha_accidente"
+                                            class="form-control" placeholder="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -132,7 +136,8 @@
                             <div class="col-lg-2 col-md-2">
                                 <div class="form-group">
                                     <input type="text" name="medico_colegiado" id="medico_colegiado"
-                                        class="form-control" placeholder="Ingrese un colegiado" required maxlength="11" pattern="[0-9]*" title="Ingrese solamente numeros">
+                                        class="form-control" placeholder="Ingrese un colegiado" required maxlength="11"
+                                        pattern="[0-9]*" title="Ingrese solamente numeros">
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2">
@@ -179,7 +184,8 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="id_clinica_servicio">Seleccione clinica/servicio (*)</label>
-                                    <select class="form-control" name="id_clinica_servicio" id="id_clinica_servicio" required>
+                                    <select class="form-control" name="id_clinica_servicio" id="id_clinica_servicio"
+                                        required>
                                         <option value="" disabled="disabled">-- Seleccione clinica/servicio</option>
 
                                     </select>
@@ -198,7 +204,8 @@
                                     <div class="form-group">
                                         <label for="nombre_medico">IBM</label>
                                         <input type="text" name="ibm" id="ibm" class="form-control"
-                                            placeholder="" maxlength="11" pattern="[0-9]*" title="Ingrese solamente numeros">
+                                            placeholder="" maxlength="11" pattern="[0-9]*"
+                                            title="Ingrese solamente numeros">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
@@ -352,6 +359,18 @@
         } else {
             element.style.display = 'none';
             check.value = "N";
+        }
+    }
+
+    function showDate() {
+        element = document.getElementById("accidente");
+        check = document.getElementById("id_riesgo");
+        if (check.value == '4'|| check.value=='5') {
+            element.style.display = 'block';
+
+        } else {
+            element.style.display = 'none';
+
         }
     }
 </script>

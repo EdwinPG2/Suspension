@@ -17,7 +17,7 @@ class Rev_OficioController extends Controller
 
     public function index()
     {
-        $congelados = 'En revision';
+        $congelados = 'En revisión';
         $ofisusp = OficioSuspencion::all();
         $oficios = Oficio::all();
         return view('rev_oficio.index', compact('ofisusp', 'oficios', 'congelados'));

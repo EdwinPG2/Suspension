@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class=" "><link href="{{ asset('img\descargar.jpg') }}" rel="icon" type="image/jpg"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SICS</div>
+        <div class="sidebar-brand-text mx-3">Suspensión<sup>App</sup></div>
     </a>
 
     <!-- Divider -->
@@ -212,6 +212,23 @@
                     <i class="fas fa-id-card fa-fw"></i> Rol Usuarios
                 </a>  -->
 
+            </div>
+        </div>  
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHist"
+            aria-expanded="true" aria-controls="collapseHist">
+            <i class="fas fa-money-bill-alt"></i>
+            <span>Historial</span>
+        </a>
+        <div id="collapseHist" class="collapse" aria-labelledby="headingHist" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                
+                <a class="collapse-item" href="{{ url('historial') }}">
+                    <i class="fas fa-id-card fa-fw"></i> Afiliado
+                </a>
+                
             </div>
         </div>  
     </li>

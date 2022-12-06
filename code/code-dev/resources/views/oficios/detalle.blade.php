@@ -16,10 +16,10 @@
                 <table id="t-oficios" class="table table-hover" align="center">
                     <thead>
                         <th scope="col">Afiliado</th>
-                        <th scope="col">Nombres y Apellidos</th>
+                        <th scope="col">Nombres y apellidos</th>
                         <th scope="col">Fecha accidente</th>
                         <th scope="col">Fecha inicio caso</th>
-                        <th scope="col">Inicio y fin de la Suspension</th>
+                        <th scope="col">Inicio y fin de la suspension</th>
                         <th scope="col">Documentos</th>
                         <th scope="col">Editar</th>
                         <th scope="col">Eliminar</th>
@@ -28,7 +28,7 @@
                     
                     <tbody>
                         @foreach ($ofi_susp as $item)
-                        @if($item->desuspension->estado != 'Rechazado')
+                        @if($item->desuspension->estado == 'Registrado')
                         <tr class="table-active">
                             <th scope="row">{{ $item->desuspension->no_afiliado}}</th>
                             <th scope="row">{{$item->desuspension->afiliado->nombre}} {{$item->desuspension->afiliado->apellidos}}</th>
