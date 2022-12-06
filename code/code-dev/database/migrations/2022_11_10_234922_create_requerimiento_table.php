@@ -21,13 +21,13 @@ class CreateRequerimientoTable extends Migration
             $table->string('estado', 20);
             $table->string('observaciones', 300)->nullable();
             $table->date('fecha_recepcion_regmed')->nullable();
-            $table->integer('id_oficio');
+            $table->integer('id_oficio')->nullable();
             $table->integer('no_afiliado');
             $table->unsignedBigInteger('users_id_remitente');
             $table->unsignedBigInteger('users_id_responsable')->nullable();
+            $table->string('archivo', 145)->nullable();
             
             $table->foreign('no_afiliado', 'fk_requerimiento_afiliado1')->references('no_afiliado')->on('afiliado')->onDelete('cascade');
-            $table->foreign('id_oficio', 'fk_requerimiento_oficio1')->references('id_oficio')->on('oficio')->onDelete('cascade');
             $table->foreign('users_id_remitente', 'fk_requerimiento_users1')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('users_id_responsable', 'fk_requerimiento_users2')->references('id')->on('users')->onDelete('cascade');
         });
