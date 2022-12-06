@@ -10,7 +10,9 @@
             <div class="card-header">
                 <div class="row justify-content-between">
                     <h4>Listado de afiliados</h4>
+                    @can('afiliado-create')
                     <a type="button" class="btn btn-primary" href="{{ route('afiliados.create')}}"><i class="fas fa-plus"></i>Nuevo</a>
+                    @endcan
                 </div>
             </div>
             <div class="card-body">
@@ -39,13 +41,17 @@
                             <td>{{  date('d-m-Y', strtotime($item->fecha_nacimiento))}}</td>
 
                             <td>
+                                @can('afiliado-edit')
                                 <a href="{{ route ('afiliados.edit', $item->no_afiliado) }}"
                                 class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                 <form action="{{ route('afiliados.destroy',$item->no_afiliado)}} " method ="post" class="d-inline">
+                                @endcan
+                                @can('afiliado-delete')
                                 @csrf
                                 {{method_field('DELETE')}}
                                 <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
                                 </form>
+                                @endcan
                             </td>
                         </tr>
                         @endforeach                

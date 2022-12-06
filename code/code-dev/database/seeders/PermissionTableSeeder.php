@@ -29,55 +29,41 @@ class PermissionTableSeeder extends Seeder
             'role-edit',
             'role-delete',
 
-            'especialidad-list',
-            'especialidad-create',
-            'especialidad-edit',
-            'especialidad-delete',
-
-            'area-list',
-            'area-create',
-            'area-edit',
-            'area-delete',
-            
-            'clinica-list',
-            'clinica-create',
-            'clinica-edit',
-            'clinica-delete',
-
-            'medico-list',
-            'medico-create',
-            'medico-edit',
-            'medico-delete',
-
             'oficio-list',
             'oficio-create',
             'oficio-edit',
             'oficio-delete',
+            'oficio-validar',
 
-            'formulario_suspencion-list',
-            'formulario_suspencion-create',
-            'formulario_suspencion-edit',
-            'formulario_suspencion-delete',
+            'suspencion-list',
+            'suspencion-create',
+            'suspencion-edit',
+            'suspencion-delete',
+
+            'rev_oficio-list',
+            'rev_oficio-create',
+            'rev_oficio-edit',
+            'rev_oficio-delete',
+
+            'rev_Suspencion-list',
+            'rev_Suspencion-create',
+            'rev_Suspencion-edit',
+            'rev_Suspencion-delete',
 
             'formulario-list',
             'formulario-create',
             'formulario-edit',
             'formulario-delete',
 
-            'oficio_suspencion-list',
-            'oficio_suspencion-create',
-            'oficio_suspencion-edit',
-            'oficio_suspencion-delete',
+            'Archivado-list',
+            'Archivado-create',
+            'Archivado-edit',
+            'Archivado-delete',
 
-            'revs-list',
-            'revs-create',
-            'revs-edit',
-            'revs-delete',
-
-            'suspencion-list',
-            'suspencion-create',
-            'suspencion-edit',
-            'suspencion-delete',
+            'Reporte-list',
+            'Reporte-create',
+            'Reporte-edit',
+            'Reporte-delete',
 
             'afiliado-list',
             'afiliado-create',
@@ -88,6 +74,51 @@ class PermissionTableSeeder extends Seeder
             'tipo_afiliado-create',
             'tipo_afiliado-edit',
             'tipo_afiliado-delete',
+
+            'area-list',
+            'area-create',
+            'area-edit',
+            'area-delete',
+
+            'especialidad-list',
+            'especialidad-create',
+            'especialidad-edit',
+            'especialidad-delete',
+
+            'clinica-list',
+            'clinica-create',
+            'clinica-edit',
+            'clinica-delete',
+
+            'medico-list',
+            'medico-create',
+            'medico-edit',
+            'medico-delete',
+
+            'riesgo-list',
+            'riesgo-create',
+            'riesgo-edit',
+            'riesgo-delete',
+
+            'dependencia-list',
+            'dependencia-create',
+            'dependencia-edit',
+            'dependencia-delete',
+
+            'formulario_suspencion-list',
+            'formulario_suspencion-create',
+            'formulario_suspencion-edit',
+            'formulario_suspencion-delete',
+
+            'oficio_suspencion-list',
+            'oficio_suspencion-create',
+            'oficio_suspencion-edit',
+            'oficio_suspencion-delete',
+
+            'revs-list',
+            'revs-create',
+            'revs-edit',
+            'revs-delete',
 
 
         ];

@@ -104,9 +104,6 @@
                     <i class="fas fa-id-card fa-fw"></i> Archivados
                 </a>
 
-                <a class="collapse-item" href="{{ url('agregarformularios') }}">
-                    <i class="fas fa-id-card fa-fw"></i> Agregar formulario
-                </a>
                 <a class="collapse-item" href="{{ url('reportes') }}">
                     <i class="fas fa-id-card fa-fw"></i> Reportes
                 </a>
@@ -163,10 +160,6 @@
                     <i class="fas fa-id-card fa-fw"></i> Clinicas/Servicios
                 </a>
                 
-                <a class="collapse-item" href="{{ url('formularios') }}">
-                    <i class="fas fa-id-card fa-fw"></i> Formularios
-                </a>
-                
                 <a class="collapse-item" href="{{ url('medico') }}">
                     <i class="fas fa-id-card fa-fw"></i> Medicos
                 </a>
@@ -175,9 +168,6 @@
                 </a>
                 <a class="collapse-item" href="{{ url('dependencias') }}">
                     <i class="fas fa-id-card fa-fw"></i> Dependencias
-                </a>
-                <a class="collapse-item" href="{{ url('afiliados') }}">
-                    <i class="fas fa-id-card fa-fw"></i> Afiliados
                 </a>
                 
             </div>

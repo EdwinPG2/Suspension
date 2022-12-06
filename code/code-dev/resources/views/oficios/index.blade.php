@@ -12,8 +12,9 @@
                     <h4>Listado de oficios</h4>
                     <ul>
                         
-                        
+                        @can('oficio-create')
                         <a type="button" class="btn btn-primary" href="{{route('oficios.create')}}"><i class="fas fa-plus"></i>Nuevo</a>
+                        @endcan
                     </ul>
                 </div>
             </div>
@@ -40,10 +41,11 @@
                             <td>{{ $item->estado}}</td>
                             
                             <td colspan="2">
+                                @can('oficio-edit')
                                 @if ($item->estado == 'Registrado')
                                 <a href="{{ route ('editaroficios.edit', $item->id_oficio) }}"
                                     class="btn btn-warning"><i class="fas fa-edit"></i></a>
-
+                                @endcan
                                 <a href="{{ route('oficios.show', $item->id_oficio) }}"
                                     class="btn btn-primary"><i class=""></i>Detalle</a>
                                 @endif
