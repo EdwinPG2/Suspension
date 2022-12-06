@@ -59,6 +59,31 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSus"
             aria-expanded="true" aria-controls="collapseSus">
             <i class="fas fa-fw fa-file"></i>
+            <span>Seguimiento</span>
+        </a>
+        <div id="collapseSus" class="collapse" aria-labelledby="headingSus" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ url('createsuspencions') }}">
+                    <i class="fas fa-id-card fa-fw"></i> En secretaria
+                </a>
+
+                <a class="collapse-item" href="{{ url('oficios') }}">
+                    <i class="fas fa-id-card fa-fw"></i> En revisión
+                </a>
+                
+                <a class="collapse-item" href="{{ url('#') }}">
+                    <i class="fas fa-money-check-alt"></i> En delegación
+                </a>
+                
+
+            </div>
+        </div>  
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSus"
+            aria-expanded="true" aria-controls="collapseSus">
+            <i class="fas fa-fw fa-file"></i>
             <span>Suspensiones</span>
         </a>
         <div id="collapseSus" class="collapse" aria-labelledby="headingSus" data-parent="#accordionSidebar">
@@ -134,6 +159,9 @@
 
                 <a class="collapse-item" href="{{ url('revreq') }}">
                     <i class="fas fa-id-card fa-fw"></i> Validar oficios
+                </a>
+                <a class="collapse-item" href="{{ url('req') }}">
+                    <i class="fas fa-money-check-alt"></i> Requerimientos
                 </a>
                 
             </div>
