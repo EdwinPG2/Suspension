@@ -52,15 +52,19 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth::user()->name}} {{Auth::user()->apellido}}</span>
+                                <span class="mr-4 d-none d-lg-inline text-gray-600 small">{{Auth::user()->name}} {{Auth::user()->apellido}}</span>
                             </a>
+                            <!--<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-4 d-none d-lg-inline text-gray-600 small"></span>
+                            </a>-->
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <!--<a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Perfil
-                                </a>-->
+                                    Perfil 
+                                </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -147,8 +151,8 @@
     <!-- Custom scripts for all pages-->
     <script src="{{asset('libs/js/sb-admin-2.min.js')}}"></script>
 
-     <!-- Page level plugins -->
-     <script src="{{asset('libs/vendor/datatables/jquery.dataTables.min.js')}}"></script>
+    <!-- Page level plugins -->
+    <script src="{{asset('libs/vendor/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('libs/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
 
     <!-- Page level plugins -->

@@ -10,7 +10,9 @@
             <div class="card-header">
                 <div class="row justify-content-between">
                     <h4>Listado de suspensiones</h4>
+                    @can('suspencion-create')
                     <a type="button" class="btn btn-primary" href="{{ route('createsuspencions.create')}}"><i class="fas fa-plus"></i>Nuevo</a>
+                    @endcan
                 </div>
             </div>
             <div class="card-body">
@@ -44,15 +46,19 @@
                             <td>{{ date('d-m-Y', strtotime($item->fecha_registro))}}</td>
 
                             <td>
+                                @can('suspencion-edit')
                                 <a href="{{ route ('agregarformularios.show', $item->id_suspension) }}"
                                     class="btn btn-warning">Editar formularios</a>
                                 <a href="{{ route ('createsuspencions.edit', $item->id_suspension) }}"
                                 class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                @endcan
+                                @can('suspencion-delete')
                                 <form action="{{ route('createsuspencions.destroy',$item->id_suspension)}} " method ="post" class="d-inline">
                                 @csrf
                                 {{method_field('DELETE')}}
                                 <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
                                 </form>
+                                @endcan
                             </td>
                         </tr>
                         @endforeach                

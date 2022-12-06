@@ -10,7 +10,9 @@
             <div class="card-header">
                 <div class="row justify-content-between">
                     <h4>Listado de clinicas servicios</h4>
+                    @can('clinita-create')
                     <a type="button" class="btn btn-primary" href="{{ route('clinicas_servicios.create') }}"><i class="fas fa-plus"></i>Nuevo</a>
+                    @endcan
                 </div>
             </div>
             <div class="card-body">

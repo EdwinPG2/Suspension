@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('titulo')
-<span>Suspensiones del sistema</span>
+<span>Vista general de suspensiones en el sistema</span>
 @endsection
 @section('contenido')
 <div class="row">
