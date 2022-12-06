@@ -56,6 +56,31 @@
     </li>-->
 
     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeg"
+            aria-expanded="true" aria-controls="collapseSeg">
+            <i class="fas fa-search-location"></i>
+            <span>Seguimiento</span>
+        </a>
+        <div id="collapseSeg" class="collapse" aria-labelledby="headingSus" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ url('#') }}">
+                    <i class="fas fa-file-signature"></i> Suspensiones en secretaria
+                </a>
+
+                <a class="collapse-item" href="{{ url('#') }}">
+                    <i class="fas fa-user-check"></i> Suspensiones en revisión
+                </a>
+                
+                <a class="collapse-item" href="{{ url('#') }}">
+                    <i class="fas fa-money-check-alt"></i> Suspensiones en delegación
+                </a>
+                
+
+            </div>
+        </div>  
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSus"
             aria-expanded="true" aria-controls="collapseSus">
             <i class="fas fa-fw fa-file"></i>
@@ -131,6 +156,9 @@
 
                 <a class="collapse-item" href="{{ url('revreq') }}">
                     <i class="fas fa-id-card fa-fw"></i> Validar oficios
+                </a>
+                <a class="collapse-item" href="{{ url('req') }}">
+                    <i class="fas fa-money-check-alt"></i> Requerimientos
                 </a>
                 
             </div>

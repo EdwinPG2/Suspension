@@ -59,7 +59,7 @@ class RequerimientoController extends Controller
             $requerimiento->users_id_remitente = Auth::user()->id;
 
 
-            if($request->hasFile('archivo'))
+            if($request->hasFile('archivo'))//guardamos copia del archivo subido en la carpeta public
             {
                 $archivo = $request->file('archivo');
                 $archivo->move(public_path().'/archivos/', $archivo->getClientOriginalName());

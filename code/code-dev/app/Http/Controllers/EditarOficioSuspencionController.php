@@ -6,6 +6,7 @@ use App\Models\Oficio;
 use App\Models\OficioSuspencion;
 use App\Models\Suspension;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EditarOficioSuspencionController extends Controller
 {
@@ -67,7 +68,7 @@ class EditarOficioSuspencionController extends Controller
         $oficio = Oficio::find($id);
         $suspenciones_existentes=OficioSuspencion::where('id_oficio',$id)->get();
         //$suspenciones = Suspension::all();
-        $suspenciones=Suspension::where('estado','Registrado')->orWhere('estado','Rechazado')->get();//a;adir condicion de usuario
+        $suspenciones=Suspension::where('users_id_registrador',Auth::user()->id)->where('estado','Registrado')->orWhere('estado','Rechazado')->get();//a;adir condicion de usuario
         foreach($suspenciones as $id_obj => $obj )
         {
             foreach ( $suspenciones_existentes as $item)

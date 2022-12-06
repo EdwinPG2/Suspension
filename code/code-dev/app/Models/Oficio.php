@@ -65,6 +65,11 @@ class Oficio extends Model
 		'id_riesgo'
 	];
 
+	public function cusuario()
+	{
+		return $this->belongsTo(Usuario::class, 'users_id_creador');
+	}
+
 	public function usuario()
 	{
 		return $this->belongsTo(Usuario::class, 'users_id_revisor');
