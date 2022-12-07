@@ -15,7 +15,10 @@ class SuspController extends Controller
      */
     public function index()
     {
-        //
+        $suspenciones = Suspension::all();
+
+        return view('seguimiento.registrada', compact('suspenciones'));
+
     }
 
     /**
@@ -34,7 +37,7 @@ class SuspController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(Request $request, $id)//aqui llenamos los campos de revision en la tabla de suspensiones
     {
         $request->validate([
             'observacion' => 'exclude|max:250',
@@ -63,7 +66,7 @@ class SuspController extends Controller
      */
     public function show(Suspension $suspension)
     {
-        //
+        
     }
 
     /**
