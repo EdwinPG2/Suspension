@@ -117,8 +117,8 @@
                     <i class="fas fa-id-card fa-fw"></i> Revisión oficios
                 </a>
                 
-                <a class="collapse-item" href="{{ url('revsusp') }}">
-                    <i class="fas fa-id-card fa-fw"></i> Revisión suspensión
+                <a class="collapse-item" href="{{ url('respuesta') }}">
+                    <i class="fas fa-id-card fa-fw"></i> Revisión requerimientos
                 </a>
 
                 <a class="collapse-item" href="{{ url('formularios') }}">
