@@ -54,7 +54,7 @@
         </span><br /></SPAN></div>
     -->
 
-    <div style="position:absolute;top:1.45in;text-align:right;left:0.84in;;width:3.53in;line-height:0.20in;">
+    <div style="position:absolute;top:1.2in;text-align:right;left:0.84in;;width:3.53in;line-height:0.20in;">
         <DIV style="position:relative; left:2.75in;"><span
                 style="font-style:normal;font-weight:bold;font-size:11pt;font-family:Century Gothic;color:#000000">
                 @if ($ofi_susp->isNotEmpty())
@@ -113,13 +113,7 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-
-    <br>
-    <br>
-    <div style="position:absolute;top:3.97in;left:0.29in;width:7in;line-height:0.20in;"><span
+    <div style="position:absolute;top:3.0in;left:0.29in;width:7in;line-height:0.20in;"><span
             style="font-style:normal;font-weight:Normal;font-size:11pt;font-family:Century Gothic;color:#000000">
             Estimados señores (as):
             <br>
@@ -162,16 +156,12 @@
                             @endif
                         @endforeach
                     </td>
-
-
-
                 </tr>
             @endforeach
         </tbody>
     </table>
     <br>
-    <br>
-    <div style="position:absolute;left:0.29in;width:7in;line-height:0.20in;"><span
+    <div style="position:absolute;left:0.29in;width:100%;line-height:0.20in;"><span
             style="font-style:normal;font-weight:Normal;font-size:11pt;font-family:Century Gothic;color:#000000">
             {{ $oficio->despedida }}
         </span>
@@ -183,7 +173,7 @@
     <br>
     <br>
 
-    <div align="center">
+    <div style="position:absolute;width:100%; top:8.0in;line-height:0.20in;text-align:center">
         <br>
         <br><br>
         {{ Auth::user()->name }}, {{ Auth::user()->apellido }},<br>
@@ -192,7 +182,7 @@
 
     </div>
 
-    <div style="position:absolute;top:10.37in;width:100%;line-height:0.20in;text-align:center"><span
+    <div style="position:absolute;top:9.7in;width:100%;line-height:0.20in;text-align:center"><span
             style="font-style:normal;font-weight:Normal;font-size:11pt;font-family:Century Gothic;color:#000000">
             5ta. Avenida 1-79 zona 5 Quetzaltenango
             <br>Tel. 7829 1200
