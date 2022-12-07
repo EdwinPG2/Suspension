@@ -45,13 +45,28 @@
                 @endif
                 <br>
                 OFICIO No. @if ($ofi_susp->isNotEmpty())
-                    {{ $ofi_susp[0]->doficio->correlativo }}
+                @if ($ofi_susp[0]->doficio->correlativo <=9)
+                000{{$ofi_susp[0]->doficio->correlativo}}
+                @elseif($ofi_susp[0]->doficio->correlativo <=99)
+                00{{$ofi_susp[0]->doficio->correlativo}}
+                @elseif($ofi_susp[0]->doficio->correlativo <=990)
+                0{{$ofi_susp[0]->doficio->correlativo}}
+                @endif
+                    /
+                    {{$ofi_susp[0]->doficio->fecha->translatedFormat('Y') }}
                 @endif
             </span>
             <br>
             <span
                 style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Century Gothic;color:#000000">
-                {{$oficio->lugar}}, {{date('d-m-Y')}}</span>
+                Quetzaltenango,
+                {{ $ofi_susp[0]->doficio->fecha->translatedFormat('d') }}
+                de
+                {{ $ofi_susp[0]->doficio->fecha->translatedFormat('F') }}
+                de
+                {{ $ofi_susp[0]->doficio->fecha->translatedFormat('Y') }}
+
+            </span>
         </DIV>
 
     </div>
