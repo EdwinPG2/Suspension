@@ -7,7 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--<link href="{{ public_path('libs/css/sb-admin-2.min.css') }}" rel="stylesheet" type="text/css">-->
     <title>PDF</title>
+    <style>
+        table {
+            width: 100%;
+            border: 0px solid #000;
+            border-spacing: 0px;
+            border-collapse: collapse;
 
+        }
+
+        th,
+        td {
+            vertical-align: top;
+            border: 0.01px solid #000;
+            text-align: center;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 
 <body>
@@ -18,26 +34,27 @@
             style="font-style:normal;font-weight:bold;font-size:15pt;font-family:Arial;color:#205784">Instituto
             Guatemalteco de Seguridad Social</span><br />
     </div>
-    <div style="position:absolute;top:0.2in;left:29%;width:3.31in;line-height:0.25in;"><span
-            style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Segoe UI;color:#000000">HOSPITAL
+    <div style="position:absolute;top:0.2in;width:100%;line-height:0.25in;text-align:center;"><span
+            style="font-style:normal;font-weight:normal;font-size:12pt;font-family:CG Omega;color:#000000">HOSPITAL
             GENERAL QUETZALTENANGO</span><span
-            style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Segoe UI;color:#000000">
+            style="font-style:normal;font-weight:normal;font-size:12pt;font-family:CG Omega;color:#000000">
         </span><br />
-        <DIV style="position:relative; left:0.9in;"><span
-                style="font-style:normal;font-weight:normal;font-size:12pt;font-family:Segoe UI;color:#000000">REGISTROS
+        <DIV style="position:relative;"><span
+                style="font-style:normal;font-weight:normal;font-size:12pt;font-family:CG Omega;color:#000000">REGISTROS
                 MÉDICOS</span><span
                 style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Arial;color:#205784">
             </span><br /></SPAN></DIV>
     </div>
 
-
-    <div style="position:absolute;top:1.54in;left:1.84in;width:3.67in;line-height:0.20in;"><span
-            style="font-style:normal;font-weight:bold;font-size:12pt;font-family:Times New Roman;color:#ff0000">OFICIO
+    <!--
+    <div style="position:absolute;top:0.94in;left:1.84in;line-height:0.20in;"><span
+            style="font-style:normal;font-weight:bold;text-align:center; font-size:12pt;font-family:Times New Roman;color:#ff0000">OFICIO
             DE SECRETARIAS A REVISORAS </span><span
             style="font-style:normal;font-weight:bold;font-size:12pt;font-family:Times New Roman;color:#ff0000">
         </span><br /></SPAN></div>
+    -->
 
-    <div style="position:absolute;top:1.95in;text-align:right;left:0.84in;;width:3.53in;line-height:0.20in;">
+    <div style="position:absolute;top:1.45in;text-align:right;left:0.84in;;width:3.53in;line-height:0.20in;">
         <DIV style="position:relative; left:2.75in;"><span
                 style="font-style:normal;font-weight:bold;font-size:11pt;font-family:Century Gothic;color:#000000">
                 @if ($ofi_susp->isNotEmpty())
@@ -45,20 +62,19 @@
                 @endif
                 <br>
                 OFICIO No. @if ($ofi_susp->isNotEmpty())
-                @if ($ofi_susp[0]->doficio->correlativo <=9)
-                000{{$ofi_susp[0]->doficio->correlativo}}
-                @elseif($ofi_susp[0]->doficio->correlativo <=99)
-                00{{$ofi_susp[0]->doficio->correlativo}}
-                @elseif($ofi_susp[0]->doficio->correlativo <=990)
-                0{{$ofi_susp[0]->doficio->correlativo}}
-                @endif
+                    @if ($ofi_susp[0]->doficio->correlativo <= 9)
+                        000{{ $ofi_susp[0]->doficio->correlativo }}
+                    @elseif($ofi_susp[0]->doficio->correlativo <= 99)
+                        00{{ $ofi_susp[0]->doficio->correlativo }}
+                    @elseif($ofi_susp[0]->doficio->correlativo <= 990)
+                        0{{ $ofi_susp[0]->doficio->correlativo }}
+                    @endif
                     /
-                    {{$ofi_susp[0]->doficio->fecha->translatedFormat('Y') }}
+                    {{ $ofi_susp[0]->doficio->fecha->translatedFormat('Y') }}
                 @endif
             </span>
             <br>
-            <span
-                style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Century Gothic;color:#000000">
+            <span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Century Gothic;color:#000000">
                 Quetzaltenango,
                 {{ $ofi_susp[0]->doficio->fecha->translatedFormat('d') }}
                 de
@@ -70,17 +86,17 @@
         </DIV>
 
     </div>
-    <div style="position:absolute;top:2.97in;left:0.29in;width:3.46in;line-height:0.20in;"><span
+    <div style="position:absolute;top:1.97in;left:0.29in;width:3.46in;line-height:0.20in;"><span
             style="font-style:normal;font-weight:bold;font-size:11pt;font-family:Century Gothic;color:#000000">Señores
-            (as) 
-        <br>
-        Analistas de Suspensiones 
-        <br>
-        Registros Médicos
-        <br>
-        {{$oficio->lugar}}
+            (as)
+            <br>
+            Analistas de Suspensiones
+            <br>
+            Registros Médicos
+            <br>
+            {{ $oficio->lugar }}
         </span>
-    
+
     </div>
     <br>
     <br>
@@ -100,56 +116,90 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <table id="t-oficios" class="table table-hover" align="center" border="1">
-        <thead>
 
-            <th scope="col">No. Afiliado</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Fecha inicio caso</th>
-            <th scope="col">Fecha inicio suspension</th>
-            <th scope="col">Fecha fin suspension</th>
-            <th scope="col">Fecha alta</th>
-            <th scope="col">Clinica-Servicio</th>
-            <th scope="col">Observación</th>
-            <th scope="col">Estado</th>
-            <th scope="col">Fecha de Registro</th>
+    <br>
+    <br>
+    <div style="position:absolute;top:3.97in;left:0.29in;width:7in;line-height:0.20in;"><span
+            style="font-style:normal;font-weight:Normal;font-size:11pt;font-family:Century Gothic;color:#000000">
+            Estimados señores (as):
+            <br>
+            {{ $oficio->saludo }}
+        </span>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <table id="t-oficios" class="">
+        <thead>
+            <td width="22">No.</td>
+            <td width="57">Afiliación</td>
+            <td width="75">Nombre</td>
+            <td width="63">Fecha de inicio de caso</td>
+            <td width="63">Fecha de accidente</th>
+            <td width="63">Fecha fin suspension DEL/AL</td>
+            <td width="63">Fecha alta</td>
+            <td width="auto">Formularios</td>
         </thead>
-        
+
         <tbody>
 
-            @foreach ($ofi_susp as $item)
-                    <tr class="table-active">
-                        <td>{{$item->desuspension->no_afiliado}}</td>
-                        <td>{{$item->desuspension->afiliado->nombre}} {{$item->desuspension->afiliado->apellidos}}</td>
-                        <td>{{$item->desuspension->fecha_inicio_caso}}</td>
-                        <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_inicio_suspension)) }}</td>
-                        <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_fin_suspension))}}</td>
-                        <td>{{ date('d-M-y', strtotime($item->desuspension->fecha_alta))}}</td>
-                        <td>{{$item->desuspension->clinica_servicio->nombre}}</td>
-                        <td>{{$item->desuspension->observacion}}</td>
-                        <td>{{$item->desuspension->estado}}</td>
-                        <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_registro)) }}</td>
-                        
-                        
-                    </tr>
-                    @endforeach              
+            @foreach ($ofi_susp as $key => $item)
+                <tr class="">
+                    <td>{{ $key + 1 }}</td>
+                    <td>{{ $item->desuspension->no_afiliado }}</td>
+                    <td>{{ $item->desuspension->afiliado->nombre }} {{ $item->desuspension->afiliado->apellidos }}
+                    </td>
+                    <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_inicio_caso)) }}</td>
+                    <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_accidente)) }}</td>
+                    <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_inicio_suspension)) }} /
+                        {{ date('d-m-Y', strtotime($item->desuspension->fecha_fin_suspension)) }}</td>
+                    <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_alta)) }}</td>
+                    <td>
+                        @foreach ($formularios as $item2)
+                            @if ($item2->id_suspension == $item->id_suspension)
+                                {{ $item2->Formularios }}
+                            @endif
+                        @endforeach
+                    </td>
+
+
+
+                </tr>
+            @endforeach
         </tbody>
     </table>
     <br>
     <br>
-    {{$oficio->despedida}}
+    <div style="position:absolute;left:0.29in;width:7in;line-height:0.20in;"><span
+            style="font-style:normal;font-weight:Normal;font-size:11pt;font-family:Century Gothic;color:#000000">
+            {{ $oficio->despedida }}
+        </span>
+    </div>
+
     <br>
     <br>
     <br>
     <br>
     <br>
-    
-        <div align="center">ATENTAMENTE,<br> <br> <br>
-        F:_____________________________ <br>
-        {{Auth::user()->name}}, {{Auth::user()->apellido}}
-        </div>
+
+    <div align="center">
+        <br>
+        <br><br>
+        {{ Auth::user()->name }}, {{ Auth::user()->apellido }},<br>
+        Registros Médicos
+        <br>IGSS, Hospital General de Quetzaltenango <br>
+
+    </div>
+
+    <div style="position:absolute;top:10.37in;width:100%;line-height:0.20in;text-align:center"><span
+            style="font-style:normal;font-weight:Normal;font-size:11pt;font-family:Century Gothic;color:#000000">
+            5ta. Avenida 1-79 zona 5 Quetzaltenango
+            <br>Tel. 7829 1200
+            <br>
+            www.igssgt.org
+        </span>
+    </div>
 
 </body>
 
