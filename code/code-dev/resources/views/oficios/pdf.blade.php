@@ -173,23 +173,23 @@
     <br>
     <br>
 
-    <div style="position:absolute;width:100%; top:8.0in;line-height:0.20in;text-align:center">
-        <br>
-        <br><br>
+    <div style="position:absolute;width:100%; top:8.3in;line-height:0.20in;text-align:center">
         {{ Auth::user()->name }}, {{ Auth::user()->apellido }},<br>
         Registros Médicos
         <br>IGSS, Hospital General de Quetzaltenango <br>
-
     </div>
 
-    <div style="position:absolute;top:9.7in;width:100%;line-height:0.20in;text-align:center"><span
-            style="font-style:normal;font-weight:Normal;font-size:11pt;font-family:Century Gothic;color:#000000">
-            5ta. Avenida 1-79 zona 5 Quetzaltenango
-            <br>Tel. 7829 1200
-            <br>
-            www.igssgt.org
-        </span>
-    </div>
+        <img style="position:absolute;top:9.7in;left:-0.5in;width:9.32in;height:0.69in;display: inline-block"
+            src="..\public\img\pie.png" />
+        <div style="position:absolute;top:9.6in;width:100%;line-height:0.20in;text-align:center"><span
+                style="font-style:normal;font-weight:Normal;font-size:11pt;font-family:Century Gothic;color:#000000">
+                5ta. Avenida 1-79 zona 5 Quetzaltenango
+                <br>Tel. 7829 1200
+                <br>
+                www.igssgt.org
+            </span>
+        </div>
+        
 
 </body>
 
