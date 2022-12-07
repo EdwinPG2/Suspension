@@ -88,7 +88,8 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::resource('/oficios', OficioController::class);
     Route::resource('/reportes', ReporteController::class);
-    Route::resource('/req', ReqController::class);    
+    Route::resource('/req', ReqController::class);
+    Route::resource('/respuesta', Respuesta_ReqController::class); 
 
     Route::get('/export', [ExportController::class,'exportResult'])->name('reportes');
 
