@@ -120,7 +120,11 @@ class PermissionTableSeeder extends Seeder
             'revs-edit',
             'revs-delete',
 
-
+            'slidebar-registrador',
+            'slidebar-revisor',
+            'slidebar-visor',
+            'slidebar-admin',
+            
         ];
 
         foreach ($permissions as $permission) {

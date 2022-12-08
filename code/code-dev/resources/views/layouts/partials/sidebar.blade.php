@@ -79,7 +79,9 @@
             </div>
         </div>  
     </li>
-
+    @can('slidebar-registrador')
+        
+    
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSus"
             aria-expanded="true" aria-controls="collapseSus">
@@ -101,7 +103,9 @@
             </div>
         </div>  
     </li>
+    @endcan
 
+    @can('slidebar-revisor')
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRev"
             aria-expanded="true" aria-controls="collapseRev">
@@ -136,7 +140,9 @@
             </div>
         </div>  
     </li>
+    @endcan
 
+    @can('slidebar-visor')
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePre"
             aria-expanded="true" aria-controls="collapseRev">
@@ -164,9 +170,9 @@
             </div>
         </div>  
     </li>
+    @endcan
 
-
-
+    @can('slidebar-admin')
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCat"
             aria-expanded="true" aria-controls="collapseCat">
@@ -233,7 +239,7 @@
             </div>
         </div>  
     </li>
-
+    @endcan
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHist"
             aria-expanded="true" aria-controls="collapseHist">
