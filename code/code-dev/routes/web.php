@@ -24,6 +24,7 @@ use App\Http\Controllers\RiesgoController;
 use App\Http\Controllers\ReqController;
 use App\Http\Controllers\DependenciaController;
 use App\Http\Controllers\ArchivoController;
+use App\Http\Controllers\BusquedaHistorialController;
 
 use App\Http\Controllers\FormularioSuspencionController;
 use App\Http\Controllers\FormularioSuspencionEditController;
@@ -90,6 +91,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('/reportes', ReporteController::class);
     Route::resource('/req', ReqController::class);
     Route::resource('/respuesta', Respuesta_ReqController::class); 
+    Route::resource('/historial', BusquedaHistorialController::class);
 
     Route::get('/export', [ExportController::class,'exportResult'])->name('reportes');
 
