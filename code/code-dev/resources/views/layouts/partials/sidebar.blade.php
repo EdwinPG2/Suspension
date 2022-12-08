@@ -125,10 +125,6 @@
                     <i class="fas fa-id-card fa-fw"></i> Revisión requerimientos
                 </a>
 
-                <a class="collapse-item" href="{{ url('formularios') }}">
-                    <i class="fas fa-id-card fa-fw"></i> Formularios
-                </a>
-
                 <a class="collapse-item" href="{{ url('arch') }}">
                     <i class="fas fa-id-card fa-fw"></i> Archivados
                 </a>
