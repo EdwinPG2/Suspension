@@ -152,13 +152,6 @@
         <div id="collapsePre" class="collapse" aria-labelledby="headingPre" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 
-                <a class="collapse-item" href="{{ url('afiliados') }}">
-                    <i class="fas fa-id-card fa-fw"></i> Afiliados
-                </a>
-                
-                <a class="collapse-item" href="{{ url('tipo_afiliados') }}">
-                    <i class="fas fa-id-card fa-fw"></i> Tipo Afiliados
-                </a>
 
                 <a class="collapse-item" href="{{ url('revreq') }}">
                     <i class="fas fa-id-card fa-fw"></i> Validar oficios
@@ -181,7 +174,10 @@
         </a>
         <div id="collapseCat" class="collapse" aria-labelledby="headingCat" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                
+
+                <a class="collapse-item" href="{{ url('afiliados') }}">
+                    <i class="fas fa-id-card fa-fw"></i> Afiliados
+                </a>
                 <a class="collapse-item" href="{{ url('areas') }}">
                     <i class="fas fa-id-card fa-fw"></i> Areas  
                 </a>
@@ -202,6 +198,10 @@
                 </a>
                 <a class="collapse-item" href="{{ url('dependencias') }}">
                     <i class="fas fa-id-card fa-fw"></i> Dependencias
+                </a>
+
+                <a class="collapse-item" href="{{ url('formularios') }}">
+                    <i class="fas fa-id-card fa-fw"></i> Formularios
                 </a>
                 
             </div>
