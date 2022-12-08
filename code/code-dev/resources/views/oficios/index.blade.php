@@ -32,7 +32,7 @@
                     <tbody>
                         @foreach($oficios as $item)
                         @if ($item->estado=='Registrado'||$item->estado=='En revisión')
-                        @if ($item->users_id_creador == Auth::user()->id || $item->users_id_creador == 1)
+                        @if ($item->users_id_creador == Auth::user()->id || Auth::user()->id == 1)
                             <tr class="text-center">
                             <td>{{ $item->correlativo }}</td>
                             <td>{{ $item->destinatario }}</td>
