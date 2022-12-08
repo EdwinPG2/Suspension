@@ -39,7 +39,7 @@
                                 <td>{{ $item->desuspension->medico->nombres}}</td>
                                 
                                 <td>
-                                    @if($item->desuspension->estado == 'Registrado')
+                                    @if($item->desuspension->estado == 'En revisión')
                                     <a href="{{ route ('revsusp.edit', $item->desuspension->id_suspension .'&'. $oficios->id_oficio)}}"
                                         class="btn btn-warning"><i class="fas fa-edit"></i> Revisar</a>
                                     @endif
