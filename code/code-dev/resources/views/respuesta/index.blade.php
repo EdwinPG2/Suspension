@@ -10,7 +10,6 @@
             <div class="card-header">
                 <div class="row justify-content-between">
                     <h4>Listado de requerimientos</h4>
-                    <a type="button" class="btn btn-primary" href="{{ route('requerimientos.create') }}"><i class="fas fa-plus"> </i> Nuevo</a>
                 </div>
             </div>
             <div class="card-body">
@@ -34,13 +33,8 @@
                             <td>{{ $item->observaciones }}</td>
                             <td><a href="archivos/{{$item->archivo}}" target="blank_">Ver documento</a></td>
                             <td colspan="2">
-                                <a href="{{ route ('requerimientos.edit', $item-> id_requerimiento) }}"
-                                class="btn btn-warning" ><i class="fas fa-edit"></i></a>
-                                <form action="{{ route('requerimientos.destroy',$item-> id_requerimiento)}}" method="post" class="d-inline">
-                                @csrf
-                                {{method_field('DELETE')}}
-                                <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
-                                </form>
+                                <a href="{{ route ('respuesta.show', $item->id_requerimiento) }}"
+                                class="btn btn-warning" >Generar respuesta</a>
                             </td>
                         </tr>
                         @endforeach                
