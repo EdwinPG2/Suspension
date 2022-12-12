@@ -72,6 +72,7 @@ class OfiController extends Controller
         $ofi_susp = OficioSuspencion::where('id_oficio',$id)->get();
         $oficio = Oficio::find($id);
         $pdf = PDF::loadView('rev_oficio.pdf_prueba', ['ofi_susp'=>$ofi_susp, 'formularios'=>$formularios, 'oficio'=>$oficio]);
+        $pdf->setIsRemoteEnabled(true);
         $pdf->setPaper('letter', 'portrait');
         $pdf->render();
         return $pdf->stream();
