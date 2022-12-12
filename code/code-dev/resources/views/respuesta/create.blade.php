@@ -129,6 +129,13 @@
                                         title="Ingrese solamente numeros">
                                 </div>
                             </div>
+                            <div class="col-lg-2 col-md-2">
+                                <div class="form-group">
+                                    <label for="archivo">Adjunte archivo</label>
+                                    <input type="file" name="archivo" id="archivo" class="form-control-file"
+                                        accept=".pdf">
+                                </div>
+                            </div>
                         </div>
                         <div class="row justify-content-between">
                             <button type="submit" class="btn btn-primary">GUARDAR</button>
