@@ -11,7 +11,7 @@
                 <div class="row justify-content-between">
                     <h4>Listado de Usuarios</h4>
                         
-                        <a type="button" class="btn btn-primary" href="{{ route('usuarios.create') }}"><i class="fas fa-plus"></i>Nuevo</a>
+                        <a type="button" class="btn btn-primary" href="{{ route('user.create') }}"><i class="fas fa-plus"></i>Nuevo</a>
                         
                 </div>
             </div>
@@ -24,39 +24,42 @@
                         <th>Apellido</th>
                         <th>Email</th>
                         <th>Roles</th>
-                        <th width="280px">Action</th>
+                        <th width="260px">Action</th>
                     </thead>
                     <tbody>
-                        @foreach($usuarios as $item)
+                        @foreach($users as $user)
                         <tr class="text-center">
-                        <td>{{ ++$i }}</td>
-                        <td>{{ $item->ibm }}</td>
-                        <td>{{ $item->name }}</td>
-                        <td>{{ $item->apellido }}</td>
-                        <td>{{ $item->email }}</td>
+                        <td><a href="{{ route('user.show', $user->id) }}">{{ $user->id }}</a></td>
+                        <td>{{ $user->ibm }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->apellido }}</td>
+                        <td>{{ $user->email }}</td>
                         <td>
-                            @if(!empty($item->getRoleNames()))
-                                @foreach($item->getRoleNames() as $v)
+                            @if(!empty($user->getRoleNames()))
+                                @foreach($user->getRoleNames() as $v)
                                     <label class="badge badge-success">{{ $v }}</label>
                                 @endforeach
+
                             @endif
                         </td>                            
                             <td colspan="2">
                                     
-                                    <a href="{{ route('usuarios.edit', $item->id)}}"
+                                    <a href="{{ route('user.edit', $user->id)}}"
                                     class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                     
-                                    <form action="{{ route('usuarios.destroy',$item->id)}}" method="post" class="d-inline">
+                                    <form action="{{ route('user.destroy',$user->id)}}" method="post" class="d-inline">
                                     @csrf
                                     {{method_field('DELETE')}}
                                         <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
                                     </form>
                                     
-                                    <form action="{{route('reset_password',$item->id)}}" method="post" class="d-inline">
+
+                                    @can('user-reset')
+                                    <form action="{{route('reset_password',$user->id)}}" method="post" class="d-inline">
                                     @csrf
                                         <button class="btn btn-success" type="submit"><i class="fas fa-sync-alt"></i></butt>
                                     </form>
-                                    
+                                    @endcan
                             </td>
                         </tr>
                         @endforeach                

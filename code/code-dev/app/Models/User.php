@@ -50,7 +50,7 @@ class User extends Authenticatable
 
 	public function oficios()
 	{
-	 	return $this->hasMany(Oficio::class, 'users_id_revisor');
+		return $this->hasMany(Oficio::class, 'users_id_revisor');
 	}
 
 	public function requerimientos()

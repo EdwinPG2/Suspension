@@ -10,7 +10,9 @@
             <div class="card-header">
                 <div class="row justify-content-between">
                     <h4>Listado de formularios</h4>
+                    @can('rev_Suspencion-create')
                     <a type="button" class="btn btn-primary" href="{{route('formularios.create')}}"><i class="fas fa-plus"></i>Nuevo</a>
+                    @endcan
                 </div>
             </div>
             <div class="card-body">
@@ -30,26 +32,18 @@
                             <td>{{ $item->suspension->estado}}</td>
                             <td>{{ $item->id_revision_oficio}}</td>
                             <td>
-                                <table>
-                                        <td>
-                                            <a href="{{ route ('revsusp.edit', $item->id_rev_susp) }}"
-                                                class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                        </td>
-                                        <td>
-                                            <form action="{{ route('revsusp.destroy', $item->id_rev_susp)}} " method ="post">
-                                                @csrf
-                                                    {{method_field('DELETE')}}
-                                                    
-                                                    <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
-                                            
-                                        </td>
-                                    
-                                    
+                            <table>
+                                <td>
+                                    <a href="{{ route ('revsusp.edit', $item->id_rev_susp) }}"
+                                    class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                </td>
+                                <td>
+                                    <form action="{{ route('revsusp.destroy', $item->id_rev_susp)}} " method ="post">
+                                    @csrf
+                                    {{method_field('DELETE')}}
+                                    <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
+                                </td>
                                 </table>
-                                
-                                
-                                
-                                
                                 </form>
                             </td>
                         </tr>
