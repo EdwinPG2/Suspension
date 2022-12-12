@@ -27,6 +27,7 @@ class CreateRespuestaRequerimientoTable extends Migration
             $table->string('folios',10);
             $table->unsignedBigInteger('users_id')->nullable();
             $table->integer('id_cargo')->nullable();
+            $table->string('archivo',150)->nullable();
 
 
             $table->foreign('no_afiliado', 'fk_respuesta_requerimiento_afiliado1')->references('no_afiliado')->on('afiliado')->onDelete('cascade');

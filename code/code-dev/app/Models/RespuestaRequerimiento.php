@@ -24,6 +24,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $folios
  * @property int|null $users_id
  * @property int|null $id_cargo
+ * @property string|null $archivo
  * 
  * @property Afiliado $afiliado
  * @property Cargo|null $cargo
@@ -57,7 +58,8 @@ class RespuestaRequerimiento extends Model
 		'vobo',
 		'folios',
 		'users_id',
-		'id_cargo'
+		'id_cargo',
+		'archivo'
 	];
 
 	public function afiliado()
