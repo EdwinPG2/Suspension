@@ -129,11 +129,11 @@
                                         title="Ingrese solamente numeros">
                                 </div>
                             </div>
-                            <div class="col-lg-2 col-md-2">
+                            <div class="col-lg-3 col-md-3">
                                 <div class="form-group">
                                     <label for="archivo">Adjunte archivo</label>
                                     <input type="file" name="archivo" id="archivo" class="form-control-file"
-                                        accept=".pdf">
+                                        accept=".pdf" multiple>
                                 </div>
                             </div>
                         </div>
