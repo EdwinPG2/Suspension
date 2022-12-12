@@ -81,7 +81,7 @@
                     <div class="col-lg-8 col-md-8">
                         <div class="form-group">
                             <label for="archivo">Adjunte archivo</label>
-                             <input type="file" name="archivo" id="archivo" class="form-control-file">
+                            <input type="file" name="archivo" id="archivo" class="form-control-file"  accept=".pdf">
                         </div>
                     </div>
 
