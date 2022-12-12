@@ -10,6 +10,7 @@ use App\Models\Especialidad;
 use App\Models\ClinicaServicio;
 use App\Models\Riesgo;
 use App\Models\Cargo;
+use Spatie\Permission\Models\Role;
 
 use DB;
 class Llenado extends Seeder
@@ -259,5 +260,9 @@ class Llenado extends Seeder
                 'nombre' => $item
             ]);
         }
+
+        Role::create(['name' => 'Registrador-Registros Medicos']);
+        Role::create(['name' => 'Revisor-Registros Medicos']);
+        Role::create(['name' => 'Registrador-Prestaciones']);
     }
 }
