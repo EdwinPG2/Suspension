@@ -45,9 +45,9 @@
                                 @if ($item->estado == 'Registrado')
                                 <a href="{{ route ('editaroficios.edit', $item->id_oficio) }}"
                                     class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                    <a href="{{ route('oficios.show', $item->id_oficio) }}"
+                                        class="btn btn-primary"><i class=""></i>Detalle</a>
                                 @endcan
-                                <a href="{{ route('oficios.show', $item->id_oficio) }}"
-                                    class="btn btn-primary"><i class=""></i>Detalle</a>
                                 @endif
                                 
                                 <a href="{{ route('oficios.edit', $item->id_oficio) }}"
