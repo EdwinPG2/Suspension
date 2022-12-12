@@ -17,7 +17,9 @@ use App\Http\Controllers\Rev_OficioController;
 use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\Oficio_SuspencionController;
 use App\Http\Controllers\CreateSuspencionController;
-use App\Http\Controllers\UserController;
+#use App\Http\Controllers\UserController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RequerimientoController;
 use App\Http\Controllers\EditarOficioController;
 use App\Http\Controllers\RiesgoController;
@@ -30,6 +32,7 @@ use App\Http\Controllers\FormularioSuspencionController;
 use App\Http\Controllers\FormularioSuspencionEditController;
 
 use App\Http\Controllers\ChangesPasswordController;
+#use App\Http\Controllers\PermissionController;
 
 use Illuminate\Support\Facades\Route;
 use Auth;
@@ -47,6 +50,8 @@ Route::get('/changes_password/{id}',[ChangesPasswordController::class, 'index'])
 Route::post('update_password/{id}',[ChangesPasswordController::class, 'update'])->name('update_password');
 Route::post('reset_password/{id}',[ChangesPasswordController::class, 'resetpass'])->name('reset_password');
 
+#Route::post('permission/{id}',[PermissionController::class, ''])->name('permisos');
+
 Route::get('oficios/pdf', [OficioController::class, 'pdf'] )->name('oficios.pdf');
 
 Route::group(['middleware' => ['auth']], function() {
@@ -54,9 +59,13 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('/especialidades', EspecialidadController::class);
     Route::resource('/areas', AreaController::class);
     Route::resource('/clinicas_servicios', ClinicaServicioController::class);
-    Route::resource('usuarios', UserController::class);
-    Route::resource('roles', RoleController::class);
+    #Route::resource('usuarios', UserController::class);
+    Route::resource('user', UsersController::class);
+    #Route::resource('roles', RoleController::class);
+    Route::resource('role', RoleController::class);
+    Route::resource('permission', PermissionController::class);
     
+
     route::resource('/ofisusp', Oficio_SuspencionController::class);
     Route::resource('/createsuspencions', CreateSuspencionController::class);
     Route::resource('/agregarformularios', FormularioSuspencionController::class);

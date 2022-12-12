@@ -28,15 +28,17 @@
                             <td>{{ $item->nombre }}</td>
                             <td>{{ $item->descripcion }}</td>
                             <td>
+                                @can('area-edit')
                                     <a href="{{ route ('areas.edit', $item->id_area) }}"
                                     class="btn btn-warning" ><i class="fas fa-edit"></i></a>
-                                
+                                @endcan
+                                @can('area-delete')
                                     <form action="{{ route('areas.destroy',$item->id_area)}}" method="post" class="d-inline">
                                     @csrf
                                     {{method_field('DELETE')}}
                                     <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
                                     </form>
-                               
+                                @endcan
                             </td>
                         </tr>
                         @endforeach                

@@ -11,26 +11,30 @@
                 <h4>Agregar datos de rol</h4>
             </div>
             <div class="card-body">
-                <form action="{{ route('roles.store') }}" method="post">
+                <form action="{{ route('role.store') }}" method="post">
                     @csrf
                     <div class="form-group">
                         <label for="name">Nombre</label>
-                        {!! Form::text('name', null, array('placeholder' => 'Ingrese el nombre del rol','class' => 'form-control')) !!}   
+                        {!! Form::text('name', $row->name , array('placeholder' => 'Ingrese el nombre del rol','class' => 'form-control')) !!}   
                     </div>
                     <div class="form-group">
-                        <label for="permission">Permisos</label>
-                        <br/>
-                        @foreach($permission as $value)
-                            <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
-                            {{ $value->name }}</label>
-                        <br/>
+                    <label for="permission">Permisos</label>
+                        @foreach ($permissions as $permission)
+                            <div clas="col-12">
+                                {!! Form::checkbox(
+                                    "permission[{$permission->id}]",
+                                    $permission->id,
+                                    $row->hasPermissionTo($permission->id),
+                                    ['label' => $permission->name
+                                ]) !!}
+                            </div>
                         @endforeach   
                     </div>
 
                     <hr>
                     <div class="row justify-content-between">
                         <button type="submit" class="btn btn-primary">GUARDAR</button>
-                        <a type="button" class="btn btn-danger" href="{{ url('roles')}}">CANCELAR</a>
+                        <a type="button" class="btn btn-danger" href="{{ url('role')}}">CANCELAR</a>
                     </div>
                 </form>
             </div>
