@@ -107,7 +107,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="cargo">Seleccione cargo/puesto</label>
-                                    <select class="form-control" name="cargo" id="cargo">
+                                    <select class="form-control" name="id_cargo" id="id_cargo">
                                         @foreach ($cargos as $item)
                                             <option value="{{ $item->id_cargo }}">{{ $item->nombre }}</option>
                                         @endforeach
@@ -129,6 +129,13 @@
                                         title="Ingrese solamente numeros">
                                 </div>
                             </div>
+                            <div class="col-lg-3 col-md-3">
+                                <div class="form-group">
+                                    <label for="archivo">Adjunte archivo</label>
+                                    <input type="file" name="archivo" id="archivo" class="form-control-file"
+                                        accept=".pdf" multiple>
+                                </div>
+                            </div>
                         </div>
                         <div class="row justify-content-between">
                             <button type="submit" class="btn btn-primary">GUARDAR</button>
@@ -140,7 +147,3 @@
         </div>
     </div>
 @endsection
-
-
-
-<script></script>

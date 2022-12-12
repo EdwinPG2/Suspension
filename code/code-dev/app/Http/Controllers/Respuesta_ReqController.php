@@ -40,7 +40,37 @@ class Respuesta_ReqController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        validator::make($request->except('_token'), [
+            'no_afiliado' => 'required',
+            'id_requerimiento' => 'required',
+            'destino_nombre' => 'required|max:50',
+            'destino_area' => 'required|max:50',
+            'destino_lugar' => 'required|max:50',
+            'cuerpo' => 'required|max:300',
+            'nombre_usuario' => 'required|max:50',
+            'vobo' => 'required|max:10',
+        ])->validate();
+
+        $respuesta = new RespuestaRequerimiento();
+        $respuesta->no_afiliado = $request->get('no_afiliado');
+        $respuesta->id_requerimiento = $request->get('id_requerimiento');
+        $respuesta->caso = $request->get('caso');
+        $respuesta->destino_nombre = $request->get('destino_nombre');
+        $respuesta->destino_area = $request->get('destino_area');
+        $respuesta->destino_lugar = $request->get('destino_lugar');
+        $respuesta->cuerpo = $request->get('cuerpo');
+        $respuesta->nombre_usuario = $request->get('nombre_usuario');
+        $respuesta->vobo = $request->get('vobo');
+        $respuesta->folios = $request->get('folios');
+        $respuesta->users_id = $request->get('users_id');
+        $respuesta->id_cargo = $request->get('id_cargo');
+
+        if($request->hasFile('archivo'))//guardamos copia del archivo subido en la carpeta public
+        {
+            $archivo = $request->file('archivo');
+            $archivo->move(public_path().'/archivos/', $archivo->getClientOriginalName());
+            $respuesta->archivo = $archivo->getClientOriginalName();
+        }
     }
 
     /**
