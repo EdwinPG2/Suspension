@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Cargo;
 use App\Models\Requerimiento;
 use App\Models\RespuestaRequerimiento;
 
@@ -52,7 +52,8 @@ class Respuesta_ReqController extends Controller
     public function show($id)
     {
         $requerimiento = Requerimiento::find($id);
-        return view('respuesta/create', compact('requerimiento'));
+        $cargos=Cargo::all();
+        return view('respuesta/create', compact('requerimiento','cargos'));
     }
 
     /**

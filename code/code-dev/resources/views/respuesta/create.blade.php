@@ -78,15 +78,61 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <!--<label for="id_usuario_registrador">Usuario</label>  esto esta oculto-->
-                                    <input type="hidden" name="id_usuario_registrador" id="id_usuario_registrador"
+                                    <input type="hidden" name="users_id" id="users_id"
                                         class="form-control" value="{{ Auth::user()->id }}" readonly>
                                 </div>
                             </div>
                         </div>
+                        <div class="card-header">
+                            <h4>Cuerpo</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10 col-md-10">
+                                <div class="form-group">
+                                    <textarea id="cuerpo"name="cuerpo" cols="150" rows="5" required maxlength="300"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-header">
+                            <h4>Registrador</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <label for="destino_lugar">Nombre de registrador</label>
+                                    <input type="text" name="destino_lugar" id="destino_lugar" class="form-control"
+                                        placeholder="" required maxlength="50">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <label for="cargo">Seleccione cargo/puesto</label>
+                                    <select class="form-control" name="cargo" id="cargo">
+                                        @foreach ($cargos as $item)
+                                            <option value="{{ $item->id_cargo }}">{{ $item->nombre }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <label for="vobo">Nombre de supervisor de Vo. Bo.</label>
+                                    <input type="text" name="vobo" id="vobo" class="form-control"
+                                        placeholder="" required maxlength="50">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <label for="folios">Folios</label>
+                                    <input type="text" name="folios" id="folios" class="form-control"
+                                        placeholder="" required maxlength="10" pattern="[0-9]*"
+                                        title="Ingrese solamente numeros">
+                                </div>
+                            </div>
+                        </div>
                         <div class="row justify-content-between">
-                            <button type="submit" class="btn btn-primary">SIGUIENTE</button>
-                            <a type="button" class="btn btn-danger" href="{{ url('createsuspencions') }}">CANCELAR</a>
+                            <button type="submit" class="btn btn-primary">GUARDAR</button>
+                            <a type="button" class="btn btn-danger" href="{{ url('respuesta') }}">CANCELAR</a>
                         </div>
                     </form>
                 </div>
