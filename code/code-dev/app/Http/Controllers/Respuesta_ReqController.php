@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Requerimiento;
-use App\Models\Oficio;
+use App\Models\RespuestaRequerimiento;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class Respuesta_ReqController extends Controller
 {
@@ -15,9 +18,8 @@ class Respuesta_ReqController extends Controller
      */
     public function index()
     {
-        $oficios = Oficio::all();
         $requerimientos = Requerimiento::all();
-        return view('respuesta.index', compact('oficios', 'requerimientos'));
+        return view('respuesta.index', compact('requerimientos'));
     }
 
     /**
@@ -47,9 +49,10 @@ class Respuesta_ReqController extends Controller
      * @param  \App\Models\Requerimiento  $requerimiento
      * @return \Illuminate\Http\Response
      */
-    public function show(Requerimiento $requerimiento)
+    public function show($id)
     {
-        //
+        $requerimiento = Requerimiento::find($id);
+        return view('respuesta/create', compact('requerimiento'));
     }
 
     /**

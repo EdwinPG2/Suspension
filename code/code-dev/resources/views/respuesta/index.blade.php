@@ -34,13 +34,8 @@
                             <td>{{ $item->observaciones }}</td>
                             <td><a href="archivos/{{$item->archivo}}" target="blank_">Ver documento</a></td>
                             <td colspan="2">
-                                <a href="{{ route ('requerimientos.edit', $item-> id_requerimiento) }}"
-                                class="btn btn-warning" ><i class="fas fa-edit"></i></a>
-                                <form action="{{ route('requerimientos.destroy',$item-> id_requerimiento)}}" method="post" class="d-inline">
-                                @csrf
-                                {{method_field('DELETE')}}
-                                <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
-                                </form>
+                                <a href="{{ route ('respuesta.show', $item->id_requerimiento) }}"
+                                class="btn btn-warning" >Generar respuesta<i class="fas fa-edit"></i></a>
                             </td>
                         </tr>
                         @endforeach                
