@@ -61,7 +61,7 @@
                                 <div class="form-group">
                                     <label for="estado">Estado</label>
                                     <input type="text" name="estado" id="estado" class="form-control"
-                                        placeholder=" ">
+                                        placeholder="" value="Generado" readonly>
                                 </div>
                             </div>
                             <div class="col-lg-8 col-md-8">

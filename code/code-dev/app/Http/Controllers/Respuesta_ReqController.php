@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Requerimiento;
+use App\Models\Oficio;
 use Illuminate\Http\Request;
 
 class Respuesta_ReqController extends Controller
@@ -14,7 +15,9 @@ class Respuesta_ReqController extends Controller
      */
     public function index()
     {
-        //
+        $oficios = Oficio::all();
+        $requerimientos = Requerimiento::all();
+        return view('respuesta.index', compact('oficios', 'requerimientos'));
     }
 
     /**

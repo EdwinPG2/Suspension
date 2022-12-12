@@ -36,7 +36,7 @@
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
                                 <label for="estado">Estado</label>
-                                <input type="text" name="estado" value="{{ $requerimientos-> estado}}" id="estado" class="form-control" placeholder="Ingrese estado">   
+                                <input type="text" name="estado" value="{{ $requerimientos-> estado}}" id="estado" class="form-control" placeholder="Ingrese estado" readonly>   
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4">
