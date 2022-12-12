@@ -19,13 +19,25 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $estado
  * @property string|null $observaciones
  * @property Carbon|null $fecha_recepcion_regmed
- * @property int $id_oficio
+ * @property int|null $id_oficio
  * @property int $no_afiliado
  * @property int $users_id_remitente
  * @property int|null $users_id_responsable
+ * @property string|null $archivo
+ * @property string|null $caso
+ * @property string|null $desino_nombre
+ * @property string|null $destino_area
+ * @property string|null $destino_lugar
+ * @property string|null $cuerpo
+ * @property string|null $nombre_usuario
+ * @property string|null $vobo
+ * @property string|null $folios
+ * @property int|null $users_id_respuesta
+ * @property int|null $id_cargo
+ * @property string|null $archivo_respuesta
  * 
  * @property Afiliado $afiliado
- * @property Oficio $oficio
+ * @property Cargo|null $cargo
  * @property User|null $user
  *
  * @package App\Models
@@ -40,7 +52,9 @@ class Requerimiento extends Model
 		'id_oficio' => 'int',
 		'no_afiliado' => 'int',
 		'users_id_remitente' => 'int',
-		'users_id_responsable' => 'int'
+		'users_id_responsable' => 'int',
+		'users_id_respuesta' => 'int',
+		'id_cargo' => 'int'
 	];
 
 	protected $dates = [
@@ -59,7 +73,19 @@ class Requerimiento extends Model
 		'id_oficio',
 		'no_afiliado',
 		'users_id_remitente',
-		'users_id_responsable'
+		'users_id_responsable',
+		'archivo',
+		'caso',
+		'desino_nombre',
+		'destino_area',
+		'destino_lugar',
+		'cuerpo',
+		'nombre_usuario',
+		'vobo',
+		'folios',
+		'users_id_respuesta',
+		'id_cargo',
+		'archivo_respuesta'
 	];
 
 	public function afiliado()
@@ -67,13 +93,13 @@ class Requerimiento extends Model
 		return $this->belongsTo(Afiliado::class, 'no_afiliado');
 	}
 
-	public function oficio()
+	public function cargo()
 	{
-		return $this->belongsTo(Oficio::class, 'id_oficio');
+		return $this->belongsTo(Cargo::class, 'id_cargo');
 	}
 
 	public function user()
 	{
-		return $this->belongsTo(User::class, 'users_id_responsable');
+		return $this->belongsTo(User::class, 'users_id_respuesta');
 	}
 }
