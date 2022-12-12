@@ -140,7 +140,10 @@ class PermissionTableSeeder extends Seeder
             'changes_password-resetpass',
             'changes_password-delete',
 
-
+            'slidebar-registrador',
+            'slidebar-revisor',
+            'slidebar-visor',
+            'slidebar-admin',
         ];
 
         foreach ($permissions as $permission) {

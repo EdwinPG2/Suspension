@@ -51,9 +51,7 @@ class Respuesta_ReqController extends Controller
             'vobo' => 'required|max:10',
         ])->validate();
 
-        $respuesta = new RespuestaRequerimiento();
-        $respuesta->no_afiliado = $request->get('no_afiliado');
-        $respuesta->id_requerimiento = $request->get('id_requerimiento');
+        $respuesta = Requerimiento::find($id);
         $respuesta->caso = $request->get('caso');
         $respuesta->destino_nombre = $request->get('destino_nombre');
         $respuesta->destino_area = $request->get('destino_area');
@@ -62,15 +60,17 @@ class Respuesta_ReqController extends Controller
         $respuesta->nombre_usuario = $request->get('nombre_usuario');
         $respuesta->vobo = $request->get('vobo');
         $respuesta->folios = $request->get('folios');
-        $respuesta->users_id = $request->get('users_id');
+        $respuesta->users_id_respuesta = $request->get('users_id_respuesta');
         $respuesta->id_cargo = $request->get('id_cargo');
 
-        if($request->hasFile('archivo'))//guardamos copia del archivo subido en la carpeta public
+        if($request->hasFile('archivo_respuesta'))//guardamos copia del archivo subido en la carpeta public
         {
-            $archivo = $request->file('archivo');
+            $archivo = $request->file('archivo_respuesta');
             $archivo->move(public_path().'/archivos/', $archivo->getClientOriginalName());
-            $respuesta->archivo = $archivo->getClientOriginalName();
+            $respuesta->archivo_respuesta = $archivo->getClientOriginalName();
         }
+
+        $respuesta->save();
     }
 
     /**
