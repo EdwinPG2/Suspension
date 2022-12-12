@@ -16,9 +16,9 @@
         {{$ofi_susp[0]->desuspension->clinica_servicio->descripcion}}<br> {{$ofi_susp[0]->doficio->lugar}}, {{date('d-m-Y')}}
     </div>
     <br><br><br><br><br>
-        Señores<br>
-        Delegacion del IGSS Quetzaltenango <br>
-        Ciudad <br>
+        Señores (as)<br>
+        Sección de prestaciones en dinero<br>
+        IGSS, Delegación de Quetzaltenango<br>
         {{$ofi_susp[0]->doficio->saludo}}
         <br>
         <br>

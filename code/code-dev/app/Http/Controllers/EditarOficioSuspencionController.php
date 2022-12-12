@@ -38,9 +38,10 @@ class EditarOficioSuspencionController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $sus = $_POST['id_suspension'];
-        
+        try {
+            $sus = $_POST['id_suspension'];
+        if($sus != null)
+        {
         foreach($sus as $id){
             $ofi_sus = new OficioSuspencion();
             $ofi_sus->id_oficio=$request->get('id_oficio');
@@ -52,6 +53,13 @@ class EditarOficioSuspencionController extends Controller
         }
 
         alert()->success('Se ha agregado la suspencion');
+    }
+            
+        } catch (\Throwable $th) {
+            alert('Error al agregar suspensiones');
+        }
+        
+        
 
         return redirect()->route('oficios.index');
     }
