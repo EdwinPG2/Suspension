@@ -71,7 +71,7 @@ class OfiController extends Controller
         $formularios = DB::select('call formularios_suspencion_oficio('.$id.')');
         $ofi_susp = OficioSuspencion::where('id_oficio',$id)->get();
         $oficio = Oficio::find($id);
-        $pdf = PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->loadView('rev_oficio.pdf_prueba', ['ofi_susp'=>$ofi_susp, 'formularios'=>$formularios, 'oficio'=>$oficio]);
+        $pdf = PDF::loadView('rev_oficio.pdf_prueba', ['ofi_susp'=>$ofi_susp, 'formularios'=>$formularios, 'oficio'=>$oficio]);
         $pdf->setPaper('letter', 'portrait');
         $pdf->render();
         return $pdf->stream();
