@@ -63,7 +63,7 @@
         </a>
         <div id="collapseSeg" class="collapse" aria-labelledby="headingSus" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ url('#') }}">
+                <a class="collapse-item" href="{{ url('susp') }}">
                     <i class="fas fa-file-signature"></i> Suspensiones en secretaria
                 </a>
 
@@ -79,7 +79,9 @@
             </div>
         </div>  
     </li>
-
+    @can('slidebar-registrador')
+        
+    
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSus"
             aria-expanded="true" aria-controls="collapseSus">
@@ -101,7 +103,9 @@
             </div>
         </div>  
     </li>
+    @endcan
 
+    @can('slidebar-revisor')
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRev"
             aria-expanded="true" aria-controls="collapseRev">
@@ -117,12 +121,8 @@
                     <i class="fas fa-id-card fa-fw"></i> Revisión oficios
                 </a>
                 
-                <a class="collapse-item" href="{{ url('revsusp') }}">
-                    <i class="fas fa-id-card fa-fw"></i> Revisión suspensión
-                </a>
-
-                <a class="collapse-item" href="{{ url('formularios') }}">
-                    <i class="fas fa-id-card fa-fw"></i> Formularios
+                <a class="collapse-item" href="{{ url('respuesta') }}">
+                    <i class="fas fa-id-card fa-fw"></i> Revisión requerimientos
                 </a>
 
                 <a class="collapse-item" href="{{ url('arch') }}">
@@ -136,7 +136,9 @@
             </div>
         </div>  
     </li>
+    @endcan
 
+    @can('slidebar-visor')
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePre"
             aria-expanded="true" aria-controls="collapseRev">
@@ -146,13 +148,6 @@
         <div id="collapsePre" class="collapse" aria-labelledby="headingPre" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 
-                <a class="collapse-item" href="{{ url('afiliados') }}">
-                    <i class="fas fa-id-card fa-fw"></i> Afiliados
-                </a>
-                
-                <a class="collapse-item" href="{{ url('tipo_afiliados') }}">
-                    <i class="fas fa-id-card fa-fw"></i> Tipo Afiliados
-                </a>
 
                 <a class="collapse-item" href="{{ url('revreq') }}">
                     <i class="fas fa-id-card fa-fw"></i> Validar oficios
@@ -164,9 +159,9 @@
             </div>
         </div>  
     </li>
+    @endcan
 
-
-
+    @can('slidebar-admin')
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCat"
             aria-expanded="true" aria-controls="collapseCat">
@@ -175,7 +170,10 @@
         </a>
         <div id="collapseCat" class="collapse" aria-labelledby="headingCat" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                
+
+                <a class="collapse-item" href="{{ url('afiliados') }}">
+                    <i class="fas fa-id-card fa-fw"></i> Afiliados
+                </a>
                 <a class="collapse-item" href="{{ url('areas') }}">
                     <i class="fas fa-id-card fa-fw"></i> Areas  
                 </a>
@@ -196,6 +194,10 @@
                 </a>
                 <a class="collapse-item" href="{{ url('dependencias') }}">
                     <i class="fas fa-id-card fa-fw"></i> Dependencias
+                </a>
+
+                <a class="collapse-item" href="{{ url('formularios') }}">
+                    <i class="fas fa-id-card fa-fw"></i> Formularios
                 </a>
                 
             </div>
@@ -233,7 +235,7 @@
             </div>
         </div>  
     </li>
-
+    @endcan
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHist"
             aria-expanded="true" aria-controls="collapseHist">

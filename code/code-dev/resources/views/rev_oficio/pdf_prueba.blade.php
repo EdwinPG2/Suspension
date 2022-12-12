@@ -133,6 +133,7 @@
             <td width="63">Fecha de accidente</th>
             <td width="63">Fecha fin suspension DEL/AL</td>
             <td width="63">Fecha alta</td>
+            <td>Estado</td>
             <td width="auto">Formularios</td>
         </thead>
 
@@ -149,6 +150,7 @@
                     <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_inicio_suspension)) }} /
                         {{ date('d-m-Y', strtotime($item->desuspension->fecha_fin_suspension)) }}</td>
                     <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_alta)) }}</td>
+                    <td>{{ $item->desuspension->estado}}</td>
                     <td>
                         @foreach ($formularios as $item2)
                             @if ($item2->id_suspension == $item->id_suspension)

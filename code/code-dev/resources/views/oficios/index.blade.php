@@ -32,7 +32,7 @@
                     <tbody>
                         @foreach($oficios as $item)
                         @if ($item->estado=='Registrado'||$item->estado=='En revisión')
-                        @if ($item->users_id_creador == Auth::user()->id || $item->users_id_creador == 1)
+                        @if ($item->users_id_creador == Auth::user()->id || Auth::user()->id == 1)
                             <tr class="text-center">
                             <td>{{ $item->correlativo }}</td>
                             <td>{{ $item->destinatario }}</td>
@@ -45,9 +45,9 @@
                                 @if ($item->estado == 'Registrado')
                                 <a href="{{ route ('editaroficios.edit', $item->id_oficio) }}"
                                     class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                    <a href="{{ route('oficios.show', $item->id_oficio) }}"
+                                        class="btn btn-primary"><i class=""></i>Detalle</a>
                                 @endcan
-                                <a href="{{ route('oficios.show', $item->id_oficio) }}"
-                                    class="btn btn-primary"><i class=""></i>Detalle</a>
                                 @endif
                                 
                                 <a href="{{ route('oficios.edit', $item->id_oficio) }}"

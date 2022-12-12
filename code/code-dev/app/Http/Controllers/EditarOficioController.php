@@ -20,7 +20,9 @@ class EditarOficioController extends Controller
      */
     public function index()
     {
-        //
+        $suspenciones = Suspension::all();
+
+        return view('seguimiento.revisada', compact('suspenciones'));
     }
 
     /**

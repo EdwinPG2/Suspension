@@ -10,6 +10,7 @@ use App\Models\Especialidad;
 use App\Models\ClinicaServicio;
 use App\Models\Riesgo;
 use App\Models\Cargo;
+use Spatie\Permission\Models\Role;
 
 use DB;
 class Llenado extends Seeder
@@ -259,5 +260,17 @@ class Llenado extends Seeder
                 'nombre' => $item
             ]);
         }
+
+        $role = Role::create(['name' => 'Registrador-Registros Medicos']);
+        $permissions = ['10','11','12','13','14','15','16','17','18','83'];
+        $role->syncPermissions($permissions);
+
+        $role = Role::create(['name' => 'Revisor-Registros Medicos']);
+        $permissions = ['19','20','21','22','23','24','25','26','35','36','37','38','75','76','77','78','79','80','81','82','84'];
+        $role->syncPermissions($permissions);
+
+        $role = Role::create(['name' => 'Registrador-Prestaciones']);
+        $permissions = ['19','20','21','22','23','24','25','26','75','76','77','78','79','80','81','82','84'];
+        $role->syncPermissions($permissions);
     }
 }

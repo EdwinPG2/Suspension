@@ -7,6 +7,7 @@ use App\Models\OficioSuspencion;
 use Illuminate\Http\Request;
 use PDF;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class OfiController extends Controller
 {
@@ -69,7 +70,10 @@ class OfiController extends Controller
     {
         $formularios = DB::select('call formularios_suspencion_oficio('.$id.')');
         $ofi_susp = OficioSuspencion::where('id_oficio',$id)->get();
-        $pdf = PDF::loadView('rev_oficio.pdf', ['ofi_susp'=>$ofi_susp, 'formularios'=>$formularios]);
+        $oficio = Oficio::find($id);
+        $pdf = PDF::loadView('rev_oficio.pdf_prueba', ['ofi_susp'=>$ofi_susp, 'formularios'=>$formularios, 'oficio'=>$oficio]);
+        $pdf->setPaper('letter', 'portrait');
+        $pdf->render();
         return $pdf->stream();
     }
 
