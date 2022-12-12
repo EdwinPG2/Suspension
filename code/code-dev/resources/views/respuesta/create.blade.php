@@ -107,7 +107,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="cargo">Seleccione cargo/puesto</label>
-                                    <select class="form-control" name="cargo" id="cargo">
+                                    <select class="form-control" name="id_cargo" id="id_cargo">
                                         @foreach ($cargos as $item)
                                             <option value="{{ $item->id_cargo }}">{{ $item->nombre }}</option>
                                         @endforeach
@@ -147,7 +147,3 @@
         </div>
     </div>
 @endsection
-
-
-
-<script></script>
