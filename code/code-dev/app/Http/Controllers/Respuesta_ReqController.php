@@ -41,9 +41,7 @@ class Respuesta_ReqController extends Controller
     public function store(Request $request)
     {
         validator::make($request->except('_token'), [
-            'no_afiliado' => 'required',
-            'id_requerimiento' => 'required',
-            'destino_nombre' => 'required|max:50',
+            'desino_nombre' => 'required|max:50',
             'destino_area' => 'required|max:50',
             'destino_lugar' => 'required|max:50',
             'cuerpo' => 'required|max:300',
@@ -51,9 +49,9 @@ class Respuesta_ReqController extends Controller
             'vobo' => 'required|max:10',
         ])->validate();
 
-        $respuesta = Requerimiento::find($id);
+        $respuesta = Requerimiento::find($request->get('id_requerimiento'));
         $respuesta->caso = $request->get('caso');
-        $respuesta->destino_nombre = $request->get('destino_nombre');
+        $respuesta->desino_nombre = $request->get('desino_nombre');
         $respuesta->destino_area = $request->get('destino_area');
         $respuesta->destino_lugar = $request->get('destino_lugar');
         $respuesta->cuerpo = $request->get('cuerpo');

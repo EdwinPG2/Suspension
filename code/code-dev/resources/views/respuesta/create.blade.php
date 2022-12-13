@@ -57,8 +57,8 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="destino_nombre">Nombre de destinatario</label>
-                                    <input type="text" name="destino_nombre" id="destino_nombre" class="form-control"
+                                    <label for="desino_nombre">Nombre de destinatario</label>
+                                    <input type="text" name="desino_nombre" id="desino_nombre" class="form-control"
                                         placeholder="" required maxlength="50">
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <input type="hidden" name="users_id" id="users_id"
+                                    <input type="hidden" name="users_id" id="users_id_respuesta"
                                         class="form-control" value="{{ Auth::user()->id }}" readonly>
                                 </div>
                             </div>
@@ -99,8 +99,8 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="destino_lugar">Nombre de registrador</label>
-                                    <input type="text" name="destino_lugar" id="destino_lugar" class="form-control"
+                                    <label for="nombre_usuario">Nombre de registrador</label>
+                                    <input type="text" name="nombre_usuario" id="nombre_usuario" class="form-control"
                                         placeholder="" required maxlength="50">
                                 </div>
                             </div>
