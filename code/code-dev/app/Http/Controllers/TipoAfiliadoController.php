@@ -10,10 +10,10 @@ class TipoAfiliadoController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:especialidad-list|especialidad-create|especialidad-edit|especialidad-delete', ['only' => ['index','show']]);
-        $this->middleware('permission:especialidad-create', ['only' => ['create','store']]);
-        $this->middleware('permission:especialidad-edit', ['only' => ['edit','update']]);
-        $this->middleware('permission:especialidad-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:tipo_afiliado-list|tipo_afiliado-create|tipo_afiliado-edit|tipo_afiliado-delete', ['only' => ['index','show']]);
+        $this->middleware('permission:tipo_afiliado-create', ['only' => ['create','store']]);
+        $this->middleware('permission:tipo_afiliado-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:tipo_afiliado-delete', ['only' => ['destroy']]);
     }
     
     public function index()

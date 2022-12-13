@@ -17,11 +17,14 @@ use Carbon\Carbon;
 
 class ReporteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    function __construct()
+    {
+        $this->middleware('permission:reporte-list|reporte-create|reporte-edit|reporte-delete', ['only' => ['index','show']]);
+        $this->middleware('permission:reporte-create', ['only' => ['create','store']]);
+        $this->middleware('permission:reporte-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:reporte-delete', ['only' => ['destroy']]);
+    }
+    
     public function index()
     {
         //
