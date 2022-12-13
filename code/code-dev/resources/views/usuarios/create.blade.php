@@ -15,19 +15,19 @@
                     @csrf
                     <div class="form-group">
                         <label for="ibm">IBM</label>
-                        {!! Form::text('ibm', $user->ibm, array('placeholder' => 'IBM','class' => 'form-control')) !!}   
+                        {!! Form::text('ibm', null, array('placeholder' => 'IBM','class' => 'form-control')) !!}   
                     </div>
                     <div class="form-group">
                         <label for="name">Nombre</label>
-                        {!! Form::text('name', $user->name, array('placeholder' => 'Name','class' => 'form-control')) !!}   
+                        {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}   
                     </div>
                     <div class="form-group">
                         <label for="apellido">Apellido</label>
-                        {!! Form::text('apellido', $user->apellido, array('placeholder' => 'Apellido','class' => 'form-control')) !!}   
+                        {!! Form::text('apellido', null, array('placeholder' => 'Apellido','class' => 'form-control')) !!}   
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        {!! Form::text('email', $user->email, array('placeholder' => 'Email','class' => 'form-control')) !!}   
+                        {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}   
                     </div>
                     <div class="form-group">
                         <label for="paswword">Password</label>
