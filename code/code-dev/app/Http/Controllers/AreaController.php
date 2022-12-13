@@ -10,10 +10,10 @@ class AreaController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:especialidad-list|especialidad-create|especialidad-edit|especialidad-delete', ['only' => ['index','show']]);
-        $this->middleware('permission:especialidad-create', ['only' => ['create','store']]);
-        $this->middleware('permission:especialidad-edit', ['only' => ['edit','update']]);
-        $this->middleware('permission:especialidad-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:area-list|area-create|area-edit|area-delete', ['only' => ['index','show']]);
+        $this->middleware('permission:area-create', ['only' => ['create','store']]);
+        $this->middleware('permission:area-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:area-delete', ['only' => ['destroy']]);
     }
 
     public function index()

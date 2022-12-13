@@ -11,10 +11,10 @@ class AfiliadoController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:especialidad-list|especialidad-create|especialidad-edit|especialidad-delete', ['only' => ['index','show']]);
-        $this->middleware('permission:especialidad-create', ['only' => ['create','store']]);
-        $this->middleware('permission:especialidad-edit', ['only' => ['edit','update']]);
-        $this->middleware('permission:especialidad-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:afiliado-list|afiliado-create|afiliado-edit|afiliado-delete', ['only' => ['index','show']]);
+        $this->middleware('permission:afiliado-create', ['only' => ['create','store']]);
+        $this->middleware('permission:afiliado-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:afiliado-delete', ['only' => ['destroy']]);
     }
     
     public function index()

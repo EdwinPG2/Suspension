@@ -11,11 +11,14 @@ use Illuminate\Support\Facades\Validator;
 
 class Oficio_SuspencionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    function __construct()
+    {
+        $this->middleware('permission:oficio_suspension-list|oficio_suspension-create|oficio_suspension-edit|oficio_suspension-delete', ['only' => ['index','show']]);
+        $this->middleware('permission:oficio_suspension-create', ['only' => ['create','store']]);
+        $this->middleware('permission:oficio_suspension-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:oficio_suspension-delete', ['only' => ['destroy']]);
+    }
+    
     public function index()
     {
         $ofi_sus = OficioSuspencion::all();
