@@ -10,13 +10,13 @@ use Illuminate\Support\Facades\Validator;
 
 class ClinicaServicioController extends Controller
 {
-    function __construct()
-    {
-        $this->middleware('permission:clinica-list|clinica-create|clinica-edit|clinica-delete', ['only' => ['index','show']]);
-        $this->middleware('permission:clinica-create', ['only' => ['create','store']]);
-        $this->middleware('permission:clinica-edit', ['only' => ['edit','update']]);
-        $this->middleware('permission:clinica-delete', ['only' => ['destroy']]);
-    }
+    #function __construct()
+    #{
+    #    $this->middleware('permission:clinica-list|clinica-create|clinica-edit|clinica-delete', ['only' => ['index','show']]);
+    #    $this->middleware('permission:clinica-create', ['only' => ['create','store']]);
+    #    $this->middleware('permission:clinica-edit', ['only' => ['edit','update']]);
+    #    $this->middleware('permission:clinica-delete', ['only' => ['destroy']]);
+    #}
 
     public function index()
     {

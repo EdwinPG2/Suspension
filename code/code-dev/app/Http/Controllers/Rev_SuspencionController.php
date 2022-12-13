@@ -12,13 +12,7 @@ use Illuminate\Support\Facades\Validator;
 
 class Rev_SuspencionController extends Controller
 {
-    function __construct()
-    {
-        $this->middleware('permission:rev_suspension-list|rev_suspension-create|rev_suspension-edit|rev_suspension-delete', ['only' => ['index','show']]);
-        $this->middleware('permission:rev_suspension-create', ['only' => ['create','store']]);
-        $this->middleware('permission:rev_suspension-edit', ['only' => ['edit','update']]);
-        $this->middleware('permission:rev_suspension-delete', ['only' => ['destroy']]);
-    }
+    
     
     public function index()
     {

@@ -17,13 +17,7 @@ use Illuminate\Support\Facades\Storage;
 
 class RequerimientoController extends Controller
 {
-    function __construct()
-    {
-        $this->middleware('permission:requerimiento-list|requerimiento-create|requerimiento-edit|requerimiento-delete', ['only' => ['index','show']]);
-        $this->middleware('permission:requerimiento-create', ['only' => ['create','store']]);
-        $this->middleware('permission:requerimiento-edit', ['only' => ['edit','update']]);
-        $this->middleware('permission:requerimiento-delete', ['only' => ['destroy']]);
-    }
+    
     
     public function index()
     {

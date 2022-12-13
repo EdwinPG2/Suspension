@@ -17,13 +17,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 class OficioController extends Controller
 {
-    function __construct()
-    {
-        $this->middleware('permission:oficio-list|oficio-create|oficio-edit|oficio-delete', ['only' => ['index','show']]);
-        $this->middleware('permission:oficio-create', ['only' => ['create','store']]);
-        $this->middleware('permission:oficio-edit', ['only' => ['edit','update']]);
-        $this->middleware('permission:oficio-delete', ['only' => ['destroy']]);
-    }
+    
 
     public function index()
     {

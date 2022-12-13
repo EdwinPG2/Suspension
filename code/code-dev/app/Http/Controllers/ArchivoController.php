@@ -15,13 +15,13 @@ use Illuminate\Support\Facades\Validator;
 
 class ArchivoController extends Controller
 {
-    function __construct()
-    {
-        $this->middleware('permission:archivo-list|archivo-create|archivo-edit|archivo-delete', ['only' => ['index','show']]);
-        $this->middleware('permission:archivo-create', ['only' => ['create','store']]);
-        $this->middleware('permission:archivo-edit', ['only' => ['edit','update']]);
-        $this->middleware('permission:archivo-delete', ['only' => ['destroy']]);
-    }
+    #function __construct()
+    #{
+    #    $this->middleware('permission:archivo-list|archivo-create|archivo-edit|archivo-delete', ['only' => ['index','show']]);
+    #    $this->middleware('permission:archivo-create', ['only' => ['create','store']]);
+    #    $this->middleware('permission:archivo-edit', ['only' => ['edit','update']]);
+    #    $this->middleware('permission:archivo-delete', ['only' => ['destroy']]);
+    #}
     
     public function index()
     {

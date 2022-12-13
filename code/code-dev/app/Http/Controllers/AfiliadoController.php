@@ -9,13 +9,13 @@ use Illuminate\Support\Facades\Validator;
 
 class AfiliadoController extends Controller
 {
-    function __construct()
-    {
-        $this->middleware('permission:afiliado-list|afiliado-create|afiliado-edit|afiliado-delete', ['only' => ['index','show']]);
-        $this->middleware('permission:afiliado-create', ['only' => ['create','store']]);
-        $this->middleware('permission:afiliado-edit', ['only' => ['edit','update']]);
-        $this->middleware('permission:afiliado-delete', ['only' => ['destroy']]);
-    }
+    #function __construct()
+    #{
+    #    $this->middleware('permission:afiliado-list|afiliado-create|afiliado-edit|afiliado-delete', ['only' => ['index','show']]);
+    #    $this->middleware('permission:afiliado-create', ['only' => ['create','store']]);
+    #    $this->middleware('permission:afiliado-edit', ['only' => ['edit','update']]);
+    #    $this->middleware('permission:afiliado-delete', ['only' => ['destroy']]);
+    #}
     
     public function index()
     {
