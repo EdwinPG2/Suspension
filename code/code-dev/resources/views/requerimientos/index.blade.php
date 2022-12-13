@@ -36,28 +36,24 @@
                             <td>{{ $item->observaciones }}</td>
                             <td><a href="archivos/{{$item->archivo}}" target="blank_">Ver documento</a></td>
                             <td colspan="2">
-<<<<<<< HEAD
                                 @can('requerimiento-edit')
-=======
                                 @if($item->estado == 'Generado')
->>>>>>> 71d66d4d1b7cdad3bfa3b2162a8c6ccc7edcdb39
                                 <a href="{{ route ('requerimientos.edit', $item-> id_requerimiento) }}"
                                 class="btn btn-warning" ><i class="fas fa-edit"></i></a>
                                 <form action="{{ route('requerimientos.destroy',$item-> id_requerimiento)}}" method="post" class="d-inline">
                                 @endcan
+
                                 @can('requerimiento-delete')
                                 @csrf
                                 {{method_field('DELETE')}}
                                 <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
                                 </form>
-<<<<<<< HEAD
                                 @endcan
-=======
+                                
                                 @endif
                                 @if ($item->estado == 'Resuelto')
                                 <a href="{{ route('respuesta.edit', $item->id_requerimiento) }}" class="btn btn-success" target="_blank"><i class="fas fa-check-circle"></i> Respuesta</a>
                                 @endif
->>>>>>> 71d66d4d1b7cdad3bfa3b2162a8c6ccc7edcdb39
                             </td>
                         </tr>
                         @endforeach                
