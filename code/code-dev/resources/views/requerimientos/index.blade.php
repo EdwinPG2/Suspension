@@ -42,7 +42,9 @@
                                 {{method_field('DELETE')}}
                                 <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
                                 </form>
-                                <a href="{{ route('ofi.edit', $item->no_requerimiento) }}" class="btn btn-success" target="_blank"><i class="fas fa-check-circle"></i> Respuesta</a>
+                                @endif
+                                @if ($item->estado == 'Resuelto')
+                                <a href="{{ route('respuesta.edit', $item->id_requerimiento) }}" class="btn btn-success" target="_blank"><i class="fas fa-check-circle"></i> Respuesta</a>
                                 @endif
                             </td>
                         </tr>
