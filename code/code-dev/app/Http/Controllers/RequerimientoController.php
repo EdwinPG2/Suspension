@@ -107,7 +107,7 @@ class RequerimientoController extends Controller
         $suspencion = Suspension::all();
         $ofisusp = OficioSuspencion::all();
         $oficios = Oficio::find($id);
-        return view('requerimientos.edit', compact('ofisusp', 'oficios', 'suspencion', 'requerimientos'));
+        return view('rev_requerimientos.edit', compact('ofisusp', 'oficios', 'suspencion', 'requerimientos'));
     }
 
 
