@@ -94,8 +94,12 @@
                 <a class="collapse-item" href="{{ url('oficios') }}">
                     <i class="fas fa-id-card fa-fw"></i> Oficios 
                 </a>
+<<<<<<< HEAD
             
             
+=======
+                
+>>>>>>> baaf428381bed450619a83730a4cc5b6b4dab0fc
                 <a class="collapse-item" href="{{ url('createsuspencions') }}">
                     <i class="fas fa-id-card fa-fw"></i> Suspensiones 
                 </a>
