@@ -52,7 +52,7 @@ class EditarOficioController extends Controller
      * @param  \App\Models\Oficio  $oficio
      * @return \Illuminate\Http\Response
      */
-    public function show($id)//En esta funcion mandamos el oficio al depart de revisiones
+    public function show($id)//En esta funcion mandamos el oficio al departamento de revisiones
     {
         $oficio = Oficio::find($id);
         $oficio->estado='En revisión';//cambiamos el estado para mostrar diferentes opciones de manejo
@@ -67,18 +67,16 @@ class EditarOficioController extends Controller
             foreach ( $ofi_susp as $item)
             {   
             if ( $item->desuspension->id_suspension == $obj->id_suspension )
-            {   
+            {
+            
             $suspenciones->pull( $id_obj);//con esto mandamos solo las suspensiones que esten dentro del oficio
+            $sus = Suspension::find($item->desuspension->id_suspension);
+            $sus->estado = 'En revisión';
+            $sus->save();//cambiamos el estado de la suspension para tener diferentes opciones en los siguientes modulos
             }
             }
         }
 
-        foreach($suspenciones as $item )
-        {
-            $suspen = Suspension::find($id);
-            $suspen->estado='En revisión';//le cambiamos el estado a cada una de ellas para las opciones
-            $suspen->save();
-        }
 
         $oficio->save();
 

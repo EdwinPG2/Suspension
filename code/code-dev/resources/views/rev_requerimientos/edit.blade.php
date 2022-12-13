@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('titulo')
-<span>Revision del oficio {{$oficios->correlativo}}</span>
+<span>Revisión del oficio {{$oficios->correlativo}}</span>
 @endsection
 @section('contenido')
 <div class="row">
@@ -18,10 +18,10 @@
                 <table id="dt-formularios" class="table table-striped table-bordered dts">
                     <thead>
                         <th>ID</th>
-                        <th>Estado Suspension</th>
-                        <th>Inicio Suspension</th>
-                        <th>Registro de Suspension</th>
-                        <th>Fin Suspension</th>
+                        <th>Estado Suspensión</th>
+                        <th>Inicio Suspensión</th>
+                        <th>Registro de Suspensión</th>
+                        <th>Fin Suspensión</th>
                         <th>Clinica</th>
                         <th>Doctor</th>
                         <th>Generar pago:</th>
