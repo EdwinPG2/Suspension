@@ -31,13 +31,14 @@ class CreateRequerimientoTable extends Migration
             $table->string('desino_nombre',50)->nullable();
             $table->string('destino_area',50)->nullable();
             $table->string('destino_lugar',50)->nullable();
-            $table->string('cuerpo',300)->nullable();
+            $table->string('cuerpo',500)->nullable();
             $table->string('nombre_usuario',50)->nullable();
             $table->string('vobo',50)->nullable();
             $table->string('folios',10)->nullable();
             $table->unsignedBigInteger('users_id_respuesta')->nullable();
             $table->integer('id_cargo')->nullable();
             $table->string('archivo_respuesta',150)->nullable();
+            $table->string('correlativo',10)->nullable();
             
             $table->foreign('no_afiliado', 'fk_requerimiento_afiliado1')->references('no_afiliado')->on('afiliado')->onDelete('cascade');
             $table->foreign('users_id_remitente', 'fk_requerimiento_users1')->references('id')->on('users')->onDelete('cascade');

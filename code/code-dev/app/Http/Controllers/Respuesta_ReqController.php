@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Cargo;
 use App\Models\Requerimiento;
 use App\Models\RespuestaRequerimiento;
+use App\Models\ClinicaServicio;
 use PDF;
 
 use Illuminate\Http\Request;
