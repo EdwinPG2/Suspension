@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Cargo;
 use App\Models\Requerimiento;
 use App\Models\RespuestaRequerimiento;
+use App\Models\ClinicaServicio;
 use PDF;
 
 use Illuminate\Http\Request;
@@ -62,6 +63,15 @@ class Respuesta_ReqController extends Controller
         $respuesta->users_id_respuesta = $request->get('users_id_respuesta');
         $respuesta->id_cargo = $request->get('id_cargo');
         $respuesta->estado = 'Resuelto';
+
+        $clinica = ClinicaServicio::find(41);
+        $correlativo=$clinica->correlativo;
+        $respuesta->correlativo = strval($correlativo);
+
+        $correlativo=$correlativo+1;
+
+        $clinica->correlativo=$correlativo;
+        $clinica->save();
 
         if($request->hasFile('archivo_respuesta'))//guardamos copia del archivo subido en la carpeta public
         {

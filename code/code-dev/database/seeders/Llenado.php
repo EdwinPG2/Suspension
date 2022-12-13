@@ -105,6 +105,7 @@ class Llenado extends Seeder
             ['ENFERMEDAD', 'TRAUMA-EMER', '3', '2'],
             ['ACCIDENTE', 'TRAUMA-EMER', '3', '2'],
             ['COVID', 'COVID-EMER', '10', '2'],
+            ['REGISTROS MEDICOS', 'CASOS-REGMED',null,null],
         ];
         foreach($clinicas_servicios as $item)
         {
