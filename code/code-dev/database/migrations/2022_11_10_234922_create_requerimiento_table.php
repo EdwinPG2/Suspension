@@ -39,6 +39,7 @@ class CreateRequerimientoTable extends Migration
             $table->integer('id_cargo')->nullable();
             $table->string('archivo_respuesta',150)->nullable();
             $table->string('correlativo',10)->nullable();
+            $table->date('fecha_respuesta')->nullable();
             
             $table->foreign('no_afiliado', 'fk_requerimiento_afiliado1')->references('no_afiliado')->on('afiliado')->onDelete('cascade');
             $table->foreign('users_id_remitente', 'fk_requerimiento_users1')->references('id')->on('users')->onDelete('cascade');
