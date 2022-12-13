@@ -51,54 +51,10 @@
                                 <input type="date" name="fecha_recepcion_regmed" value="{{ $requerimientos-> fecha_recepcion_regmed}}" id="fecha_recepcion_regmed" class="form-control" placeholder="Ingrese fecha de recepción">   
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="id_oficio">Oficio</label>
-                            <select class="form-control" name="id_oficio" id="id_oficio">
-                                @foreach ($oficio as $item)
-                                    <option 
-                                    @if($requerimientos->id_oficio== $item->id_oficio)
-                                        selected="selected"
-                                        @endif
-                                    value = "{{$item->id_oficio }}">{{ $item->id_oficio }}</option>
-                                @endforeach
-                            </select>   
-                        </div>
-                        <div class="form-group">
-                            <label for="no_afiliado">Numero de afiliado</label>
-                            <select class="form-control" name="no_afiliado" id="no_afiliado">
-                                @foreach ($afiliado as $item)
-                                    <option 
-                                    @if($requerimientos->no_afiliado== $item->no_afiliado)
-                                        selected="selected"
-                                        @endif
-                                    value = "{{$item->no_afiliado }}">{{ $item->no_afiliado }}</option>
-                                @endforeach
-                            </select>   
-                        </div>
-                        <div class="form-group">
-                            <label for="id_usuario">Oficio</label>
-                            <select class="form-control" name="id_usuario" id="id_usuario">
-                                @foreach ($usuario as $item)
-                                    <option 
-                                    @if($requerimientos->id_usuario== $item->nombre_usuario)
-                                        selected="selected"
-                                        @endif
-                                    value = "{{$item->id_usuario }}">{{ $item->nombre_usuario }}</option>
-                                @endforeach
-                            </select>   
-                        </div>
-                        <div class="form-group">
-                            <label for="id_usuario">Oficio</label>
-                            <select class="form-control" name="id_usuario" id="id_usuario">
-                                @foreach ($usuario as $item)
-                                    <option 
-                                    @if($requerimientos->id_usuario== $item->nombre_usuario)
-                                        selected="selected"
-                                        @endif
-                                    value = "{{$item->id_usuario }}">{{ $item->nombre_usuario }}</option>
-                                @endforeach
-                            </select>   
-                        </div>
+                        
+                        
+                        
+                       
                     </div>
 
                     <hr>
