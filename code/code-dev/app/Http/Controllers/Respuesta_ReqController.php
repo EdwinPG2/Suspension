@@ -48,7 +48,7 @@ class Respuesta_ReqController extends Controller
             'destino_lugar' => 'required|max:50',
             'cuerpo' => 'required|max:300',
             'nombre_usuario' => 'required|max:50',
-            'vobo' => 'required|max:10',
+            'vobo' => 'required|max:50',
         ])->validate();
 
         $respuesta = Requerimiento::find($request->get('id_requerimiento'));
