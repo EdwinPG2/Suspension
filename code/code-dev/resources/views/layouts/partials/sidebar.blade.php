@@ -95,7 +95,7 @@
                     <i class="fas fa-id-card fa-fw"></i> Oficios 
                 </a>
                 
-                <a class="collapse-item" href="{{ url('suspencions') }}">
+                <a class="collapse-item" href="{{ url('createsuspencions') }}">
                     <i class="fas fa-id-card fa-fw"></i> Suspensiones 
                 </a>
                 
