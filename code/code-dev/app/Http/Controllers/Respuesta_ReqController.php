@@ -6,7 +6,7 @@ use App\Models\Requerimiento;
 use App\Models\RespuestaRequerimiento;
 use App\Models\ClinicaServicio;
 use PDF;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
@@ -62,7 +62,8 @@ class Respuesta_ReqController extends Controller
         $respuesta->folios = $request->get('folios');
         $respuesta->users_id_respuesta = $request->get('users_id_respuesta');
         $respuesta->id_cargo = $request->get('id_cargo');
-        $respuesta->estado = 'Resuelto';
+        //$respuesta->estado = 'Resuelto';
+        $respuesta->fecha_respuesta =Carbon::now()->format('Y/m/d'); ;
 
         $clinica = ClinicaServicio::find(41);
         $correlativo=$clinica->correlativo;

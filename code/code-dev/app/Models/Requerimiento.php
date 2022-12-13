@@ -35,6 +35,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $users_id_respuesta
  * @property int|null $id_cargo
  * @property string|null $archivo_respuesta
+ * @property string|null $correlativo
+ * @property Carbon|null $fecha_respuesta
  * 
  * @property Afiliado $afiliado
  * @property Cargo|null $cargo
@@ -60,7 +62,8 @@ class Requerimiento extends Model
 	protected $dates = [
 		'fecha_requerimiento',
 		'fecha_envio',
-		'fecha_recepcion_regmed'
+		'fecha_recepcion_regmed',
+		'fecha_respuesta'
 	];
 
 	protected $fillable = [
@@ -85,7 +88,9 @@ class Requerimiento extends Model
 		'folios',
 		'users_id_respuesta',
 		'id_cargo',
-		'archivo_respuesta'
+		'archivo_respuesta',
+		'correlativo',
+		'fecha_respuesta'
 	];
 
 	public function afiliado()
