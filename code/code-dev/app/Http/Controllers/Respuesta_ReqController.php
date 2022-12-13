@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Cargo;
 use App\Models\Requerimiento;
 use App\Models\RespuestaRequerimiento;
+use PDF;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -92,9 +93,13 @@ class Respuesta_ReqController extends Controller
      * @param  \App\Models\Requerimiento  $requerimiento
      * @return \Illuminate\Http\Response
      */
-    public function edit(Requerimiento $requerimiento)
+    public function edit($id)
     {
-        //
+        $requerimiento = Requerimiento::find($id);
+        $pdf = PDF::loadView('respuesta.pdf', ['requerimiento'=>$requerimiento]);
+        $pdf->setPaper('letter', 'portrait');
+        $pdf->render();
+        return $pdf->stream();
     }
 
     /**

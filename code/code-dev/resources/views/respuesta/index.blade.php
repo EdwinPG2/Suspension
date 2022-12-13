@@ -38,7 +38,7 @@
                                 class="btn btn-warning" >Generar respuesta</a>
                                 @endif
                                 @if($item->estado=='Resuelto')
-                                <a href="{{ route('respuesta.destroy', $item->id_requerimiento) }}"
+                                <a href="{{ route('respuesta.edit', $item->id_requerimiento) }}"
                                     class="btn btn-primary" target="_blank"><i class=""></i>PDF</a>
                                     @endif
                             </td>

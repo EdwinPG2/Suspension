@@ -57,45 +57,50 @@
     <div style="position:absolute;top:1.2in;text-align:right;left:0.84in;;width:3.53in;line-height:0.20in;">
         <DIV style="position:relative; left:2.75in;"><span
                 style="font-style:normal;font-weight:bold;font-size:11pt;font-family:Century Gothic;color:#000000">
-                @if ($ofi_susp->isNotEmpty())
-                    {{ $ofi_susp[0]->doficio->dclinica_servicio->descripcion }}
-                @endif
+                CASOS-REGMED
                 <br>
-                OFICIO No. @if ($ofi_susp->isNotEmpty())
-                    @if ($ofi_susp[0]->doficio->correlativo <= 9)
-                        000{{ $ofi_susp[0]->doficio->correlativo }}
-                    @elseif($ofi_susp[0]->doficio->correlativo <= 99)
-                        00{{ $ofi_susp[0]->doficio->correlativo }}
-                    @elseif($ofi_susp[0]->doficio->correlativo <= 990)
-                        0{{ $ofi_susp[0]->doficio->correlativo }}
-                    @endif
-                    /
-                    {{ $ofi_susp[0]->doficio->fecha->translatedFormat('Y') }}
-                @endif
+                OFICIO No.
+                0
+                /
+                {{ $requerimiento->fecha_envio->translatedFormat('Y') }}
+
             </span>
             <br>
             <span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Century Gothic;color:#000000">
                 Quetzaltenango,
-                {{ $ofi_susp[0]->doficio->fecha->translatedFormat('d') }}
+                {{ $requerimiento->fecha_envio->translatedFormat('d') }}
                 de
-                {{ $ofi_susp[0]->doficio->fecha->translatedFormat('F') }}
+                {{ $requerimiento->fecha_envio->translatedFormat('F') }}
                 de
-                {{ $ofi_susp[0]->doficio->fecha->translatedFormat('Y') }}
+                {{ $requerimiento->fecha_envio->translatedFormat('Y') }}
 
             </span>
         </DIV>
 
     </div>
-    <div style="position:absolute;top:1.97in;left:0.29in;width:3.46in;line-height:0.20in;"><span
-            style="font-style:normal;font-weight:bold;font-size:11pt;font-family:Century Gothic;color:#000000">Señores
-            (as)
+    <div style="position:absolute;top:1.97in;left:0.29in;width:100%;line-height:0.20in;text-align:center"><span
+            style="font-style:normal;font-weight:bold;font-size:11pt;font-family:Century Gothic;color:#000000">
+            AFILIADO:{{ $requerimiento->afiliado->nombre }} {{ $requerimiento->afiliado->apellidos }}
             <br>
-            Analistas de Suspensiones
+            CASO No. {{ $requerimiento->caso }}
             <br>
-            Registros Médicos
-            <br>
-            {{ $oficio->lugar }}
+            REQUERIMIENTO: {{ $requerimiento->no_requerimiento }}
+
         </span>
+
+
+    </div>
+    <div style="position:absolute;top:2.97in;left:0.29in;width:3.46in;line-height:0.20in;"><span
+            style="font-style:normal;font-weight:bold;font-size:11pt;font-family:Century Gothic;color:#000000">Señor
+            (a)
+            <br>
+
+        </span>
+        {{ $requerimiento->desino_nombre }}
+        <br>
+        {{ $requerimiento->destino_area }}
+        <br>
+        {{ $requerimiento->destino_lugar }}
 
     </div>
     <br>
@@ -113,57 +118,22 @@
     <br>
     <br>
     <br>
-    <div style="position:absolute;top:3.0in;left:0.29in;width:7in;line-height:0.20in;"><span
+    <div style="position:absolute;top:4.0in;left:0.29in;width:7in;line-height:0.20in;"><span
             style="font-style:normal;font-weight:Normal;font-size:11pt;font-family:Century Gothic;color:#000000">
-            Estimados señores (as):
+            Estimados señor (a):
             <br>
-            {{ $oficio->saludo }}
+            {{ $requerimiento->cuerpo }}
         </span>
     </div>
     <br>
     <br>
     <br>
     <br>
-    <table id="t-oficios" class="">
-        <thead>
-            <td width="22">No.</td>
-            <td width="57">Afiliación</td>
-            <td width="75">Nombre</td>
-            <td width="63">Fecha de inicio de caso</td>
-            <td width="63">Fecha de accidente</th>
-            <td width="63">Fecha fin suspension DEL/AL</td>
-            <td width="63">Fecha alta</td>
-            <td width="auto">Formularios</td>
-        </thead>
 
-        <tbody>
-
-            @foreach ($ofi_susp as $key => $item)
-                <tr class="">
-                    <td>{{ $key + 1 }}</td>
-                    <td>{{ $item->desuspension->no_afiliado }}</td>
-                    <td>{{ $item->desuspension->afiliado->nombre }} {{ $item->desuspension->afiliado->apellidos }}
-                    </td>
-                    <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_inicio_caso)) }}</td>
-                    <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_accidente)) }}</td>
-                    <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_inicio_suspension)) }} /
-                        {{ date('d-m-Y', strtotime($item->desuspension->fecha_fin_suspension)) }}</td>
-                    <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_alta)) }}</td>
-                    <td>
-                        @foreach ($formularios as $item2)
-                            @if ($item2->id_suspension == $item->id_suspension)
-                                {{ $item2->Formularios }}
-                            @endif
-                        @endforeach
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
     <br>
     <div style="position:absolute;left:0.29in;width:100%;line-height:0.20in;"><span
             style="font-style:normal;font-weight:Normal;font-size:11pt;font-family:Century Gothic;color:#000000">
-            {{ $oficio->despedida }}
+
         </span>
     </div>
 
@@ -179,17 +149,17 @@
         <br>IGSS, Hospital General de Quetzaltenango <br>
     </div>
 
-        <img style="position:absolute;top:9.7in;left:-0.5in;width:9.32in;height:0.69in;display: inline-block"
-            src="..\public\img\pie.png" />
-        <div style="position:absolute;top:9.6in;width:100%;line-height:0.20in;text-align:center"><span
-                style="font-style:normal;font-weight:Normal;font-size:11pt;font-family:Century Gothic;color:#000000">
-                5ta. Avenida 1-79 zona 5 Quetzaltenango
-                <br>Tel. 7829 1200
-                <br>
-                www.igssgt.org
-            </span>
-        </div>
-        
+    <img style="position:absolute;top:9.7in;left:-0.5in;width:9.32in;height:0.69in;display: inline-block"
+        src="..\public\img\pie.png" />
+    <div style="position:absolute;top:9.6in;width:100%;line-height:0.20in;text-align:center"><span
+            style="font-style:normal;font-weight:Normal;font-size:11pt;font-family:Century Gothic;color:#000000">
+            5ta. Avenida 1-79 zona 5 Quetzaltenango
+            <br>Tel. 7829 1200
+            <br>
+            www.igssgt.org
+        </span>
+    </div>
+
 
 </body>
 
