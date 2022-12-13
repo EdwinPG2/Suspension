@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('titulo')
-<span>Suspensiones del sistema</span>
+<span>Suspensiones existentes en el área de delegación</span>
 @endsection
 @section('contenido')
 <div class="row">
@@ -13,7 +13,7 @@
 <!----------------------------------Tabla de suspensiones en delegacion-------------------------------------->
                 <div class="card-body">
                     <div class="card-header">
-                        <h4>Suspensiones en delegación:</h4>
+                        <h4>Suspensiones en seguimiento:</h4>
                     </div>
                 <table id="dt-suspencions" class="table table-striped table-bordered dts">
                     <thead>
@@ -34,6 +34,7 @@
                             <td id="fecha_registro">{{$item3->fecha_registro}}</td>
                             <td id="fecha_registro">{{$item3->estado}}</td>
                         </tr>
+                        @endif
                         @endif
                         @endforeach   
                     </tbody>

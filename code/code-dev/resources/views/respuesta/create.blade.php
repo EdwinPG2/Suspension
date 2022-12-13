@@ -89,7 +89,7 @@
                         <div class="row">
                             <div class="col-lg-10 col-md-10">
                                 <div class="form-group">
-                                    <textarea id="cuerpo"name="cuerpo" cols="150" rows="5" required maxlength="300"></textarea>
+                                    <textarea id="cuerpo"name="cuerpo" cols="150" rows="5" required maxlength="500"></textarea>
                                 </div>
                             </div>
                         </div>

@@ -73,7 +73,7 @@ class RequerimientoController extends Controller
 
         
 
-        return redirect()->route('requerimientos.index');
+        return redirect()->route('req.index');
     }
 
 

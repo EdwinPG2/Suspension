@@ -56,23 +56,29 @@
 
     <div style="position:absolute;top:1.2in;text-align:right;left:0.84in;;width:3.53in;line-height:0.20in;">
         <DIV style="position:relative; left:2.75in;"><span
-                style="font-style:normal;font-weight:bold;font-size:11pt;font-family:Century Gothic;color:#000000">
+                style="font-style:normal;font-weight:bold;font-size:12pt;font-family:Century Gothic;color:#000000">
                 CASOS-REGMED
                 <br>
                 OFICIO No.
-                0
+                @if ($requerimiento->correlativo <= 9)
+                        000{{ $requerimiento->correlativo }}
+                    @elseif($requerimiento->correlativo <= 99)
+                        00{{ $requerimiento->correlativo }}
+                    @elseif($requerimiento->correlativo <= 990)
+                        0{{ $requerimiento->correlativo }}
+                    @endif
                 /
-                {{ $requerimiento->fecha_envio->translatedFormat('Y') }}
+                {{ $requerimiento->fecha_respuesta->translatedFormat('Y') }}
 
             </span>
             <br>
             <span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Century Gothic;color:#000000">
                 Quetzaltenango,
-                {{ $requerimiento->fecha_envio->translatedFormat('d') }}
+                {{ $requerimiento->fecha_respuesta->translatedFormat('d') }}
                 de
-                {{ $requerimiento->fecha_envio->translatedFormat('F') }}
+                {{ $requerimiento->fecha_respuesta->translatedFormat('F') }}
                 de
-                {{ $requerimiento->fecha_envio->translatedFormat('Y') }}
+                {{ $requerimiento->fecha_respuesta->translatedFormat('Y') }}
 
             </span>
         </DIV>
@@ -119,8 +125,9 @@
     <br>
     <br>
     <div style="position:absolute;top:4.0in;left:0.29in;width:7in;line-height:0.20in;"><span
-            style="font-style:normal;font-weight:Normal;font-size:11pt;font-family:Century Gothic;color:#000000">
+            style="font-style:normal;font-weight:Normal;font-size:12pt;font-family:Century Gothic;color:#000000">
             Estimados señor (a):
+            <br>
             <br>
             {{ $requerimiento->cuerpo }}
         </span>
@@ -131,22 +138,36 @@
     <br>
 
     <br>
-    <div style="position:absolute;left:0.29in;width:100%;line-height:0.20in;"><span
-            style="font-style:normal;font-weight:Normal;font-size:11pt;font-family:Century Gothic;color:#000000">
 
-        </span>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="position:absolute;top:6.8in;left:0.29in;width:7in;line-height:0.20in;"><span
+        style="font-style:normal;font-weight:Normal;font-size:12pt;font-family:Century Gothic;color:#000000">
+        Sin otro particular me suscribo atentamente, 
+    </span>
+</div>
+
+    <div style="position:absolute;width:50%; top:7.4in;line-height:0.20in;text-align:center">
+        {{ $requerimiento->nombre_usuario }}<br>
+        {{ $requerimiento->cargo->nombre }}
+        <br>Registros Médicos
+        <br>IGSS, Hospital General de Quetzaltenango <br>
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <div style="position:absolute;width:100%; top:8.3in;line-height:0.20in;text-align:center">
-        {{ Auth::user()->name }}, {{ Auth::user()->apellido }},<br>
-        Registros Médicos
+    <div style="position:absolute;width:50%; top:8.2in;line-height:0.20in;text-align:center;float:right">
+        Vo.Bo. {{ $requerimiento->vobo }}
+        <br>Supervisor(a)/Registros Médicos
         <br>IGSS, Hospital General de Quetzaltenango <br>
+    </div>
+
+    <div style="position:absolute;top:8.6in;left:0.29in;width:1.3in;line-height:0.20in;background-color: lightgray; text-align:center;"><span
+            style="font-style:normal;font-weight:bold;font-size:12pt;font-family:Century Gothic;color:#000000">
+            Anexo: {{ $requerimiento->folios }} folios
+        </span>
     </div>
 
     <img style="position:absolute;top:9.7in;left:-0.5in;width:9.32in;height:0.69in;display: inline-block"

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('titulo')
-<span>Suspensiones del sistema</span>
+<span>Suspensiones existentes en secretaria:</span>
 @endsection
 @section('contenido')
 <div class="row">
@@ -22,11 +22,10 @@
                             <th>Estado</th>
                             
                         </thead>
-                        <tbody>
-                            
+                        <tbody> 
                             @foreach($suspenciones as $item)
                             @if($item->estado == 'Registrado')
-                            @if($item->users_id_creador == Auth::user()->id)
+                            @if($item->users_id_registrador == Auth::user()->id)
                             <tr class="text-center">
                                 <td id="nombre">{{ $item->no_afiliado}}</td>
                                 <td id="descripcion">{{ $item->afiliado->nombre }} {{$item->afiliado->apellidos}}</td>

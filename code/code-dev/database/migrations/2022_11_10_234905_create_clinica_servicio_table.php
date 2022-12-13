@@ -17,8 +17,8 @@ class CreateClinicaServicioTable extends Migration
             $table->integer('id_clinica_servicio',true);
             $table->string('nombre', 50);
             $table->string('descripcion', 250);
-            $table->integer('id_especialidad');
-            $table->integer('id_area');
+            $table->integer('id_especialidad')->nullable();
+            $table->integer('id_area')->nullable();
             $table->integer('correlativo')->default(1);
             $table->integer('correlativo_rechazado')->default(1);
             
