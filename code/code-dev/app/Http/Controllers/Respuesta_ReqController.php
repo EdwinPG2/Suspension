@@ -64,6 +64,15 @@ class Respuesta_ReqController extends Controller
         $respuesta->id_cargo = $request->get('id_cargo');
         $respuesta->estado = 'Resuelto';
 
+        $clinica = ClinicaServicio::find(41);
+        $correlativo=$clinica->correlativo;
+        $respuesta->correlativo = strval($correlativo);
+
+        $correlativo=$correlativo+1;
+
+        $clinica->correlativo=$correlativo;
+        $clinica->save();
+
         if($request->hasFile('archivo_respuesta'))//guardamos copia del archivo subido en la carpeta public
         {
             $archivo = $request->file('archivo_respuesta');
