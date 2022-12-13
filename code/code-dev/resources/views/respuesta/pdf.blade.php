@@ -60,7 +60,13 @@
                 CASOS-REGMED
                 <br>
                 OFICIO No.
-                0
+                @if ($requerimiento->correlativo <= 9)
+                        000{{ $requerimiento->correlativo }}
+                    @elseif($requerimiento->correlativo <= 99)
+                        00{{ $requerimiento->correlativo }}
+                    @elseif($requerimiento->correlativo <= 990)
+                        0{{ $requerimiento->correlativo }}
+                    @endif
                 /
                 {{ $requerimiento->fecha_envio->translatedFormat('Y') }}
 
