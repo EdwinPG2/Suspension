@@ -9,7 +9,7 @@
         <div class="card mb-4">
             <div class="card-header">
                 <div class="row justify-content-between">
-                    <h4>Listado de suspenciones</h4>
+                    <h4>Listado de suspensiones</h4>
                     @can('suspension-create')
                     <a type="button" class="btn btn-primary" href="{{ route('suspencions.create')}}"><i class="fas fa-plus"></i>Nuevo</a>
                     @endcan
