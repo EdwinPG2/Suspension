@@ -60,6 +60,7 @@ class Respuesta_ReqController extends Controller
         $respuesta->folios = $request->get('folios');
         $respuesta->users_id_respuesta = $request->get('users_id_respuesta');
         $respuesta->id_cargo = $request->get('id_cargo');
+        $respuesta->estado = 'Resuelto';
 
         if($request->hasFile('archivo_respuesta'))//guardamos copia del archivo subido en la carpeta public
         {
@@ -114,8 +115,8 @@ class Respuesta_ReqController extends Controller
      * @param  \App\Models\Requerimiento  $requerimiento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Requerimiento $requerimiento)
+    public function destroy($id)
     {
-        //
+        
     }
 }

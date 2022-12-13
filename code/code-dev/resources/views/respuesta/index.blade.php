@@ -35,6 +35,10 @@
                             <td colspan="2">
                                 <a href="{{ route ('respuesta.show', $item->id_requerimiento) }}"
                                 class="btn btn-warning" >Generar respuesta</a>
+                                @if($item->estado=='Resuelto')
+                                <a href="{{ route('respuesta.destroy', $item->id_requerimiento) }}"
+                                    class="btn btn-primary" target="_blank"><i class=""></i>PDF</a>
+                                    @endif
                             </td>
                         </tr>
                         @endforeach                
