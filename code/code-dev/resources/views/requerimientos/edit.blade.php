@@ -27,12 +27,7 @@
                                 <input type="date" name="fecha_requerimiento" value="{{ $requerimientos-> fecha_requerimiento}}" id="fecha_requerimiento" class="form-control" placeholder="Ingrese fecha de requerimiento">   
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4">
-                            <div class="form-group">
-                                <label for="fecha_envio">Fecha de envío</label>
-                                <input type="date" name="fecha_envio" value="{{ $requerimientos-> fecha_envio}}" id="fecha_envio" class="form-control" placeholder="Ingrese fecha de envio">   
-                            </div>
-                        </div>
+                        
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
                                 <label for="estado">Estado</label>
@@ -41,18 +36,10 @@
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
-                                <label for="observaciones">Observacion</label>
-                                <input type="text" name="observaciones" value="{{ $requerimientos-> observaciones}}" id="nombre" class="form-control" placeholder="Ingrese observación">   
+                                <label for="observaciones">Observación</label>
+                                <input type="text" name="observaciones" value="{{ $requerimientos->observaciones}}" id="nombre" class="form-control" placeholder="Ingrese observación">   
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4">
-                            <div class="form-group">
-                                <label for="fecha_recepcion_regmed">Fecha de recepcion</label>
-                                <input type="date" name="fecha_recepcion_regmed" value="{{ $requerimientos-> fecha_recepcion_regmed}}" id="fecha_recepcion_regmed" class="form-control" placeholder="Ingrese fecha de recepción">   
-                            </div>
-                        </div>
-                        
-                        
                         
                        
                     </div>
