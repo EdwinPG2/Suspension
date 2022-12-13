@@ -3,30 +3,11 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-#use Illuminate\Database\Seeder;
-#use Illuminate\Support\Facades\DB;
-#use Illuminate\Support\Facades\Hash;
-#use Illuminate\Support\Str;
-#use Illuminate\database\seeders;
-
-#class DatabaseSeeder extends Seeder
-#{
-
-    #public function run()
-    #{
-        
-    #    $this->call([
-    #        PermissionTableSeeder::class,
-    #        CreateAdminUserSeeder::class,
-    #        Llenado::class,
-    #    ]);
-    #}
-#}
-
-
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+#use Illuminate\database\seeders;
 
 class DatabaseSeeder extends Seeder
 {
@@ -37,17 +18,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
-
-        try {
-            Schema::disableForeignKeyConstraints();
-
-            $this->call(UsersTableSeeder::class);
-
-            Schema::enableForeignKeyConstraints();
-        } catch (\Throwable $th) {
-            return $th->getMessage();
-        }
-
+        
+        $this->call([
+            PermissionTableSeeder::class,
+            CreateAdminUserSeeder::class,
+            Llenado::class,
+        ]);
     }
 }
