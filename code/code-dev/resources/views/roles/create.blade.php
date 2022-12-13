@@ -14,8 +14,8 @@
                 <form action="{{ route('roles.store') }}" method="post">
                     @csrf
                     <div class="form-group">
-                        <label for="name">Nombre</label>
-                        {!! Form::text('name', null, array('placeholder' => 'Ingrese el nombre del rol','class' => 'form-control')) !!}   
+                        <label for="name">Nombre (*)</label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Ingrese nombre rol" required maxlength="45" pattern="*" title="Ingrese solamente letras">
                     </div>
                     <div class="form-group">
                         <label for="permission">Permisos</label>
