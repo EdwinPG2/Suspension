@@ -37,14 +37,14 @@
                                     <td>{{ $item->observaciones }}</td>
                                     <td><a href="archivos/{{ $item->archivo }}" target="blank_">Ver documento</a></td>
                                     <td colspan="2">
-                                        @can('requerimiento-edit')
+                                        
                                             @if ($item->estado == 'Generado')
+                                            @can('requerimiento-edit')
                                                 <a href="{{ route('requerimientos.edit', $item->id_requerimiento) }}"
                                                     class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                            @endcan
                                                 <form action="{{ route('requerimientos.destroy', $item->id_requerimiento) }}"
                                                     method="post" class="d-inline">
-                                                @endcan
-
                                                 @can('requerimiento-delete')
                                                     @csrf
                                                     {{ method_field('DELETE') }}
