@@ -79,7 +79,7 @@
             </div>
         </div>  
     </li>
-    @can('slidebar-registrador')
+    
         
     
     <li class="nav-item">
@@ -90,22 +90,23 @@
         </a>
         <div id="collapseSus" class="collapse" aria-labelledby="headingSus" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                
+            
                 <a class="collapse-item" href="{{ url('oficios') }}">
                     <i class="fas fa-id-card fa-fw"></i> Oficios 
                 </a>
-                
-                <a class="collapse-item" href="{{ url('suspencions') }}">
+            
+            
+                <a class="collapse-item" href="{{ url('createsuspencions') }}">
                     <i class="fas fa-id-card fa-fw"></i> Suspensiones 
                 </a>
-                
+            
 
             </div>
         </div>  
     </li>
-    @endcan
+    
 
-    @can('slidebar-revisor')
+    
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRev"
             aria-expanded="true" aria-controls="collapseRev">
@@ -115,30 +116,31 @@
         <div id="collapseRev" class="collapse" aria-labelledby="headingRev" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 
-                
-                
+            
                 <a class="collapse-item" href="{{ url('revofi') }}">
                     <i class="fas fa-id-card fa-fw"></i> Revisión oficios
                 </a>
-                
+            
+            
                 <a class="collapse-item" href="{{ url('respuesta') }}">
                     <i class="fas fa-id-card fa-fw"></i> Revisión requerimientos
                 </a>
 
+            
                 <a class="collapse-item" href="{{ url('arch') }}">
                     <i class="fas fa-id-card fa-fw"></i> Archivados
                 </a>
-
+            
                 <a class="collapse-item" href="{{ url('reportes') }}">
                     <i class="fas fa-id-card fa-fw"></i> Reportes
                 </a>
-                
+            
             </div>
         </div>  
     </li>
-    @endcan
+    
 
-    @can('slidebar-visor')
+    
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePre"
             aria-expanded="true" aria-controls="collapseRev">
@@ -148,10 +150,11 @@
         <div id="collapsePre" class="collapse" aria-labelledby="headingPre" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 
-
+            
                 <a class="collapse-item" href="{{ url('revreq') }}">
                     <i class="fas fa-id-card fa-fw"></i> Validar oficios
                 </a>
+
                 <a class="collapse-item" href="{{ url('req') }}">
                     <i class="fas fa-money-check-alt"></i> Requerimientos
                 </a>
@@ -159,9 +162,12 @@
             </div>
         </div>  
     </li>
-    @endcan
+    
 
-    @can('slidebar-admin')
+    
+
+
+    
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCat"
             aria-expanded="true" aria-controls="collapseCat">
@@ -171,31 +177,39 @@
         <div id="collapseCat" class="collapse" aria-labelledby="headingCat" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
+            
                 <a class="collapse-item" href="{{ url('afiliados') }}">
                     <i class="fas fa-id-card fa-fw"></i> Afiliados
                 </a>
+            
                 <a class="collapse-item" href="{{ url('areas') }}">
                     <i class="fas fa-id-card fa-fw"></i> Areas  
                 </a>
-                
+            
+
                 <a class="collapse-item" href="{{ url('especialidades') }}">
                     <i class="fas fa-id-card fa-fw"></i> Especialidad  
                 </a>
-                
+            
+
                 <a class="collapse-item" href="{{ url('clinicas_servicios') }}">
                     <i class="fas fa-id-card fa-fw"></i> Clinicas/Servicios
                 </a>
-                
+            
                 <a class="collapse-item" href="{{ url('medico') }}">
                     <i class="fas fa-id-card fa-fw"></i> Medicos
                 </a>
+            
+
                 <a class="collapse-item" href="{{ url('riesgos') }}">
                     <i class="fas fa-id-card fa-fw"></i> Riesgos
                 </a>
+            
                 <a class="collapse-item" href="{{ url('dependencias') }}">
                     <i class="fas fa-id-card fa-fw"></i> Dependencias
                 </a>
-
+            
+            
                 <a class="collapse-item" href="{{ url('formularios') }}">
                     <i class="fas fa-id-card fa-fw"></i> Formularios
                 </a>
@@ -203,8 +217,9 @@
             </div>
         </div>  
     </li>
+    
 
-
+    
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUs"
             aria-expanded="true" aria-controls="collapseUs">
@@ -214,28 +229,23 @@
         <div id="collapseUs" class="collapse" aria-labelledby="headingUs" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-                <!--<a class="collapse-item" href="{{ url('tipoUsuarios') }}">
-                    <i class="fas fa-id-card fa-fw"></i> Tipos usuarios
-                </a>-->
-                
+            
                 <a class="collapse-item" href="{{ url('roles') }}">
                     <i class="fas fa-id-card fa-fw"></i> Roles
                 </a>
-                
+            
                 
                 <a class="collapse-item" href="{{ url('usuarios') }}">
                     <i class="fas fa-id-card fa-fw"></i> Usuarios
                 </a>
                 
-
-                <!--<a class="collapse-item" href="{{ url('rolUsuarios') }}">
-                    <i class="fas fa-id-card fa-fw"></i> Rol Usuarios
-                </a>  -->
-
             </div>
         </div>  
     </li>
-    @endcan
+    
+
+
+
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHist"
             aria-expanded="true" aria-controls="collapseHist">
