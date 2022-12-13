@@ -16,8 +16,10 @@ class FormularioSuspencionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {//vista de seguimiento de suspensiones en delegacion
+        $suspenciones = Suspension::all();
+
+        return view('seguimiento.validada', compact('suspenciones'));
     }
 
     /**

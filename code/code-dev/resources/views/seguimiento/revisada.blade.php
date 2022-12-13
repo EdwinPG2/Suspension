@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('titulo')
-<span>Suspensiones del sistema</span>
+<span>Suspensiones en el área de registros médicos</span>
 @endsection
 @section('contenido')
 <div class="row">
@@ -9,7 +9,6 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                <!-------------------------Tabla de suspensiones en revision---------------------------------->
                     <div class="card-body">
                         <div class="card-header">
                             <h4>Suspensiones en revisión:</h4>
@@ -25,7 +24,7 @@
                         <tbody>
                             
                             @foreach($suspenciones as $item2)
-                            @if($item2->users_id_creador == Auth::user()->id)
+                            @if($item2->users_id_registrador == Auth::user()->id || Auth::user()->id == 1)
                             @if($item2->estado == 'Aceptado'||$item2->estado == 'Rechazado'||$item2->estado == 'En revisión')
                             <tr class="text-center">
                                 <td id="nombre">{{ $item2->no_afiliado}}</td>

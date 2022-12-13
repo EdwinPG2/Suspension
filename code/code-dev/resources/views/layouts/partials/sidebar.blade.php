@@ -67,11 +67,11 @@
                     <i class="fas fa-file-signature"></i> Suspensiones en secretaria
                 </a>
 
-                <a class="collapse-item" href="{{ url('#') }}">
+                <a class="collapse-item" href="{{ url('agregarsuspenciones') }}">
                     <i class="fas fa-user-check"></i> Suspensiones en revisión
                 </a>
                 
-                <a class="collapse-item" href="{{ url('#') }}">
+                <a class="collapse-item" href="{{ url('agregarformularios') }}">
                     <i class="fas fa-money-check-alt"></i> Suspensiones en delegación
                 </a>
                 

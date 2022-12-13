@@ -16,8 +16,10 @@ class EditarOficioSuspencionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {//vista de seguimiento de suspensiones en revision 
+        $suspenciones = Suspension::all();
+
+        return view('seguimiento.revisada', compact('suspenciones'));
     }
 
     /**
