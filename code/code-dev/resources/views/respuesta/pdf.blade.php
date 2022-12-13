@@ -56,7 +56,7 @@
 
     <div style="position:absolute;top:1.2in;text-align:right;left:0.84in;;width:3.53in;line-height:0.20in;">
         <DIV style="position:relative; left:2.75in;"><span
-                style="font-style:normal;font-weight:bold;font-size:11pt;font-family:Century Gothic;color:#000000">
+                style="font-style:normal;font-weight:bold;font-size:12pt;font-family:Century Gothic;color:#000000">
                 CASOS-REGMED
                 <br>
                 OFICIO No.
@@ -125,7 +125,7 @@
     <br>
     <br>
     <div style="position:absolute;top:4.0in;left:0.29in;width:7in;line-height:0.20in;"><span
-            style="font-style:normal;font-weight:Normal;font-size:11pt;font-family:Century Gothic;color:#000000">
+            style="font-style:normal;font-weight:Normal;font-size:12pt;font-family:Century Gothic;color:#000000">
             Estimados señor (a):
             <br>
             <br>
@@ -145,9 +145,14 @@
     <br>
     <br>
     <br>
+    <div style="position:absolute;top:6.8in;left:0.29in;width:7in;line-height:0.20in;"><span
+        style="font-style:normal;font-weight:Normal;font-size:12pt;font-family:Century Gothic;color:#000000">
+        Sin otro particular me suscribo atentamente, 
+    </span>
+</div>
 
-    <div style="position:absolute;width:50%; top:7.2in;line-height:0.20in;text-align:center">
-        {{ $requerimiento->nombre_usuario }},<br>
+    <div style="position:absolute;width:50%; top:7.4in;line-height:0.20in;text-align:center">
+        {{ $requerimiento->nombre_usuario }}<br>
         {{ $requerimiento->cargo->nombre }}
         <br>Registros Médicos
         <br>IGSS, Hospital General de Quetzaltenango <br>
