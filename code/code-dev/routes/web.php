@@ -59,9 +59,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('/especialidades', EspecialidadController::class);
     Route::resource('/areas', AreaController::class);
     Route::resource('/clinicas_servicios', ClinicaServicioController::class);
-    #Route::resource('usuarios', UserController::class);
+    Route::resource('usuarios', UserController::class);
     Route::resource('user', UsersController::class);
-    #Route::resource('roles', RoleController::class);
+    Route::resource('roles', RoleController::class);
     Route::resource('role', RoleController::class);
     Route::resource('permission', PermissionController::class);
     
