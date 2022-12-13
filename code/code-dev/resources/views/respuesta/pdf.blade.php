@@ -68,17 +68,17 @@
                         0{{ $requerimiento->correlativo }}
                     @endif
                 /
-                {{ $requerimiento->fecha_envio->translatedFormat('Y') }}
+                {{ $requerimiento->fecha_respuesta->translatedFormat('Y') }}
 
             </span>
             <br>
             <span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Century Gothic;color:#000000">
                 Quetzaltenango,
-                {{ $requerimiento->fecha_envio->translatedFormat('d') }}
+                {{ $requerimiento->fecha_respuesta->translatedFormat('d') }}
                 de
-                {{ $requerimiento->fecha_envio->translatedFormat('F') }}
+                {{ $requerimiento->fecha_respuesta->translatedFormat('F') }}
                 de
-                {{ $requerimiento->fecha_envio->translatedFormat('Y') }}
+                {{ $requerimiento->fecha_respuesta->translatedFormat('Y') }}
 
             </span>
         </DIV>
