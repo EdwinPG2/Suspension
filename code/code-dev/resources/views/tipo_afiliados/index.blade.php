@@ -33,6 +33,7 @@
                                 class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                 <form action="{{ route('tipo_afiliados.destroy',$item->Id_tipo_afiliado)}} " method ="post" class="d-inline">
                                 @endcan
+                                
                                 @can('tipo_afiliado-delete')
                                 @csrf
                                 {{method_field('DELETE')}}

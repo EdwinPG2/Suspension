@@ -27,13 +27,18 @@
                             <td>{{ $item->nombre }}</td>
                             <td>{{ $item->descripcion }}</td>
                             <td colspan="2">
-                                <a href="{{ route ('riesgos.edit', $item-> id) }}"
-                                class="btn btn-warning" ><i class="fas fa-edit"></i></a>
-                                <form action="{{ route('riesgos.destroy',$item-> id)}}" method="post" class="d-inline">
-                                @csrf
-                                {{method_field('DELETE')}}
-                                <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
-                                </form>
+                                @can('riesgo-edit')
+                                    <a href="{{ route ('riesgos.edit', $item-> id) }}"
+                                    class="btn btn-warning" ><i class="fas fa-edit"></i></a>
+                                @endcan
+
+                                @can('riesgo-delete')
+                                    <form action="{{ route('riesgos.destroy',$item-> id)}}" method="post" class="d-inline">
+                                    @csrf
+                                    {{method_field('DELETE')}}
+                                        <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                @endcan
                             </td>
                         </tr>
                         @endforeach                

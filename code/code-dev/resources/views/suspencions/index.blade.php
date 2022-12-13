@@ -10,7 +10,7 @@
             <div class="card-header">
                 <div class="row justify-content-between">
                     <h4>Listado de suspenciones</h4>
-                    @can('suspencion-create')
+                    @can('suspension-create')
                     <a type="button" class="btn btn-primary" href="{{ route('suspencions.create')}}"><i class="fas fa-plus"></i>Nuevo</a>
                     @endcan
                 </div>
@@ -51,12 +51,12 @@
                             <td>{{ $item->usuario_registrador->nombres }}</td>
                             <td>{{isset($item->usuario_revisor->nombres)?$item->usuario_revisor->nombres:''}}</td>
                             <td>
-                                @can('suspencion-edit')
+                                @can('suspension-edit')
                                 <a href="{{ route ('suspencions.edit', $item->no_afiliado) }}"
                                 class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                 <form action="{{ route('suspencions.destroy',$item->no_afiliado)}} " method ="post" class="d-inline">
                                 @endcan
-                                @can('suspencion-delete')
+                                @can('suspension-delete')
                                 @csrf
                                 {{method_field('DELETE')}}
                                 <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>

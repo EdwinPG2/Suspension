@@ -28,13 +28,17 @@
                             <td>{{ $item->nombre }}</td>
                             <td>{{ $item->descripcion }}</td>
                             <td>
+                                @can('formulario-edit')
                                 <a href="{{ route ('formularios.edit', $item->id_formulario) }}"
                                 class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                @endcan
+                                @can('formulario-delete')
                                 <form action="{{ route('formularios.destroy',$item->id_formulario)}} " method ="post" class="d-inline">
                                 @csrf
                                 {{method_field('DELETE')}}
                                 <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
                                 </form>
+                                @endcan
                             </td>
                         </tr>
                         @endforeach                
