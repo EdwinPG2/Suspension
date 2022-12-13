@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('titulo')
-<span>Editar Clinica/Servicio</span>
+<span>Editar</span>
 @endsection
 @section('contenido')
 <div class="row">
