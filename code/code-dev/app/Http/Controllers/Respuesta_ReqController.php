@@ -69,6 +69,7 @@ class Respuesta_ReqController extends Controller
         }
 
         $respuesta->save();
+        return redirect()->route('respuesta.index');
     }
 
     /**
