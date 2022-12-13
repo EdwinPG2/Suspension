@@ -12,10 +12,10 @@ class ClinicaServicioController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:especialidad-list|especialidad-create|especialidad-edit|especialidad-delete', ['only' => ['index','show']]);
-        $this->middleware('permission:especialidad-create', ['only' => ['create','store']]);
-        $this->middleware('permission:especialidad-edit', ['only' => ['edit','update']]);
-        $this->middleware('permission:especialidad-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:clinica-list|clinica-create|clinica-edit|clinica-delete', ['only' => ['index','show']]);
+        $this->middleware('permission:clinica-create', ['only' => ['create','store']]);
+        $this->middleware('permission:clinica-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:clinica-delete', ['only' => ['destroy']]);
     }
 
     public function index()

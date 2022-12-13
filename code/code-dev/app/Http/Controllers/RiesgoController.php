@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class RiesgoController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission:riesgo-list|riesgo-create|riesgo-edit|riesgo-delete', ['only' => ['index','show']]);
+        $this->middleware('permission:riesgo-create', ['only' => ['create','store']]);
+        $this->middleware('permission:riesgo-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:riesgo-delete', ['only' => ['destroy']]);
+    }
     
     public function index()
     {

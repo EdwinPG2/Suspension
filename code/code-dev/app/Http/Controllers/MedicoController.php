@@ -11,10 +11,10 @@ class MedicoController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:especialidad-list|especialidad-create|especialidad-edit|especialidad-delete', ['only' => ['index','show']]);
-        $this->middleware('permission:especialidad-create', ['only' => ['create','store']]);
-        $this->middleware('permission:especialidad-edit', ['only' => ['edit','update']]);
-        $this->middleware('permission:especialidad-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:medico-list|medico-create|medico-edit|medico-delete', ['only' => ['index','show']]);
+        $this->middleware('permission:medico-create', ['only' => ['create','store']]);
+        $this->middleware('permission:medico-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:medico-delete', ['only' => ['destroy']]);
     }
 
     public function index()

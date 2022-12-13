@@ -8,6 +8,14 @@ use Illuminate\Support\Facades\Validator;
 
 class FormularioController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission:formulario-list|formulario-create|formulario-edit|formulario-delete', ['only' => ['index','show']]);
+        $this->middleware('permission:formulario-create', ['only' => ['create','store']]);
+        $this->middleware('permission:formulario-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:formulario-delete', ['only' => ['destroy']]);
+    }
+    
     public function index()
     {
         $formularios = Formulario::all();

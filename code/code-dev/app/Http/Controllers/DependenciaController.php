@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\Validator;
 
 class DependenciaController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission:dependencia-list|dependencia-create|dependencia-edit|dependencia-delete', ['only' => ['index','show']]);
+        $this->middleware('permission:dependencia-create', ['only' => ['create','store']]);
+        $this->middleware('permission:dependencia-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:dependencia-delete', ['only' => ['destroy']]);
+    }
 
     public function index()
     {

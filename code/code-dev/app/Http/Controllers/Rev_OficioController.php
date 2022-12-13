@@ -14,6 +14,13 @@ use function GuzzleHttp\Promise\all;
 
 class Rev_OficioController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission:rev_oficio-list|rev_oficio-create|rev_oficio-edit|rev_oficio-delete', ['only' => ['index','show']]);
+        $this->middleware('permission:rev_oficio-create', ['only' => ['create','store']]);
+        $this->middleware('permission:rev_oficio-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:rev_oficio-delete', ['only' => ['destroy']]);
+    }
 
     public function index()
     {
