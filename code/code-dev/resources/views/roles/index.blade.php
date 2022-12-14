@@ -32,7 +32,6 @@
                                     <a href="{{ route ('roles.edit', $item->id) }}"
                                     class="btn btn-warning" ><i class="fas fa-edit"></i></a>
                                 @endcan
-
                                 @can('role-delete')
                                     <form action="{{ route('roles.destroy',$item->id)}}" method="post" class="d-inline">
                                     @csrf

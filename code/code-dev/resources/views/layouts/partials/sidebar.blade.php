@@ -28,32 +28,6 @@
             <span>INICIO</span>
         </a>
     </li>
-    <!-- Heading -->
-    <!--<div class="sidebar-heading">
-        MENÚ
-    </div>-->
-
-    <!-- Nav Item - Pages Collapse Menu -->
-    <!--<li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-            aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Administración</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="buttons.html">
-                    <i class="fas fa-users fa-fw"></i> Usuarios
-                </a>
-                <a class="collapse-item" href="cards.html">
-                    <i class="fas fa-id-card fa-fw"></i> Roles
-                </a>
-                <a class="collapse-item" href="cards.html">
-                    <i class="far fa-hand-paper fa-fw"></i> Permisos
-                </a>
-            </div>
-        </div>
-    </li>-->
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeg"
@@ -81,7 +55,7 @@
     </li>
     
         
-    
+    @can('suspension-list')
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSus"
             aria-expanded="true" aria-controls="collapseSus">
@@ -90,27 +64,21 @@
         </a>
         <div id="collapseSus" class="collapse" aria-labelledby="headingSus" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-            
+            @can('oficio-list')
                 <a class="collapse-item" href="{{ url('oficios') }}">
                     <i class="fas fa-id-card fa-fw"></i> Oficios 
                 </a>
-<<<<<<< HEAD
-            
-            
-=======
-                
->>>>>>> baaf428381bed450619a83730a4cc5b6b4dab0fc
+            @endcan
+
                 <a class="collapse-item" href="{{ url('createsuspencions') }}">
                     <i class="fas fa-id-card fa-fw"></i> Suspensiones 
                 </a>
-            
-
             </div>
         </div>  
     </li>
-    
+    @endcan
 
-    
+    @can('reporte-list')
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRev"
             aria-expanded="true" aria-controls="collapseRev">
@@ -120,31 +88,32 @@
         <div id="collapseRev" class="collapse" aria-labelledby="headingRev" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 
-            
+                @can('rev_oficio-list')
                 <a class="collapse-item" href="{{ url('revofi') }}">
                     <i class="fas fa-id-card fa-fw"></i> Revisión oficios
                 </a>
             
-            
+                @endcan
+                @can('rev_suspension-list')
                 <a class="collapse-item" href="{{ url('respuesta') }}">
                     <i class="fas fa-id-card fa-fw"></i> Revisión requerimientos
                 </a>
-
-            
+                @endcan
+                @can('archivo-list')
                 <a class="collapse-item" href="{{ url('arch') }}">
                     <i class="fas fa-id-card fa-fw"></i> Archivados
                 </a>
-            
+                @endcan
+
                 <a class="collapse-item" href="{{ url('reportes') }}">
                     <i class="fas fa-id-card fa-fw"></i> Reportes
                 </a>
-            
             </div>
         </div>  
     </li>
-    
+    @endcan
 
-    
+    @can('requerimiento-list')
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePre"
             aria-expanded="true" aria-controls="collapseRev">
@@ -166,12 +135,12 @@
             </div>
         </div>  
     </li>
-    
+    @endcan
 
     
 
 
-    
+    @can('formulario-list')
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCat"
             aria-expanded="true" aria-controls="collapseCat">
@@ -185,35 +154,37 @@
                 <a class="collapse-item" href="{{ url('afiliados') }}">
                     <i class="fas fa-id-card fa-fw"></i> Afiliados
                 </a>
-            
+                @can('area-list')
                 <a class="collapse-item" href="{{ url('areas') }}">
                     <i class="fas fa-id-card fa-fw"></i> Areas  
                 </a>
-            
-
+                @endcan
+                @can('especialidad-list')
                 <a class="collapse-item" href="{{ url('especialidades') }}">
                     <i class="fas fa-id-card fa-fw"></i> Especialidad  
                 </a>
-            
-
+                @endcan
+                @can('clinica-list')
                 <a class="collapse-item" href="{{ url('clinicas_servicios') }}">
                     <i class="fas fa-id-card fa-fw"></i> Clinicas/Servicios
                 </a>
-            
+                @endcan
+                @can('medico-list')
                 <a class="collapse-item" href="{{ url('medico') }}">
                     <i class="fas fa-id-card fa-fw"></i> Medicos
                 </a>
-            
-
+                @endcan
+                @can('riesgo-list')
                 <a class="collapse-item" href="{{ url('riesgos') }}">
                     <i class="fas fa-id-card fa-fw"></i> Riesgos
                 </a>
-            
+                @endcan
+                @can('dependencia-list')
                 <a class="collapse-item" href="{{ url('dependencias') }}">
                     <i class="fas fa-id-card fa-fw"></i> Dependencias
                 </a>
-            
-            
+                @endcan
+
                 <a class="collapse-item" href="{{ url('formularios') }}">
                     <i class="fas fa-id-card fa-fw"></i> Formularios
                 </a>
@@ -221,10 +192,12 @@
             </div>
         </div>  
     </li>
+    @endcan
     
 
-    
+    @can('user-list')
     <li class="nav-item">
+
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUs"
             aria-expanded="true" aria-controls="collapseUs">
             <i class="fas fa-fw fa-users"></i>
@@ -233,19 +206,21 @@
         <div id="collapseUs" class="collapse" aria-labelledby="headingUs" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-            
+            @can('role-list')
                 <a class="collapse-item" href="{{ url('roles') }}">
                     <i class="fas fa-id-card fa-fw"></i> Roles
                 </a>
+            @endcan
             
-                
+            
                 <a class="collapse-item" href="{{ url('usuarios') }}">
                     <i class="fas fa-id-card fa-fw"></i> Usuarios
                 </a>
-                
+            
             </div>
         </div>  
     </li>
+    @endcan
     
 
 

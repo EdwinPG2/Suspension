@@ -19,6 +19,14 @@ use Illuminate\Support\Facades\Auth;
 
 class CreateSuspencionController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission:suspension-list|suspension-create|suspension-edit|suspension-delete', ['only' => ['index','show']]);
+        $this->middleware('permission:suspension-create', ['only' => ['create','store']]);
+        $this->middleware('permission:suspension-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:suspension-delete', ['only' => ['destroy']]);
+    }
+
     public function index()
     {
         //$suspencions = Suspension::all();

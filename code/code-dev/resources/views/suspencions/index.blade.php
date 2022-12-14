@@ -52,17 +52,16 @@
                             <td>{{isset($item->usuario_revisor->nombres)?$item->usuario_revisor->nombres:''}}</td>
                             <td>
                                 @can('suspension-edit')
-                                <a href="{{ route ('suspencions.edit', $item->no_afiliado) }}"
-                                class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                <form action="{{ route('suspencions.destroy',$item->no_afiliado)}} " method ="post" class="d-inline">
+                                    <a href="{{ route ('suspencions.edit', $item->no_afiliado) }}"
+                                    class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                    <form action="{{ route('suspencions.destroy',$item->no_afiliado)}} " method ="post" class="d-inline">
                                 @endcan
                                 @can('suspension-delete')
-                                @csrf
-                                {{method_field('DELETE')}}
-                                <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
-                                @endcan
+                                    @csrf
+                                    {{method_field('DELETE')}}
+                                    <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
                                 </form>
-                                
+                                @endcan
                             </td>
                         </tr>
                         @endforeach                
