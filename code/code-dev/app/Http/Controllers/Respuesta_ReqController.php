@@ -62,7 +62,7 @@ class Respuesta_ReqController extends Controller
         $respuesta->folios = $request->get('folios');
         $respuesta->users_id_respuesta = $request->get('users_id_respuesta');
         $respuesta->id_cargo = $request->get('id_cargo');
-        $respuesta->estado = 'Resuelto';
+        $respuesta->estado = 'En espera';
         $respuesta->fecha_respuesta =Carbon::now()->format('Y/m/d');
 
         $clinica = ClinicaServicio::find(41);
