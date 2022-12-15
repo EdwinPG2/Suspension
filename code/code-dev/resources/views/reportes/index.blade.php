@@ -40,7 +40,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <input type="date" name="fechaf" id="fechaf"class="form-control" value=""
+                                    <input type="date" name="fechaf" id="fechaf" max= "{{date('Y-m-d')}}" class="form-control" value=""
                                         required>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <input type="date" name="fechaf" id="fechaf"class="form-control" value=""
+                                    <input type="date" name="fechaf" id="fechaf" max= "{{date('Y-m-d')}}" class="form-control" value=""
                                         required>
                                 </div>
                             </div>
