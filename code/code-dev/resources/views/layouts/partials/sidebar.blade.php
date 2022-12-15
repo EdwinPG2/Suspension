@@ -73,6 +73,10 @@
                 <a class="collapse-item" href="{{ url('createsuspencions') }}">
                     <i class="fas fa-id-card fa-fw"></i> Suspensiones 
                 </a>
+
+                <a class="collapse-item" href="{{ url('afiliados') }}">
+                    <i class="fas fa-id-card fa-fw"></i> Afiliados
+                </a>
             </div>
         </div>  
     </li>
