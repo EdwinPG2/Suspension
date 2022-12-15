@@ -31,7 +31,7 @@ class CreateRequerimientoTable extends Migration
             $table->string('desino_nombre',50)->nullable();
             $table->string('destino_area',50)->nullable();
             $table->string('destino_lugar',50)->nullable();
-            $table->string('cuerpo',500)->nullable();
+            $table->string('cuerpo',900)->nullable();
             $table->string('nombre_usuario',50)->nullable();
             $table->string('vobo',50)->nullable();
             $table->string('folios',10)->nullable();

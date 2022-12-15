@@ -46,7 +46,7 @@ class Respuesta_ReqController extends Controller
             'desino_nombre' => 'required|max:50',
             'destino_area' => 'required|max:50',
             'destino_lugar' => 'required|max:50',
-            'cuerpo' => 'required|max:300',
+            'cuerpo' => 'required|max:900',
             'nombre_usuario' => 'required|max:50',
             'vobo' => 'required|max:50',
         ])->validate();
