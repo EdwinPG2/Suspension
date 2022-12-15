@@ -1,6 +1,8 @@
 <table>
     <thead>
         <tr>
+            <th>Registrador</th>
+            <th>Revisor</th>
             <th>No afiliación</th>
             <th>Nombres</th>
             <th>Fecha inicio caso</th>
@@ -16,6 +18,8 @@
     <tbody>
         @foreach ($data as $item)
             <tr>
+                <td>{{ $item->nombre_registrador }}</td>
+                <td>{{ $item->nombre_revisor }}</td>
                 <td>{{ $item->no_afiliado }}</td>
                 <td>{{ $item->nombre_afiliado }} {{ $item->apellidos }}</td>
                 <td>{{ $item->fecha_inicio_caso }}</td>
