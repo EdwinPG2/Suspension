@@ -62,8 +62,8 @@
                                             <a href="{{ route('respuesta.edit', $item->id_requerimiento) }}"
                                                 class="btn btn-warning" target="_blank"><i class="fas fa-file-excel"></i>
                                                 PDF</a>
-                                            <a href="{{ route('respuesta.edit', $item->id_requerimiento) }}"
-                                                class="btn btn-primary" target="_blank"><i class="fas fa-check-circle"></i>
+                                            <a href="{{ route('requerimientos.aceptar', $item->id_requerimiento) }}"
+                                                class="btn btn-primary"><i class="fas fa-check-circle"></i>
                                                 Aceptar</a>
                                         @elseif($item->estado == 'Resuelto')
                                         <a href="{{ route('respuesta.edit', $item->id_requerimiento) }}"

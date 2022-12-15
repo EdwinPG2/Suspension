@@ -22,7 +22,7 @@ class RequerimientoController extends Controller
     public function index()
     {
         $oficios = Oficio::all();
-        return view('rev_requerimientos.index', compact('oficios'));
+        return view('requerimientos.index', compact('oficios'));
     }
 
     public function create()
@@ -151,11 +151,11 @@ class RequerimientoController extends Controller
     public function aceptar($id)
     {
         $requerimiento = Requerimiento::find($id);
-        $requerimiento->estado = 'Resuelsto';
+        $requerimiento->estado = 'Resuelto';
         $requerimiento->save();
 
         alert()->success('Requerimiento aceptado');
         
-        return redirect()->route('requerimientos.index');
+        return redirect()->route('req.index');
     }
 }
