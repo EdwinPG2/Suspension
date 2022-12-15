@@ -16,7 +16,7 @@ class CreateMedicoTable extends Migration
         Schema::create('medico', function (Blueprint $table) {
             $table->string('colegiado', 10)->primary();
             $table->string('nombres', 45);
-            $table->string('especialidad', 45);
+            $table->string('especialidad', 45)->nullable();
             $table->string('telefono', 11)->nullable();
             $table->integer('id_especialidad')->nullable();
             
