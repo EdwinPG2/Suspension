@@ -18,10 +18,10 @@ class CreateAdminUserSeeder extends Seeder
         $role = Role::create(['name' => 'Super Administrador']);
     
         $user = User::create([
-            'ibm' => '1000269',
-            'name' => 'Francisco Isaac',
-            'apellido' => 'López Martinez',
-            'email' => 'francicoi.lopez@igssgt.org',
+            'ibm' => '0000000',
+            'name' => 'Admin',
+            'apellido' => 'Igss',
+            'email' => 'adminz@igssgt.org',
             'password' => bcrypt('Igssxela'),
             'role_id' => $role->id,
         ]);
