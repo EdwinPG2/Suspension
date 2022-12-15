@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 use DB;
 use Hash;
 use Illuminate\Support\Arr;
+
 
 class UserController extends Controller
 {
@@ -29,8 +31,9 @@ class UserController extends Controller
 
     public function create()
     {
-        $roles = Role::pluck('name','name')->all();
-        return view('usuarios.create',compact('roles'));
+        $roles = Role::pluck('name','id')->all();
+        $permission = Permission::get();
+        return view('usuarios.create',compact('roles', 'permission'));
     }
 
     public function store(Request $request)
@@ -40,15 +43,27 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirm-password',
-            'roles' => 'required',
+            'role_id' => 'required',
         ]);
 
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
     
-        $user = User::create($input);
-        $user->assignRole($request->input('roles'));
-    
+        $user = new User();
+        $user->ibm=$input['ibm'];
+        $user->name=$input['name'];
+        $user->apellido=$input['apellido'];
+        $user->email=$input['email'];
+        $user->password=$input['password'];
+        $user->role_id=$input['role_id'][0];
+        $user->save();
+        $permissions = DB::table("role_has_permissions")->where("role_has_permissions.role_id",$request->input('role_id'))
+        ->pluck('role_has_permissions.permission_id','role_has_permissions.permission_id')
+        ->all();
+        $user->givePermissionTo($permissions);
+        if(!empty($request->input['permission'])){
+            $user->givePermissionTo($request->input('permission'));
+        }
         return redirect()->route('usuarios.index')
                         ->with('success','User created successfully');
     }
@@ -62,10 +77,14 @@ class UserController extends Controller
     public function edit($id)
     {
         $usuario = User::find($id);
-        $roles = Role::pluck('name','name')->all();
+        $roles = Role::pluck('name','id')->all();
+        $idrol = $usuario->roles->pluck('id','name')->first();
         $userRole = $usuario->roles->pluck('name','name')->all();
+
+        $permission = Permission::get();
+        $rolePermissions = $usuario->getAllPermissions()->pluck('id','id')->all();
     
-        return view('usuarios.edit',compact('usuario','roles','userRole'));
+        return view('usuarios.edit',compact('usuario','roles','userRole', 'permission', 'rolePermissions'));
     }
 
     public function update(Request $request, $id)
@@ -73,22 +92,28 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email,'.$id,
-            'roles' => 'required',
+            'role_id' => 'required',
         ]);
     
         $input = $request->all();
-        // if(!empty($input['password'])){ 
-        //     $input['password'] = Hash::make($input['password']);
-        // }else{
-        //     $input = Arr::except($input,array('password'));    
-        // }
-    
+        
+        $input['role_id']=$input['role_id'][0];
         $user = User::find($id);
         $user->update($input);
-        DB::table('model_has_roles')->where('model_id',$id)->delete();
-    
-        $user->assignRole($request->input('roles'));
-    
+        
+        $rolePermissions = $user->getAllPermissions()->pluck('id','id')->all();
+        $getpermissions = $request->input('permission');
+        foreach ($getpermissions as $permission) {
+            if(!in_array($permission,$rolePermissions)){
+                $user->givePermissionTo($permission);
+            }
+        }
+        foreach ($rolePermissions as $permiso){
+            if(!in_array($permiso,$getpermissions)){
+                $user->revokePermissionTo($permiso);
+            }
+        }
+
         return redirect()->route('usuarios.index')
                         ->with('success','User updated successfully');
     }

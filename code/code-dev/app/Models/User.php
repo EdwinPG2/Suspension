@@ -35,13 +35,14 @@ class User extends Authenticatable
 		'email',
 		'email_verified_at',
 		'password',
+		'role_id',
 		'remember_token',
 	];
 
-	// public function tipo_usuario()
-	// {
-	// 	return $this->belongsTo(TipoUsuario::class, 'id_tipo_usuario');
-	// }
+	public function role()
+	{
+		return $this->belongsTo(Role::class, 'role_id');
+	}
 
 	public function control_requerimientos()
 	{

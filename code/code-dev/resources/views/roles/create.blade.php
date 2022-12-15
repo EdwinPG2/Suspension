@@ -20,11 +20,13 @@
                     <div class="form-group">
                         <label for="permission">Permisos</label>
                         <br/>
-                        @foreach($permission as $value)
-                            <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
-                            {{ $value->name }}</label>
-                        <br/>
-                        @endforeach   
+                        <ul style="columns: 3 auto;">
+                            @foreach($permission as $value)
+                                <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
+                                {{ $value->name }}</label>
+                            <br/>
+                            @endforeach 
+                        </ul>
                     </div>
 
                     <hr>

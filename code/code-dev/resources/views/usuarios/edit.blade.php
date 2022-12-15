@@ -15,23 +15,37 @@
                     @method('PATCH')
                     @csrf
                     <div class="row">
-                        <div class="col-lg-4 col-md-4">
+                        <div class="col-lg-6 col-md-6">
                             <div class="form-group">
                                 <label for="name">Nombre</label>
                                 <input type="text" name="name" value="{{ $usuario->name}}" id="name" class="form-control" placeholder="Actualizar name de usuario">   
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4">
+                        <div class="col-lg-6 col-md-6">
                             <div class="form-group">
                                 <label for="email">Correo electrónico</label>
                                 {!! Form::text('email', $usuario->email, array('placeholder' => 'Correo electrónico','class' => 'form-control')) !!}   
                             </div>
                         </div>
-                        <div class="col-lg-8 col-md-4">
-                            <div class="form-group">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="form-group"
                                 <label for="roles">Roles</label>
-                                {!! Form::select('roles[]', $roles,$userRole, array('class' => 'form-control','multiple')) !!}   
+                                {!! Form::select('role_id[]', $roles,$usuario->role_id, array('class' => 'form-control','multiple')) !!}   
                             </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <div class="form-group">
+                                <label for="permissions">Permisos</label>
+                                <br/>
+                                <ul style="columns: 3 auto;">
+                                    @foreach($permission as $value)
+                                        <label>{{ Form::checkbox('permission[]', $value->id, in_array($value->id, $rolePermissions) ? true : false, array('class' => 'name')) }}
+                                            {{ $value->name }}
+                                        </label>
+                                        <br/>
+                                    @endforeach
+                                </ul>   
+                            </div>          
                         </div>
                     </div>
 

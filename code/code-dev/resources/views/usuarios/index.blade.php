@@ -35,13 +35,9 @@
                         <td>{{ $item->apellido }}</td>
                         <td>{{ $item->email }}</td>
                         <td>
-                            @if(!empty($item->getRoleNames()))
-                                @foreach($item->getRoleNames() as $v)
-                                    <label class="badge badge-success">{{ $v }}</label>
-                                @endforeach
-
-                            @endif
-                        </td>                            
+                            <label class="badge badge-success">{{ $item->role->name }}</label>
+                        </td>
+                                                    
                             <td colspan="2">
                                     @can('user-edit')
                                     <a href="{{ route('usuarios.edit', $item->id)}}"

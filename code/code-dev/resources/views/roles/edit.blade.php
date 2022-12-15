@@ -21,7 +21,7 @@
                     <div class="form-group">
                         <label for="permissions">Permisos</label>
                         <br/>
-                        <ul style="column: 3 auto;">
+                        <ul style="columns: 3 auto;">
                             @foreach($permission as $value)
                                 <label>{{ Form::checkbox('permission[]', $value->id, in_array($value->id, $rolePermissions) ? true : false, array('class' => 'name')) }}
                                     {{ $value->name }}
