@@ -200,7 +200,7 @@
                         </div>
                         <div id="colaborador" style="display:none;">
                             <div class="row">
-                                <div class="col-lg-4 col-md-4">
+                                <div class="col-lg-3 col-md-4">
                                     <div class="form-group">
                                         <label for="nombre_medico">IBM</label>
                                         <input type="text" name="ibm" id="ibm" class="form-control"
@@ -208,7 +208,7 @@
                                             title="Ingrese solamente numeros">
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4">
+                                <div class="col-lg-3 col-md-4">
                                     <div class="form-group">
                                         <label for="cargo">Seleccione cargo/puesto</label>
                                         <select class="form-control" name="cargo" id="cargo">
@@ -218,11 +218,18 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4">
+                                <div class="col-lg-3 col-md-4">
                                     <div class="form-group">
                                         <label for="dependencia">Ingrese dependencia</label>
                                         <input type="text" name="dependencia" id="dependencia" class="form-control"
                                             placeholder="" maxlength="50">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4">
+                                    <div class="form-group">
+                                        <label for="renglon">Ingrese renglón</label>
+                                        <input type="text" name="renglon" id="renglon" class="form-control"
+                                            placeholder="" maxlength="7">
                                     </div>
                                 </div>
                             </div>

@@ -56,6 +56,7 @@ class AfiliadoController extends Controller
         $Afiliado->fecha_nacimiento = $request->get('fecha_nacimiento');
         $Afiliado->ibm = $request->get('ibm');
         $Afiliado->id_tipo_afiliado = $request->get('id_tipo_afiliado');
+        $Afiliado->reglon = $request->get('renglon');
 
         $Afiliado->save();
 
