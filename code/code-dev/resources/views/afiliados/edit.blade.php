@@ -24,7 +24,7 @@
                         </div>
                         <div class="col-lg-2 col-md-2">
                             <div class="form-group">
-                                <label for="cui">Cui (*)</label>
+                                <label for="cui">Cui</label>
                                 <input type="text" name="cui" id="cui" class="form-control" placeholder="" 
                                 value="{{isset($afiliados->cui)?$afiliados->cui:''}}"  minlength="13" maxlength="13" pattern="[0-9]*" title="Ingrese solamente numeros">   
                             </div>
@@ -84,7 +84,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
-                                <label for="fecha_nacimiento">Fecha de nacimiento (*)</label>
+                                <label for="fecha_nacimiento">Fecha de nacimiento</label>
                                 <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" class="form-control" placeholder=""
                                 value="{{isset($afiliados->fecha_nacimiento)?$afiliados->fecha_nacimiento->toDateString():''}}" >   
                             </div>
