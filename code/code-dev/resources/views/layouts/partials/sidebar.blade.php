@@ -233,7 +233,7 @@
         </a>
         <div id="collapseHist" class="collapse" aria-labelledby="headingHist" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                @can('afiliado')
+                @can('historial-afiliado')
                 <a class="collapse-item" href="{{ url('historial') }}">
                     <i class="fas fa-id-card fa-fw"></i> Afiliado
                 </a>
