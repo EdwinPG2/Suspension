@@ -8,6 +8,7 @@ use App\Models\Especialidad;
 use App\Models\Riesgo;
 use App\Models\Dependencium;
 use App\Models\Cargo;
+use App\Models\User;
 
 use Illuminate\Http\Request;
 use App\Exports\ReportesExport;
@@ -28,8 +29,9 @@ class ReporteController extends Controller
         $riesgos=Riesgo::all();
         $dependencias=Dependencium::all();
         $cargos=Cargo::all();
+        $usuarios=User::all();
 
-        return view('reportes/index', compact('clinicas_servicios','areas','especialidads','riesgos','dependencias','cargos'));
+        return view('reportes/index', compact('clinicas_servicios','areas','especialidads','riesgos','dependencias','cargos','usuarios'));
     }
 
     /**
@@ -61,7 +63,7 @@ class ReporteController extends Controller
             $especialidad=$request->get('especialidad');
             $clinica=$request->get('id_clinica_servicio');
             
-            $exportResult=new ReportesExport([$fechai,$fechaf,$area,$especialidad,$clinica],[]);
+            $exportResult=new ReportesExport([$fechai,$fechaf,$area,$especialidad,$clinica],[],[]);
     
             $data = Excel::download($exportResult, 'Reporte'.$date->toDateTimeString().'.xlsx');
     
@@ -74,7 +76,20 @@ class ReporteController extends Controller
             $tipo_reporte=$request->get('reporte_colaborador');
             $seleccion=$request->get('seleccion');
             
-            $exportResult=new ReportesExport([],[$fechai,$fechaf,$tipo_reporte,$seleccion]);
+            $exportResult=new ReportesExport([],[$fechai,$fechaf,$tipo_reporte,$seleccion],[]);
+    
+            $data = Excel::download($exportResult, 'Reporte'.$date->toDateTimeString().'.xlsx');
+    
+            return $data;
+        }
+
+        if($condicion== 2)
+        {
+            $fechai=$request->get('fechai');
+            $fechaf=$request->get('fechaf');
+            $registrador=$request->get('usuario');
+            
+            $exportResult=new ReportesExport([],[],[$fechai,$fechaf,$registrador,null,null,null,null]);
     
             $data = Excel::download($exportResult, 'Reporte'.$date->toDateTimeString().'.xlsx');
     

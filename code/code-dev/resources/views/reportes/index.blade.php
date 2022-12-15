@@ -8,9 +8,12 @@
         <div class="form-group">
             <label for="reporte">Seleccione reporte</label>
             <select class="form-control" name="reporte" id="reporte" onchange="javascript:showContent()">
-                <option value="0"  selected>-- Seleccione reporte --</option>
+                <option value="0" selected>-- Seleccione reporte --</option>
                 <option value="1">Suspenciones por area, especialidad, clinica/servicio</option>
                 <option value="2">Suspenciones de colaboradores</option>
+                <option value="3">Suspenciones rechazadas de registradores</option>
+                <option value="4">Suspenciones rechazadas de revisores</option>
+                <option value="5">Suspenciones rechazadas por area, especialidad, clinica/servicio</option>
 
             </select>
         </div>
@@ -40,8 +43,8 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <input type="date" name="fechaf" id="fechaf" max= "{{date('Y-m-d')}}" class="form-control" value=""
-                                        required>
+                                    <input type="date" name="fechaf" id="fechaf" max="{{ date('Y-m-d') }}"
+                                        class="form-control" value="" required>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +100,6 @@
     </div>
     <div id="cont_colaborador" style="display:none;">
         <div class="row">
-
             <div class="col-lg-12 col-md-12 col-xs-12">
                 <div class="card mb-4">
                     <form action="{{ route('reportes.store') }}" method="post">
@@ -120,8 +122,8 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <input type="date" name="fechaf" id="fechaf" max= "{{date('Y-m-d')}}" class="form-control" value=""
-                                        required>
+                                    <input type="date" name="fechaf" id="fechaf" max="{{ date('Y-m-d') }}"
+                                        class="form-control" value="" required>
                                 </div>
                             </div>
                         </div>
@@ -135,11 +137,11 @@
                                     <select class="form-control" name="reporte_colaborador" id="reporte_colaborador"
                                         onclick="cargar_info()" required>
                                         <option value="" disabled selected>-- Seleccione un reporte --</option>
-                                        
+
                                         <option value="1">Riesgo</option>
                                         <option value="2">Dependencia</option>
                                         <option value="3">Cargo/Puesto</option>
-                                        
+
                                     </select>
                                 </div>
                             </div>
@@ -147,8 +149,68 @@
                                 <div class="form-group">
                                     <label for="seleccion">Seleccione una opcion</label>
                                     <select class="form-control" name="seleccion" id="seleccion" required>
-                                        <option value="">--  --</option>
+                                        <option value="">-- --</option>
 
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-header">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Descargar reporte <i
+                                            class="fas fa-download"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="cont_rechazos_registrador" style="display:none;">
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-xs-12">
+                <div class="card mb-4">
+                    <form action="{{ route('reportes.store') }}" method="post">
+                        @csrf
+                        <input type="text" hidden name="condicion" id="condicion"class="form-control" value="2">
+                        <div class="card-header">
+                            <div class="row justify-content-between">
+                                <h4>Suspensiones rechazadas de registradores</h4>
+                            </div>
+                            <div class="row justify-content-between">
+                                <h5>Seleccione rango de fechas</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <input type="date" name="fechai" id="fechai"class="form-control" value=""
+                                        required>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <input type="date" name="fechaf" id="fechaf" max="{{ date('Y-m-d') }}"
+                                        class="form-control" value="" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-header">
+                            <h4>Usuario</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <label for="usuario">Seleccione usuario</label>
+                                    <select class="form-control" name="usuario" id="usuario" required>
+                                        <option value="" disabled selected>-- Seleccione un usuario --</option>
+                                        @foreach ($usuarios as $item4)
+                                            <option value="{{ $item4->id }}">{{ $item4->name }} {{ $item4->apellido }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -172,14 +234,20 @@
     function showContent() {
         element = document.getElementById("cont_clinica");
         check = document.getElementById("reporte");
-        if (check.value==1) {
+        if (check.value == 1) {
             element.style.display = 'block';
         } else {
             element.style.display = 'none';
         }
 
         element = document.getElementById("cont_colaborador");
-        if (check.value==2) {
+        if (check.value == 2) {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+        element = document.getElementById("cont_rechazos_registrador");
+        if (check.value == 3) {
             element.style.display = 'block';
         } else {
             element.style.display = 'none';
@@ -195,41 +263,44 @@
         list_dependencias = @json($dependencias);
         list_cargos = @json($cargos);
 
-        
+
         check = document.getElementById("reporte_colaborador");
         document.getElementById("seleccion").innerHTML = "";
         var select = document.getElementsByName("seleccion")[0];
-        
-        if (check.value==1) {
+
+        if (check.value == 1) {
             for (let x = 0; x < list_riesgos.length; x++) {
-            
+
                 var option = document.createElement("option");
                 option.value = list_riesgos[x].id;
                 option.text = list_riesgos[x].nombre;
                 select.add(option);
-            
-        
-        }}
-        if (check.value==2) {
+
+
+            }
+        }
+        if (check.value == 2) {
             for (let x = 0; x < list_riesgos.length; x++) {
-            
+
                 var option = document.createElement("option");
                 option.value = list_dependencias[x].id_dependencia;
                 option.text = list_dependencias[x].nombre;
                 select.add(option);
-            
-        
-        }}
-        if (check.value==3) {
+
+
+            }
+        }
+        if (check.value == 3) {
             for (let x = 0; x < list_riesgos.length; x++) {
-            
+
                 var option = document.createElement("option");
                 option.value = list_cargos[x].id_cargo;
                 option.text = list_cargos[x].nombre;
                 select.add(option);
-            
-        
-        }}
+
+
+            }
+        }
 
     }
 

@@ -16,12 +16,14 @@ class ReportesExport implements FromView, ShouldAutoSize
 
     protected $data;
     protected $item;
+    protected $rechazos;
     
 
-    public function __construct(array $data,array $item)
+    public function __construct(array $data,array $item, array $rechazos)
     {
         $this->data = $data;
         $this->item = $item;
+        $this->rechazos = $rechazos;
     }
     public function view():View
     {
@@ -99,6 +101,59 @@ class ReportesExport implements FromView, ShouldAutoSize
                 'data' => $collection
                 ]);
             }
+        }
+        elseif($this->rechazos!=null)
+        {
+            $fechai=$this->rechazos[0];
+            $fechaf=$this->rechazos[1];
+            $registrador=$this->rechazos[2];
+            $revisor=$this->rechazos[3];
+            $area=$this->rechazos[4];
+            $especialidad=$this->rechazos[5];
+            $clinica=$this->rechazos[6];
+            if($registrador!=null)
+            {
+                $result =DB::select("call rechazos_registrador('".$fechai."','".$fechaf."',".$registrador.")");
+                $collection = collect($result);
+
+                return view('report.rechazos',[
+                'data' => $collection
+                ]);
+            }
+            elseif($revisor=!null)
+            {
+                $result =DB::select("call rechazos_revisor('".$fechai."','".$fechaf."',".$revisor.")");
+                $collection = collect($result);
+
+                return view('report.rechazos',[
+                'data' => $collection
+                ]);
+            }
+            if($clinica!=null)
+            {
+                $result =DB::select("call rechazos_clinicas_servicios('".$fechai."','".$fechaf."',".$clinica.")");
+                $collection = collect($result);
+
+            return view('report.rechazos',[
+                'data' => $collection
+            ]);
+            }
+            elseif ($especialidad!=null) {
+                $result =DB::select("call rechazos_especialidad('".$fechai."','".$fechaf."',".$especialidad.")");
+                $collection = collect($result);
+                return view('report.rechazos',[
+                    'data' => $collection
+                ]);
+            }
+            elseif($area!=null){
+                $result =DB::select("call rechazos_area('".$fechai."','".$fechaf."',".$area.")");
+                $collection = collect($result);
+
+            return view('report.rechazos',[
+                'data' => $collection
+            ]);
+            }
+            
         }
 
         
