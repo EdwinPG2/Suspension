@@ -15,28 +15,28 @@
                     @method('PATCH')
                     @csrf
                     <div class="row">
-                        <div class="col-lg-2 col-md-2">
+                        <div class="col-lg-3 col-md-3">
                             <div class="form-group">
                                 <label for="no_afiliado">Numero de afiliación (*)</label>
                                 <input type="text" name="no_afiliado" id="no_afiliado" class="form-control" placeholder="" 
                                 value="{{isset($afiliados->no_afiliado)?$afiliados->no_afiliado:''}}" placeholder="Ejemplo: 54321" required maxlength="15" pattern="[0-9]*" title="Ingrese solamente numeros">   
                             </div>
                         </div>
-                        <div class="col-lg-2 col-md-2">
+                        <div class="col-lg-3 col-md-3">
                             <div class="form-group">
                                 <label for="cui">Cui</label>
                                 <input type="text" name="cui" id="cui" class="form-control" placeholder="" 
                                 value="{{isset($afiliados->cui)?$afiliados->cui:''}}"  minlength="13" maxlength="13" pattern="[0-9]*" title="Ingrese solamente numeros">   
                             </div>
                         </div>
-                        <div class="col-lg-5 col-md-5">
+                        <div class="col-lg-6 col-md-6">
                             <div class="form-group">
                                 <label for="nombre">Nombres (*)</label>
                                 <input type="text" name="nombre" id="nombre" class="form-control" placeholder=""
                                 value="{{isset($afiliados->nombre)?$afiliados->nombre:''}}" placeholder="Ejemplo: Luis" required max="100">   
                             </div>
                         </div>
-                        <div class="col-lg-5 col-md-5">
+                        <div class="col-lg-4 col-md-4">
                             <div class="form-group">
                                 <label for="apellidos">Apellidos (*)</label>
                                 <input type="text" name="apellidos" id="apellidos" class="form-control" placeholder=""
@@ -57,20 +57,20 @@
                                 value="{{isset($afiliados->direccion)?$afiliados->direccion:''}}" maxlength="50" placeholder="-- --">   
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4">
+                        <div class="col-lg-6 col-md-6">
                             <div class="form-group">
                                 <label for="genero">Género</label>
                                 <select class="form-control" name="genero" id="genero">
                                     @if ($afiliados->genero=="Masculino")
                                     {
-                                    <option value="" disabled >-- --</option>
-                                    <option value="Masculino" selected>Masculino</option>
-                                    <option value="Femenino">Femenino</option>
+                                        <option value="" disabled >-- --</option>
+                                        <option value="Masculino" selected>Masculino</option>
+                                        <option value="Femenino">Femenino</option>
                                     }
                                     @elseif($afiliados->genero=="Femenino")
-                                    <option value="" disabled selected>-- --</option>
-                                    <option value="Masculino">Masculino</option>
-                                    <option value="Femenino">Femenino</option>
+                                        <option value="" disabled selected>-- --</option>
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
                                     @else
                                     {
                                         <option value="" disabled selected>-- --</option>
@@ -82,7 +82,7 @@
                                 </select>   
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4">
+                        <div class="col-lg-6 col-md-6">
                             <div class="form-group">
                                 <label for="fecha_nacimiento">Fecha de nacimiento</label>
                                 <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" class="form-control" placeholder=""

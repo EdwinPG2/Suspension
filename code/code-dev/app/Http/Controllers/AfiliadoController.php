@@ -83,7 +83,6 @@ class AfiliadoController extends Controller
     {
         $request->validate([
             'no_afiliado' => 'required|max:11',
-            'cui' => 'required|max:13',
             'nombre' => 'required|max:100',
             'apellidos' => 'required|max:100',
             'telefono' => 'required|max:15',
