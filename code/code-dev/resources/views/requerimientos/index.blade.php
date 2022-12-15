@@ -10,6 +10,17 @@
             <div class="card mb-4">
                 <div class="card-header">
                     <div class="row justify-content-between">
+                        <div align="left">
+                        <h4>Seleccione que tipo de requerimientos desea ver:</h4>
+                        <a href="{{route('req.index')}}" class="btn btn-info">Resueltos</a>
+                        <a href="{{route('requerimientos.espera')}}" class="btn btn-info">En espera</a>
+                        <a href="{{route('requerimientos.generados')}}" class="btn btn-info">Generados</a>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <div class="row justify-content-between">
                         <h4>Listado de requerimientos</h4>
                         @can('requerimiento-create')
                             <a type="button" class="btn btn-primary" href="{{ route('requerimientos.create') }}"><i

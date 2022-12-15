@@ -158,4 +158,20 @@ class RequerimientoController extends Controller
         
         return redirect()->route('req.index');
     }
+
+    public function espera()
+    {
+
+        $oficios = Oficio::all();
+        $requerimientos = Requerimiento::where('estado','En espera')->take(50)->get();
+        return view('requerimientos.index', compact('oficios', 'requerimientos'));
+    }
+    public function generado()
+    {
+
+        $oficios = Oficio::all();
+        $requerimientos = Requerimiento::where('estado','Generado')->take(50)->get();
+        return view('requerimientos.index', compact('oficios', 'requerimientos'));
+
+    }
 }

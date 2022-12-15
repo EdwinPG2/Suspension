@@ -18,10 +18,10 @@ class ReqController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index()//requerimientos resueltos
     {
         $oficios = Oficio::all();
-        $requerimientos = Requerimiento::all();
+        $requerimientos = Requerimiento::where('estado','Resuelto')->take(50)->get();
         return view('requerimientos.index', compact('oficios', 'requerimientos'));
     }
 

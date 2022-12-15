@@ -68,6 +68,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('/editarformularios', FormularioSuspencionEditController::class);
     Route::resource('/requerimientos', RequerimientoController::class);
     Route::get('/requerimientos/aceptar/{id}', 'RequerimientoController@aceptar')->name('requerimientos.aceptar');
+    Route::get('/requerimientos','RequerimientoController@espera')->name('requerimientos.espera');
+    Route::get('/requerimiento','RequerimientoController@generado')->name('requerimientos.generados');
 
     Route::resource('/editaroficios', EditarOficioController::class);
     Route::resource('/agregarsuspenciones', EditarOficioSuspencionController::class);
