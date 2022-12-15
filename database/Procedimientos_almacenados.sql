@@ -176,7 +176,7 @@ CREATE EVENT reiniciar_correlativo
         UPDATE clinica_servicio SET correlativo = '1', correlativo_rechazado = '1';
 END$$
 
-drop procedure if exists rechazos_usuario;
+drop procedure if exists rechazos_registrador;
 DELIMITER $$
 CREATE PROCEDURE `rechazos_registrador`(in fechai datetime ,in fechaf datetime,in usuario int)
 begin
