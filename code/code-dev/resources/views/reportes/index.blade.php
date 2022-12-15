@@ -14,6 +14,7 @@
                 <option value="3">Suspenciones rechazadas de registradores</option>
                 <option value="4">Suspenciones rechazadas de revisores</option>
                 <option value="5">Suspenciones rechazadas por area, especialidad, clinica/servicio</option>
+                <option value="6">Requerimientos generados, en espera y respondidos</option>
 
             </select>
         </div>
@@ -369,6 +370,67 @@
 
         </div>
     </div>
+    <div id="cont_requerimientos" style="display:none;">
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-xs-12">
+                <div class="card mb-4">
+                    <form action="{{ route('reportes.store') }}" method="post">
+                        @csrf
+                        <input type="text" hidden name="condicion" id="condicion"class="form-control" value="5">
+                        <div class="card-header">
+                            <div class="row justify-content-between">
+                                <h4>Reporte de requerimientos genenerados, en espera y respondidos</h4>
+                            </div>
+                            <div class="row justify-content-between">
+                                <h5>Seleccione rango de fechas</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <input type="date" name="fechai" id="fechai"class="form-control" value=""
+                                        required>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <input type="date" name="fechaf" id="fechaf" max="{{ date('Y-m-d') }}"
+                                        class="form-control" value="" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-header">
+                            <h4>Seleccione una opcion</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <label for="requerimiento">Seleccione reporte</label>
+                                    <select class="form-control" name="requerimiento" id="requerimiento">
+                                        <option value="generado">Requerimientos generados</option>
+                                        <option value="espera">Requerimientos en espera de respuesta</option>
+                                        <option value="respondido">Requerimientos respondidos</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="card-header">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Descargar reporte <i
+                                            class="fas fa-download"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
 @endsection
 <script type="text/javascript">
     function showContent() {
@@ -403,6 +465,13 @@
 
         element = document.getElementById("cont_rechazos_clinica");
         if (check.value == 5) {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+
+        element = document.getElementById("cont_requerimientos");
+        if (check.value == 6) {
             element.style.display = 'block';
         } else {
             element.style.display = 'none';

@@ -17,13 +17,15 @@ class ReportesExport implements FromView, ShouldAutoSize
     protected $data;
     protected $item;
     protected $rechazos;
+    protected $requerimiento;
     
 
-    public function __construct(array $data,array $item, array $rechazos)
+    public function __construct(array $data,array $item, array $rechazos,array $requerimiento)
     {
         $this->data = $data;
         $this->item = $item;
         $this->rechazos = $rechazos;
+        $this->requerimiento = $requerimiento;
     }
     public function view():View
     {
@@ -152,6 +154,37 @@ class ReportesExport implements FromView, ShouldAutoSize
             return view('report.rechazos',[
                 'data' => $collection
             ]);
+            }
+            
+        }
+        elseif($this->requerimiento!=null)
+        {
+            $fechai=$this->requerimiento[0];
+            $fechaf=$this->requerimiento[1];
+            $requerimiento=$this->requerimiento[2];
+            
+            if($requerimiento=='generado')
+            {
+                $result =DB::select("call requerimientos_enviados('".$fechai."','".$fechaf."')");
+                $collection = collect($result);
+
+            return view('report.requerimientos',[
+                'data' => $collection
+            ]);
+            }
+            elseif ($requerimiento=='espera') {
+                $result =DB::select("call requerimientos_en_espera('".$fechai."','".$fechaf."')");
+                $collection = collect($result);
+                return view('report.requerimientos',[
+                    'data' => $collection
+                ]);
+            }
+            elseif ($requerimiento=='respondido') {
+                $result =DB::select("call requerimientos_respondidos('".$fechai."','".$fechaf."')");
+                $collection = collect($result);
+                return view('report.requerimientos',[
+                    'data' => $collection
+                ]);
             }
             
         }
