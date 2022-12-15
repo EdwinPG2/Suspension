@@ -329,7 +329,7 @@
                                     <label for="areas2">Seleccione area</label>
                                     <select class="form-control" name="areas2" id="areas2"
                                         onclick="cargar_especialidad2()">
-                                        <option value="">-- Seleccione un area --</option>
+                                        <option value=""selected disabled>-- Seleccione un area --</option>
                                         @foreach ($areas as $item3)
                                             <option value="{{ $item3->id_area }}">{{ $item3->nombre }}</option>
                                         @endforeach
@@ -341,7 +341,7 @@
                                     <label for="especialidad2">Seleccione especialidad</label>
                                     <select class="form-control" name="especialidad2" id="especialidad2"
                                         onclick="cargar_clinica_servicios2()">
-                                        <option value="">-- Seleccione especialidad --</option>
+                                        <option value=""selected disabled>-- Seleccione especialidad --</option>
 
                                     </select>
                                 </div>
@@ -350,7 +350,7 @@
                                 <div class="form-group">
                                     <label for="id_clinica_servicio2">Seleccione clinica/servicio</label>
                                     <select class="form-control" name="id_clinica_servicio2" id="id_clinica_servicio2">
-                                        <option value="">-- Seleccione clinica/servicio --</option>
+                                        <option value=""selected disabled>-- Seleccione clinica/servicio --</option>
 
                                     </select>
                                 </div>

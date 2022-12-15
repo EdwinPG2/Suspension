@@ -117,7 +117,7 @@ class ReporteController extends Controller
             $especialidad=$request->get('especialidad2');
             $clinica=$request->get('id_clinica_servicio2');
             
-            $exportResult=new ReportesExport([],[],[$fechai,$fechaf,null,null,$area,$especialidad,$clinica]);
+            $exportResult=new ReportesExport([],[],[$fechai,$fechaf,null,null,$area,$especialidad,$clinica],[]);
     
             $data = Excel::download($exportResult, 'Reporte'.$date->toDateTimeString().'.xlsx');
     
