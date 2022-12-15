@@ -15,6 +15,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+
+use function Symfony\Component\HttpFoundation\Session\Storage\Handler\close;
+
 class OficioController extends Controller
 {
     
@@ -82,14 +85,20 @@ class OficioController extends Controller
 
     public function edit($id)
     {
-        
-        $formularios = DB::select('call formularios_suspencion_oficio('.$id.')');
-        $ofi_susp = OficioSuspencion::where('id_oficio',$id)->get();
-        $oficio = Oficio::find($id);
-        $pdf = PDF::loadView('oficios.pdf', ['formularios'=>$formularios, 'ofi_susp'=>$ofi_susp, 'oficio'=>$oficio]);
-        $pdf->setPaper('letter', 'portrait');
-        $pdf->render();
-        return $pdf->stream();
+        try {
+
+            $formularios = DB::select('call formularios_suspencion_oficio('.$id.')');
+            $ofi_susp = OficioSuspencion::where('id_oficio',$id)->get();
+            $oficio = Oficio::find($id);
+            $pdf = PDF::loadView('oficios.pdf', ['formularios'=>$formularios, 'ofi_susp'=>$ofi_susp, 'oficio'=>$oficio]);
+            $pdf->setPaper('letter', 'portrait');
+            $pdf->render();
+            return $pdf->stream();
+            
+        } catch (\Throwable $th) {
+            alert()->info('Oficio sin suspensiones');
+            return back();
+        }   
     }
 
     public function detalles($id)
