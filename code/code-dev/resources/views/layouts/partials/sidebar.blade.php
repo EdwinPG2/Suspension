@@ -228,7 +228,7 @@
     
 
 
-
+    @can('historial-afiliado')
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHist"
             aria-expanded="true" aria-controls="collapseHist">
@@ -237,14 +237,15 @@
         </a>
         <div id="collapseHist" class="collapse" aria-labelledby="headingHist" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                @can('historial-afiliado')
+                
                 <a class="collapse-item" href="{{ url('historial') }}">
                     <i class="fas fa-id-card fa-fw"></i> Afiliado
                 </a>
-                @endcan
+                
             </div>
         </div>  
     </li>
+    @endcan
 
 
     <!-- Divider -->

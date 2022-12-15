@@ -137,11 +137,6 @@ class PermissionTableSeeder extends Seeder
             'susp-edit',
             'susp-delete',
 
-            'changes_password-list',
-            'changes_password-update',
-            'changes_password-resetpass',
-            'changes_password-delete',
-
             'slidebar-registrador',
             'slidebar-revisor',
             'slidebar-visor',
