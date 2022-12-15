@@ -287,7 +287,8 @@ drop procedure if exists requerimientos_enviados;
 DELIMITER $$
 CREATE PROCEDURE `requerimientos_enviados`(in fechai datetime ,in fechaf datetime)
 begin
-	select * from requerimiento 
+	select * ,afiliado.nombre, afiliado.apellidos from requerimiento 
+    inner join afiliado on requerimiento.no_afiliado = afiliado.no_afiliado
 WHERE requerimiento.fecha_requerimiento BETWEEN fechai AND fechaf
 and requerimiento.estado='Generado';
 end
@@ -297,7 +298,8 @@ drop procedure if exists requerimientos_en_espera;
 DELIMITER $$
 CREATE PROCEDURE `requerimientos_en_espera`(in fechai datetime ,in fechaf datetime)
 begin
-	select * from requerimiento 
+	select * ,afiliado.nombre, afiliado.apellidos from requerimiento 
+    inner join afiliado on requerimiento.no_afiliado = afiliado.no_afiliado
 WHERE requerimiento.fecha_requerimiento BETWEEN fechai AND fechaf
 and requerimiento.estado='En espera';
 end
@@ -307,7 +309,8 @@ drop procedure if exists requerimientos_respondidos;
 DELIMITER $$
 CREATE PROCEDURE `requerimientos_respondidos`(in fechai datetime ,in fechaf datetime)
 begin
-	select * from requerimiento 
+	select * ,afiliado.nombre, afiliado.apellidos from requerimiento 
+    inner join afiliado on requerimiento.no_afiliado = afiliado.no_afiliado
 WHERE requerimiento.fecha_requerimiento BETWEEN fechai AND fechaf
 and requerimiento.estado='Resuelto';
 end
