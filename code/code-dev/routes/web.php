@@ -59,7 +59,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('/clinicas_servicios', ClinicaServicioController::class);
     Route::resource('usuarios', UserController::class);
     Route::resource('roles', RoleController::class);
-    Route::resource('permission', PermissionController::class);
+
     
 
     route::resource('/ofisusp', Oficio_SuspencionController::class);
@@ -98,7 +98,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('/respuesta', Respuesta_ReqController::class); 
     Route::resource('/historial', BusquedaHistorialController::class);
 
-    Route::get('/export', [ExportController::class,'exportResult'])->name('reportes');
 
 });
 

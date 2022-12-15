@@ -147,4 +147,15 @@ class RequerimientoController extends Controller
         
         return redirect()->route('requerimientos.index');
     }
+
+    public function aceptar($id)
+    {
+        $requerimiento = Requerimiento::find($id);
+        $requerimiento->estado = 'Resuelsto';
+        $requerimiento->save();
+
+        alert()->success('Requerimiento aceptado');
+        
+        return redirect()->route('requerimientos.index');
+    }
 }
