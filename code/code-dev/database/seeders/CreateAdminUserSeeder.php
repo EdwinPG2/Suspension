@@ -23,6 +23,7 @@ class CreateAdminUserSeeder extends Seeder
             'apellido' => 'López Martinez',
             'email' => 'francicoi.lopez@igssgt.org',
             'password' => bcrypt('Igssxela'),
+            'role_id' => $role->id,
         ]);
         
         $permissions = Permission::pluck('id','id')->all();
