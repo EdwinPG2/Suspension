@@ -113,9 +113,9 @@ class ReporteController extends Controller
             $fechai=$request->get('fechai');
             $fechaf=$request->get('fechaf');
             $revisor=$request->get('usuario');
-            $area=$request->get('areas');
-            $especialidad=$request->get('especialidad');
-            $clinica=$request->get('id_clinica_servicio');
+            $area=$request->get('areas2');
+            $especialidad=$request->get('especialidad2');
+            $clinica=$request->get('id_clinica_servicio2');
             
             $exportResult=new ReportesExport([],[],[$fechai,$fechaf,null,null,$area,$especialidad,$clinica]);
     

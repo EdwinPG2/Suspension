@@ -325,9 +325,9 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="areas">Seleccione area</label>
-                                    <select class="form-control" name="areas" id="areas"
-                                        onclick="cargar_especialidad()">
+                                    <label for="areas2">Seleccione area</label>
+                                    <select class="form-control" name="areas2" id="areas2"
+                                        onclick="cargar_especialidad2()">
                                         <option value="">-- Seleccione un area --</option>
                                         @foreach ($areas as $item3)
                                             <option value="{{ $item3->id_area }}">{{ $item3->nombre }}</option>
@@ -337,9 +337,9 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="especialidad">Seleccione especialidad</label>
-                                    <select class="form-control" name="especialidad" id="especialidad"
-                                        onclick="cargar_clinica_servicios()">
+                                    <label for="especialidad2">Seleccione especialidad</label>
+                                    <select class="form-control" name="especialidad2" id="especialidad2"
+                                        onclick="cargar_clinica_servicios2()">
                                         <option value="">-- Seleccione especialidad --</option>
 
                                     </select>
@@ -347,8 +347,8 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="id_clinica_servicio">Seleccione clinica/servicio</label>
-                                    <select class="form-control" name="id_clinica_servicio" id="id_clinica_servicio">
+                                    <label for="id_clinica_servicio2">Seleccione clinica/servicio</label>
+                                    <select class="form-control" name="id_clinica_servicio2" id="id_clinica_servicio2">
                                         <option value="">-- Seleccione clinica/servicio --</option>
 
                                     </select>
@@ -505,6 +505,73 @@
 
         document.getElementById("id_clinica_servicio").innerHTML = "";
         var select = document.getElementsByName("id_clinica_servicio")[0];
+
+        //console.log(filtro_area);
+        //console.log(list_clinicas_servicios);
+        var option = document.createElement("option");
+        option.value = "";
+        option.text = "-- Seleccione clinica/servicio --";
+        select.add(option);
+
+
+        for (x in result) {
+            var option = document.createElement("option");
+            option.value = result[x].id_clinica_servicio;
+            option.text = result[x].nombre;
+            select.add(option);
+        }
+
+    }
+    function cargar_especialidad2() {
+        let area = document.getElementById('areas2');
+
+        list_clinicas_servicios = @json($clinicas_servicios);
+        list_especialidades = @json($especialidads);
+        //let especialidades = list_especialidades.find(x => x.id_area == area.value);
+        let result = list_clinicas_servicios.filter(a => a.id_area == area.value);
+
+        const result_especialidad = list_especialidades.map(esp => {
+            for (let i = 0; i < result.length; i++) {
+                if (esp.id_especialidad == result[i].id_especialidad) {
+                    return esp;
+                }
+            }
+        });
+        //console.log(result_especialidad);
+
+
+        document.getElementById("especialidad2").innerHTML = "";
+        document.getElementById("id_clinica_servicio2").innerHTML = ""; //para limpiar el ultimo nivel
+
+        var select = document.getElementsByName("especialidad2")[0];
+
+        var option = document.createElement("option");
+        option.value = "";
+        option.text = "-- Seleccione especialidad --";
+        select.add(option);
+
+        for (let x = 0; x < result_especialidad.length; x++) {
+            if (result_especialidad[x] != undefined) {
+                var option = document.createElement("option");
+                option.value = result_especialidad[x].id_especialidad;
+                option.text = result_especialidad[x].nombre_especialidad;
+                select.add(option);
+            }
+        }
+
+    }
+
+    function cargar_clinica_servicios2() {
+        let area = document.getElementById('areas2');
+        let especialidad = document.getElementById('especialidad2');
+
+        list_clinicas_servicios = @json($clinicas_servicios);
+
+        filtro_area = list_clinicas_servicios.filter(x => x.id_area == area.value);
+        result = filtro_area.filter(x => x.id_especialidad == especialidad.value);;
+
+        document.getElementById("id_clinica_servicio2").innerHTML = "";
+        var select = document.getElementsByName("id_clinica_servicio2")[0];
 
         //console.log(filtro_area);
         //console.log(list_clinicas_servicios);
