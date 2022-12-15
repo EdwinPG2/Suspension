@@ -107,6 +107,22 @@ class ReporteController extends Controller
     
             return $data;
         }
+
+        if($condicion== 4)
+        {
+            $fechai=$request->get('fechai');
+            $fechaf=$request->get('fechaf');
+            $revisor=$request->get('usuario');
+            $area=$request->get('areas');
+            $especialidad=$request->get('especialidad');
+            $clinica=$request->get('id_clinica_servicio');
+            
+            $exportResult=new ReportesExport([],[],[$fechai,$fechaf,null,null,$area,$especialidad,$clinica]);
+    
+            $data = Excel::download($exportResult, 'Reporte'.$date->toDateTimeString().'.xlsx');
+    
+            return $data;
+        }
         
     }
 
