@@ -94,7 +94,7 @@
                 </a>
             
                 @endcan
-                @can('rev_suspension-list')
+                @can('respuesta-requerimiento-list')
                 <a class="collapse-item" href="{{ url('respuesta') }}">
                     <i class="fas fa-id-card fa-fw"></i> Revisión requerimientos
                 </a>

@@ -125,6 +125,8 @@ class PermissionTableSeeder extends Seeder
             'req-edit',
             'req-delete',
 
+            'respuesta-requerimiento-list',
+
             'requerimiento-list',
             'requerimiento-create',
             'requerimiento-edit',
