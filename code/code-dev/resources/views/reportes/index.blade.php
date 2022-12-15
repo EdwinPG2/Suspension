@@ -229,6 +229,66 @@
 
         </div>
     </div>
+    <div id="cont_rechazos_revisor" style="display:none;">
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-xs-12">
+                <div class="card mb-4">
+                    <form action="{{ route('reportes.store') }}" method="post">
+                        @csrf
+                        <input type="text" hidden name="condicion" id="condicion"class="form-control" value="3">
+                        <div class="card-header">
+                            <div class="row justify-content-between">
+                                <h4>Suspensiones rechazadas de revisores</h4>
+                            </div>
+                            <div class="row justify-content-between">
+                                <h5>Seleccione rango de fechas</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <input type="date" name="fechai" id="fechai"class="form-control" value=""
+                                        required>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <input type="date" name="fechaf" id="fechaf" max="{{ date('Y-m-d') }}"
+                                        class="form-control" value="" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-header">
+                            <h4>Usuario</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <label for="usuario">Seleccione usuario</label>
+                                    <select class="form-control" name="usuario" id="usuario" required>
+                                        <option value="" disabled selected>-- Seleccione un usuario --</option>
+                                        @foreach ($usuarios as $item4)
+                                            <option value="{{ $item4->id }}">{{ $item4->name }} {{ $item4->apellido }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-header">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Descargar reporte <i
+                                            class="fas fa-download"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
 @endsection
 <script type="text/javascript">
     function showContent() {
@@ -246,8 +306,16 @@
         } else {
             element.style.display = 'none';
         }
+
         element = document.getElementById("cont_rechazos_registrador");
         if (check.value == 3) {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+
+        element = document.getElementById("cont_rechazos_revisor");
+        if (check.value == 4) {
             element.style.display = 'block';
         } else {
             element.style.display = 'none';
@@ -286,8 +354,6 @@
                 option.value = list_dependencias[x].id_dependencia;
                 option.text = list_dependencias[x].nombre;
                 select.add(option);
-
-
             }
         }
         if (check.value == 3) {
@@ -297,8 +363,6 @@
                 option.value = list_cargos[x].id_cargo;
                 option.text = list_cargos[x].nombre;
                 select.add(option);
-
-
             }
         }
 

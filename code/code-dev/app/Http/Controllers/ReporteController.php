@@ -95,6 +95,18 @@ class ReporteController extends Controller
     
             return $data;
         }
+        if($condicion== 3)
+        {
+            $fechai=$request->get('fechai');
+            $fechaf=$request->get('fechaf');
+            $revisor=$request->get('usuario');
+            
+            $exportResult=new ReportesExport([],[],[$fechai,$fechaf,null,$revisor,null,null,null]);
+    
+            $data = Excel::download($exportResult, 'Reporte'.$date->toDateTimeString().'.xlsx');
+    
+            return $data;
+        }
         
     }
 
