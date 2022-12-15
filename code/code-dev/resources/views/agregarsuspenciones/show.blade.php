@@ -54,7 +54,7 @@
 
                     <div class="row justify-content-between">
                         <button type="submit" class="btn btn-primary">AGREGAR</button>
-                        <a type="button" class="btn btn-danger" href="{{ route ('oficios.index')}}">CANCELAR</a>
+                        <a type="button" class="btn btn-danger" href="{{ route ('oficios.index')}}">NO AGREGAR</a>
                     </div>
                 </form>
             </div>
