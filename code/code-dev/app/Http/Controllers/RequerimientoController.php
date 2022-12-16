@@ -47,7 +47,6 @@ class RequerimientoController extends Controller
                 'no_requerimiento' => 'required|max:50',
                 'fecha_requerimiento' => 'required|date:d/m/Y',
                 'estado' => 'required|max:20',
-                'observaciones' => 'required|max:300',
     
             ])->validate();
             

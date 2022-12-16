@@ -29,14 +29,14 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="nombre">Nombre de afiliado</label>
+                                    <label for="nombre">Nombre de afiliado*</label>
                                     <input type="text" name="nombre_afiliado" id="nombre_afiliado" class="form-control"
                                         placeholder="" value="" disabled>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="apellidos">Apellido de afiliado</label>
+                                    <label for="apellidos">Apellido de afiliado*</label>
                                     <input type="text" name="apellidos_afiliado" id="apellidos_afiliado"
                                         class="form-control" placeholder="" disabled>
                                 </div>
@@ -47,14 +47,14 @@
                                 <div class="form-group">
                                     <label for="no_requerimiento">Requerimiento no:</label>
                                     <input type="text" name="no_requerimiento" id="no_requerimiento" class="form-control"
-                                        placeholder="">
+                                        placeholder="" required>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="fecha_requerimiento">Fecha de requerimiento</label>
                                     <input type="date" name="fecha_requerimiento" id="fecha_requerimiento"
-                                        class="form-control" placeholder="">
+                                        class="form-control" placeholder="" required>
                                 </div>
                             </div>
                             <div class="col-lg-8 col-md-8">
@@ -82,7 +82,7 @@
                         </div>
                         <div class="row justify-content-between">
                             <button type="submit" class="btn btn-primary">GUARDAR</button>
-                            <a type="button" class="btn btn-danger" href="{{ url('revreq') }}">CANCELAR</a>
+                            <a type="button" class="btn btn-danger" href="{{ url('req') }}">CANCELAR</a>
                         </div>
                     </form>
                 </div>
