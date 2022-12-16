@@ -11,7 +11,7 @@
                 <h4>Agregar datos del afiliado</h4>
             </div>
             <div class="card-body">
-                <form action="{{ route('afiliados.store') }}" method="post">
+                <form action="{{ route('afiliados.store') }}" method="post" autocomplete="off">
                 @csrf   
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
@@ -23,7 +23,7 @@
                     <div class="col-lg-3 col-md-3">
                         <div class="form-group">
                             <label for="cui">Cui</label>
-                            <input type="text" name="cui" id="cui" class="form-control" placeholder="Ejemplo: 12345" maxlength="13" pattern="[0-9]*" title="Ingrese solamente numeros">   
+                            <input type="text" name="cui" id="cui" class="form-control" placeholder="Ejemplo: 12345" minlength="13" maxlength="13" pattern="[0-9]*" title="Ingrese solamente numeros">   
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
