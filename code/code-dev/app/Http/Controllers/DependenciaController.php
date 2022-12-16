@@ -39,7 +39,7 @@ class DependenciaController extends Controller
 
         $dependencia->save();
 
-        alert()->success('Dependencia guardado correctamente');
+        alert()->success('Dependencia guardada correctamente');
 
         return redirect()->route('dependencias.index');
     }

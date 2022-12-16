@@ -17,7 +17,7 @@
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
                                 <label for="nombre">Nombre</label>
-                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese nombre de dependencia">   
+                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese nombre de dependencia" required>   
                             </div>
                         </div>
                     </div>

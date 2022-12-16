@@ -19,13 +19,12 @@
                 <table id="dt-riesgos" class="table table-striped table-bordered dts">
                     <thead>
                         <th> Nombre de riesgo </th>
-                        <th> Descripción de riesgo </th>
+                        <th> Opciones</th>
                     </thead>
                     <tbody>
                         @foreach($riesgos as $item)
                         <tr class="text-center">
                             <td>{{ $item->nombre }}</td>
-                            <td>{{ $item->descripcion }}</td>
                             <td colspan="2">
                                 @can('riesgo-edit')
                                     <a href="{{ route ('riesgos.edit', $item-> id) }}"

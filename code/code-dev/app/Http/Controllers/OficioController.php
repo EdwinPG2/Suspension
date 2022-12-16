@@ -87,18 +87,18 @@ class OficioController extends Controller
     {
         try {
 
-            $formularios = DB::select('call formularios_suspencion_oficio('.$id.')');
-            $ofi_susp = OficioSuspencion::where('id_oficio',$id)->get();
-            $oficio = Oficio::find($id);
-            $pdf = PDF::loadView('oficios.pdf', ['formularios'=>$formularios, 'ofi_susp'=>$ofi_susp, 'oficio'=>$oficio]);
-            $pdf->setPaper('letter', 'portrait');
-            $pdf->render();
-            return $pdf->stream();
             
         } catch (\Throwable $th) {
             alert()->info('Oficio sin suspensiones');
             return back();
         }   
+        $formularios = DB::select('call formularios_suspencion_oficio('.$id.')');
+        $ofi_susp = OficioSuspencion::where('id_oficio',$id)->get();
+        $oficio = Oficio::find($id);
+        $pdf = PDF::loadView('oficios.pdf', ['formularios'=>$formularios, 'ofi_susp'=>$ofi_susp, 'oficio'=>$oficio]);
+        $pdf->setPaper('letter', 'portrait');
+        $pdf->render();
+        return $pdf->stream();
     }
 
     public function detalles($id)

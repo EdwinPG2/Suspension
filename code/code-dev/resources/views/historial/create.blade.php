@@ -20,10 +20,10 @@
                         <div class="row">
                             <div class="col-lg-2 col-md-2">
                                 <div class="form-group">
-                                    <label for="nombre">Numero de afiliación</label>
+                                    <label for="nombre">Número de afiliación</label>
                                     <input type="text" name="no_afiliado" id="no_afiliado" class="form-control"
-                                        placeholder="Ingrese un numero" required maxlength="11" pattern="[0-9]*"
-                                        title="Ingrese solamente numeros" value="{{ isset($afiliado->no_afiliado) ? $afiliado->no_afiliado : '' }}">
+                                        placeholder="Ingrese un número" required maxlength="11" pattern="[0-9]*"
+                                        title="Ingresar solamente numeros" value="{{ isset($afiliado->no_afiliado) ? $afiliado->no_afiliado : '' }}">
                                 </div>
                             </div>
                             
@@ -54,7 +54,7 @@
                         <table id="dt-suspencions" class="table table-striped table-bordered dts">
                             <thead>
                                 <!--<th>Id</th>-->
-                                <th>No afiliación</th>
+                                <th>No. afiliación</th>
                                 <th>Nombres</th>
                                 <th>Fecha de inicio caso</th>
                                 <th>Fecha de inicio suspensión</th>
