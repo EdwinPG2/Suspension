@@ -33,6 +33,7 @@ class MedicoController extends Controller
 
     public function store(Request $request)
     {
+        try{
         validator::make($request->except('_token'), [
             'colegiado'=> 'required|max:10',
             'nombres' => 'required|max:45',
@@ -53,6 +54,11 @@ class MedicoController extends Controller
         alert()->success('Médico guardado correctamente');
 
         return redirect()->route('medico.index');
+    } catch (\Throwable $th) {
+        error_log($th);
+        alert()->error('Error al ingreso de datos, verifique campos y longitudes');
+        return redirect()->back();
+    }
     
     }
 
