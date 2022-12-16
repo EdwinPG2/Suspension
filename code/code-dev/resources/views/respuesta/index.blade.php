@@ -36,7 +36,7 @@
                                 @if($item->estado=='Generado')
                                 <a href="{{ route ('respuesta.show', $item->id_requerimiento) }}"
                                 class="btn btn-warning" >Generar respuesta</a>
-                                @elseif($item->estado=='Resuelto')
+                                @elseif($item->estado=='En espera')
                                 <a href="{{ route('respuesta.edit', $item->id_requerimiento) }}"
                                     class="btn btn-primary" target="_blank"><i class=""></i>PDF</a>
                                 @endif
