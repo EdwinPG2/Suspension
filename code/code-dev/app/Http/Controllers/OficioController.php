@@ -95,7 +95,7 @@ class OficioController extends Controller
         $formularios = DB::select('call formularios_suspencion_oficio('.$id.')');
         $ofi_susp = OficioSuspencion::where('id_oficio',$id)->get();
 
-        if(empty($ofi_susp)){
+        if($ofi_susp->count() > 0){
         $oficio = Oficio::find($id);
         $pdf = PDF::loadView('oficios.pdf', ['formularios'=>$formularios, 'ofi_susp'=>$ofi_susp, 'oficio'=>$oficio]);
         $pdf->setPaper('letter', 'portrait');
