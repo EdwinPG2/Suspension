@@ -41,7 +41,7 @@ class AfiliadoController extends Controller
         try {
             
             validator::make($request->except('_token'), [
-                'no_afiliado' => 'required|max:11',
+                'no_afiliado' => 'required|max:13',
                 'nombre' => 'required|max:100',
                 'apellidos' => 'required|max:100',
                 'telefono' => 'required|max:15',
@@ -91,7 +91,7 @@ class AfiliadoController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'no_afiliado' => 'required|max:11',
+            'no_afiliado' => 'required|max:13',
             'nombre' => 'required|max:100',
             'apellidos' => 'required|max:100',
             'telefono' => 'required|max:15',

@@ -14,7 +14,7 @@ class CreateAfiliadoTable extends Migration
     public function up()
     {
         Schema::create('afiliado', function (Blueprint $table) {
-            $table->integer('no_afiliado')->primary();
+            $table->bigInteger('no_afiliado')->primary();
             $table->string('cui', 15)->nullable();
             $table->string('nombre', 100);
             $table->string('apellidos', 100);
