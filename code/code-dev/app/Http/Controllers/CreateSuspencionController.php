@@ -113,7 +113,7 @@ class CreateSuspencionController extends Controller
 
             
         } catch (\Throwable $th) {
-            alert()->error('Error en los campos');
+            alert()->error('Error en los campos, revise el numero de médico y afiliado');
             return redirect()->route('createsuspencions.create');
             
         }
@@ -141,6 +141,7 @@ class CreateSuspencionController extends Controller
     }
     public function update(Request $request, $id)
     {
+        try{
         $request->validate([
             'fecha_inicio_suspension' => 'date:d/m/Y',
             'fecha_fin_suspension' => 'date:d/m/Y',
@@ -193,6 +194,12 @@ class CreateSuspencionController extends Controller
         alert()->success('Suspension actualizada correctamente');
 
         return redirect()->back();
+        
+    } catch (\Throwable $th) {
+        alert()->error('Error en los campos, revise el numero de médico y afiliado');
+        return redirect()->route('createsuspencions.create');
+        
+    }
     }
 
     public function destroy($id)

@@ -22,7 +22,7 @@
                                 <div class="form-group">
                                     <input type="text" name="no_afiliado" id="no_afiliado" class="form-control"
                                         placeholder="Ingrese un numero" value="{{ $suspencion->no_afiliado }}" required
-                                        maxlength="11" pattern="[0-9]*" title="Ingrese solamente numeros">
+                                        maxlength="13" pattern="[0-9]*" title="Ingrese solamente numeros">
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2">

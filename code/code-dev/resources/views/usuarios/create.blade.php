@@ -48,13 +48,13 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
                                 <label for="password">Password (*)</label>
-                                <input type="text" name="password" id="password" class="form-control" placeholder="Ingrese su contraseña" required maxlength="letras" pattern="*" title="Ingrese solamente letras">
+                                <input type="text" name="password" id="password" class="form-control" placeholder="Ingrese su contraseña" required maxlength="letras" pattern="*" title="Ingrese solamente letras" value="Igssxela">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
                                 <label for="confirm-password">Confirm Password (*)</label>
-                                <input type="text" name="confirm-password" id="confirm-password" class="form-control" placeholder="Confirme su contraseña" required maxlength="letras" pattern="*" title="Ingrese solamente letras">
+                                <input type="text" name="confirm-password" id="confirm-password" class="form-control" placeholder="Confirme su contraseña" required maxlength="letras" pattern="*" title="Ingrese solamente letras" value="Igssxela">
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12">
