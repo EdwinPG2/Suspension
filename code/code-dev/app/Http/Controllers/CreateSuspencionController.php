@@ -113,7 +113,7 @@ class CreateSuspencionController extends Controller
 
             
         } catch (\Throwable $th) {
-            alert()->error('Error en los campos');
+            alert()->error('Error en los campos, revise el numero de médico y afiliado');
             return redirect()->route('createsuspencions.create');
             
         }
@@ -196,7 +196,7 @@ class CreateSuspencionController extends Controller
         return redirect()->back();
         
     } catch (\Throwable $th) {
-        alert()->error('Error en los campos');
+        alert()->error('Error en los campos, revise el numero de médico y afiliado');
         return redirect()->route('createsuspencions.create');
         
     }
