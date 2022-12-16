@@ -44,8 +44,8 @@
 
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
-                                <label for="id_especialidad">Eliga especialidad de trabajo (*)</label>
-                                <select name="id_especialidad" id="id_especialidad" class="form-control select2" required>
+                                <label for="id_especialidad">Eliga especialidad de trabajo</label>
+                                <select name="id_especialidad" id="id_especialidad" class="form-control select2">
                                     <option value="" disabled selected>-- Seleccione una opcion --</option>
                                     @foreach($especialidades as  $item)
                                     <option value="{{ $item->id_especialidad }}" @if ($medicos->id_especialidad == $item->id_especialidad) selected="selected" @endif>
