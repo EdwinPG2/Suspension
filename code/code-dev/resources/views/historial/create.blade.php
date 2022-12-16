@@ -22,7 +22,7 @@
                                 <div class="form-group">
                                     <label for="nombre">Número de afiliación</label>
                                     <input type="text" name="no_afiliado" id="no_afiliado" class="form-control"
-                                        placeholder="Ingrese un número" required maxlength="11" pattern="[0-9]*"
+                                        placeholder="Ingrese un número" required maxlength="13" pattern="[0-9]*"
                                         title="Ingresar solamente numeros" value="{{ isset($afiliado->no_afiliado) ? $afiliado->no_afiliado : '' }}">
                                 </div>
                             </div>
