@@ -85,13 +85,6 @@ class OficioController extends Controller
 
     public function edit($id)
     {
-        try {
-
-            
-        } catch (\Throwable $th) {
-            alert()->info('Oficio sin suspensiones');
-            return back();
-        }   
         $formularios = DB::select('call formularios_suspencion_oficio('.$id.')');
         $ofi_susp = OficioSuspencion::where('id_oficio',$id)->get();
 

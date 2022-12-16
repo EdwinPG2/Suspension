@@ -22,7 +22,7 @@ class RequerimientoController extends Controller
     public function index()
     {
         $oficios = Oficio::all();
-        return view('requerimientos.index', compact('oficios'));
+        return view('rev_requerimientos.index', compact('oficios'));
     }
 
     public function create()
