@@ -17,13 +17,13 @@
                     <div class="col-lg-3 col-md-3">
                         <div class="form-group">
                             <label for="no_afiliado">Numero de afiliación (*)</label>
-                            <input type="text" name="no_afiliado" id="no_afiliado" class="form-control" placeholder="Ejemplo: 54321" required maxlength="15" pattern="[0-9]*" title="Ingrese solamente numeros">   
+                            <input type="text" name="no_afiliado" id="no_afiliado" class="form-control" placeholder="Ejemplo: 54321" required maxlength="11" pattern="[0-9]*" title="Ingrese solamente numeros">   
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3">
                         <div class="form-group">
                             <label for="cui">Cui</label>
-                            <input type="text" name="cui" id="cui" class="form-control" placeholder="Ejemplo: 12345" minlength="13" maxlength="13" pattern="[0-9]*" title="Ingrese solamente numeros">   
+                            <input type="text" name="cui" id="cui" class="form-control" placeholder="Ejemplo: 12345" maxlength="13" pattern="[0-9]*" title="Ingrese solamente numeros">   
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
