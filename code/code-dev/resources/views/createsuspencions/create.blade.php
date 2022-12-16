@@ -73,7 +73,7 @@
                             </div>
                         </div>
                         <div class="card-header">
-                            <h4>Suspension</h4>
+                            <h4>Suspensión</h4>
                         </div>
                         <div class="row">
                             <div class="col-lg-4 col-md-4">

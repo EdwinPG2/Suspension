@@ -19,7 +19,6 @@
                 <table id="dt-especialidades" class="table table-striped table-bordered dts">
                     <thead>
                         <th>Nombre</th>
-                        <th>Descripción</th>
                         <th>Opciones </th>
                     </thead>
                     <tbody>
@@ -27,7 +26,6 @@
                         <tr class="text-center">
                             
                             <td>{{ $item->nombre_especialidad }}</td>
-                            <td>{{ $item->descripcion }}</td>
                             <td>
                                     <a href="{{ route ('especialidades.edit', $item->id_especialidad) }}"
                                     class="btn btn-warning" ><i class="fas fa-edit"></i></a>
