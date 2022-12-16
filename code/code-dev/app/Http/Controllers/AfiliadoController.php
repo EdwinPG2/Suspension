@@ -37,7 +37,7 @@ class AfiliadoController extends Controller
 
     public function store(Request $request)
     {
-<<<<<<< HEAD
+
         try {
             
             validator::make($request->except('_token'), [
@@ -71,34 +71,7 @@ class AfiliadoController extends Controller
             alert()->error('Error al ingreso de datos, verifique campos y longitudes');
             return redirect()->back();
         }
-=======
-        validator::make($request->except('_token'), [
-            'no_afiliado' => 'required|max:11',
-            'nombre' => 'required|max:100',
-            'apellidos' => 'required|max:100',
-            'telefono' => 'required|max:15',
-        ])->validate();
-
-        $Afiliado = new Afiliado();
-        $Afiliado->no_afiliado = $request->get('no_afiliado');
-        $Afiliado->cui = $request->get('cui');
-        $Afiliado->nombre = $request->get('nombre');
-        $Afiliado->apellidos = $request->get('apellidos');
-        $Afiliado->telefono = $request->get('telefono');
-        $Afiliado->direccion = $request->get('direccion');
-        $Afiliado->genero = $request->get('genero');
-        $Afiliado->fecha_nacimiento = $request->get('fecha_nacimiento');
-        $Afiliado->ibm = $request->get('ibm');
-        $Afiliado->id_tipo_afiliado = $request->get('id_tipo_afiliado');
-        $Afiliado->reglon = $request->get('renglon');
-
-        $Afiliado->save();
-
-        alert()->success('Afiliado guardado correctamente');
-
-        return redirect()->route('afiliados.index');
         
->>>>>>> 6a5a09da26c794103acc3eff1c720614050f3ca2
         
     }
 
