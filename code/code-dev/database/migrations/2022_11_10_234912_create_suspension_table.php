@@ -24,7 +24,7 @@ class CreateSuspensionTable extends Migration
             $table->date('fecha_revision')->nullable();
             $table->string('observacion', 250)->nullable();
             $table->string('estado', 20);
-            $table->integer('no_afiliado');
+            $table->bigInteger('no_afiliado');
             $table->integer('id_clinica_servicio');
             $table->string('medico_colegiado', 10);
             $table->unsignedBigInteger('users_id_registrador');

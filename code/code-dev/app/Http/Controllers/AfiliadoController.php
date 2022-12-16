@@ -41,7 +41,7 @@ class AfiliadoController extends Controller
         try {
             
             validator::make($request->except('_token'), [
-                'no_afiliado' => 'required|max:11',
+                'no_afiliado' => 'required|max:13',
                 'nombre' => 'required|max:100',
                 'apellidos' => 'required|max:100',
                 'telefono' => 'required|max:15',
@@ -90,14 +90,16 @@ class AfiliadoController extends Controller
 
     public function update(Request $request, $id)
     {
+        try{
         $request->validate([
-            'no_afiliado' => 'required|max:11',
+            'no_afiliado' => 'required|max:13',
             'nombre' => 'required|max:100',
             'apellidos' => 'required|max:100',
             'telefono' => 'required|max:15',
         ]);
 
         $Afiliado = Afiliado::find($id);
+        $Afiliado->no_afiliado = $request->get('no_afiliado');
         $Afiliado->cui = $request->get('cui');
         $Afiliado->nombre = $request->get('nombre');
         $Afiliado->apellidos = $request->get('apellidos');
@@ -113,6 +115,13 @@ class AfiliadoController extends Controller
         alert()->success('Afiliado actualizado correctamente');
 
         return redirect()->route('afiliados.index');
+        } catch (\Throwable $th) {
+
+        error_log($th);
+        alert()->error('Error al ingreso de datos, verifique campos y longitudes');
+        return redirect()->back();
+        
+        }
     }
 
     public function destroy($id)

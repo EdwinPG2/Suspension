@@ -22,7 +22,7 @@ class CreateRequerimientoTable extends Migration
             $table->string('observaciones', 300)->nullable();
             $table->date('fecha_recepcion_regmed')->nullable();
             $table->integer('id_oficio')->nullable();
-            $table->integer('no_afiliado');
+            $table->bigInteger('no_afiliado');
             $table->unsignedBigInteger('users_id_remitente');
             $table->unsignedBigInteger('users_id_responsable')->nullable();
             $table->string('archivo', 145)->nullable();

@@ -11,7 +11,7 @@
                 <h4>Editar datos de médico</h4>
             </div>
             <div class="card-body">
-                <form action="{{ route('medico.update', $medicos->colegiado) }}" method="post">
+                <form action="{{ route('medico.update', $medicos->colegiado) }}" method="post" autocomplete="off">
                     @method('PATCH')
                     @csrf
                     <div class="row">
@@ -30,8 +30,8 @@
                         </div>
                         <div class="col-lg-8 col-md-8">
                             <div class="form-group">
-                                <label for="especialidad">Especialidad (*)</label>
-                                <input type="text" name="especialidad" value="{{ $medicos->especialidad}}" id="especialidad" class="form-control" placeholder="Ingrese especialidad"  required maxlength="45">   
+                                <label for="especialidad">Especialidad</label>
+                                <input type="text" name="especialidad" value="{{ $medicos->especialidad}}" id="especialidad" class="form-control" placeholder="Ingrese especialidad"  maxlength="45">   
                             </div>
                         </div>
                     </div>
@@ -44,8 +44,9 @@
 
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
-                                <label for="id_especialidad">Eliga especialidad de trabajo (*)</label>
-                                <select name="id_especialidad" id="id_especialidad" class="form-control select2" required>
+                                <label for="id_especialidad">Eliga especialidad de trabajo</label>
+                                <select name="id_especialidad" id="id_especialidad" class="form-control select2">
+                                    <option value="" disabled selected>-- Seleccione una opcion --</option>
                                     @foreach($especialidades as  $item)
                                     <option value="{{ $item->id_especialidad }}" @if ($medicos->id_especialidad == $item->id_especialidad) selected="selected" @endif>
                                         {{ $item->nombre_especialidad }}</option>
