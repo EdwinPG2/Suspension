@@ -37,9 +37,6 @@ class MedicoController extends Controller
         validator::make($request->except('_token'), [
             'colegiado'=> 'required|max:10',
             'nombres' => 'required|max:45',
-		    'especialidad' => 'required|max:45',
-		    'telefono' => 'exclude|max:11',
-            'id_especialidad' => 'required|max:5',
         ])->validate();
 
         $medico = new Medico();
@@ -54,11 +51,11 @@ class MedicoController extends Controller
         alert()->success('Médico guardado correctamente');
 
         return redirect()->route('medico.index');
-    } catch (\Throwable $th) {
-        error_log($th);
-        alert()->error('Error al ingreso de datos, verifique campos y longitudes');
-        return redirect()->back();
-    }
+        } catch (\Throwable $th) {
+            error_log($th);
+            alert()->error('Error al ingreso de datos, verifique campos y longitudes');
+            return redirect()->back();
+        }
     
     }
 
@@ -77,12 +74,10 @@ class MedicoController extends Controller
     public function update(Request $request, $id)
     {
         
-        alert('Holi');
+        try{
         $request->validate([
+            'colegiado'=> 'required|max:10',
             'nombres' => 'required|max:45',
-		    'especialidad' => 'required|max:45',
-		    'telefono' => 'exclude|max:10',
-            'id_especialidad' => 'required|max:5',
         ]);
         $medico = Medico::find($id);
         $medico->colegiado=$request->get('colegiado');
@@ -96,6 +91,11 @@ class MedicoController extends Controller
         alert()->success('Médico actualizado correctamente');
 
         return redirect()->route('medico.index');
+    } catch (\Throwable $th) {
+        error_log($th);
+        alert()->error('Error al ingreso de datos, verifique campos y longitudes');
+        return redirect()->back();
+    }
     }
 
     public function destroy($id)
