@@ -22,8 +22,8 @@
                         </div>
                         <div class="col-lg-2 col-md-2">
                             <div class="form-group">
-                                <label for="descripcion">Correlativo (*)</label>
-                                <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="-- --" required maxlength="20">   
+                                <label for="descripcion">Nomenclatura (*)</label>
+                                <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="" required maxlength="20" required>   
                             </div>
                         </div>
                     </div>

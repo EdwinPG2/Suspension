@@ -41,40 +41,45 @@ class RequerimientoController extends Controller
         $date = Carbon::now();
         $fecha_env = $date->toDateString();
 
-        validator::make($request->except('_token'), [
-            'no_requerimiento' => 'required|max:50',
-            'fecha_requerimiento' => 'required|date:d/m/Y',
-            'estado' => 'required|max:20',
-            'observaciones' => 'required|max:300',
+        try {
 
-        ])->validate();
-        
-            $requerimiento = new Requerimiento();
-            $requerimiento->no_requerimiento = $request->get('no_requerimiento');
-            $requerimiento->fecha_requerimiento = $request->get('fecha_requerimiento');
-            $requerimiento->fecha_envio = $fecha_env;
-            $requerimiento->estado = $request->get('estado');
-            $requerimiento->observaciones = $request->get('observaciones');
-            $requerimiento->fecha_recepcion_regmed = $request->get('fecha_recepcion_regmed');
-            $requerimiento->no_afiliado = $request->get('no_afiliado');
-            $requerimiento->users_id_remitente = Auth::user()->id;
+            validator::make($request->except('_token'), [
+                'no_requerimiento' => 'required|max:50',
+                'fecha_requerimiento' => 'required|date:d/m/Y',
+                'estado' => 'required|max:20',
+                'observaciones' => 'required|max:300',
+    
+            ])->validate();
+            
+                $requerimiento = new Requerimiento();
+                $requerimiento->no_requerimiento = $request->get('no_requerimiento');
+                $requerimiento->fecha_requerimiento = $request->get('fecha_requerimiento');
+                $requerimiento->fecha_envio = $fecha_env;
+                $requerimiento->estado = $request->get('estado');
+                $requerimiento->observaciones = $request->get('observaciones');
+                $requerimiento->fecha_recepcion_regmed = $request->get('fecha_recepcion_regmed');
+                $requerimiento->no_afiliado = $request->get('no_afiliado');
+                $requerimiento->users_id_remitente = Auth::user()->id;
+    
+    
+                if($request->hasFile('archivo'))//guardamos copia del archivo subido en la carpeta public
+                {
+                    $archivo = $request->file('archivo');
+                    $archivo->move(public_path().'/archivos/', $archivo->getClientOriginalName());
+                    $requerimiento->archivo = $archivo->getClientOriginalName();
+                    
+                }
+                    
+                $requerimiento->save();
+                alert()->success('Requerimiento guardado correctamente');
 
+            return redirect()->route('req.index');
+            
+        } catch (\Throwable $th) {
+            alert()->error('Verifique que todos los campos esten llenos');
+            return back();
+        }
 
-            if($request->hasFile('archivo'))//guardamos copia del archivo subido en la carpeta public
-            {
-                $archivo = $request->file('archivo');
-                $archivo->move(public_path().'/archivos/', $archivo->getClientOriginalName());
-                $requerimiento->archivo = $archivo->getClientOriginalName();
-                
-            }
-                
-            $requerimiento->save();
-            alert()->success('Requerimiento guardado correctamente');
-        
-
-        
-
-        return redirect()->route('req.index');
     }
 
 
@@ -85,9 +90,7 @@ class RequerimientoController extends Controller
         $suspension->pago = "NO";
         $suspension->estado = "Archivado";
 
-        //$bitacora_suspension = BitacoraSuspension::find($id);
-        //$bitacora_suspension->pago = "NO";
-        //$bitacora_suspension->save();
+       
         
         $suspension->save();
         alert()->danger('Pago Validado');
@@ -114,10 +117,6 @@ class RequerimientoController extends Controller
             'estado' => 'required|max:20',
             'observaciones' => 'required|max:300',
             'fecha_recepcion_regmed' => 'required|date:d/m/Y'
-            /*'id_oficio' => 'required|max:100',
-            'no_afiliado' => 'required|max:100',
-            'id_usuario_remitente' => 'required|max:100',
-            'id_usuario_responsable' => 'required|max:100'*/
         ]);
 
         $requerimiento = Requerimiento::find($id);
