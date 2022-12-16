@@ -98,6 +98,7 @@ class AfiliadoController extends Controller
         ]);
 
         $Afiliado = Afiliado::find($id);
+        $Afiliado->no_afiliado = $request->get('no_afiliado');
         $Afiliado->cui = $request->get('cui');
         $Afiliado->nombre = $request->get('nombre');
         $Afiliado->apellidos = $request->get('apellidos');
