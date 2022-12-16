@@ -90,6 +90,7 @@ class AfiliadoController extends Controller
 
     public function update(Request $request, $id)
     {
+        try{
         $request->validate([
             'no_afiliado' => 'required|max:13',
             'nombre' => 'required|max:100',
@@ -114,6 +115,13 @@ class AfiliadoController extends Controller
         alert()->success('Afiliado actualizado correctamente');
 
         return redirect()->route('afiliados.index');
+        } catch (\Throwable $th) {
+
+        error_log($th);
+        alert()->error('Error al ingreso de datos, verifique campos y longitudes');
+        return redirect()->back();
+        
+        }
     }
 
     public function destroy($id)
