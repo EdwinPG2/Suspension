@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('titulo')
-<span>Clinicas Servicios</span>
+<span>Clinicas/Servicios</span>
 @endsection
 @section('contenido')
 <div class="row">
@@ -25,16 +25,16 @@
                         <th> Opciones </th>
                     </thead>
                     <tbody>
-                        @foreach($clinicas_servicios as $item)
+                        @foreach($clinica_servicios as $item)
                         <tr class="text-center">
                             <td>{{ $item->nombre }}</td>
                             <td>{{ $item->descripcion }}</td>
-                            <td>{{ $item->area->nombre }}</td>
-                            <td>{{ $item->especialidad->nombre_especialidad }}</td>
+                            <td>{{ $item->area->nombre}}</td>
+                            <td>{{ $item->especialidad->nombre_especialidad}}</td>
                             <td colspan="2">
-                                <a href="{{ route ('clinicas_servicios.edit', $item-> id_clinica_servicio) }}"
+                                <a href="{{ route ('clinicas_servicios.edit', $item->id_clinica_servicio) }}"
                                 class="btn btn-warning" ><i class="fas fa-edit"></i></a>
-                                <form action="{{ route('clinicas_servicios.destroy',$item-> id_clinica_servicio)}}" method="post" class="d-inline">
+                                <form action="{{ route('clinicas_servicios.destroy',$item->id_clinica_servicio)}}" method="post" class="d-inline">
                                 @csrf
                                 {{method_field('DELETE')}}
                                 <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>

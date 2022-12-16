@@ -21,10 +21,10 @@ class ClinicaServicioController extends Controller
     public function index()
     {
         $especialidade = Especialidad::all();
-        $area = Area::all();
-        $clinicas_servicios = ClinicaServicio::all();
+        $areas = Area::all();
+        $clinica_servicios = ClinicaServicio::all();
 
-        return view('clinicas_servicios/index', compact('clinicas_servicios', 'especialidade','area'));
+        return view('clinicas_servicios.index', compact('clinica_servicios'));
     }
 
     public function create()
