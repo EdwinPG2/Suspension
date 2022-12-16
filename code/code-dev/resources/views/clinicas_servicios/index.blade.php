@@ -29,8 +29,8 @@
                         <tr class="text-center">
                             <td>{{ $item->nombre }}</td>
                             <td>{{ $item->descripcion }}</td>
-                            <td>{{ $item->area->nombre}}</td>
-                            <td>{{ $item->especialidad->nombre_especialidad}}</td>
+                            <td>{{isset($item->id_area)?$item->area->nombre:''}}</td>
+                            <td>{{isset($item->id_especialidad)?$item->especialidad->nombre_especialidad:''  }}</td>
                             <td colspan="2">
                                 <a href="{{ route ('clinicas_servicios.edit', $item->id_clinica_servicio) }}"
                                 class="btn btn-warning" ><i class="fas fa-edit"></i></a>
