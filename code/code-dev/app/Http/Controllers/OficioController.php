@@ -96,16 +96,15 @@ class OficioController extends Controller
         $ofi_susp = OficioSuspencion::where('id_oficio',$id)->get();
 
         if(empty($ofi_susp)){
-            alert()->info('Oficio sin suspensiones');
-            return back();
-        }
-        else {
-            
-            $oficio = Oficio::find($id);
+        $oficio = Oficio::find($id);
         $pdf = PDF::loadView('oficios.pdf', ['formularios'=>$formularios, 'ofi_susp'=>$ofi_susp, 'oficio'=>$oficio]);
         $pdf->setPaper('letter', 'portrait');
         $pdf->render();
         return $pdf->stream();
+        }
+        else {
+            alert()->info('Oficio sin suspensiones');
+            return back();
         }
 
     }
