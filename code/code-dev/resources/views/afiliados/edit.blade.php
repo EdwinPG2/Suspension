@@ -11,7 +11,7 @@
                 <h4>Editar datos</h4>
             </div>
             <div class="card-body">
-                <form action="{{ route('afiliados.update', $afiliados->no_afiliado) }}" method="post">
+                <form action="{{ route('afiliados.update', $afiliados->no_afiliado) }}" method="post" autocomplete="off">
                     @method('PATCH')
                     @csrf
                     <div class="row">
