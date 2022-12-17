@@ -315,3 +315,39 @@ WHERE requerimiento.fecha_requerimiento BETWEEN fechai AND fechaf
 and requerimiento.estado='Resuelto';
 end
 $$
+
+drop procedure if exists suspenciones_si_pago;
+DELIMITER $$
+CREATE PROCEDURE `suspenciones_si_pago`(in fechai datetime ,in fechaf datetime)
+begin
+	select formulario_suspencion.id_suspension, suspension.no_afiliado,afiliado.nombre as nombre_afiliado ,afiliado.apellidos, suspension.fecha_registro, suspension.fecha_accidente,suspension.fecha_inicio_caso, riesgo.nombre as nombre_riesgo,area.nombre as nombre_area ,especialidad.nombre_especialidad,clinica_servicio.nombre as nombre_clinica_servicio, GROUP_CONCAT(formulario.nombre SEPARATOR ', ') as Formularios, suspension.pago
+from formulario_suspencion inner join formulario on formulario_suspencion.id_formulario = formulario.id_formulario 
+inner join suspension on formulario_suspencion.id_suspension =suspension.id_suspension
+inner join afiliado on suspension.no_afiliado = afiliado.no_afiliado
+inner join clinica_servicio on clinica_servicio.id_clinica_servicio = suspension.id_clinica_servicio
+inner join area on area.id_area = clinica_servicio.id_area
+inner join especialidad on especialidad.id_especialidad = clinica_servicio.id_especialidad
+inner join riesgo on riesgo.id = suspension.id_riesgo
+WHERE suspension.fecha_registro BETWEEN fechai AND fechaf
+and suspension.pago='SI'
+group by id_suspension;
+end
+$$
+
+drop procedure if exists suspenciones_no_pago;
+DELIMITER $$
+CREATE PROCEDURE `suspenciones_no_pago`(in fechai datetime ,in fechaf datetime)
+begin
+	select formulario_suspencion.id_suspension, suspension.no_afiliado,afiliado.nombre as nombre_afiliado ,afiliado.apellidos, suspension.fecha_registro, suspension.fecha_accidente,suspension.fecha_inicio_caso, riesgo.nombre as nombre_riesgo,area.nombre as nombre_area ,especialidad.nombre_especialidad,clinica_servicio.nombre as nombre_clinica_servicio, GROUP_CONCAT(formulario.nombre SEPARATOR ', ') as Formularios, suspension.pago
+from formulario_suspencion inner join formulario on formulario_suspencion.id_formulario = formulario.id_formulario 
+inner join suspension on formulario_suspencion.id_suspension =suspension.id_suspension
+inner join afiliado on suspension.no_afiliado = afiliado.no_afiliado
+inner join clinica_servicio on clinica_servicio.id_clinica_servicio = suspension.id_clinica_servicio
+inner join area on area.id_area = clinica_servicio.id_area
+inner join especialidad on especialidad.id_especialidad = clinica_servicio.id_especialidad
+inner join riesgo on riesgo.id = suspension.id_riesgo
+WHERE suspension.fecha_registro BETWEEN fechai AND fechaf
+and suspension.pago='NO'
+group by id_suspension;
+end
+$$

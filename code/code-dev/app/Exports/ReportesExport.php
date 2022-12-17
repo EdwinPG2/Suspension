@@ -18,14 +18,16 @@ class ReportesExport implements FromView, ShouldAutoSize
     protected $item;
     protected $rechazos;
     protected $requerimiento;
+    protected $pago;
     
 
-    public function __construct(array $data,array $item, array $rechazos,array $requerimiento)
+    public function __construct(array $data,array $item, array $rechazos,array $requerimiento,array $pago)
     {
         $this->data = $data;
         $this->item = $item;
         $this->rechazos = $rechazos;
         $this->requerimiento = $requerimiento;
+        $this->pago = $pago;
     }
     public function view():View
     {
@@ -186,6 +188,30 @@ class ReportesExport implements FromView, ShouldAutoSize
                     'data' => $collection
                 ]);
             }
+            
+        }
+        elseif($this->pago!=null)
+        {
+            $fechai=$this->pago[0];
+            $fechaf=$this->pago[1];
+            $pag=$this->pago[2];
+            
+            $result=null;
+            if($pag=='SI')
+            {
+                $result =DB::select("call suspenciones_si_pago('".$fechai."','".$fechaf."')");
+            }
+            elseif($pag=='NO')
+            {
+                $result =DB::select("call suspenciones_no_pago('".$fechai."','".$fechaf."')");
+            }
+            
+            $collection = collect($result);
+
+            return view('report.data',[
+                'data' => $collection
+            ]);
+            
             
         }
 

@@ -11,6 +11,7 @@
             <th>Especialidad</th>
             <th>Clinica/Servicio</th>
             <th>Formularios</th>
+            <th>{{isset($data[0]->pago)?Pago:''}}</th>
         </tr>
     </thead>
     <tbody>
@@ -26,6 +27,7 @@
                 <td>{{ $item->nombre_especialidad }}</td>
                 <td>{{ $item->nombre_clinica_servicio }}</td>
                 <td>{{ $item->Formularios }}</td>
+                <td>{{isset($item->pago)?$item->pago:''}}</td>
             </tr>
         @endforeach
     </tbody>

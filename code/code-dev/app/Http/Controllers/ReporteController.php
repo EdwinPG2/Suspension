@@ -63,7 +63,7 @@ class ReporteController extends Controller
             $especialidad=$request->get('especialidad');
             $clinica=$request->get('id_clinica_servicio');
             
-            $exportResult=new ReportesExport([$fechai,$fechaf,$area,$especialidad,$clinica],[],[],[]);
+            $exportResult=new ReportesExport([$fechai,$fechaf,$area,$especialidad,$clinica],[],[],[],[]);
     
             $data = Excel::download($exportResult, 'Reporte'.$date->toDateTimeString().'.xlsx');
     
@@ -76,7 +76,7 @@ class ReporteController extends Controller
             $tipo_reporte=$request->get('reporte_colaborador');
             $seleccion=$request->get('seleccion');
             
-            $exportResult=new ReportesExport([],[$fechai,$fechaf,$tipo_reporte,$seleccion],[],[]);
+            $exportResult=new ReportesExport([],[$fechai,$fechaf,$tipo_reporte,$seleccion],[],[],[]);
     
             $data = Excel::download($exportResult, 'Reporte'.$date->toDateTimeString().'.xlsx');
     
@@ -89,7 +89,7 @@ class ReporteController extends Controller
             $fechaf=$request->get('fechaf');
             $registrador=$request->get('usuario');
             
-            $exportResult=new ReportesExport([],[],[$fechai,$fechaf,$registrador,null,null,null,null],[]);
+            $exportResult=new ReportesExport([],[],[$fechai,$fechaf,$registrador,null,null,null,null],[],[]);
     
             $data = Excel::download($exportResult, 'Reporte'.$date->toDateTimeString().'.xlsx');
     
@@ -101,7 +101,7 @@ class ReporteController extends Controller
             $fechaf=$request->get('fechaf');
             $revisor=$request->get('usuario');
             
-            $exportResult=new ReportesExport([],[],[$fechai,$fechaf,null,$revisor,null,null,null],[]);
+            $exportResult=new ReportesExport([],[],[$fechai,$fechaf,null,$revisor,null,null,null],[],[]);
     
             $data = Excel::download($exportResult, 'Reporte'.$date->toDateTimeString().'.xlsx');
     
@@ -117,7 +117,7 @@ class ReporteController extends Controller
             $especialidad=$request->get('especialidad2');
             $clinica=$request->get('id_clinica_servicio2');
             
-            $exportResult=new ReportesExport([],[],[$fechai,$fechaf,null,null,$area,$especialidad,$clinica],[]);
+            $exportResult=new ReportesExport([],[],[$fechai,$fechaf,null,null,$area,$especialidad,$clinica],[],[]);
     
             $data = Excel::download($exportResult, 'Reporte'.$date->toDateTimeString().'.xlsx');
     
@@ -130,7 +130,19 @@ class ReporteController extends Controller
             $fechaf=$request->get('fechaf');
             $requerimiento=$request->get('requerimiento');
             
-            $exportResult=new ReportesExport([],[],[],[$fechai,$fechaf,$requerimiento]);
+            $exportResult=new ReportesExport([],[],[],[$fechai,$fechaf,$requerimiento],[]);
+    
+            $data = Excel::download($exportResult, 'Reporte'.$date->toDateTimeString().'.xlsx');
+    
+            return $data;
+        }
+        if($condicion== 6)
+        {
+            $fechai=$request->get('fechai');
+            $fechaf=$request->get('fechaf');
+            $pago=$request->get('pago');
+            
+            $exportResult=new ReportesExport([],[],[],[],[$fechai,$fechaf,$pago]);
     
             $data = Excel::download($exportResult, 'Reporte'.$date->toDateTimeString().'.xlsx');
     
