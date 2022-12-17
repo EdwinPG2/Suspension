@@ -131,8 +131,8 @@
                             </div>
                             <div class="col-lg-2 col-md-2">
                                 <div class="form-group">
-                                    <label for="archivo">Adjunte archivo</label>
-                                    <input type="file" name="archivo" id="archivo" class="form-control-file"
+                                    <label for="archivo_respuesta">Adjunte archivo</label>
+                                    <input type="file" name="archivo_respuesta" id="archivo_respuesta" class="form-control-file"
                                         accept=".pdf">
                                 </div>
                             </div>

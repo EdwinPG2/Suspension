@@ -76,9 +76,9 @@ class Respuesta_ReqController extends Controller
 
         if($request->hasFile('archivo_respuesta'))//guardamos copia del archivo subido en la carpeta public
         {
-            $archivo = $request->file('archivo_respuesta');
-            $archivo->move(public_path().'/archivos/', $archivo->getClientOriginalName());
-            $respuesta->archivo_respuesta = $archivo->getClientOriginalName();
+            $archivo_respuesta= $request->file('archivo_respuesta');
+            $archivo_respuesta->move(public_path().'/archivos/', $archivo_respuesta->getClientOriginalName());
+            $respuesta->archivo_respuesta = $archivo_respuesta->getClientOriginalName();
         }
 
         $respuesta->save();
