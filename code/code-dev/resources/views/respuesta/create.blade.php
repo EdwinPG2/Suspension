@@ -11,7 +11,7 @@
                     <h4>Requerimiento No. {{ $requerimiento->no_requerimiento }}</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('respuesta.store') }}" method="post">
+                    <form action="{{ route('respuesta.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-header">
                             <h4>Afiliado</h4>
