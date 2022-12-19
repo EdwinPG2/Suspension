@@ -311,17 +311,7 @@ class Llenado extends Seeder
             ['1004296','MARTHA ISABEL','ARDIANO FUENTES','martha.ardiano@igssgt.org','Igssxela','3']
         ];
 
-        foreach($users as $item)
-        {
-            User::create([
-                'ibm' => $item[0],
-                'name' => $item[1],
-                'apellido' => $item[2],
-                'email' => $item[3],
-                'password' => $item[4],
-                'role_id' => $item[5],
-            ]);
-        }
+
 
 
 
