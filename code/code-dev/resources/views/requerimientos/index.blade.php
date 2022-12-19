@@ -37,6 +37,7 @@
                             <th> Estado </th>
                             <th> Observaciones </th>
                             <th> Documento</th>
+                            <th> Documento respuesta</th>
                             <th> Opciones</th>
                         </thead>
                         <tbody>
@@ -56,6 +57,7 @@
                                     </td>
                                     <td>{{ $item->observaciones }}</td>
                                     <td><a href="archivos/{{ $item->archivo }}" target="blank_">Ver documento</a></td>
+                                    <td><a href="archivos/{{ $item->archivo_respuesta }}" target="blank_">Ver documento</a></td>
                                     <td colspan="2">
                                         @if ($item->estado == 'Generado')
                                             @can('requerimiento-edit')
