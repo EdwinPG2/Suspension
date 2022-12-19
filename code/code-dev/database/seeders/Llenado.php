@@ -11,6 +11,7 @@ use App\Models\ClinicaServicio;
 use App\Models\Riesgo;
 use App\Models\Cargo;
 use App\Models\Medico;
+use App\Models\User;
 use Spatie\Permission\Models\Role;
 
 use DB;
@@ -262,6 +263,68 @@ class Llenado extends Seeder
                 'nombre' => $item
             ]);
         }
+
+        $users = [
+            ['1000269','FRANCISCO ISAAC','LÓPEZ MARTINEZ','franciscoi.lopez@igssgt.org','Igssxela','2'],
+            ['39093','MADELYN ROCÍO','DE LEÓN CIFUENTES','madelyn.deleon@igssgt.org','Igssxela','3'],
+            ['38271','BETHZABÉ BERENICE','CARDONA TORRES','bethzabe.cardona@igssgt.org','Igssxela','2'],
+            ['39115','SULMA ROXANA','SIGUANTAY CARDONA','sulma.siguantay@igssgt.org','Igssxela','2'],
+            ['38563','LUISA MARÍA','MEJICANOS BONILLA','luisa.mejicanos@igssgt.org','Igssxela','4'],
+            ['38380','KARLA PAOLA','FUENTES GONZALEZ','karla.fuentes@igssgt.org','Igssxela','2'],
+            ['38982','NANCY ALEJANDRA','ASENCIO BATZ','nancy.asencio@igssgt.org','Igssxela','4'],
+            ['38096','JENNY VIRGINIA','OSORIO RECINOS','jennyv.osorio@igssgt.org','Igssxela','3'],
+            ['38246','ELIDA CELINA','IXCOT GARCIA','elida.ixcot@igssgt.org','Igssxela','3'],
+            ['37888','JENNIFER FABIOLA','OVALLE','jenniffer.ovalle@igssgt.org','Igssxela','3'],
+            ['37798','ESTRELLA ODILI','GARCIA REYES','estrella.garcia@igssgt.org','Igssxela','3'],
+            ['39964','JULIO CESAR','FUENTES','julio.fuentes@igssgt.org','Igssxela','3'],
+            ['37796','JUAN AMILCAR','FUENTES GODINEZ','juan.fuentes@igssgt.org','Igssxela','3'],
+            ['39091','HEIDY ELEANY','MORALES ANGEL','heidy.morales@igssgt.org','Igssxela','3'],
+            ['37811','PATRICIA GUADALUPE','ROJAS PEREZ','patricia.rojas@igssgt.org','Igssxela','3'],
+            ['38976','RUTH ALEJANDRA','PEREZ GOMEZ','ruth.perez@igssgt.org','Igssxela','3'],
+            ['37879','MARILYN MICHELLE','BARRIOS DE LEON','marily.barrios@igssgt.org','Igssxela','3'],
+            ['37810','CLAUDIA MARCELA','CORZO JACOBS','claudia.corzo@igssgt.org','Igssxela','3'],
+            ['38975','SANDRA INES','RECINOS GONZÁLEZ','sandra.recinos@igssgt.org','Igssxela','3'],
+            ['37874','ANTONIA TERESA','CHOX CARRILLO','antonia.chox@igssgt.org','Igssxela','3'],
+            ['25327','HENLY KARINA','FLORES ELIAS','henly.flores@igssgt.org','Igssxela','3'],
+            ['39263','VERA DEL ROSARIO','RUIZ BARRIOS','vera.ruiz@igssgt.org','Igssxela','3'],
+            ['38978','ANDREA ALEJANDRA','ARAUZ MEDRANO','andrea.arauz@igssgt.org','Igssxela','3'],
+            ['1002145','JEAQUELINE MARIBEL','MAZARIEGOS','jeaqueline.mazariegos@igssgt.org','Igssxela','3'],
+            ['1004249','MARIA PAOLA','ARCHILA GUARE','mariap.archila@igssgt.org','Igssxela','3'],
+            ['38690','LUIS ROBERTO','ESCOBAR PEREZ','luisr.escobar@igssgt.org','Igssxela','3'],
+            ['2002447','ELVIRA ENCARNACIÓN','ESTRADA ESTRADA','elvira.estrada@igssgt.org','Igssxela','3'],
+            ['38300','LILIAN MARLEY','CASTILLO Y CASTILLO','lilian.castillo@igssgt.org','Igssxela','3'],
+            ['1004237','EUGENIA BEATRIZ','OCHOA DE LEÓN','eugenia.ochoa@igssgt.org','Igssxela','3'],
+            ['39119','ABSALÓN BENJAMÍN','LÉMUS SAMAYOA','absalon.lemus@igssgt.org','Igssxela','3'],
+            ['37884','JOSE MARIO','CASTILLO MENDEZ','josem.castillo@igssgt.org','Igssxela','3'],
+            ['38686','ROSA PATRICIA','GONZÁLEZ DE VIDAL','rosa.gonzalez@igssgt.org','Igssxela','3'],
+            ['2003466','JESNEE MISHILCK','CIFUENTES MALDONADO','jesnee.cifuentes@igssgt.org','Igssxela','3'],
+            ['37806','HENRRY WALBERTO','PAZ MACARIO','henrry.paz@igssgt.org','Igssxela','3'],
+            ['37837','MARIA DE LOS ANGELES','CARDONA LOPEZ','mariad.cardona@igssgt.org','Igssxela','3'],
+            ['39007','RAÚL ANTONIO','DE LEÓN PÉREZ','raula.deleon@igssgt.org','Igssxela','3'],
+            ['37142','SUSANA INES','VEGA LOPEZ','susana.vega@igssgt.org','Igssxela','3'],
+            ['2004613','ANGELICA DE ROCÍO','ROMANO VILLATORO','angelica.romano@igssgt.org','Igssxela','3'],
+            ['2004695','DIDY LILY','PÉREZ HERRERA','didy.perez@igssgt.org','Igssxela','3'],
+            ['1001850','WALTER FLORENCIO','YAX CHACLAN','walter.yax@igssgt.org','Igssxela','3'],
+            ['37799','ANA PATRICIA','SUM ESCOBAR','ana.sum@igssgt.org','Igssxela','3'],
+            ['39130','GLORIA FLORENCIA LYNDA','CHÁVEZ ESTRADA','gloria.chavez@igssgt.org','Igssxela','3'],
+            ['1002239','ZULMA IRACEMA','ARGUETA POZ','zulma.argueta@igssgt.org','Igssxela','3'],
+            ['1004296','MARTHA ISABEL','ARDIANO FUENTES','martha.ardiano@igssgt.org','Igssxela','3']
+        ];
+
+        foreach($users as $item)
+        {
+            User::create([
+                'ibm' => $item[0],
+                'name' => $item[1],
+                'apellido' => $item[2],
+                'email' => $item[3],
+                'password' => $item[4],
+                'role_id' => $item[5],
+            ]);
+        }
+
+
+
         $medicos = [
             ['37913','Cristina Ileana Racancoj Alonzo'],
         ['37914','Ana Lucía Palomo Leppe'],
@@ -427,7 +490,7 @@ class Llenado extends Seeder
         ['35593','Eloisa Del Carmen Lopez Morales'],
         ['37906','Tito Belizario Ixcot Mejía'],
         ['37904','Victor Gustavo García Bautista'],
-        ['37916','Manuel De Jesús Rojas Gómez'],
+        ['37916','Manuel De Jesús Ro Gómez'],
         ['38076','Aldo Juancarlos Calderón Contreras'],
         ['38132','Heydi Marisol De León Villagrán'],
         ['38168','Kévin Esaú Soch Tohóm'],
@@ -579,7 +642,7 @@ class Llenado extends Seeder
         ['2007162','Estela MaríaHerrera Medina '],
         ['2007601','Alexia YomaraTacam Son'],
         ['1001738','María AlejandraBarrios de León'],
-        ['1002640','RolandoRojas Gómez'],
+        ['1002640','RolandoRo Gómez'],
         ['1002411','Jorge Daniel Castillo Solis'],
         ['1002416','Maya LauraMonterroso Fuentes'],
         ['1001736','Claudia Lucrecia López Castillo'],
@@ -605,7 +668,7 @@ class Llenado extends Seeder
         ['1001729','María Cristina Del Carmen Monterroso Sosa'],
         ['1001730','Andrea del Carmen Ruano Díaz'],
         ['1001739','Anyee Gabriela De León Miranda'],
-        ['1001742','Edgar Estuardo Nimatuj Cajas '],
+        ['1001742','Edgar Estuardo Nimatuj Ca '],
         ['1001998','Howard Romeo Bradley Vásquez'],
         ['1001999','Claudia Carolina Guillén Rivera'],
         ];
