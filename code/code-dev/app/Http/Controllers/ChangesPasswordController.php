@@ -33,6 +33,8 @@ class ChangesPasswordController extends Controller
         $user->password = Hash::make('Igssxela');
         $user->save();
 
+        alert()->success('Contraseña reseateado correctamente');
+
         return redirect()->route('usuarios.index');
     }
 }
