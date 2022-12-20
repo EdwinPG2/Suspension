@@ -55,7 +55,7 @@
                                     @can('user-reset')
                                     <form action="{{route('reset_password',$item->id)}}" method="post" class="d-inline">
                                     @csrf
-                                        <button class="btn btn-success" type="submit"><i class="fas fa-sync-alt"></i></button>
+                                        <button class="btn btn-success" type="submit" onclick="return ConfirmRestab()"><i class="fas fa-sync-alt"></i></button>
                                     </form>
                                     @endcan
                             </td>
@@ -68,3 +68,19 @@
     </div>
 </div>
 @endsection
+
+<script type="text/javascript">
+    function ConfirmRestab()
+    {
+        var respuesta = confirm("¿Esta seguro que desea restablecer la contraseña predeterminada?");
+
+        if (respuesta == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+</script>

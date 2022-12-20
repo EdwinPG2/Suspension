@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class ChangesPasswordController extends Controller
@@ -13,6 +14,7 @@ class ChangesPasswordController extends Controller
     {
         $user = User::where('id',$id)->first();
         return view('auth/passwords/reset',compact('user'));
+
     }
     
 
@@ -24,20 +26,17 @@ class ChangesPasswordController extends Controller
         $user = User::find($id);
         $user->password = Hash::make($request->input('password'));
         $user->save();
-
+        #alert()->success('Contraseña actualizada correctamente');
         return redirect('/login');
-        
     }
-
 
     public function resetpass($id){
 
         $user = User::find($id);
         $user->password = Hash::make('Igssxela');
         $user->save();
-        alert()->success('Contraseña reseteado correctamente');
+        #alert()->question('Contraseña reseteado correctamente');
         return redirect()->route('usuarios.index');
-
         
     }
 }
