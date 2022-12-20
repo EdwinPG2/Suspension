@@ -26,15 +26,18 @@ class ChangesPasswordController extends Controller
         $user->save();
 
         return redirect('/login');
+        
     }
 
+
     public function resetpass($id){
+
         $user = User::find($id);
         $user->password = Hash::make('Igssxela');
         $user->save();
-
-        alert()->success('Contraseña reseateado correctamente');
-
+        alert()->success('Contraseña reseteado correctamente');
         return redirect()->route('usuarios.index');
+
+        
     }
 }

@@ -3,9 +3,7 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class=" "><link href="{{ asset('img\descargar.jpg') }}" rel="icon" type="image/jpg"></i>
-        </div>
+        
         <div class="sidebar-brand-text mx-3">Suspensión<sup>App</sup></div>
     </a>
 

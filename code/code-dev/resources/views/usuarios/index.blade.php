@@ -43,7 +43,7 @@
                                     <a href="{{ route('usuarios.edit', $item->id)}}"
                                     class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                     @endcan
-
+                                    
                                     @can('user-delete')
                                     <form action="{{ route('usuarios.destroy',$item->id)}}" method="post" class="d-inline">
                                     @csrf
@@ -55,7 +55,7 @@
                                     @can('user-reset')
                                     <form action="{{route('reset_password',$item->id)}}" method="post" class="d-inline">
                                     @csrf
-                                        <button class="btn btn-success" type="submit"><i class="fas fa-sync-alt"></i></butt>
+                                        <button class="btn btn-success" type="submit"><i class="fas fa-sync-alt"></i></button>
                                     </form>
                                     @endcan
                             </td>

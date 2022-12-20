@@ -64,8 +64,11 @@ class UserController extends Controller
         if(!empty($request->input['permission'])){
             $user->givePermissionTo($request->input('permission'));
         }
-        return redirect()->route('usuarios.index')
-                        ->with('success','User created successfully');
+
+        alert()->success('Usuario creado correctamente');
+        return redirect()->route('usuarios.index');
+        
+            
     }
 
     public function show($id)
@@ -114,14 +117,19 @@ class UserController extends Controller
             }
         }
 
-        return redirect()->route('usuarios.index')
-                        ->with('success','User updated successfully');
+        alert()->success('usuario actualizado correctamente');
+
+        return redirect()->route('usuarios.index');
+    
     }
 
     public function destroy($id)
     {
         User::find($id)->delete();
-        return redirect()->route('usuarios.index')
-                        ->with('success','User deleted successfully');
+
+        alert()->success('usuario eliminado correctamente');
+
+        return redirect()->route('usuarios.index');
+        
     }
 }
