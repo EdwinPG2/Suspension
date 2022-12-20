@@ -40,7 +40,6 @@ class DependenciaController extends Controller
         $dependencia->save();
 
         alert()->success('Dependencia guardada correctamente');
-
         return redirect()->route('dependencias.index');
     }
 
@@ -66,7 +65,6 @@ class DependenciaController extends Controller
         $dependencia->save();
 
         alert()->success('Dependencia actualizado correctamente');
-
         return redirect()->route('dependencias.index');
     }
 
@@ -76,7 +74,6 @@ class DependenciaController extends Controller
         $dependencia->delete();
 
         alert()->success('Dependencia eliminado correctamente');
-        
         return redirect()->route('dependencias.index');
     }
 }

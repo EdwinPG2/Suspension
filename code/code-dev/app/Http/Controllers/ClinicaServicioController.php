@@ -53,11 +53,8 @@ class ClinicaServicioController extends Controller
         $clinica_servicio->id_especialidad = $request->get('id_especialidad');
         $clinica_servicio->id_area = $request->get('id_area');
 
-
         $clinica_servicio->save();
-
         alert()->success('Clinica/servicio guardado correctamente');
-
         return redirect()->route('clinicas_servicios.index');
     }
 
@@ -90,8 +87,7 @@ class ClinicaServicioController extends Controller
         $clinica_servicio->id_area = $request->get('id_area');
         $clinica_servicio->save();
 
-        alert()->success('Especialidad actualizado correctamente');
-
+        alert()->success('Clinica/servicio actualizado correctamente');
         return redirect()->route('clinicas_servicios.index');
     }
 
@@ -101,7 +97,6 @@ class ClinicaServicioController extends Controller
         $clinica_servicio->delete();
 
         alert()->success('clinica/servicio eliminado correctamente');
-        
         return redirect()->route('clinicas_servicios.index');
     }
 }

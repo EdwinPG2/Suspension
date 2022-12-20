@@ -22,9 +22,7 @@ class EspecialidadController extends Controller
     
     public function index()
     {
-        #$especialidades = Especialidad::latest()->paginate(5);
-        #return view('especialidades.index',compact('especialidades'))
-            #->with('i', (request()->input('page', 1) - 1) * 5);
+
         $especialidades = Especialidad::all();
         return view('especialidades/index', compact('especialidades'));        
     }
@@ -32,7 +30,7 @@ class EspecialidadController extends Controller
 
     public function create()
     {
-        #return view('especialidades.create');
+
         $especialidades = Especialidad::all();
         return view('especialidades/create', compact('especialidades'));
     }
@@ -55,12 +53,6 @@ class EspecialidadController extends Controller
         return redirect()->route('especialidades.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
@@ -72,7 +64,6 @@ class EspecialidadController extends Controller
         $especialidades = Especialidad::find($id);
         return view('especialidades.edit', compact('especialidades'));
     }
-
 
     public function update(Request $request, $id)
     {

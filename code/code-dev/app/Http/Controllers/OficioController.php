@@ -70,8 +70,7 @@ class OficioController extends Controller
         $oficio ->users_id_creador = $request->get('users_id_creador');
         
         $oficio->save();
-
-
+        alert()->success('Oficio guardado correctamente');
         return redirect()->route('agregarsuspenciones.show',$oficio->id_oficio);
     }
 
@@ -99,7 +98,6 @@ class OficioController extends Controller
             alert()->info('Oficio sin suspensiones');
             return back();
         }
-
     }
 
     public function detalles($id)

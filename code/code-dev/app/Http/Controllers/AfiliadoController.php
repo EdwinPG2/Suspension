@@ -128,6 +128,8 @@ class AfiliadoController extends Controller
     {
         //
         Afiliado::destroy($id);
+        alert()->success('Afiliado eliminado correctamente');
+        
         return redirect()->route('afiliados.index');
     }
 }

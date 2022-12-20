@@ -13,11 +13,7 @@ use Illuminate\Http\Request;
 
 class ReqController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()//requerimientos resueltos
     {
         $oficios = Oficio::all();
@@ -25,33 +21,16 @@ class ReqController extends Controller
         return view('requerimientos.index', compact('oficios', 'requerimientos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Requerimiento  $requerimiento
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $suspension = Suspension::find($id);
@@ -63,35 +42,16 @@ class ReqController extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Requerimiento  $requerimiento
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Requerimiento  $requerimiento
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Requerimiento $requerimiento)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Requerimiento  $requerimiento
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Requerimiento $requerimiento)
     {
         //

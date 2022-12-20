@@ -17,8 +17,6 @@ use Illuminate\Support\Facades\Storage;
 
 class RequerimientoController extends Controller
 {
-    
-    
     public function index()
     {
         $oficios = Oficio::all();
@@ -35,19 +33,16 @@ class RequerimientoController extends Controller
         return view('requerimientos/create', compact('oficio','afiliados','usuario', 'requerimientos'));
     }
 
-
     public function store(Request $request)
     {
         $date = Carbon::now();
         $fecha_env = $date->toDateString();
 
         try {
-
             validator::make($request->except('_token'), [
                 'no_requerimiento' => 'required|max:50',
                 'fecha_requerimiento' => 'required|date:d/m/Y',
                 'estado' => 'required|max:20',
-    
             ])->validate();
             
                 $requerimiento = new Requerimiento();
@@ -88,8 +83,6 @@ class RequerimientoController extends Controller
 
         $suspension->pago = "NO";
         $suspension->estado = "Archivado";
-
-       
         
         $suspension->save();
         alert()->danger('Pago Validado');

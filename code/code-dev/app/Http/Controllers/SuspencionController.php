@@ -26,9 +26,7 @@ class SuspencionController extends Controller
     public function index()
     {
         $suspencions = Suspension::all();
-
         return view('suspencions/index', compact('suspencions'));
-
     }
 
     public function create()
@@ -88,14 +86,10 @@ class SuspencionController extends Controller
         $Suspension->users_id_revisor = $request->get('id_usuario_revisor');
 
         $Suspension->save();
-
         $Bitacora_Suspension->save();
 
-        alert()->success('Suspension guardado correctamente');
-
+        alert()->success('Suspensión guardado correctamente');
         return redirect()->route('suspencions.index');
-        
-        
     }
 
     public function show($id)
@@ -158,16 +152,14 @@ class SuspencionController extends Controller
         $Suspension->users_id_revisor = $request->get('id_usuario_revisor');
 
         $Suspension->save();
-
-        alert()->success('Suspension actualizado correctamente');
-
+        alert()->success('Suspensión actualizado correctamente');
         return redirect()->route('suspencions.index');
     }
 
     public function destroy($id)
     {
-        //
         Suspension::destroy($id);
+        alert()->success('Suspensión eliminado correctamente');
         return redirect()->route('suspencions.index');
     }
 }

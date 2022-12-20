@@ -50,7 +50,6 @@ class RiesgoController extends Controller
         //
     }
 
-
     public function edit($id)
     {
         $riesgos = Riesgo::find($id);
@@ -80,7 +79,6 @@ class RiesgoController extends Controller
         $riesgo->delete();
 
         alert()->success('riesgo eliminado correctamente');
-        
         return redirect()->route('riesgos.index');
     }
 }

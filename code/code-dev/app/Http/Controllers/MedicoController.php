@@ -47,7 +47,6 @@ class MedicoController extends Controller
         $medico->id_especialidad = $request->get('id_especialidad');
 
         $medico->save();
-
         alert()->success('Médico guardado correctamente');
 
         return redirect()->route('medico.index');
@@ -101,6 +100,7 @@ class MedicoController extends Controller
     public function destroy($id)
     {
         Medico::destroy($id);
+        alert()->success('Médico eliminado correctamente');
         return redirect()->route('medico.index');
     }
 }

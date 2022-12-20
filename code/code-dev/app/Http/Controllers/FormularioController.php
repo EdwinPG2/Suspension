@@ -13,10 +13,7 @@ class FormularioController extends Controller
     public function index()
     {
         $formularios = Formulario::all();
-
-        #return view('formularios.index', compact(varne: 'formulario'));
         return view('formularios/index', compact('formularios'));
-        #Route::get('/formularios.index', 'formularioController@index')->name('formularios.index');
     }
 
     public function create()
@@ -39,10 +36,7 @@ class FormularioController extends Controller
         $formulario->save();
 
         alert()->success('Formulario guardado correctamente');
-
         return redirect()->route('formularios.index');
-        
-        
     }
 
     public function show($id)
@@ -70,14 +64,13 @@ class FormularioController extends Controller
         $formulario->save();
 
         alert()->success('Formulario actualizado correctamente');
-
         return redirect()->route('formularios.index');
     }
 
     public function destroy($id)
     {
-        //
         Formulario::destroy($id);
+        alert()->success('Formulario eliminado correctamente');
         return redirect()->route('formularios.index');
     }
 }
