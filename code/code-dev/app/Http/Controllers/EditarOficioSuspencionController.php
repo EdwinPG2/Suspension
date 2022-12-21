@@ -54,7 +54,7 @@ class EditarOficioSuspencionController extends Controller
             $ofi_sus->save();
         }
 
-        alert()->success('Se ha agregado la suspencion');
+        alert()->success('Se ha agregado la suspensión');
     }
             
         } catch (\Throwable $th) {
