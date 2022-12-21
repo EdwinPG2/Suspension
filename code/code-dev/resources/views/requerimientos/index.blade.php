@@ -57,7 +57,11 @@
                                     </td>
                                     <td>{{ $item->observaciones }}</td>
                                     <td><a href="archivos/{{ $item->archivo }}" target="blank_">Ver documento</a></td>
+                                    @if ($item->estado == 'Generado')
+                                    <td>No se ha generado respuesta</td>
+                                    @else
                                     <td><a href="archivos/{{ $item->archivo_respuesta }}" target="blank_">Ver documento</a></td>
+                                    @endif
                                     <td colspan="2">
                                         @if ($item->estado == 'Generado')
                                             @can('requerimiento-edit')
