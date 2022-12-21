@@ -140,6 +140,7 @@
         <tbody>
 
             @foreach ($ofi_susp as $key => $item)
+            @if($item->desuspension->estado == 'Aceptado')
                 <tr class="">
                     <td>{{ $key + 1 }}</td>
                     <td>{{ $item->desuspension->no_afiliado }}</td>
@@ -159,6 +160,7 @@
                         @endforeach
                     </td>
                 </tr>
+                @endif
             @endforeach
         </tbody>
     </table>
