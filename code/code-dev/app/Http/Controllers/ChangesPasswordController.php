@@ -26,7 +26,7 @@ class ChangesPasswordController extends Controller
         $user = User::find($id);
         $user->password = Hash::make($request->input('password'));
         $user->save();
-        #alert()->success('Contraseña actualizada correctamente');
+        alert()->success('Contraseña actualizada correctamente');
         return redirect('/login');
     }
 
@@ -35,7 +35,7 @@ class ChangesPasswordController extends Controller
         $user = User::find($id);
         $user->password = Hash::make('Igssxela');
         $user->save();
-        #alert()->question('Contraseña reseteado correctamente');
+        alert()->success('Contraseña reseteada correctamente a Igssxela');
         return redirect()->route('usuarios.index');
         
     }
