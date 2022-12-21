@@ -74,7 +74,7 @@ class EditarOficioSuspencionController extends Controller
      */
     public function show($id)
     {
-        //
+        
         $oficio = Oficio::find($id);
         $suspenciones_existentes=OficioSuspencion::where('id_oficio',$id)->get();
         //$suspenciones = Suspension::all();
