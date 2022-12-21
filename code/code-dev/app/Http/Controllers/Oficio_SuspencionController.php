@@ -129,6 +129,7 @@ class Oficio_SuspencionController extends Controller
     public function destroy($id)
     {
         OficioSuspencion::destroy($id);
+        alert()->success('Suspensión eliminada correctamente');
         return redirect()->back();
     }
 }
