@@ -136,7 +136,7 @@ class RequerimientoController extends Controller
 
         alert()->success('Requerimiento eliminado correctamente');
         
-        return redirect()->route('requerimientos.index');
+        return redirect()->route('req.index');
     }
 
     public function aceptar($id)

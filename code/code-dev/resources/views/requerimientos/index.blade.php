@@ -62,9 +62,9 @@
                                         @if ($item->estado == 'Generado')
                                             @can('requerimiento-edit')
                                             @endcan
+                                            @can('requerimiento-delete')
                                             <form action="{{ route('requerimientos.destroy', $item->id_requerimiento) }}"
                                                 method="post" class="d-inline">
-                                                @can('requerimiento-delete')
                                                     @csrf
                                                     {{ method_field('DELETE') }}
                                                     <button class="btn btn-danger" type="submit"><i
