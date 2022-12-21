@@ -46,13 +46,13 @@
                             <td>{{ date('d-m-Y', strtotime($item->fecha_registro))}}</td>
 
                             <td>
-                                @can('suspencion-edit')
+                                @can('suspension-edit')
                                 <a href="{{ route ('agregarformularios.show', $item->id_suspension) }}"
                                     class="btn btn-warning">Editar formularios</a>
                                 <a href="{{ route ('createsuspencions.edit', $item->id_suspension) }}"
                                 class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                 @endcan
-                                @can('suspencion-delete')
+                                @can('suspension-delete')
                                 <form action="{{ route('createsuspencions.destroy',$item->id_suspension)}} " method ="post" class="d-inline">
                                 @csrf
                                 {{method_field('DELETE')}}

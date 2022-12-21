@@ -114,12 +114,10 @@ class EditarOficioController extends Controller
             'destinatario' => 'required|max:50',
             'saludo' => 'required|max:250',
             'lugar' => 'required|max:250',
-            'correlativo' => 'required|max:250',
             'clinica_servicio' => 'required',
             'fecha' => 'date:d/m/Y',
             'despedida' => 'required|max:250',
             'estado' => 'required|max:20',
-            'users_id_creador' => 'required|max:11',
         ])  ;
         
         $oficio = Oficio::find($id);
@@ -134,8 +132,8 @@ class EditarOficioController extends Controller
         $oficio ->users_id_creador = $request->get('users_id_creador');
         
         $oficio->save();
-
-        return redirect()->route('ofisusp.index');
+        alert()->success('Oficio actualizado');
+        return redirect()->route('oficios.index');
     }
 
     /**

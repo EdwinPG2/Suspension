@@ -72,7 +72,10 @@ class CreateSuspencionController extends Controller
             $Suspension = new Suspension();
             $Suspension->fecha_inicio_suspension = $request->get('fecha_inicio_suspension');
             $Suspension->fecha_fin_suspension = $request->get('fecha_fin_suspension');
+            if($request->get('fecha_alta')!=null)
+            {
             $Suspension->fecha_alta = $request->get('fecha_alta');
+            }
             $Suspension->fecha_registro = $request->get('fecha_registro');
             $Suspension->fecha_envio_prestacion = $request->get('fecha_envio_prestacion');
             $Suspension->fecha_recibido_prestacione = $request->get('fecha_recibido_prestacione');
@@ -158,7 +161,14 @@ class CreateSuspencionController extends Controller
         $Suspension = Suspension::find($id);
         $Suspension->fecha_inicio_suspension = $request->get('fecha_inicio_suspension');
         $Suspension->fecha_fin_suspension = $request->get('fecha_fin_suspension');
+        if($request->get('fecha_alta')!=null)
+        {
         $Suspension->fecha_alta = $request->get('fecha_alta');
+        }
+        else
+        {
+            $Suspension->fecha_alta=null;
+        }
         $Suspension->fecha_registro = $request->get('fecha_registro');
         $Suspension->fecha_envio_prestacion = $request->get('fecha_envio_prestacion');
         $Suspension->fecha_recibido_prestacione = $request->get('fecha_recibido_prestacione');
