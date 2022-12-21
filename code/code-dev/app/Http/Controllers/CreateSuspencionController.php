@@ -96,14 +96,14 @@ class CreateSuspencionController extends Controller
                 $afiliado = Afiliado::find($request->get('no_afiliado'));
                 $afiliado->colaborador = $request->get('check');
                 $afiliado->ibm = $request->get('ibm');
-                $afiliado->id_dependencia = $request->get('dependencia');
+                $afiliado->dependencia = $request->get('dependencia');
                 $afiliado->id_cargo = $request->get('cargo');
+                $afiliado->reglon = $request->get('renglon');
                 $afiliado->save();
             }
             else {
                 $afiliado = Afiliado::find($request->get('no_afiliado'));
                 $afiliado->colaborador = $request->get('check');
-                $afiliado->reglon = $request->get('renglon');
                 $afiliado->save();
             }
             
