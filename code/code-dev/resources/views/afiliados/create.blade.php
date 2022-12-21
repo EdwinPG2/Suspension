@@ -47,7 +47,7 @@
                     <div class="col-lg-4 col-md-4">
                         <div class="form-group">
                             <label for="direccion">Dirección</label>
-                            <input type="text" name="direccion" id="direccion" class="form-control" maxlength="50" placeholder="-- --">   
+                            <input type="text" name="direccion" id="direccion" class="form-control" maxlength="150" placeholder="-- --">   
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
