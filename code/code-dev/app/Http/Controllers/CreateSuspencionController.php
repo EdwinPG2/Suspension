@@ -201,9 +201,9 @@ class CreateSuspencionController extends Controller
             $afiliado->save();
         }
 
-        alert()->success('Suspension actualizada correctamente');
+        alert()->success('Suspensión actualizada correctamente');
 
-        return redirect()->back();
+        return redirect()->route('createsuspencions.index');;
         
     } catch (\Throwable $th) {
         alert()->error('Error en los campos, revise el numero de médico y afiliado');
