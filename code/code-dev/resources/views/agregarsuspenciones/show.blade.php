@@ -34,8 +34,6 @@
                         </thead>
                         <tbody>
                             @foreach($suspenciones as $item2)
-                            @foreach($suspenciones_existentes as $item)
-                            @if ($item->id_suspension != $item2->id_suspension)
                             <tr class="text-center">
                                 <td>
                                     <input type="checkbox" name="id_suspension[]" id="{{$item2->id_suspension}}" value="{{$item2->id_suspension}}">
@@ -45,9 +43,7 @@
                                 <td id="fecha_registro">{{$item2->fecha_registro}}</td>
                                 <td id="fecha_registro">{{$item2->estado}}</td>
                             </tr>
-                            @endif
-                            @endforeach
-                            @endforeach   
+                            @endforeach    
                         </tbody>
                     </table>
                 </div>

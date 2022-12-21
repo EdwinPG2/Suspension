@@ -83,7 +83,7 @@ class EditarOficioSuspencionController extends Controller
         {
             foreach ( $suspenciones_existentes as $item)
             {   
-            if ( $item->id_oficio == $obj->id_suspension )
+            if ( $item->id_suspension == $obj->id_suspension)
             {   
             $suspenciones->pull( $id_obj);
             }
