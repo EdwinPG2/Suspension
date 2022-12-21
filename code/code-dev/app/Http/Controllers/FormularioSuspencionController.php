@@ -63,7 +63,7 @@ class FormularioSuspencionController extends Controller
             $form_susp->save();
         }
 
-        alert()->success('Se ha guardado la suspencion');
+        alert()->success('Se ha guardado la suspensión');
 
         
         }
