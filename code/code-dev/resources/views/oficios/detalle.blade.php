@@ -28,7 +28,6 @@
                     
                     <tbody>
                         @foreach ($ofi_susp as $item)
-                        @if($item->desuspension->estado == 'Registrado')
                         <tr class="table-active">
                             <th scope="row">{{ $item->desuspension->no_afiliado}}</th>
                             <th scope="row">{{$item->desuspension->afiliado->nombre}} {{$item->desuspension->afiliado->apellidos}}</th>
@@ -57,7 +56,6 @@
                             </td>
                             
                         </tr>
-                        @endif
                         @endforeach
                                    
                     </tbody>
