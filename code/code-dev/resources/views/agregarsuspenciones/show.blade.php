@@ -36,8 +36,6 @@
                             @foreach($suspenciones as $item2)
                             @foreach($suspenciones_existentes as $item)
                             @if ($item->id_suspension != $item2->id_suspension)
-                                
-                            @endif
                             <tr class="text-center">
                                 <td>
                                     <input type="checkbox" name="id_suspension[]" id="{{$item2->id_suspension}}" value="{{$item2->id_suspension}}">
