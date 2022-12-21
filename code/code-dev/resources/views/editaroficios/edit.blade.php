@@ -19,14 +19,14 @@
                             <div class="form-group">
                                 <label for="correlativo">Correlativo</label>
                                 <input type="text" name="correlativo" id="correlativo" class="form-control" placeholder="Ingrese correlativo de oficio"
-                                value="{{isset($oficio->correlativo)?$oficio->correlativo:''}}">   
+                                value="{{isset($oficio->correlativo)?$oficio->correlativo:''}}" required>   
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-8">
                             <div class="form-group">
                                 <label for="destinatario">Destinatario</label>
                                 <input type="text" name="destinatario" id="destinatario" class="form-control" placeholder="Ingrese nombre del destinatario"
-                                value="{{isset($oficio->destinatario)?$oficio->destinatario:''}}">   
+                                value="{{isset($oficio->destinatario)?$oficio->destinatario:''}}" required>   
                             </div>
                         </div>
                     </div>
@@ -35,14 +35,14 @@
                             <div class="form-group">
                                 <label for="fecha">Fecha</label>
                                 <input type="date" name="fecha" id="fecha" class="form-control"
-                                value="{{isset($oficio->fecha)?$oficio->fecha:''}}">   
+                                value="{{ date('Y-m-d', strtotime($oficio->fecha)) }}" required>   
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
                                 <label for="lugar">Lugar</label>
                                 <input type="text" name="lugar" id="lugar" class="form-control" placeholder="Ingrese lugar"
-                                value="{{isset($oficio->lugar)?$oficio->lugar:''}}">   
+                                value="{{isset($oficio->lugar)?$oficio->lugar:''}}" required>   
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4">
@@ -78,7 +78,7 @@
                             <div class="form-group">
                                 <label for="saludo">Saludo</label>
                                 <input type="text" name="saludo" id="saludo" class="form-control" rows="3" placeholder="Ingrese un saludo"
-                                value="{{isset($oficio->saludo)?$oficio->saludo:''}}">   
+                                value="{{isset($oficio->saludo)?$oficio->saludo:''}}" required>   
                             </div>
                         </div>
                     </div>
@@ -87,13 +87,13 @@
                             <div class="form-group">
                                 <label for="despedida">Despedida</label>
                                 <input type="text" name="despedida" id="despedida" class="form-control" rows="3" cols="50" placeholder="Ingrese una despedida"
-                                value="{{isset($oficio->despedida)?$oficio->despedida:''}}">   
+                                value="{{isset($oficio->despedida)?$oficio->despedida:''}}" required>   
                             </div>
                         </div>
                     </div>
                     <hr> 
                     <div class="row justify-content-between">
-                        <button type="submit" class="btn btn-primary">SIGUIENTE</button>
+                        <button type="submit" class="btn btn-primary">ACTUALIZAR</button>
                         <a type="button" class="btn btn-danger" href="{{ url('oficios')}}">CANCELAR</a>
                     </div>
                 </form>
