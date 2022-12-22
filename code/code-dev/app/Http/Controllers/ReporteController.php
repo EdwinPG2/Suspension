@@ -47,7 +47,7 @@ class ReporteController extends Controller
         if($condicion == 0)
         {
             $fechai=$request->get('fechai');
-            $fechaf=$request->get('fechaf');
+            $fechaf=(new Carbon($request->get('fechaf')))->addDays(1); 
             $area=$request->get('areas');
             $especialidad=$request->get('especialidad');
             $clinica=$request->get('id_clinica_servicio');
@@ -61,7 +61,7 @@ class ReporteController extends Controller
         if($condicion== 1)
         {
             $fechai=$request->get('fechai');
-            $fechaf=$request->get('fechaf');
+            $fechaf=(new Carbon($request->get('fechaf')))->addDays(1); 
             $tipo_reporte=$request->get('reporte_colaborador');
             $seleccion=$request->get('seleccion');
             
@@ -75,7 +75,7 @@ class ReporteController extends Controller
         if($condicion== 2)
         {
             $fechai=$request->get('fechai');
-            $fechaf=$request->get('fechaf');
+            $fechaf=(new Carbon($request->get('fechaf')))->addDays(1); 
             $registrador=$request->get('usuario');
             
             $exportResult=new ReportesExport([],[],[$fechai,$fechaf,$registrador,null,null,null,null],[],[]);
@@ -87,7 +87,7 @@ class ReporteController extends Controller
         if($condicion== 3)
         {
             $fechai=$request->get('fechai');
-            $fechaf=$request->get('fechaf');
+            $fechaf=(new Carbon($request->get('fechaf')))->addDays(1); 
             $revisor=$request->get('usuario');
             
             $exportResult=new ReportesExport([],[],[$fechai,$fechaf,null,$revisor,null,null,null],[],[]);
@@ -100,7 +100,7 @@ class ReporteController extends Controller
         if($condicion== 4)
         {
             $fechai=$request->get('fechai');
-            $fechaf=$request->get('fechaf');
+            $fechaf=(new Carbon($request->get('fechaf')))->addDays(1); 
             $revisor=$request->get('usuario');
             $area=$request->get('areas2');
             $especialidad=$request->get('especialidad2');
@@ -116,7 +116,7 @@ class ReporteController extends Controller
         if($condicion== 5)
         {
             $fechai=$request->get('fechai');
-            $fechaf=$request->get('fechaf');
+            $fechaf=(new Carbon($request->get('fechaf')))->addDays(1); 
             $requerimiento=$request->get('requerimiento');
             
             $exportResult=new ReportesExport([],[],[],[$fechai,$fechaf,$requerimiento],[]);
@@ -128,7 +128,7 @@ class ReporteController extends Controller
         if($condicion== 6)
         {
             $fechai=$request->get('fechai');
-            $fechaf=$request->get('fechaf');
+            $fechaf=(new Carbon($request->get('fechaf')))->addDays(1); 
             $pago=$request->get('pago');
             
             $exportResult=new ReportesExport([],[],[],[],[$fechai,$fechaf,$pago]);
