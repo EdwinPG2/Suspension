@@ -198,7 +198,7 @@
                             <h4>Colaborador</h4>
                             <input type="checkbox" id="check" name="check"
                                 value="{{ isset($suspencion->afiliado->colaborador) ? $suspencion->afiliado->colaborador : '' }}"
-                                onchange="javascript:showContent()" @if ($suspencion->afiliado->colaborador == 'Y') checked @endif>
+                                onchange="javascript:showContent()" @if ($suspencion->afiliado->colaborador == 'y') checked @endif>
                         </div>
 
                         <div class="row">
