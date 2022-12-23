@@ -14,7 +14,7 @@ class ChangesPasswordController extends Controller
     {
         $user = User::where('id',$id)->first();
         return view('auth/passwords/reset',compact('user'));
-        alert()->success('Contraseña actualizada correctamente');
+        
 
     }
     
@@ -27,7 +27,6 @@ class ChangesPasswordController extends Controller
         $user = User::find($id);
         $user->password = Hash::make($request->input('password'));
         $user->save();
-        alert()->success('Contraseña actualizada correctamente');
         return redirect('/login')->with('message', 'Contraseña actualizada correctamente');
     }
 
