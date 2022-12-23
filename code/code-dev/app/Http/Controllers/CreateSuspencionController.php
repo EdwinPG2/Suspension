@@ -216,6 +216,7 @@ class CreateSuspencionController extends Controller
     {
         //
         Suspension::destroy($id);
+        alert()->success('Suspensión eliminada correctamente');
         return redirect()->route('createsuspencions.index');
     }
 }

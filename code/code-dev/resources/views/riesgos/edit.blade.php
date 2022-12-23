@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-4">
                             <div class="form-group">
-                                <label for="nombre">Riesgo</label>
+                                <label for="nombre">Riesgo (*)</label>
                                 <input type="text" name="nombre" value="{{ $riesgos-> nombre}}" id="nombre" class="form-control" placeholder="Ingrese nombre de riesgo" required maxlength="100">   
                             </div>
                         </div>

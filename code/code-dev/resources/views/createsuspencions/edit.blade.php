@@ -66,7 +66,10 @@
                                 <div class="form-group">
                                     <label for="fecha_accidente">Fecha de accidente</label>
                                     <input type="date" name="fecha_accidente" id="fecha_accidente" class="form-control"
-                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_accidente)) }}">
+                                    @if(date('d-m-Y', strtotime($item->fecha_alta)) != '31-12-1969')
+                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_accidente)) }}"
+                                        @endif
+                                        >
                                 </div>
                             </div>
                         </div>
@@ -102,7 +105,10 @@
                                 <div class="form-group">
                                     <label for="fecha_alta">Fecha de alta</label>
                                     <input type="date" name="fecha_alta" id="fecha_alta" class="form-control"
-                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_alta)) }}">
+                                    @if(date('d-m-Y', strtotime($item->fecha_alta)) != '31-12-1969')
+                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_alta)) }}"
+                                    @endif
+                                        >
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">

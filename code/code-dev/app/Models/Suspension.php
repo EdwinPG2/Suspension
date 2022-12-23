@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id_suspension
  * @property Carbon $fecha_inicio_suspension
  * @property Carbon $fecha_fin_suspension
- * @property Carbon $fecha_alta
+ * @property Carbon|null $fecha_alta
  * @property Carbon $fecha_registro
  * @property Carbon|null $fecha_envio_prestacion
  * @property Carbon|null $fecha_recibido_prestacione
@@ -29,7 +29,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $users_id_registrador
  * @property int|null $users_id_revisor
  * @property Carbon $fecha_inicio_caso
- * @property Carbon $fecha_accidente
+ * @property Carbon|null $fecha_accidente
  * @property int $id_riesgo
  * 
  * @property Afiliado $afiliado

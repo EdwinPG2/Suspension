@@ -32,7 +32,6 @@ class RiesgoController extends Controller
     {
         validator::make($request->except('_token'), [
             'nombre' => 'required|max:255',
-            'descripcion' => 'required'
         ])->validate();
         
         $riesgo = new Riesgo();

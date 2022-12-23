@@ -116,7 +116,6 @@ class EditarOficioController extends Controller
             'destinatario' => 'required|max:50',
             'saludo' => 'required|max:250',
             'lugar' => 'required|max:250',
-            'clinica_servicio' => 'required',
             'fecha' => 'date:d/m/Y',
             'despedida' => 'required|max:250',
             'estado' => 'required|max:20',
@@ -127,7 +126,6 @@ class EditarOficioController extends Controller
         $oficio ->saludo = $request->get('saludo');
         $oficio ->lugar = $request->get('lugar');
         $oficio ->correlativo = $request->get('correlativo');
-        $oficio ->clinica_servicio = $request->get('clinica_servicio');
         $oficio ->fecha = $request->get('fecha');
         $oficio ->despedida = $request->get('despedida');
         $oficio ->estado = $request->get('estado');

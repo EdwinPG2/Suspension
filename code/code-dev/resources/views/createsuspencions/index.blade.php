@@ -39,7 +39,11 @@
                             <td>{{ date('d-m-Y', strtotime($item->fecha_inicio_caso)) }}</td>
                             <td>{{ date('d-m-Y', strtotime($item->fecha_inicio_suspension)) }}</td>
                             <td>{{ date('d-m-Y', strtotime($item->fecha_fin_suspension)) }}</td>
+                            @if(date('d-m-Y', strtotime($item->fecha_alta)) != '31-12-1969')
                             <td>{{ date('d-m-Y', strtotime($item->fecha_alta)) }}</td>
+                            @else
+                            <td></td>
+                            @endif
                             <td>{{$item->clinica_servicio->nombre}}</td>
                             <td>{{ $item->observacion }}</td>
                             <td>{{ $item->estado }}</td>
