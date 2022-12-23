@@ -39,7 +39,6 @@ class EspecialidadController extends Controller
     {
         validator::make($request->except('_token'), [
             'nombre_especialidad' => 'required|max:100',
-            'descripcion' => 'required|max:45'
         ])->validate();
 
         $especialidad = new Especialidad();
@@ -69,7 +68,6 @@ class EspecialidadController extends Controller
     {
         $request->validate([
             'nombre_especialidad' => 'required|max:100',
-            'descripcion' => 'required|max:45'
         ]);
 
         $especialidad = Especialidad::find($id);
