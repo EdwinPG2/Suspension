@@ -148,7 +148,11 @@
                     <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_accidente)) }}</td>
                     <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_inicio_suspension)) }} /
                         {{ date('d-m-Y', strtotime($item->desuspension->fecha_fin_suspension)) }}</td>
-                    <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_alta)) }}</td>
+                    @if (date('d-m-Y', strtotime($item->desuspension->fecha_alta)) != '31-12-1969')
+                        <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_alta)) }}</td>
+                    @else
+                        <td></td>
+                    @endif
                     <td>
                         @foreach ($formularios as $item2)
                             @if ($item2->id_suspension == $item->id_suspension)
@@ -179,17 +183,17 @@
         <br>IGSS, Hospital General de Quetzaltenango <br>
     </div>
 
-        <img style="position:absolute;top:9.7in;left:-0.5in;width:9.32in;height:0.69in;display: inline-block"
-            src="..\public\img\pie.png" />
-        <div style="position:absolute;top:9.6in;width:100%;line-height:0.20in;text-align:center"><span
-                style="font-style:normal;font-weight:Normal;font-size:11pt;font-family:Century Gothic;color:#000000">
-                5ta. Avenida 1-79 zona 5 Quetzaltenango
-                <br>Tel. 7829 1200
-                <br>
-                www.igssgt.org
-            </span>
-        </div>
-        
+    <img style="position:absolute;top:9.7in;left:-0.5in;width:9.32in;height:0.69in;display: inline-block"
+        src="..\public\img\pie.png" />
+    <div style="position:absolute;top:9.6in;width:100%;line-height:0.20in;text-align:center"><span
+            style="font-style:normal;font-weight:Normal;font-size:11pt;font-family:Century Gothic;color:#000000">
+            5ta. Avenida 1-79 zona 5 Quetzaltenango
+            <br>Tel. 7829 1200
+            <br>
+            www.igssgt.org
+        </span>
+    </div>
+
 
 </body>
 
