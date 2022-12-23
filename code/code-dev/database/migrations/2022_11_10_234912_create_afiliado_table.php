@@ -19,7 +19,7 @@ class CreateAfiliadoTable extends Migration
             $table->string('nombre', 100);
             $table->string('apellidos', 100);
             $table->string('telefono', 15);
-            $table->string('direccion', 50)->nullable();
+            $table->string('direccion', 250)->nullable();
             $table->string('genero', 15)->nullable();
             $table->date('fecha_nacimiento')->nullable();
             $table->string('ibm', 20)->nullable();
