@@ -60,18 +60,7 @@
                                 value="{{isset($oficio->estado)?$oficio->estado:''}}">   
                             </div>
                         </div>
-                        
 
-                        <div class="col-lg-4 col-md-4">
-                            <div class="form-group">
-                                <label for="clinica_servicio">Clinica servicio</label>
-                                <select name="clinica_servicio" id="clinica_servicio" class="form-control select2">
-                                    @foreach($clinicas as  $item)
-                                    <option value="{{ $item->id_clinica_servicio }}">{{ $item->nombre }}</option>
-                                    @endforeach   
-                                </select>   
-                            </div>
-                        </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
