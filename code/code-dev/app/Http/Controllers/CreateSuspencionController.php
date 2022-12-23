@@ -186,12 +186,12 @@ class CreateSuspencionController extends Controller
 
         $Suspension->save();
 
-        if($request->get('check')=='Y')
+        if($request->get('check')=='y')
         {
             $afiliado = Afiliado::find($request->get('no_afiliado'));
             $afiliado->colaborador = $request->get('check');
             $afiliado->ibm = $request->get('ibm');
-            $afiliado->id_dependencia = $request->get('dependencia');
+            $afiliado->dependencia = $request->get('dependencia');
             $afiliado->id_cargo = $request->get('cargo');
             $afiliado->save();
         }
@@ -207,7 +207,7 @@ class CreateSuspencionController extends Controller
         
     } catch (\Throwable $th) {
         alert()->error('Error en los campos, revise el numero de médico y afiliado');
-        return redirect()->route('createsuspencions.create');
+        return redirect()->back();
         
     }
     }
