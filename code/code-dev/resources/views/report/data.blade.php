@@ -11,7 +11,7 @@
             <th>Especialidad</th>
             <th>Clinica/Servicio</th>
             <th>Formularios</th>
-            <th>{{isset($data[0]->pago)?Pago:''}}</th>
+            <th>Pago</th>
         </tr>
     </thead>
     <tbody>
