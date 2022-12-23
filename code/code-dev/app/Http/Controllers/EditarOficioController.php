@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Area;
 use App\Models\Oficio;
 use App\Models\OficioSuspencion;
 use App\Models\Suspension;
@@ -97,8 +98,9 @@ class EditarOficioController extends Controller
     {
         $oficio = Oficio::find($id);
         $clinicas = ClinicaServicio::all();
+        $areas = Area::all();
 
-        return view('editaroficios.edit', compact('oficio','clinicas'));
+        return view('editaroficios.edit', compact('oficio','clinicas','areas'));
     }
 
     /**
