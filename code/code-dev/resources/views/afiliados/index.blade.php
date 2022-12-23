@@ -38,7 +38,11 @@
                             <td>{{ $item->telefono }}</td>
                             <td>{{ $item->direccion }}</td>
                             <td>{{ $item->genero }}</td>
-                            <td>{{  date('d-m-Y', strtotime($item->fecha_nacimiento))}}</td>
+                            @if(date('d-m-Y', strtotime($item->fecha_nacimiento)) != '31-12-1969')
+                            <td>{{ date('d-m-Y', strtotime($item->fecha_nacimiento)) }}</td>
+                            @else
+                            <td></td>
+                            @endif
 
                             <td>
                                 @can('afiliado-edit')
