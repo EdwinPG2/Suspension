@@ -43,6 +43,8 @@
                                                 @elseif($item->correlativo <= 990)
                                                     0{{ $item->correlativo }}
                                                 @endif
+                                                /
+                                                {{ $item->fecha->translatedFormat('Y') }}
                                             </td>
                                             <td>{{ $item->destinatario }}</td>
                                             <td>{{ $item->dclinica_servicio->nombre }}</td>
