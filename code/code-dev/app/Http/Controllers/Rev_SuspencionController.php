@@ -70,13 +70,9 @@ class Rev_SuspencionController extends Controller
 
         $suspension->pago = "SI";
         $suspension->estado = "Archivado";
-        
-        //$bitacora_suspension = BitacoraSuspension::find($id);
-        //$bitacora_suspension->pago = "SI";
-        //$bitacora_suspension->save();
 
         $suspension->save();
-        alert()->success('Pago Validado');
+        alert()->success('Pago validado');
 
         return redirect()->route('revreq.index');
     }

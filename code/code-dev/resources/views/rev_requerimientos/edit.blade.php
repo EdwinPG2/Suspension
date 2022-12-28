@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('titulo')
-<span>Revisión del oficio {{$oficios->correlativo}}</span>
+<span>Revisión del oficio #{{$oficios->id_oficio}}</span>
 @endsection
 @section('contenido')
 <div class="row">
@@ -46,7 +46,7 @@
                                     <a href="{{ route ('req.show', $item->desuspension->id_suspension) }}"
                                         class="btn btn-success"><i class="fas fa-check-circle"></i> Aceptada</a>
                                         <br> <br>
-                                    <a href="{{ route ('revsusp.edit', $item->desuspension->id_suspension) }}"
+                                    <a href="{{ route ('req.edit', $item->desuspension->id_suspension) }}"
                                             class="btn btn-danger"><i class="fas fa-times-circle"></i> Rechazada</a>
                                     @endif
 
@@ -54,7 +54,7 @@
                                     <a href="{{ route ('revsusp.show', $item->desuspension->id_suspension) }}"
                                         class="btn btn-success"><i class="fas fa-check-circle"></i> PAGO</a>
                                         <br> <br>
-                                    <a href="{{ route ('revsusp.edit', $item->desuspension->id_suspension) }}"
+                                    <a href="{{ route ('gen.edit', $item->desuspension->id_suspension) }}"
                                             class="btn btn-danger"><i class="fas fa-times-circle"></i> PAGO</a>
                                     @endif
 

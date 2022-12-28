@@ -26,9 +26,9 @@ class ReqController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store($id)
     {
-        //
+        
     }
 
     public function show($id)
@@ -44,7 +44,13 @@ class ReqController extends Controller
 
     public function edit($id)
     {
-        //
+        $suspension = Suspension::find($id);
+        $suspension->estado = "Denegado";
+        
+        $suspension->save();
+        alert()->info('Suspensión denegada!');
+
+        return redirect()->back();
     }
 
     public function update(Request $request, Requerimiento $requerimiento)

@@ -31,6 +31,18 @@ class GeneralController extends Controller
 
     }
 
+    public function edit($id){
+        $suspension = Suspension::find($id);
+
+        $suspension->pago = "NO";
+        $suspension->estado = "Archivado";
+
+        $suspension->save();
+        alert()->info('Pago denegado');
+
+        return redirect()->route('revreq.index');
+    }
+
     public function Suspension_especialidad()
     {
 
