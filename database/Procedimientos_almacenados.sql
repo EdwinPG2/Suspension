@@ -122,7 +122,7 @@ inner join area on area.id_area = clinica_servicio.id_area
 inner join especialidad on especialidad.id_especialidad = clinica_servicio.id_especialidad
 inner join riesgo on riesgo.id = suspension.id_riesgo
 WHERE suspension.fecha_registro BETWEEN fechai AND fechaf
-and afiliado.colaborador='Y'
+and afiliado.colaborador='y'
 and suspension.id_riesgo=idriesgo
 group by id_suspension;
 end$$
@@ -142,7 +142,7 @@ inner join area on area.id_area = clinica_servicio.id_area
 inner join especialidad on especialidad.id_especialidad = clinica_servicio.id_especialidad
 inner join riesgo on riesgo.id = suspension.id_riesgo
 WHERE suspension.fecha_registro BETWEEN fechai AND fechaf
-and afiliado.colaborador='Y'
+and afiliado.colaborador='y'
 and afiliado.id_dependencia=iddependencia
 group by id_suspension;
 end$$
@@ -160,7 +160,7 @@ inner join area on area.id_area = clinica_servicio.id_area
 inner join especialidad on especialidad.id_especialidad = clinica_servicio.id_especialidad
 inner join riesgo on riesgo.id = suspension.id_riesgo
 WHERE suspension.fecha_inicio_caso BETWEEN fechai AND fechaf
-and afiliado.colaborador='Y'
+and afiliado.colaborador='y'
 and afiliado.id_cargo =idcargo
 group by id_suspension;
 end$$
