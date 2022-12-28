@@ -141,7 +141,7 @@
                                         <option value="" disabled selected>-- Seleccione un reporte --</option>
 
                                         <option value="1">Riesgo</option>
-                                        <option value="2">Dependencia</option>
+                                        <!--<option value="2">Dependencia</option>-->
                                         <option value="3">Cargo/Puesto</option>
 
                                     </select>
