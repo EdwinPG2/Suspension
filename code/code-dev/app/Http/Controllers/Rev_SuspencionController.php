@@ -74,7 +74,7 @@ class Rev_SuspencionController extends Controller
         $suspension->save();
         alert()->success('Pago validado');
 
-        return redirect()->route('revreq.index');
+        return redirect()->back();
     }
 
     /**

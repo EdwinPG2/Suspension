@@ -41,7 +41,7 @@
                                 
 
                                 <td align="center">
-
+                                    
                                     @if($item->desuspension->estado == 'Aceptado')
                                     <a href="{{ route ('req.show', $item->desuspension->id_suspension) }}"
                                         class="btn btn-success"><i class="fas fa-check-circle"></i> Aceptada</a>
@@ -51,6 +51,7 @@
                                     @endif
 
                                     @if($item->desuspension->estado == 'Validado')
+                                    
                                     <a href="{{ route ('revsusp.show', $item->desuspension->id_suspension) }}"
                                         class="btn btn-success"><i class="fas fa-check-circle"></i> PAGO</a>
                                         <br> <br>
@@ -62,6 +63,10 @@
                                     <a href="{{ route ('req.create', $item->id_oficio_suspencion) }}"
                                         class="btn btn-info"><i class="fas fa-edit"></i> Generar requerimiento</a>
                                         
+                                    @endif
+
+                                    @if($item->desuspension->pago != null)
+                                        {{$item->desuspension->pago}}
                                     @endif
                                 </td>
                                 

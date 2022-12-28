@@ -40,7 +40,7 @@ class GeneralController extends Controller
         $suspension->save();
         alert()->info('Pago denegado');
 
-        return redirect()->route('revreq.index');
+        return redirect()->back();
     }
 
     public function Suspension_especialidad()
