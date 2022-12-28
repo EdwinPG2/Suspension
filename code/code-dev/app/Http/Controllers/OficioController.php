@@ -25,8 +25,8 @@ class OficioController extends Controller
     public function index()
     {
         //alert('users_id_creador',Auth::user()->id);
-        $oficios = Oficio::all();
-        //$oficios = Oficio::where('users_id_creador',Auth::user()->id);
+        //$oficios = Oficio::all();
+        $oficios = Oficio::where('users_id_creador',Auth::user()->id)->get();
         
         return view('oficios/index',compact('oficios'));
     }
