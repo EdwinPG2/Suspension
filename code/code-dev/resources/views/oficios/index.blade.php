@@ -45,6 +45,7 @@
                                                 @endif
                                                 /
                                                 {{ $item->fecha->translatedFormat('Y') }}
+                                                {{ $item->dclinica_servicio->descripcion }}
                                             </td>
                                             <td>{{ $item->destinatario }}</td>
                                             <td>{{ $item->dclinica_servicio->nombre }}</td>

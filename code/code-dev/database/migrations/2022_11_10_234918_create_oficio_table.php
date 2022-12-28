@@ -27,6 +27,7 @@ class CreateOficioTable extends Migration
             $table->unsignedBigInteger('users_id_revisor')->nullable();
             $table->date('fecha_revision')->nullable();
             
+            $table->foreign('clinica_servicio', 'fk_clinica_servicio1')->references('id_clinica_servicio')->on('clinica_servicio')->onDelete('cascade');
             $table->foreign('users_id_creador', 'fk_oficio_users1')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('users_id_revisor', 'fk_oficio_users2')->references('id')->on('users')->onDelete('cascade');
         });

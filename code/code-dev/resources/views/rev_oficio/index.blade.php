@@ -62,7 +62,18 @@
                             <td>{{ date('d-m-Y', strtotime($item->fecha)) }}</td>
                             <td>{{ $item->destinatario}}</td>
                             <td>{{ $item->estado}}</td>
-                            <td>{{ $item->correlativo}}</td>
+                            <td>
+                                @if ($item->correlativo <= 9)
+                                                    000{{ $item->correlativo }}
+                                                @elseif($item->correlativo <= 99)
+                                                    00{{ $item->correlativo }}
+                                                @elseif($item->correlativo <= 990)
+                                                    0{{ $item->correlativo }}
+                                                @endif
+                                                /
+                                                {{ $item->fecha->translatedFormat('Y') }}
+                                                {{ $item->dclinica_servicio->descripcion }}
+                            </td>
                         
                             <td>
                                 @if($item->estado != 'Congelado')
