@@ -18,14 +18,14 @@
             <div class="card-body">
                 <table id="dt-roles" class="table table-striped table-bordered dts">
                     <thead>
-                        <th>No.</th>
+                        
                         <th>Nombre</th>
                         <th width="280px">Opciones</th>
                     </thead>
                     <tbody>
                         @foreach($roles as $item)
                         <tr class="text-center">
-                            <td>{{ ++$i }}</td>
+                            
                             <td>{{ $item->name }}</td>
                             <td colspan="2">
                                 @can('role-edit')
