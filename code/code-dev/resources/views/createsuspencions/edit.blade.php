@@ -57,7 +57,11 @@
                                     <label for="id_riesgo">Seleccione riesgo (*)</label>
                                     <select class="form-control" name="id_riesgo" id="id_riesgo" required>
                                         @foreach ($riesgo as $item)
-                                            <option value="{{ $item->id }}">{{ $item->nombre }}</option>
+                                            <option value="{{ $item->id }}"
+                                                @if($suspencion->id_riesgo == $item->id)
+                                            selected="select"
+                                            @endif
+                                                >{{ $item->nombre }}</option>
                                         @endforeach
                                     </select>
                                 </div>
