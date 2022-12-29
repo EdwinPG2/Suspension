@@ -30,6 +30,7 @@ class Bitacora extends Model
 	];
 
 	protected $fillable = [
+		'id_usuario',
 		'fecha_hora',
 		'accion',
 		'descripcion'

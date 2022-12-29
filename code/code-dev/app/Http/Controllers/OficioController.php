@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bitacora;
-use App\Models\BitacoraOficio;
-use App\Models\BitacoraSuspension;
 use App\Models\Oficio;
 use App\Models\Area;
 use App\Models\Especialidad;

@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Afiliado;
+use App\Models\Bitacora;
 use App\Models\TipoAfiliado;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 
 class AfiliadoController extends Controller
 {
@@ -59,10 +62,18 @@ class AfiliadoController extends Controller
             $Afiliado->ibm = $request->get('ibm');
             $Afiliado->id_tipo_afiliado = $request->get('id_tipo_afiliado');
             $Afiliado->reglon = $request->get('renglon');
-    
+
+            $bitacora = new Bitacora();
+            $bitacora->id_usuario = Auth::user()->id;
+            $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+            $bitacora->accion = 'Creacion Afiliado';
+            $bitacora->descripcion = 'Creacion del afiliado #'.$Afiliado->no_afiliado;
+
+            $bitacora->save();
             $Afiliado->save();
     
             alert()->success('Afiliado guardado correctamente');
+
     
             return redirect()->route('afiliados.index');
             
@@ -110,6 +121,13 @@ class AfiliadoController extends Controller
         $Afiliado->ibm = $request->get('ibm');
         $Afiliado->id_tipo_afiliado = $request->get('id_tipo_afiliado');
 
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Actualización Afiliado';
+        $bitacora->descripcion = 'Actualización del afiliado #'.$Afiliado->no_afiliado;
+        $bitacora->save();
+
         $Afiliado->save();
 
         alert()->success('Afiliado actualizado correctamente');
@@ -128,6 +146,12 @@ class AfiliadoController extends Controller
     {
         //
         Afiliado::destroy($id);
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Eliminación Afiliado';
+        $bitacora->descripcion = 'Eliminación del afiliado #'.$id;
+        $bitacora->save();
         alert()->success('Afiliado eliminado correctamente');
         
         return redirect()->route('afiliados.index');
