@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $saludo
  * @property string $lugar
  * @property string $correlativo
- * @property string $clinica_servicio
+ * @property int $clinica_servicio
  * @property Carbon $fecha
  * @property string $despedida
  * @property string $estado

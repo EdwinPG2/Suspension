@@ -19,7 +19,7 @@ class CreateOficioTable extends Migration
             $table->string('saludo', 250);
             $table->string('lugar', 50);
             $table->string('correlativo', 250);
-            $table->string('clinica_servicio', 100);
+            $table->integer('clinica_servicio');
             $table->date('fecha');
             $table->string('despedida', 250);
             $table->string('estado', 20);
