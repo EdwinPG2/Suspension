@@ -30,7 +30,7 @@ class CreateSuspencionController extends Controller
     public function index()
     {
         //$suspencions = Suspension::all();
-        $suspencions = Suspension::where('users_id_registrador',Auth::user()->id)->where('estado','Registrado')->orWhere('estado','Rechazado')->get();
+        $suspencions = Suspension::where('users_id_registrador',Auth::user()->id)->where('estado','Registrado')->get();
         $formularios_suspencion=FormularioSuspencion::all();
         return view('createsuspencions/index', compact('suspencions','formularios_suspencion'));
     }
@@ -218,5 +218,14 @@ class CreateSuspencionController extends Controller
         Suspension::destroy($id);
         alert()->success('Suspensión eliminada correctamente');
         return redirect()->route('createsuspencions.index');
+    }
+
+    public function rechazos()
+    {
+
+        $suspencions = Suspension::where('users_id_registrador',Auth::user()->id)->where('estado','Rechazado')->get();
+        $formularios_suspencion=FormularioSuspencion::all();
+        return view('createsuspencions/index', compact('suspencions','formularios_suspencion'));
+
     }
 }

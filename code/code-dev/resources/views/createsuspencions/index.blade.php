@@ -10,9 +10,19 @@
             <div class="card-header">
                 <div class="row justify-content-between">
                     <h4>Listado de suspensiones</h4>
+                    
                     @can('suspension-create')
                     <a type="button" class="btn btn-primary" href="{{ route('createsuspencions.create')}}"><i class="fas fa-plus"></i>Nuevo</a>
                     @endcan
+                </div>
+                <div class="card-header">
+                    <div class="row justify-content-between">
+                        <div align="left">
+                        <h4>Seleccione que tipo de suspensiones desea ver:</h4>
+                        <a href="{{route('createsuspencions.index')}}" class="btn btn-info">Registrados</a>
+                        <a href="{{route('createsuspencions.rechazos')}}" class="btn btn-info">Rechazados</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="card-body">
@@ -49,7 +59,7 @@
                             <td>{{ $item->estado }}</td>
                             <td>{{ date('d-m-Y', strtotime($item->fecha_registro))}}</td>
 
-                            <td>
+                            <td>@if($item->estado=='Registrado')
                                 @can('suspension-edit')
                                 <a href="{{ route ('agregarformularios.show', $item->id_suspension) }}"
                                     class="btn btn-warning">Editar formularios</a>
@@ -63,6 +73,7 @@
                                 <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
                                 </form>
                                 @endcan
+                                @endif
                             </td>
                         </tr>
                         @endforeach                

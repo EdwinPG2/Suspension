@@ -64,6 +64,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     route::resource('/ofisusp', Oficio_SuspencionController::class);
     Route::resource('/createsuspencions', CreateSuspencionController::class);
+    Route::get('/createsuspencionsrech', 'CreateSuspencionController@rechazos')->name('createsuspencions.rechazos');
     Route::resource('/agregarformularios', FormularioSuspencionController::class);
     Route::resource('/editarformularios', FormularioSuspencionEditController::class);
     Route::resource('/requerimientos', RequerimientoController::class);
