@@ -61,6 +61,7 @@
                     {{ $ofi_susp[0]->doficio->dclinica_servicio->descripcion }}
                 @endif
                 <br>
+                <span style="font-style:normal;font-weight:bold;font-size:11pt;font-family:Century Gothic;color:#fb0404"> Rechazos según:</span>
                 OFICIO No. @if ($ofi_susp->isNotEmpty())
                     @if ($ofi_susp[0]->doficio->correlativo <= 9)
                         000{{ $ofi_susp[0]->doficio->correlativo }}
