@@ -53,6 +53,13 @@ class ClinicaServicioController extends Controller
         $clinica_servicio->id_especialidad = $request->get('id_especialidad');
         $clinica_servicio->id_area = $request->get('id_area');
 
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Creación de clínica';
+        $bitacora->descripcion = 'Creación del servicio '.$clinica_servicio->nombre;
+        $bitacora->save();
+
         $clinica_servicio->save();
         alert()->success('Clinica/servicio guardado correctamente');
         return redirect()->route('clinicas_servicios.index');
@@ -87,6 +94,13 @@ class ClinicaServicioController extends Controller
         $clinica_servicio->id_area = $request->get('id_area');
         $clinica_servicio->save();
 
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Actualización de clínica';
+        $bitacora->descripcion = 'Actualización del servicio '.$clinica_servicio->nombre;
+        $bitacora->save();
+
         alert()->success('Clinica/servicio actualizado correctamente');
         return redirect()->route('clinicas_servicios.index');
     }
@@ -95,6 +109,13 @@ class ClinicaServicioController extends Controller
     {
         $clinica_servicio = ClinicaServicio::find($id);
         $clinica_servicio->delete();
+
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Eliminación de clínica';
+        $bitacora->descripcion = 'Eliminación del servicio '.$clinica_servicio->nombre;
+        $bitacora->save();
 
         alert()->success('clinica/servicio eliminado correctamente');
         return redirect()->route('clinicas_servicios.index');
