@@ -223,6 +223,9 @@
                                 <div class="form-group">
                                     <label for="cargo">Seleccione cargo/puesto</label>
                                     <select class="form-control" name="cargo" id="cargo">
+                                        <option value=""selected="select">
+                                            -- --
+                                        </option>
                                         @foreach ($cargos as $item)
                                             <option value="{{ $item->id_cargo }}"
                                                 @if ($suspencion->afiliado->id_cargo == $item->id_cargo) selected="select" @endif>
