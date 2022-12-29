@@ -678,15 +678,15 @@ class Llenado extends Seeder
         $role->syncPermissions($permissions);
 
         $role = Role::create(['name' => 'Registrador-Registros Medicos']);
-        $permissions = ['10','11','12','13','14','15','16','17','18','83'];
+        $permissions = ['10','11','12','13','14','15','16','17','18','39','40','41','42','83','100'];
         $role->syncPermissions($permissions);
 
         $role = Role::create(['name' => 'Revisor-Registros Medicos']);
-        $permissions = ['19','20','21','22','23','24','25','26','35','36','37','38','75','76','77','78','79','80','81','82','84'];
+        $permissions = ['19','20','21','22','23','24','25','26','31', '35', '36', '37','38','75','76','77','78','79','80','81','82','84','87','100'];
         $role->syncPermissions($permissions);
 
         $role = Role::create(['name' => 'Registrador-Prestaciones']);
-        $permissions = ['19','20','21','22','23','24','25','26','75','76','77','78','79','80','81','82','84'];
+        $permissions = ['19','20','21','22','23','24','25','26','75','76','77','78','79','80','81','82','84','86', '88','89','90','91', '100'];
         $role->syncPermissions($permissions);
     }
 }
