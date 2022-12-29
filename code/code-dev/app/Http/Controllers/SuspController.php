@@ -87,7 +87,7 @@ class SuspController extends Controller
      * @param  \App\Models\Suspension  $suspension
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id)//aceptando o rechazando suspensiones en registros medicos
     {
         $request->validate([
             'observacion' => 'exclude|max:250',

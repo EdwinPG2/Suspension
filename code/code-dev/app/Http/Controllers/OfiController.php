@@ -66,7 +66,7 @@ class OfiController extends Controller
      * @param  \App\Models\Oficio  $oficio
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id)//pdf de oficios aceptados
     {
         $ofi_susp = OficioSuspencion::where('id_oficio',$id)->get();
         if($ofi_susp->count()>0){
