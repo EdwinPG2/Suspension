@@ -78,7 +78,7 @@ class EditarOficioSuspencionController extends Controller
         $oficio = Oficio::find($id);
         $suspenciones_existentes=OficioSuspencion::where('id_oficio',$id)->get();
         //$suspenciones = Suspension::all();
-        $suspenciones=Suspension::where('users_id_registrador',Auth::user()->id)->where('estado','Registrado')->orWhere('estado','Rechazado')->get();//a;adir condicion de usuario
+        $suspenciones=Suspension::where('users_id_registrador',Auth::user()->id)->where('estado','Registrado')->get();//a;adir condicion de usuario y condicion de estado de suspension->orWhere('estado','Rechazado')
         foreach($suspenciones as $id_obj => $obj )
         {
             foreach ( $suspenciones_existentes as $item)
