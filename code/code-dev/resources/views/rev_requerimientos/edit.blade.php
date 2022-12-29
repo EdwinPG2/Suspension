@@ -60,8 +60,7 @@
                                     @endif
 
                                     @if($item->desuspension->estado == 'Denegado')
-                                    <a href="{{ route ('req.create', $item->id_oficio_suspencion) }}"
-                                        class="btn btn-info"><i class="fas fa-edit"></i> Generar requerimiento</a>
+                                    Rechazo de papelería
                                         
                                     @endif
 
