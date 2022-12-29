@@ -40,6 +40,13 @@ class AreaController extends Controller
         $area->nombre = $request->get('nombre');
         $area->descripcion = $request->get('descripcion');
 
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Creación de área';
+        $bitacora->descripcion = 'Creación del área '.$area->nombre;
+        $bitacora->save();
+
         $area->save();
 
         alert()->success('Area guardado correctamente');
@@ -68,6 +75,12 @@ class AreaController extends Controller
         $area->nombre = $request->get('nombre');
         $area->descripcion = $request->get('descripcion');
 
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Modificación de área';
+        $bitacora->descripcion = 'Modificación del área '.$area->nombre;
+        $bitacora->save();
         $area->save();
 
         alert()->success('Area actualizado correctamente');
@@ -78,6 +91,13 @@ class AreaController extends Controller
     {
         $area = Area::find($id);
         $area->delete();
+
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Eliminación de área';
+        $bitacora->descripcion = 'Eliminación del área '.$area->nombre;
+        $bitacora->save();
 
         alert()->success('Area eliminado correctamente');
         
