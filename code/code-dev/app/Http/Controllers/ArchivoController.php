@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Suspension;
+use App\Models\OficioSuspencion;
 use App\Models\ClinicaServicio;
 use App\Models\Area;
 use App\Models\Especialidad;
@@ -13,6 +14,7 @@ use App\Models\Riesgo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Collection;
 
 class ArchivoController extends Controller
 {
@@ -27,9 +29,17 @@ class ArchivoController extends Controller
     public function index()
     {
         //$suspencions = Suspension::all();
-        $suspencions = Suspension::all();
+        $suspencions = Suspension::where('estado','Archivado')->get();;
         $formularios_suspencion=FormularioSuspencion::all();
-        return view('archivos/index', compact('suspencions','formularios_suspencion'));
+
+        $fin=collect();
+        foreach($suspencions as $id_obj => $obj )
+        {
+            $original=$fin;
+            $aux=OficioSuspencion::where('id_suspension',$obj->id_suspension)->get();
+            $fin=$original->concat($aux);
+        }
+        return view('archivos/index', compact('fin','formularios_suspencion'));
     }
 
     public function create()
