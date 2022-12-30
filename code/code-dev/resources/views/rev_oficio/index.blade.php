@@ -81,7 +81,7 @@
                                         class="btn btn-warning"><i class="fas fa-edit"></i> Revisar</a>
                                      
                                 <!--PDF sin revisar-->
-                                <a href="{{ route('ofi.edit', $item->id_oficio) }}" class="btn btn-primary"><i class="fas fa-check-circle"></i> PDF</a>
+                                <a href="{{ route('oficios.edit', $item->id_oficio) }}" class="btn btn-primary"><i class="fas fa-check-circle"></i> PDF</a>
                                 
                                 @endif
                                 @if($item->estado == 'Congelado')

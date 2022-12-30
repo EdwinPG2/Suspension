@@ -17,12 +17,13 @@
             <div class="card-body">
                 <table id="dt-formularios" class="table table-striped table-bordered dts">
                     <thead>
-                        <th>ID</th>
-                        <th>Estado suspension</th>
-                        <th>Inicio suspension</th>
-                        <th>Registro de suspension</th>
-                        <th>Fin suspension</th>
-                        <th>Clinica</th>
+                        <th>No. afiliado</th>
+                        <th>Nombres</th>
+                        <th>Estado suspensión</th>
+                        <th>Inicio suspensión</th>
+                        <th>Registro de suspensión</th>
+                        <th>Fin suspensión</th>
+                        <th>Clínica</th>
                         <th>Doctor</th>
                         <th>Revisar</th>
                     </thead>
@@ -30,7 +31,8 @@
                         @foreach($ofisusp as $item)
                         @if($item->id_oficio == $oficios->id_oficio)
                             <tr class="table-active">
-                                <th scope="row">{{ $item->desuspension->id_suspension}}</th>
+                                <th scope="row">{{ $item->desuspension->no_afiliado}}</th>
+                                <th>{{ $item->desuspension->afiliado->nombre}} {{ $item->desuspension->afiliado->apellidos}}</th>
                                 <td>{{ $item->desuspension->estado }}</td>
                                 <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_inicio_suspension))}}</td>
                                 <td>{{ $item->desuspension->fecha_registro }}</td>  
