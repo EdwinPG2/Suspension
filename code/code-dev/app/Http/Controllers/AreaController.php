@@ -52,7 +52,7 @@ class AreaController extends Controller
 
         $area->save();
 
-        alert()->success('Area guardado correctamente');
+        alert()->success('Area guardada correctamente');
         return redirect()->route('areas.index');
     }
 
@@ -86,7 +86,7 @@ class AreaController extends Controller
         $bitacora->save();
         $area->save();
 
-        alert()->success('Area actualizado correctamente');
+        alert()->success('Area actualizada correctamente');
         return redirect()->route('areas.index');
     }
 
@@ -102,7 +102,7 @@ class AreaController extends Controller
         $bitacora->descripcion = 'Eliminación del área '.$area->nombre;
         $bitacora->save();
 
-        alert()->success('Area eliminado correctamente');
+        alert()->success('Area eliminada correctamente');
         
         return redirect()->route('areas.index');
     }
