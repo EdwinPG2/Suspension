@@ -7,7 +7,7 @@ use App\Models\Oficio;
 use App\Models\OficioSuspencion;
 use App\Models\Suspension;
 use App\Models\ClinicaServicio;
-
+use App\Models\Bitacora;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -77,7 +77,12 @@ class EditarOficioController extends Controller
             }
             }
         }
-
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Envio de oficio';
+        $bitacora->descripcion = 'El oficio #'.$id. 'fue mandado a revisiones';
+        $bitacora->save();
 
         $oficio->save();
 
@@ -132,7 +137,16 @@ class EditarOficioController extends Controller
         $oficio ->users_id_creador = $request->get('users_id_creador');
         
         $oficio->save();
+
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Actualización de oficio';
+        $bitacora->descripcion = 'Actualización del oficio '.$id;
+        $bitacora->save();
+
         alert()->success('Oficio actualizado');
+
         return redirect()->route('oficios.index');
     }
 
