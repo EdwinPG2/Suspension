@@ -100,11 +100,9 @@ class RequerimientoController extends Controller
 
     public function edit($id)//retorna la vista de las suspensiones en delegacion
     {
-        $requerimientos = Requerimiento::find($id);
-        $suspencion = Suspension::all();
-        $ofisusp = OficioSuspencion::all();
+        $ofisusp = OficioSuspencion::where('id_oficio',$id)->get();
         $oficios = Oficio::find($id);
-        return view('rev_requerimientos.edit', compact('ofisusp', 'oficios', 'suspencion', 'requerimientos'));
+        return view('rev_requerimientos.edit', compact('ofisusp', 'oficios'));
     }
 
 
