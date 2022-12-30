@@ -107,7 +107,13 @@ class CreateSuspencionController extends Controller
                 $afiliado->save();
             }
             
-    
+            $bitacora = new Bitacora();
+            $bitacora->id_usuario = Auth::user()->id;
+            $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+            $bitacora->accion = 'Creación de suspensión';
+            $bitacora->descripcion = 'Actualización de la suspensión del afiliado '.$Suspension->no_afiliado;
+            $bitacora->save();
+
             $Suspension->save();
     
             //alert()->success('Suspension guardado correctamente');
@@ -201,6 +207,13 @@ class CreateSuspencionController extends Controller
             $afiliado->save();
         }
 
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Actualización de suspensión';
+        $bitacora->descripcion = 'Actualización de la suspensión '.$id;
+        $bitacora->save();
+
         alert()->success('Suspensión actualizada correctamente');
 
         return redirect()->route('createsuspencions.index');;
@@ -216,6 +229,12 @@ class CreateSuspencionController extends Controller
     {
         //
         Suspension::destroy($id);
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Eliminación de suspensión';
+        $bitacora->descripcion = 'Eliminación de la suspensión '.$id;
+        $bitacora->save();
         alert()->success('Suspensión eliminada correctamente');
         return redirect()->route('createsuspencions.index');
     }
