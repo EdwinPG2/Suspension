@@ -9,7 +9,8 @@ use App\Models\OficioSuspencion;
 use App\Models\Controller\oficontroller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Suspension;
-
+use Illuminate\Support\Carbon;
+use App\Models\Bitacora;
 use function GuzzleHttp\Promise\all;
 
 class Rev_OficioController extends Controller
@@ -52,6 +53,13 @@ class Rev_OficioController extends Controller
 
         $oficio->save();
         $revofis->save();
+
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Oficio congelado';
+        $bitacora->descripcion = 'Congelo el oficio  '.$id;
+        $bitacora->save();
 
         alert()->success('Oficio enviado a delegación!');
 

@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Requerimiento;
 use Illuminate\Http\Request;
 
+
 class ReqController extends Controller
 {
 

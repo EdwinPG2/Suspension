@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Suspension;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Bitacora;
+use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 
 class SuspController extends Controller
@@ -103,7 +105,12 @@ class SuspController extends Controller
 
         $Suspension->save();
 
-        
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Estado de suspensión';
+        $bitacora->descripcion = 'Se a '.$Suspension->estado.' la suspensión desde registros médicos';
+        $bitacora->save();        
 
         alert()->success('Suspension actualizada correctamente');
 

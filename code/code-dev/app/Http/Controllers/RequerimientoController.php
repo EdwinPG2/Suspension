@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Requerimiento;
 use App\Models\Oficio;
 use App\Models\Afiliado;
-use App\Models\BitacoraSuspension;
+use App\Models\Bitacora;
 use App\Models\Suspension;
 use App\Models\User;
 use App\Models\OficioSuspencion;

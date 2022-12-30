@@ -72,6 +72,14 @@ class Rev_SuspencionController extends Controller
         $suspension->estado = "Archivado";
 
         $suspension->save();
+
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Pago aceptado';
+        $bitacora->descripcion = 'Se acepto el pago de la suspensión '.$id;
+        $bitacora->save();
+
         alert()->success('Pago validado');
 
         return redirect()->back();
