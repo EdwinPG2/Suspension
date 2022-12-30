@@ -18,8 +18,8 @@ class BusquedaHistorialController extends Controller
     public function index()
     {
         $afiliado=null;
-        $suspencions=null;
-        return view('historial.create',compact('afiliado','suspencions'));
+        $fin=null;
+        return view('historial.create',compact('afiliado','fin'));
     }
 
     /**
