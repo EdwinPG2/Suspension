@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Suspension;
 use App\Models\Afiliado;
+use App\Models\OficioSuspencion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class BusquedaHistorialController extends Controller
 {
@@ -38,11 +40,20 @@ class BusquedaHistorialController extends Controller
      */
     public function store(Request $request)
     {
+        
         $no_afiliado =$request->get('no_afiliado');
         $suspencions = Suspension::where('no_afiliado',$no_afiliado)->get();
         
         $afiliado=Afiliado::find($request->get('no_afiliado'));
-        return view('historial.create',compact('suspencions','afiliado'));
+
+        $fin=collect();
+        foreach($suspencions as $id_obj => $obj )
+        {
+            $original=$fin;
+            $aux=OficioSuspencion::where('id_suspension',$obj->id_suspension)->get();
+            $fin=$original->concat($aux);
+        }
+        return view('historial.create',compact('afiliado','fin'));
     }
 
     /**

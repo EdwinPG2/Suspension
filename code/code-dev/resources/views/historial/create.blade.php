@@ -52,7 +52,7 @@
 
                         </div>
                     </form>
-                    @if ($suspencions != null)
+                    @if ($fin != null)
                         <div class="card-body">
                             <table id="dt-suspencions" class="table table-striped table-bordered dts">
                                 <thead>
@@ -67,27 +67,41 @@
                                     <th>Observación</th>
                                     <th>Estado</th>
                                     <th>Fecha de registro</th>
+                                    <th>Oficio</th>
 
                                 </thead>
                                 <tbody>
-                                    @foreach ($suspencions as $item)
+                                    @foreach ($fin as $item)
                                         <tr class="text-center">
-                                            <td>{{ $item->afiliado->no_afiliado }}</td>
-                                            <td>{{ $item->afiliado->nombre }} {{ $item->afiliado->apellidos }}</td>
-                                            <td>{{ date('d-m-Y', strtotime($item->fecha_inicio_caso)) }}</td>
-                                            <td>{{ date('d-m-Y', strtotime($item->fecha_inicio_suspension)) }}</td>
-                                            <td>{{ date('d-m-Y', strtotime($item->fecha_fin_suspension)) }}</td>
-                                            @if (date('d-m-Y', strtotime($item->fecha_alta)) != '31-12-1969')
-                                                <td>{{ date('d-m-Y', strtotime($item->fecha_alta)) }}</td>
+                                            <td>{{ $item->desuspension->afiliado->no_afiliado }}</td>
+                                            <td>{{ $item->desuspension->afiliado->nombre }}
+                                                {{ $item->desuspension->afiliado->apellidos }}</td>
+                                            <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_inicio_caso)) }}</td>
+                                            <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_inicio_suspension)) }}
+                                            </td>
+                                            <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_fin_suspension)) }}
+                                            </td>
+                                            @if (date('d-m-Y', strtotime($item->desuspension->fecha_alta)) != '31-12-1969')
+                                                <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_alta)) }}</td>
                                             @else
                                                 <td></td>
                                             @endif
-                                            <td>{{ $item->clinica_servicio->nombre }}</td>
-                                            <td>{{ $item->observacion }}</td>
-                                            <td>{{ $item->estado }}</td>
-                                            <td>{{ date('d-m-Y', strtotime($item->fecha_registro)) }}</td>
-
-
+                                            <td>{{ $item->desuspension->clinica_servicio->nombre }}</td>
+                                            <td>{{ $item->desuspension->observacion }}</td>
+                                            <td>{{ $item->desuspension->estado }}</td>
+                                            <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_registro)) }}</td>
+                                            <td>
+                                                @if ($item->doficio->correlativo <= 9)
+                                                    000{{ $item->doficio->correlativo }}
+                                                @elseif($item->doficio->correlativo <= 99)
+                                                    00{{ $item->doficio->correlativo }}
+                                                @elseif($item->doficio->correlativo <= 990)
+                                                    0{{ $item->doficio->correlativo }}
+                                                @endif
+                                                /
+                                                {{ $item->doficio->fecha->translatedFormat('Y') }}
+                                                {{ $item->doficio->dclinica_servicio->descripcion }}
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
