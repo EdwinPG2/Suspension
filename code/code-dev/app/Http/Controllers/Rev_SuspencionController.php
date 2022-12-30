@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BitacoraSuspension;
+use App\Models\Bitacora;
 use App\Models\OficioSuspencion;
 use App\Models\RevisionOficio;
 use App\Models\RevSusp;
 use App\Models\Suspension;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 
 class Rev_SuspencionController extends Controller
