@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Dependencium;
+use App\Models\Bitacora;
 use Illuminate\Support\Facades\Validator;
 
 class DependenciaController extends Controller
@@ -36,8 +37,15 @@ class DependenciaController extends Controller
 
         $dependencia = new Dependencium();
         $dependencia->nombre = $request->get('nombre');
-
+    
         $dependencia->save();
+
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Creación de dependencia';
+        $bitacora->descripcion = 'Creación de la dependencia '.$dependencia->nombre;
+        $bitacora->save();
 
         alert()->success('Dependencia guardada correctamente');
         return redirect()->route('dependencias.index');
@@ -64,6 +72,13 @@ class DependenciaController extends Controller
         $dependencia->nombre = $request->get('nombre');
         $dependencia->save();
 
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Actualización de dependencia';
+        $bitacora->descripcion = 'Actualización de la dependencia '.$dependencia->nombre;
+        $bitacora->save();
+
         alert()->success('Dependencia actualizado correctamente');
         return redirect()->route('dependencias.index');
     }
@@ -72,6 +87,13 @@ class DependenciaController extends Controller
     {
         $dependencia = Dependencium::find($id);
         $dependencia->delete();
+
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Eliminación de dependencia';
+        $bitacora->descripcion = 'Eliminación de la dependencia '.$id;
+        $bitacora->save();
 
         alert()->success('Dependencia eliminado correctamente');
         return redirect()->route('dependencias.index');

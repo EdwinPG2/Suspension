@@ -11,6 +11,7 @@ use App\Models\Medico;
 use App\Models\FormularioSuspencion;
 use App\Models\Riesgo;
 use App\Models\Dependencium;
+use App\Models\Bitacora;
 use App\Models\Cargo;
 
 use Illuminate\Http\Request;
