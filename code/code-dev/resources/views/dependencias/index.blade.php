@@ -18,14 +18,14 @@
             <div class="card-body">
                 <table id="dt-dependencias" class="table table-striped table-bordered dts">
                     <thead>
-                        <th>ID</th>
+                        
                         <th>Nombre</th>
                         <th> Opciones </th>
                     </thead>
                     <tbody>
                         @foreach($dependencias as $item)
                         <tr class="text-center">
-                            <td>{{ $item->id }}</td>
+                           
                             <td>{{ $item->nombre }}</td>
                             <td colspan="2 flex justify-center">
                                 @can('dependencia-edit')

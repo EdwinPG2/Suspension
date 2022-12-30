@@ -57,7 +57,7 @@ class EspecialidadController extends Controller
         $bitacora->descripcion = 'Creación de la especialidad '.$especialidad->nombre_especialidad;
         $bitacora->save();
 
-        alert()->success('Especialidad guardado correctamente');
+        alert()->success('Especialidad guardada correctamente');
 
         return redirect()->route('especialidades.index');
     }
@@ -92,7 +92,7 @@ class EspecialidadController extends Controller
         $bitacora->descripcion = 'Actualización de la especialidad '.$id;
         $bitacora->save();
 
-        alert()->success('Especialidad actualizado correctamente');
+        alert()->success('Especialidad actualizada correctamente');
 
         return redirect()->route('especialidades.index');
     }
@@ -110,7 +110,7 @@ class EspecialidadController extends Controller
         $bitacora->descripcion = 'Eliminación de la especialidad '.$id;
         $bitacora->save();
 
-        alert()->success('Especialidad eliminado correctamente');
+        alert()->success('Especialidad eliminada correctamente');
         
         return redirect()->route('especialidades.index');
     }

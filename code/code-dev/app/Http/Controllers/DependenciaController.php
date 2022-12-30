@@ -81,7 +81,7 @@ class DependenciaController extends Controller
         $bitacora->descripcion = 'Actualización de la dependencia '.$dependencia->nombre;
         $bitacora->save();
 
-        alert()->success('Dependencia actualizado correctamente');
+        alert()->success('Dependencia actualizada correctamente');
         return redirect()->route('dependencias.index');
     }
 
@@ -97,7 +97,7 @@ class DependenciaController extends Controller
         $bitacora->descripcion = 'Eliminación de la dependencia '.$id;
         $bitacora->save();
 
-        alert()->success('Dependencia eliminado correctamente');
+        alert()->success('Dependencia eliminada correctamente');
         return redirect()->route('dependencias.index');
     }
 }
