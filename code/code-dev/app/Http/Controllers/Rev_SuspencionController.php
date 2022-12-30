@@ -9,6 +9,7 @@ use App\Models\RevSusp;
 use App\Models\Suspension;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class Rev_SuspencionController extends Controller
