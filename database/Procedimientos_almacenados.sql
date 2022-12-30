@@ -1,4 +1,4 @@
-use suspension;
+use local_igss;
 
 drop trigger if exists correlativo;
 DELIMITER $$

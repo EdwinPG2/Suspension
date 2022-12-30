@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Especialidad;
 use App\Models\Bitacora;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class EspecialidadController extends Controller

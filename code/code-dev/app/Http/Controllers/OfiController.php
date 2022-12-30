@@ -7,6 +7,7 @@ use App\Models\OficioSuspencion;
 use Illuminate\Http\Request;
 use PDF;
 use App\Models\Bitacora;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
