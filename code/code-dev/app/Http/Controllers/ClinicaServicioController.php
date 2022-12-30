@@ -7,6 +7,7 @@ use App\Models\ClinicaServicio;
 use App\Models\Especialidad;
 use App\Models\Bitacora;
 use App\Models\Area;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Validator;
 
 class ClinicaServicioController extends Controller

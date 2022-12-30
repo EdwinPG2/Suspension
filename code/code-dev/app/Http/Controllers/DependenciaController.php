@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Dependencium;
 use App\Models\Bitacora;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Validator;
 
 class DependenciaController extends Controller

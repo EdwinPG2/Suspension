@@ -10,6 +10,7 @@ use App\Models\Oficio;
 use App\Models\ClinicaServicio;
 use App\Models\OficioSuspencion;
 use App\Models\Suspension;
+use Illuminate\Support\Carbon;
 
 class GeneralController extends Controller
 {

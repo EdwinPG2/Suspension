@@ -13,6 +13,7 @@ use App\Models\Riesgo;
 use App\Models\Dependencium;
 use App\Models\Bitacora;
 use App\Models\Cargo;
+use Illuminate\Support\Carbon;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;

@@ -10,6 +10,7 @@ use App\Models\ClinicaServicio;
 use App\Models\Bitacora;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Validator;
 
 class EditarOficioController extends Controller

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Bitacora;
 use App\Models\Area;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Validator;
 
 class AreaController extends Controller

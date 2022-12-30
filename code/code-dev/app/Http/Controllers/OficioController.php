@@ -9,6 +9,7 @@ use App\Models\Especialidad;
 use App\Models\ClinicaServicio;
 use App\Models\OficioSuspencion;
 use PDF;
+use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
