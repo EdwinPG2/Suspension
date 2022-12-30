@@ -38,6 +38,14 @@ class GeneralController extends Controller
         $suspension->estado = "Archivado";
 
         $suspension->save();
+
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Pago rechazado';
+        $bitacora->descripcion = 'Se le denego el pago a la suspensión '.$id;
+        $bitacora->save();
+
         alert()->info('Pago denegado');
 
         return redirect()->back();
