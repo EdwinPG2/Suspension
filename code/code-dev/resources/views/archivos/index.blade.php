@@ -16,16 +16,16 @@
                 <table id="dt-suspencions" class="table table-striped table-bordered dts">
                     <thead>
                         <!--<th>Id</th>-->
-                        <th>No afiliacion</th>
+                        <th>No afiliación</th>
                         <th>Formularios</th>
                         <th>Fecha de inicio</th>
                         <th>Fecha de fin</th>
                         <th>Fecha de alta</th>
                         <th>Fecha de registro</th>
-                        <th>Observacion</th>
+                        <th>Observación</th>
                         <th>Estado</th>
                         
-                        <th>Clinica/servicio</th>
+                        <th>Clínica/servicio</th>
                         <!--<th>Registrador</th>-->
                         <!--<th style="height: auto">Opciones</th>-->
                     </thead>
@@ -43,10 +43,14 @@
                             </td>
                             
                             <!--<td> $item->id_suspension }}</td>-->
-                            <td>{{ date('d-M-y', strtotime($item->fecha_inicio_suspension)) }}</td>
-                            <td>{{ date('d-M-y', strtotime($item->fecha_fin_suspension)) }}</td>
-                            <td>{{ date('d-M-y', strtotime($item->fecha_alta)) }}</td>
-                            <td>{{ date('d-M-y', strtotime($item->fecha_registro))}}</td>
+                            <td>{{ date('d-m-y', strtotime($item->fecha_inicio_suspension)) }}</td>
+                            <td>{{ date('d-m-y', strtotime($item->fecha_fin_suspension)) }}</td>
+                            @if (date('d-m-Y', strtotime($item->fecha_alta)) != '31-12-1969')
+                                                <td>{{ date('d-m-Y', strtotime($item->fecha_alta)) }}</td>
+                                            @else
+                                                <td></td>
+                                            @endif
+                            <td>{{ date('d-m-y', strtotime($item->fecha_registro))}}</td>
                             <td>{{ $item->observacion }}</td>
                             <td>{{ $item->estado }}</td>
                             
