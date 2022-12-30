@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Oficio;
+use App\Models\Bitacora;
 use App\Models\Afiliado;
 use App\Models\BitacoraSuspension;
 use App\Models\Suspension;
@@ -37,6 +38,14 @@ class ReqController extends Controller
         $suspension->estado = "Validado";
         
         $suspension->save();
+
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Validación de la suspensión';
+        $bitacora->descripcion = 'La suspensión '.$id.' se valido para pago';
+        $bitacora->save();
+
         alert()->success('Suspensión validada!');
 
         return redirect()->back();
@@ -47,6 +56,13 @@ class ReqController extends Controller
         $suspension = Suspension::find($id);
         $suspension->estado = "Denegado";
         
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Suspensión denegada';
+        $bitacora->descripcion = 'La suspensión '.$id.' se denego antes del pago';
+        $bitacora->save();
+
         $suspension->save();
         alert()->info('Suspensión denegada!');
 

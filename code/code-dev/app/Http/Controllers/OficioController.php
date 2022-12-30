@@ -68,6 +68,14 @@ class OficioController extends Controller
         $oficio ->users_id_creador = $request->get('users_id_creador');
         
         $oficio->save();
+
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Creación de un oficio';
+        $bitacora->descripcion = 'Creación del oficio con correlativo '.$oficio->correlativo;
+        $bitacora->save();
+
         alert()->success('Oficio guardado correctamente');
         return redirect()->route('agregarsuspenciones.show',$oficio->id_oficio);
     }

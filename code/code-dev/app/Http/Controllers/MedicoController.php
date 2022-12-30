@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Especialidad;
 use App\Models\Medico;
 use Illuminate\Http\Request;
+
+use App\Models\Bitacora;
 use Illuminate\Support\Facades\Validator;
 
 class MedicoController extends Controller
