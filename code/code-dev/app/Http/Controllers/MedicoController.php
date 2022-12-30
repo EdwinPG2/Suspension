@@ -46,6 +46,13 @@ class MedicoController extends Controller
         $medico->telefono = $request->get('telefono');
         $medico->id_especialidad = $request->get('id_especialidad');
 
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Creación de un médico';
+        $bitacora->descripcion = 'Nuevo médico agregado: '.$medico->nombres;
+        $bitacora->save();
+
         $medico->save();
         alert()->success('Médico guardado correctamente');
 
@@ -86,6 +93,12 @@ class MedicoController extends Controller
         $medico->id_especialidad = $request->get('id_especialidad');
 
         $medico->save();
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Actualización de medicos';
+        $bitacora->descripcion = 'Actualización del médico '.$medico->nombres;
+        $bitacora->save();
 
         alert()->success('Médico actualizado correctamente');
 
@@ -100,6 +113,14 @@ class MedicoController extends Controller
     public function destroy($id)
     {
         Medico::destroy($id);
+
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Eliminación de médico';
+        $bitacora->descripcion = 'Eliminación del médico '.$id;
+        $bitacora->save();
+
         alert()->success('Médico eliminado correctamente');
         return redirect()->route('medico.index');
     }
