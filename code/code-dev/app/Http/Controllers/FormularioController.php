@@ -35,6 +35,13 @@ class FormularioController extends Controller
 
         $formulario->save();
 
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Creación de formularios';
+        $bitacora->descripcion = 'Creación del formulario '.$formulario->nombre;
+        $bitacora->save();
+
         alert()->success('Formulario guardado correctamente');
         return redirect()->route('formularios.index');
     }
@@ -63,6 +70,13 @@ class FormularioController extends Controller
         $formulario->descripcion = $request->get('descripcion');
         $formulario->save();
 
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Actualización de formularios';
+        $bitacora->descripcion = 'Actualización del formulario '.$formulario->nombre;
+        $bitacora->save();
+
         alert()->success('Formulario actualizado correctamente');
         return redirect()->route('formularios.index');
     }
@@ -70,6 +84,14 @@ class FormularioController extends Controller
     public function destroy($id)
     {
         Formulario::destroy($id);
+        
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Eliminación de formularios';
+        $bitacora->descripcion = 'Eliminación del formulario '.$id;
+        $bitacora->save();
+
         alert()->success('Formulario eliminado correctamente');
         return redirect()->route('formularios.index');
     }
