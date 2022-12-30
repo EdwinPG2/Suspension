@@ -24,7 +24,7 @@
                     </thead>
                     <tbody>
                         @foreach($oficios as $item)
-                        @if($item->estado=='Congelado')
+                        
                         <tr class="text-center">
                             <td>{{ $item->id_oficio }}</td>
                             <td>{{ date('d-m-Y', strtotime($item->fecha)) }}</td>
@@ -47,7 +47,7 @@
                                         class="btn btn-info"><i class="fas fa-check-circle"></i> Detalles</a>
                             </td>
                         </tr>
-                        @endif
+                        
                         @endforeach                
                     </tbody>
                 </table>

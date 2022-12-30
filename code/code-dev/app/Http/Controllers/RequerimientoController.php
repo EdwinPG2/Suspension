@@ -19,7 +19,7 @@ class RequerimientoController extends Controller
 {
     public function index()
     {
-        $oficios = Oficio::all();
+        $oficios = Oficio::where('estado','Congelado')->get();
         return view('rev_requerimientos.index', compact('oficios'));
     }
 
