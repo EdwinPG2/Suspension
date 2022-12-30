@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Formulario;
 use Illuminate\Http\Request;
+use App\Models\Bitacora;
 use Illuminate\Support\Facades\Validator;
 
 class FormularioController extends Controller
