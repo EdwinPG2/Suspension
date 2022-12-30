@@ -41,9 +41,28 @@ class Rev_OficioController extends Controller
 
     public function show($id)
     {
-        
+        $ofisusp = OficioSuspencion::where('id_oficio',$id)->get();
         $oficio = Oficio::find($id);
-        $oficio->estado='Congelado';
+
+        $cont=$ofisusp;
+
+        foreach($cont as $id_obj => $obj )
+        {
+            if ( $obj->desuspension->estado == 'Rechazado')
+            {   
+            $cont->pull( $id_obj);
+            
+            }
+        }
+
+        if($cont->count()>0){
+            $oficio->estado='Congelado';
+        }
+        else
+        {
+            $oficio->estado='Congelado N';
+        }
+
         $oficio->users_id_revisor=Auth::user()->id;
 
         $revofis = new RevisionOficio();
