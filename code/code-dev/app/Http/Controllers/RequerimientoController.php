@@ -102,7 +102,27 @@ class RequerimientoController extends Controller
     {
         $ofisusp = OficioSuspencion::where('id_oficio',$id)->get();
         $oficios = Oficio::find($id);
-        return view('rev_requerimientos.edit', compact('ofisusp', 'oficios'));
+        //return view('rev_requerimientos.edit', compact('ofisusp', 'oficios'));
+
+        $cont=$ofisusp;
+
+        foreach($cont as $id_obj => $obj )
+        {
+            if ( $obj->desuspension->estado == 'Rechazado')
+            {   
+            $cont->pull( $id_obj);
+            
+            }
+        }
+
+        if($cont->count()>0){
+            return view('rev_requerimientos.edit', compact('ofisusp', 'oficios'));
+        }
+        else
+        {
+            alert()->info('Oficio sin suspensiones aceptadas');
+            return back();
+        }
     }
 
 
