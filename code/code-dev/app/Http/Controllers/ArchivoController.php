@@ -11,6 +11,7 @@ use App\Models\Medico;
 use App\Models\FormularioSuspencion;
 use App\Models\Riesgo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Validator;
 
 class ArchivoController extends Controller

@@ -65,6 +65,14 @@ class RequerimientoController extends Controller
                 }
                     
                 $requerimiento->save();
+
+                $bitacora = new Bitacora();
+                $bitacora->id_usuario = Auth::user()->id;
+                $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+                $bitacora->accion = 'Creación de requerimiento';
+                $bitacora->descripcion = 'Se creo el requerimiento '.$requerimiento->no_requerimiento;
+                $bitacora->save();
+
                 alert()->success('Requerimiento guardado correctamente');
 
             return redirect()->route('req.index');
