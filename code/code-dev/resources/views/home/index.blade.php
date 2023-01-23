@@ -27,14 +27,12 @@
                             
                             @foreach($suspenciones as $item)
                             @if($item->estado == 'Registrado')
-                            @if($item->users_id_registrador == Auth::user()->id || Auth::user()->id == 1)
                             <tr class="text-center">
                                 <td id="nombre">{{ $item->no_afiliado}}</td>
                                 <td id="descripcion">{{ $item->afiliado->nombre }} {{$item->afiliado->apellidos}}</td>
                                 <td id="fecha_registro">{{$item->fecha_registro}}</td>
                                 <td id="fecha_registro">{{$item->estado}}</td>
                             </tr>
-                            @endif
                             @endif
                             @endforeach   
                         </tbody>
@@ -57,14 +55,12 @@
                             
                             @foreach($suspenciones as $item2)
                             @if($item2->estado == 'Aceptado'||$item2->estado == 'Rechazado'||$item2->estado == 'En revisión')
-                            @if($item->users_id_registrador == Auth::user()->id || Auth::user()->id == 1)
                             <tr class="text-center">
                                 <td id="nombre">{{ $item2->no_afiliado}}</td>
                                 <td id="descripcion">{{ $item2->afiliado->nombre }} {{$item2->afiliado->apellidos}}</td>
                                 <td id="fecha_registro">{{$item2->fecha_registro}}</td>
                                 <td id="fecha_registro">{{$item2->estado}}</td>
                             </tr>
-                            @endif
                             @endif
                             @endforeach   
                         </tbody>
@@ -87,14 +83,12 @@
                         
                         @foreach($suspenciones as $item3)
                         @if($item3->estado == 'Validado'||$item3->estado == 'Denegado')
-                        @if($item->users_id_registrador == Auth::user()->id || Auth::user()->id == 1)
                         <tr class="text-center">
                             <td id="nombre">{{ $item3->no_afiliado}}</td>
                             <td id="descripcion">{{ $item3->afiliado->nombre }} {{$item3->afiliado->apellidos}}</td>
                             <td id="fecha_registro">{{$item3->fecha_registro}}</td>
                             <td id="fecha_registro">{{$item3->estado}}</td>
                         </tr>
-                        @endif
                         @endif
                         @endforeach   
                     </tbody>
