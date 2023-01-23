@@ -31,6 +31,7 @@ use App\Http\Controllers\FormularioSuspencionController;
 use App\Http\Controllers\FormularioSuspencionEditController;
 
 use App\Http\Controllers\ChangesPasswordController;
+use App\Models\Cargo;
 #use App\Http\Controllers\PermissionController;
 
 use Illuminate\Support\Facades\Route;
@@ -102,7 +103,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('/req', ReqController::class);
     Route::resource('/respuesta', Respuesta_ReqController::class); 
     Route::resource('/historial', BusquedaHistorialController::class);
-
+    Route::resource('/cargo', CargoController::class);
 
 });
 
