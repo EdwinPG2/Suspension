@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cargo;
+use App\Models\Bitacora;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class CargoController extends Controller
@@ -26,7 +30,7 @@ class CargoController extends Controller
     public function create()
     {
         $cargos = Cargo::all();
-        return view('cargo.index', compact('cargos'));
+        return view('cargo.create', compact('cargos'));
     }
 
     /**
