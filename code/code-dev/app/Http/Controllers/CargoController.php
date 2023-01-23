@@ -25,7 +25,8 @@ class CargoController extends Controller
      */
     public function create()
     {
-        //
+        $cargos = Cargo::all();
+        return view('cargo.index', compact('cargos'));
     }
 
     /**
@@ -36,7 +37,24 @@ class CargoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        validator::make($request->except('_token'), [
+            'nombre' => 'required|max:255',
+        ])->validate();
+
+        $cargo = new Cargo();
+        $cargo->nombre = $request->get('nombre');
+    
+        $cargo->save();
+
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Creación de cargo';
+        $bitacora->descripcion = 'Creación del cargo '.$cargo->nombre;
+        $bitacora->save();
+
+        alert()->success('Cargo guardado correctamente');
+        return redirect()->route('cargo.index');
     }
 
     /**
@@ -56,9 +74,10 @@ class CargoController extends Controller
      * @param  \App\Models\Cargo  $cargo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cargo $cargo)
+    public function edit($id)
     {
-        //
+        $cargos = Cargo::find($id);
+        return view('cargo.edit', compact('cargos'));
     }
 
     /**
@@ -68,9 +87,25 @@ class CargoController extends Controller
      * @param  \App\Models\Cargo  $cargo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cargo $cargo)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nombre' => 'required|max:255',
+        ]);
+
+        $cargo = Cargo::find($id);
+        $cargo->nombre = $request->get('nombre');
+        $cargo->save();
+
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Actualización de dependencia';
+        $bitacora->descripcion = 'Actualización de la dependencia '.$cargo->nombre;
+        $bitacora->save();
+
+        alert()->success('Cargo actualizado correctamente');
+        return redirect()->route('cargo.index');
     }
 
     /**
@@ -79,8 +114,19 @@ class CargoController extends Controller
      * @param  \App\Models\Cargo  $cargo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cargo $cargo)
+    public function destroy($id)
     {
-        //
+        $cargo = Cargo::find($id);
+        $cargo->delete();
+
+        $bitacora = new Bitacora();
+        $bitacora->id_usuario = Auth::user()->id;
+        $bitacora->fecha_hora = Carbon::now()->format('Y/m/d');
+        $bitacora->accion = 'Eliminación de cargo';
+        $bitacora->descripcion = 'Eliminación del cargo: '.$id;
+        $bitacora->save();
+
+        alert()->success('Cargo eliminado correctamente');
+        return redirect()->route('cargo.index');
     }
 }
