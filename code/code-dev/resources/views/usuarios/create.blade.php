@@ -17,7 +17,7 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
                                 <label for="ibm">IBM (*)</label>
-                                <input type="text" name="ibm" id="ibm" class="form-control" placeholder="Ingrese # de IBM" required maxlength="5 or 7" pattern="*" title="Ingrese solamente numeros"> 
+                                <input type="text" name="ibm" id="ibm" class="form-control" placeholder="Ingrese # de IBM" required maxlength="9" pattern="*" title="Ingrese solamente numeros"> 
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">

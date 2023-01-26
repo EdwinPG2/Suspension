@@ -23,6 +23,12 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
+                                <label for="apellido">Apellido</label>
+                                <input type="text" name="apellido" value="{{ $usuario->apellido}}" id="apellido" class="form-control" placeholder="Actualizar apellido de usuario">   
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
                                 <label for="email">Correo electrónico</label>
                                 {!! Form::text('email', $usuario->email, array('placeholder' => 'Correo electrónico','class' => 'form-control')) !!}   
                             </div>
