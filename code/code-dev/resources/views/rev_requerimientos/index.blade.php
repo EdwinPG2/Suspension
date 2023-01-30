@@ -9,7 +9,12 @@
         <div class="card mb-4">
             <div class="card-header">
                 <div class="row justify-content-between">
-                    <h4>Bandeja de oficios</h4>
+                    <div align="left">
+                    <h4>Seleccione que tipo de oficios desea ver:</h4>
+                        <a href="{{route('revreq.index')}}" class="btn btn-info">Pendientes de revisar</a>
+                        <a href="{{route('oficio.verespera')}}" class="btn btn-info">En espera</a>
+                        <a href="{{route('oficio.verarchivado')}}" class="btn btn-info">Archivados</a>
+                    </div>
                 </div>
             </div>
             <div class="card-body">

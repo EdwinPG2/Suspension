@@ -47,7 +47,7 @@ class AfiliadoController extends Controller
                 'no_afiliado' => 'required|max:13',
                 'nombre' => 'required|max:100',
                 'apellidos' => 'required|max:100',
-                'telefono' => 'required|max:15',
+                
             ])->validate();
     
             $Afiliado = new Afiliado();

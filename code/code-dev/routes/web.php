@@ -94,6 +94,14 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('/ofi',OfiController::class);
     Route::resource('/reportes', ReportesController::class);
     Route::resource('/revreq', RequerimientoController::class);
+    Route::get('/revreqespera','RequerimientoController@oficio_ver_espera')->name('oficio.verespera');
+    Route::get('/revreqarchivado','RequerimientoController@oficio_ver_archivado')->name('oficio.verarchivado');
+
+    Route::get('/revreqcambiarespera/{id}','RequerimientoController@oficio_espera')->name('oficio.espera');
+    Route::get('/revreqcambiarcongelado/{id}','RequerimientoController@oficio_congelado')->name('oficio.congelado');
+    Route::get('/revreqcambiararchivado/{id}','RequerimientoController@oficio_archivado')->name('oficio.archivado');
+
+
     Route::resource('/gen', GeneralController::class);
     Route::resource('/oficios', OficioController::class);
     Route::resource('/arch', ArchivoController::class);
