@@ -22,6 +22,16 @@ class RequerimientoController extends Controller
         $oficios = Oficio::where('estado','Congelado')->get();
         return view('rev_requerimientos.index', compact('oficios'));
     }
+    public function oficio_ver_espera()
+    {
+        $oficios = Oficio::where('estado','Espera requerimiento')->get();
+        return view('rev_requerimientos.index', compact('oficios'));
+    }
+    public function oficio_ver_archivado()
+    {
+        $oficios = Oficio::where('estado','Archivado')->get();
+        return view('rev_requerimientos.index', compact('oficios'));
+    }
 
     public function create()
     {
@@ -190,5 +200,30 @@ class RequerimientoController extends Controller
         $requerimientos = Requerimiento::where('estado','Generado')->take(50)->get();
         return view('requerimientos.index', compact('oficios', 'requerimientos'));
 
+    }
+    public function oficio_espera($id)
+    {
+        $oficio = Oficio::find($id);
+        $oficio ->estado = 'Espera requerimiento';
+        $oficio ->save();
+        alert()->success('Oficio en espera');
+        return redirect()->route('revreq.index');
+    }
+
+    public function oficio_congelado($id)
+    {
+        $oficio = Oficio::find($id);
+        $oficio ->estado = 'Congelado';
+        $oficio ->save();
+        alert()->success('Oficio congelado');
+        return redirect()->route('revreq.index');
+    }
+    public function oficio_archivado($id)
+    {
+        $oficio = Oficio::find($id);
+        $oficio ->estado = 'Archivado';
+        $oficio ->save();
+        alert()->success('Oficio archivado');
+        return redirect()->route('revreq.index');
     }
 }

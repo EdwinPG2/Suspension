@@ -87,4 +87,13 @@
         </div>
     </div>
 </div>
+<div class="row justify-content-between">
+    <div align="left">
+    <h4>Cambiar estado del oficio:</h4>
+        <a href="{{route('oficio.congelado',$oficios->id_oficio)}}" class="btn btn-info">Congelado</a>
+        <a href="{{route('oficio.espera',$oficios->id_oficio)}}" class="btn btn-info">En espera</a>
+        <a href="{{route('oficio.archivado',$oficios->id_oficio)}}" class="btn btn-info">Archivado</a>
+    </div>
+</div>
+
 @endsection
