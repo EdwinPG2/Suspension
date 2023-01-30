@@ -31,6 +31,8 @@
                 <div class="card-body">
                     <table id="dt-requerimientos" class="table table-striped table-bordered dts">
                         <thead>
+                            <th> No. afiliado</th>
+                            <th> Nombres</th>
                             <th> Número de requerimiento </th>
                             <th> Fecha de requerimiento </th>
                             <th> Fecha de envio </th>
@@ -43,6 +45,8 @@
                         <tbody>
                             @foreach ($requerimientos as $item)
                                 <tr class="text-center">
+                                    <td>{{ $item->afiliado->no_afiliado}}</td>
+                                    <td>{{ $item->afiliado->nombre}} {{$item->afiliado->apellidos}}</td>
                                     <td>{{ $item->no_requerimiento }}</td>
                                     <td>{{ date('d-m-Y', strtotime($item->fecha_requerimiento)) }}</td>
                                     <td>{{ date('d-m-Y', strtotime($item->fecha_envio)) }}</td>
