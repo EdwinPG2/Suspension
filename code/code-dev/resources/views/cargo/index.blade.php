@@ -28,11 +28,11 @@
                             <td>{{ $item->nombre }}</td>
                             <td colspan="2 flex justify-center">
                                 @can('cargo-edit')
-                                    <a href="{{ route ('dependencias.edit', $item->id_dependencia) }}"
+                                    <a href="{{ route ('cargo.edit', $item->id_cargo) }}"
                                     class="btn btn-warning" ><i class="fas fa-edit"></i></a>
                                 @endcan
                                 @can('cargo-delete')
-                                    <form action="{{ route('dependencias.destroy',$item->id_dependencia)}}" method="post" class="d-inline">
+                                    <form action="{{ route('cargo.destroy',$item->id_cargo)}}" method="post" class="d-inline">
                                     @csrf
                                     {{method_field('DELETE')}}
                                     <button class="btn btn-danger" type="submit" class="d-inline"><i class="fas fa-trash"></i></button>
