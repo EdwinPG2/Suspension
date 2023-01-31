@@ -163,13 +163,7 @@
                 @endcan
                 @can('especialidad-list')
                 <a class="collapse-item" href="{{ url('especialidades') }}">
-                    <i class="fas fa-id-card fa-fw"></i> Especialidades 
-                </a>
-                @endcan
-                @endcan
-                @can('cargo-list')
-                <a class="collapse-item" href="{{ url('cargo') }}">
-                    <i class="fas fa-id-card fa-fw"></i> Cargos  
+                    <i class="fas fa-id-card fa-fw"></i> Especialidad  
                 </a>
                 @endcan
                 @can('clinica-list')

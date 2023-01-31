@@ -42,7 +42,7 @@
                                                     00{{ $item->correlativo }}
                                                 @elseif($item->correlativo <= 990)
                                                     0{{ $item->correlativo }}
-                                                @endif
+                                @endif
                                                 /
                                                 {{ $item->fecha->translatedFormat('Y') }}
                                                 {{ $item->dclinica_servicio->descripcion }}

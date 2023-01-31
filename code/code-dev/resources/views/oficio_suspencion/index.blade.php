@@ -18,7 +18,7 @@
                     <thead>
                         <th>No.</th>
                         <th>idOficio</th>
-                        <th>idSuspencion</th>
+                        <th>idSuspension</th>
                         <th>Estado</th>
                         <th>Opciones</th>
                     </thead>

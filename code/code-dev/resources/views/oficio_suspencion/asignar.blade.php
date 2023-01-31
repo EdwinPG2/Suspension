@@ -9,7 +9,7 @@
         <div class="card mb-4">
             <div class="card-header">
                 <div class="row justify-content-between">
-                    <h4>Asignación de suspenciones a oficios</h4>
+                    <h4>Asignación de suspensiones a oficios</h4>
                     
                     <ul>
                         <a type="button" class="btn btn-primary" href="{{ route('suspen_oficio.index')}}"><i class="fas fa-plus"></i>Asignar</a>
@@ -22,7 +22,7 @@
                 <table id="dt-suspencions" class="table table-striped table-bordered dts">
                     <thead>
                         <th>Agregar</th>
-                        <th>Suspension</th>
+                        <th>Suspensión</th>
                         <th>Oficio</th>
                         <th>Estado</th>
                         

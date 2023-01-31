@@ -63,7 +63,7 @@
                     <hr>
                     <div class="row justify-content-between">
                         <a type="button" class="btn btn-info" href="{{ route('editaroficios.show',$oficio->id_oficio)}}">ENVIAR A REVISIÓN</a>
-                        <a type="button" class="btn btn-primary" href="{{ route('agregarsuspenciones.show',$oficio->id_oficio)}}">AÑADIR SUSPENCIONES</a>
+                        <a type="button" class="btn btn-primary" href="{{ route('agregarsuspenciones.show',$oficio->id_oficio)}}">AÑADIR SUSPENSIONES</a>
                         <a type="button" class="btn btn-danger" href="javascript:history.back()"><-REGRESAR</a>
                     </div>
             </div>
