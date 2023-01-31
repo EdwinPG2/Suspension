@@ -19,7 +19,7 @@
                 <table id="dt-dependencias" class="table table-striped table-bordered dts">
                     <thead>
                         <th>Nombre</th>
-                        <th> Opciones </th>
+                        <th>Opciones</th>
                     </thead>
                     <tbody>
                         @foreach($cargos as $item)
@@ -27,17 +27,12 @@
                            
                             <td>{{ $item->nombre }}</td>
                             <td colspan="2 flex justify-center">
-                                @can('cargo-edit')
-                                    <a href="{{ route ('cargo.edit', $item->id_cargo) }}"
-                                    class="btn btn-warning" ><i class="fas fa-edit"></i></a>
-                                @endcan
-                                @can('cargo-delete')
+                                
                                     <form action="{{ route('cargo.destroy',$item->id_cargo)}}" method="post" class="d-inline">
                                     @csrf
                                     {{method_field('DELETE')}}
                                     <button class="btn btn-danger" type="submit" class="d-inline"><i class="fas fa-trash"></i></button>
                                     </form>
-                                @endcan
                             </td>
                         </tr>
                         @endforeach                

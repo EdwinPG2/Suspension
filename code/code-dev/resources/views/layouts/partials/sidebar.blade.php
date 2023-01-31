@@ -161,6 +161,9 @@
                     <i class="fas fa-id-card fa-fw"></i> Areas  
                 </a>
                 @endcan
+                <a class="collapse-item" href="{{url('cargo')}}">
+                    <i class="fas fa-id-card fa-fw"></i> Cargos
+                </a>
                 @can('especialidad-list')
                 <a class="collapse-item" href="{{ url('especialidades') }}">
                     <i class="fas fa-id-card fa-fw"></i> Especialidad  
