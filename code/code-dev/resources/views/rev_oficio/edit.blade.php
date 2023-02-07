@@ -43,7 +43,11 @@
                                 <td>
                                     @if($item->desuspension->estado == 'En revisión')
                                     <a href="{{ route ('revsusp.edit', $item->desuspension->id_suspension .'&'. $oficios->id_oficio)}}"
-                                        class="btn btn-warning"><i class="fas fa-edit"></i> Revisar</a>
+                                        class="btn btn-warning"><i class="fas fa-check-double"></i> Revisar</a>
+                                    @endif
+                                    @if($item->desuspension->estado != 'En revisión')
+                                    <a href="{{ route ('revsusp.edit', $item->desuspension->id_suspension .'&'. $oficios->id_oficio)}}"
+                                        class="btn btn-warning"><i class="fas fa-edit"></i> Editar</a>
                                     @endif
                                 </td>
                                 
