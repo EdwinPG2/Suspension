@@ -78,23 +78,23 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_inicio_caso">Fecha de inicio caso (*)</label>
+                                    <label for="fecha_inicio_caso">Fecha de inicio caso</label>
                                     <input type="date" name="fecha_inicio_caso" id="fecha_inicio_caso"
-                                        class="form-control" placeholder="" required>
+                                        class="form-control" placeholder="">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_inicio_suspension">Fecha de inicio de suspensión (*)</label>
+                                    <label for="fecha_inicio_suspension">Fecha de inicio de suspensión</label>
                                     <input type="date" name="fecha_inicio_suspension" id="fecha_inicio_suspension"
-                                        class="form-control" placeholder="" required>
+                                        class="form-control" placeholder="">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_fin_suspension">Fecha de finalizacion de suspensión (*)</label>
+                                    <label for="fecha_fin_suspension">Fecha de finalizacion de suspensión</label>
                                     <input type="date" name="fecha_fin_suspension" id="fecha_fin_suspension"
-                                        class="form-control" placeholder="" required>
+                                        class="form-control" placeholder="">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
