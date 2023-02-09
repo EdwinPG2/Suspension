@@ -78,9 +78,9 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_inicio_caso">Fecha de inicio caso</label>
+                                    <label for="fecha_inicio_caso">Fecha de inicio caso (*)</label>
                                     <input type="date" name="fecha_inicio_caso" id="fecha_inicio_caso"
-                                        class="form-control" placeholder="">
+                                        class="form-control" placeholder="" required>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
