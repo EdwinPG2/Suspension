@@ -74,11 +74,49 @@
             <br>
             <span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Century Gothic;color:#000000">
                 Quetzaltenango,
-                {{ $requerimiento->fecha_respuesta->translatedFormat('d') }}
+                {{ {{ $ldate = date('d')}} }}
                 de
-                {{ $requerimiento->fecha_respuesta->translatedFormat('F') }}
+                @switch($ldate = date('m'))
+                    @case('01')
+                        Enero
+                        @break
+                    @case('02')
+                        Febrero
+                    @break
+                    @case('03')
+                        Marzo
+                    @break
+                    @case('04')
+                        Abril
+                    @break
+                    @case('05')
+                        Mayo
+                    @break
+                    @case('06')
+                        Junio
+                    @break
+                    @case('07')
+                        Julio
+                    @break
+                    @case('08')
+                        Agosto
+                    @break
+                    @case('09')
+                        Septiempre
+                    @break
+                    @case('10')
+                        Octubre
+                    @break
+                    @case('11')
+                        Noviembre
+                    @break
+                    @case('12')
+                        Diciembre
+                    @break
+                    @default
+                @endswitch
                 de
-                {{ $requerimiento->fecha_respuesta->translatedFormat('Y') }}
+                {{ {{ $ldate = date('Y')}} }}
 
             </span>
         </DIV>
