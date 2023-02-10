@@ -21,7 +21,7 @@
                                 <div class="form-group">
                                     <input type="text" name="no_afiliado" id="no_afiliado" class="form-control"
                                         placeholder="Ingrese un numero" required maxlength="13" pattern="[0-9]*"
-                                        title="Ingrese solamente numeros">
+                                        title="Ingrese solamente numeros" value="{{ old('no_afiliado') }}">
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2">
@@ -35,7 +35,7 @@
                                 <div class="form-group">
                                     <label for="nombre">Nombre de afiliado</label>
                                     <input type="text" name="nombre_afiliado" id="nombre_afiliado" class="form-control"
-                                        placeholder="" value="" disabled>
+                                        placeholder="" disabled>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
@@ -57,17 +57,18 @@
                                         onchange="javascript:showDate()">
                                         <option value="" disabled selected>-- --</option>
                                         @foreach ($riesgo as $item)
-                                            <option value="{{ $item->id }}">{{ $item->nombre }}</option>
+                                            <option value="{{ $item->id }}"  @if (old('id_riesgo')==$item->id)selected @endif>
+                                                {{ $item->nombre}}</option>
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
-                                <div id="accidente" style="display:none;">
+                                <div id="accidente" @if (old('fecha_accidente') == null) style="display: none;" @else style="display: block;" @endif>
                                     <div class="form-group">
                                         <label for="fecha_accidente">Fecha de accidente</label>
                                         <input type="datetime-local" name="fecha_accidente" id="fecha_accidente"
-                                            class="form-control" placeholder="">
+                                            class="form-control" placeholder="" value="{{old('fecha_accidente')}}">
                                     </div>
                                 </div>
                             </div>
@@ -80,28 +81,28 @@
                                 <div class="form-group">
                                     <label for="fecha_inicio_caso">Fecha de inicio caso (*)</label>
                                     <input type="date" name="fecha_inicio_caso" id="fecha_inicio_caso"
-                                        class="form-control" placeholder="" required>
+                                        class="form-control" placeholder="" required value="{{old('fecha_inicio_caso')}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="fecha_inicio_suspension">Fecha de inicio de suspensión</label>
                                     <input type="date" name="fecha_inicio_suspension" id="fecha_inicio_suspension"
-                                        class="form-control" placeholder="">
+                                        class="form-control" placeholder="" value="{{old('fecha_inicio_suspension')}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="fecha_fin_suspension">Fecha de finalizacion de suspensión</label>
                                     <input type="date" name="fecha_fin_suspension" id="fecha_fin_suspension"
-                                        class="form-control" placeholder="">
+                                        class="form-control" placeholder="" value="{{old('fecha_fin_suspension')}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="fecha_alta">Fecha de alta</label>
                                     <input type="date" name="fecha_alta" id="fecha_alta" class="form-control"
-                                        placeholder="">
+                                        placeholder="" value="{{old('fecha_alta')}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
@@ -109,7 +110,7 @@
                                     <label for="fecha_registro">Fecha de registro (*)</label>
                                     <input type="datetime-local" name="fecha_registro" id="fecha_registro"
                                         class="form-control" placeholder="" value="{{ $ldate = date('Y-m-d H:i:s') }}"
-                                        readonly>
+                                        readonly >
                                 </div>
                             </div>
 
@@ -137,7 +138,7 @@
                                 <div class="form-group">
                                     <input type="text" name="medico_colegiado" id="medico_colegiado"
                                         class="form-control" placeholder="Ingrese un colegiado" required maxlength="11"
-                                        pattern="[0-9]*" title="Ingrese solamente numeros">
+                                        pattern="[0-9]*" title="Ingrese solamente numeros" value="{{old('medico_colegiado')}}">
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2">
@@ -151,7 +152,7 @@
                                 <div class="form-group">
                                     <label for="nombre_medico">Nombres de médico</label>
                                     <input type="text" name="nombre_medico" id="nombre_medico" class="form-control"
-                                        placeholder="" value="" disabled>
+                                        placeholder="" disabled>
                                 </div>
                             </div>
                         </div>
@@ -166,7 +167,7 @@
                                         onclick="cargar_especialidad()">
                                         <option value="" disabled="disabled">-- Seleccione un área</option>
                                         @foreach ($areas as $item3)
-                                            <option value="{{ $item3->id_area }}">{{ $item3->nombre }}</option>
+                                            <option value="{{ $item3->id_area }}" @if (old('areas')==$item->id_area)selected @endif>{{ $item3->nombre }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -205,7 +206,7 @@
                                         <label for="nombre_medico">IBM</label>
                                         <input type="text" name="ibm" id="ibm" class="form-control"
                                             placeholder="" maxlength="11" pattern="[0-9]*"
-                                            title="Ingrese solamente numeros">
+                                            title="Ingrese solamente numeros" value="{{old('ibm')}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-4">
@@ -213,7 +214,7 @@
                                         <label for="cargo">Seleccione cargo/puesto</label>
                                         <select class="form-control" name="cargo" id="cargo">
                                             @foreach ($cargos as $item)
-                                                <option value="{{ $item->id_cargo }}">{{ $item->nombre }}</option>
+                                                <option value="{{ $item->id_cargo }}" @if (old('cargo')==$item->id_cargo)selected @endif >{{ $item->nombre }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -222,14 +223,14 @@
                                     <div class="form-group">
                                         <label for="dependencia">Ingrese dependencia</label>
                                         <input type="text" name="dependencia" id="dependencia" class="form-control"
-                                            placeholder="" maxlength="50">
+                                            placeholder="" maxlength="50" value="{{old('dependencia')}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-4">
                                     <div class="form-group">
                                         <label for="renglon">Ingrese renglón</label>
                                         <input type="text" name="renglon" id="renglon" class="form-control"
-                                            placeholder="" maxlength="7">
+                                            placeholder="" maxlength="7" value="{{old('renglon')}}">
                                     </div>
                                 </div>
                             </div>
