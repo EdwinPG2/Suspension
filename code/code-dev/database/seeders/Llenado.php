@@ -482,11 +482,11 @@ class Llenado extends Seeder
         ['16534','Wilmar Rafael Lopez Monterroso'],
         ['12792','Yadira Lisbeth Mérida Escobedo'],
         ['20326','Yecenia Del Rosario Sabaj Citalan'],
-        ['1547','Hilda  Verónica Godínez López'],
+        ##['1547','Hilda  Verónica Godínez López'],
         ['1726','Vivian Rosangela Reyes Rodas'],
         ['1585','Beatriz Albina Yax Coti'],
         ['3594','Carlos Alexander Mérida Rodas'],
-        ['1547','Aura Sucely Rosario Soto'],
+        ##['1547','Aura Sucely Rosario Soto'],
         ['4291','Maria del Carmen Rivas Pacheco'],
         ['19543','Dr. Gustavo Ramiro Mérida Reina Amaya'],
         ['19402','Dr. Sergio Roberto Villatoro Amézquita'],
@@ -499,8 +499,8 @@ class Llenado extends Seeder
         ['11836','Henry Oswaldo Pisquiy Quixtan'],
         ['15769','Vivian Natalia Gómez García'],
         ['14169','José Roberto Loarca Hernández'],
-        ['13930','Mercy Margoth Herrera Coyoy'],
-        ['13930','Fernando Rodrigo Xet Monzón'],
+        ##['13930','Mercy Margoth Herrera Coyoy'],
+        ##['13930','Fernando Rodrigo Xet Monzón'],
         ['14153','Adolfo Antonio Ochoa Cabrera'],
         ['15738','Luis Emilio Bucaro Echeverría'],
         ['10622','Evelin Lisseth López Granados'],
@@ -529,22 +529,409 @@ class Llenado extends Seeder
         }
 
         $role = Role::create(['name' => 'Administrador']);
+
+        $user = User::create([
+            'ibm'=>'38271',
+            'name'=>'Bethzabe Berenice',
+            'apellido'=>'Cardona Torres',
+            'email'=>'bethzabe.cardona@igssgt.org',
+            'password'=>'$2y$10$2RqFpH6s9g2DNrZO/XRNree0My378Jk3cCLxHOYBe1N1AJ0YRTbNi',
+            'role_id' => $role->id,
+        ]);
+
         $permissions = ['1','2','3','4','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27',
         '28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57',
         '58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87',
         '88','89','90','91','92','93','94','95','96','97','98','99','100'];
         $role->syncPermissions($permissions);
+        $user->givePermissionTo($permissions);
+
+        $user = User::create([
+            'ibm'=>'1000269',
+            'name'=>'Francisco Isaac',
+            'apellido'=>'López Martinez',
+            'email'=>'francisco.lopez@igssgt.org',
+            'password'=>'$2y$10$BEQEUIV6B8FfV5ZYzcxPZ.S7RVvRZAE/0rLrXFyJFURVX2b5sTP.q',
+            'role_id' => $role->id,
+        ]);
+        $user->givePermissionTo($permissions);
+
 
         $role = Role::create(['name' => 'Registrador-Registros Medicos']);
         $permissions = ['10','11','12','13','14','15','16','17','18','39','40','41','42','83','100'];
         $role->syncPermissions($permissions);
+        $user = User::create([
+            'ibm'=>'10042',
+            'name'=>'Martha Isabel',
+            'apellido'=>'Ardiano Fuentes',
+            'email'=>'martha.ardiano@igssgt.org',
+            'password'=>'$2y$10$IpAW7ZTTqwLDDLTXaEE.0eOGSNl2Q5CccYqL/Z4Qiu4jrNiR5XtS.',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'20070',
+            'name'=>'Cindy Yasmin',
+            'apellido'=>'Morales Villagran','email'=>'cindy.morales@igssgt.org',
+            'password'=>'$2y$10$UCCTdgYCirZMfI7Om.5XWeZWeJhsuFrigaLxbnvWUtwwLOKlZNuU2',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2006452',
+            'name'=>'Carolina Edith',
+            'apellido'=>'Hernandez Perez','email'=>'caroline.hernandez@igssgt.org',
+            'password'=>'$2y$10$QaJCkYTACw0TgphKKEK4SOLSj9hLiNJoJLvncqNsIEdWecRlsCIjK',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'1002145',
+            'name'=>'Jeaqueline Maribel',
+            'apellido'=>'Mazariegos','email'=>'jeaqueline.mazariego@igssgt.org',
+            'password'=>'$2y$10$g6YX4JLjJd/6Ol69P5ioteMvVeLgYhzYu6e1/bsp0Bcds8My7qBc6',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'38690',
+            'name'=>'Luis Roberto',
+            'apellido'=>'Escobar Perez','email'=>'luis.escobar@igssgt.org',
+            'password'=>'$2y$10$E9F7TVLurw9D8gdXaI06eOn0PpkR9p9zoBJ4tReut86nG9A2ftaPm',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'39007',
+            'name'=>'Raul',
+            'apellido'=>'De Leon','email'=>'raul.deleon@igssgt.org',
+            'password'=>'$2y$10$Zm5oYit3TRhRLKo8O.7UCOUrQPJ4WXqNUh5gX2XUlE2ySNOq1k/Va',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'37142',
+            'name'=>'Susana Ines',
+            'apellido'=>'Vega Lopez','email'=>'susana.vega@igssgt.org',
+            'password'=>'$2y$10$R3svcKEtmfUi1z7g073f7eLYWEw5P9GTwGY7TTd3Eyzp1Ue9.jXZO',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'39263',
+            'name'=>'Vera',
+            'apellido'=>'Barrios Ruiz','email'=>'vera.barrios@igssgt.org',
+            'password'=>'$2y$10$Lkj9Y1yhOTeyv7gojhsvxuwdkknnWZyyGYOJyQCT8aX8KpOvwXxVS',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'1001850',
+            'name'=>'Walter Florencio',
+            'apellido'=>'Yax Chaclan','email'=>'walter.yax@igssgt.org',
+            'password'=>'$2y$10$n6oPwti1UfrY/EhHvr3lTe3mQHd5ixW6NmH9aakxwY83i4QEGNooW',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'39119',
+            'name'=>'Absalon Benjamin',
+            'apellido'=>'Lemus Samayoa','email'=>'absalon.lemus@igssgt.org',
+            'password'=>'$2y$10$/tw9eK7Zv34F//v81Irfpun.MZoXMM13R9aPSy83lfcB37RcDtmu6',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'39125',
+            'name'=>'Adriana Daniela',
+            'apellido'=>'Sanchez','email'=>'adriana.sanchez@igssgt.org',
+            'password'=>'$2y$10$xU..DAn6H9JDXBby9QB6F.6bBNQlOU1wIBwq69KbpnprFNNB9YUBa',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'38300',
+            'name'=>'Lilian Marleny',
+            'apellido'=>'Castillo y Castillo','email'=>'lilian.castillo@igssgt.org',
+            'password'=>'$2y$10$k6El3lk1tp8g9U5jHLCcnOqoIj/aZN4lnUU9ZAQiHZEWUzlXYTv.C',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2007067',
+            'name'=>'Skarleth Dayanara',
+            'apellido'=>'Dubon Aguilar','email'=>'skarleth.dubon@igssgt.org',
+            'password'=>'$2y$10$KypK.9Namgsa0.6/alElsOybU3d5trXODzaFjETSnwX1R3H8KdXbe',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'38978',
+            'name'=>'Andrea Alejandra',
+            'apellido'=>'Arauz Medrano','email'=>'andrea.arauz@igssgt.org',
+            'password'=>'$2y$10$osg0mfQIwlNr7jfOuNGBeOk/FducC/9tH2ULh/JecMCFaqJQX5lW2',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'1004249',
+            'name'=>'Maria Paola',
+            'apellido'=>'Archila','email'=>'maria.archila@igssgt.org',
+            'password'=>'$2y$10$urTe9dCk0.QV.w2cJDA3yO74QQh.9CGZNwqiTZQl2blTxZBrt5BzS',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'37837',
+            'name'=>'Maria',
+            'apellido'=>'Cardona Lopez','email'=>'mariad.cardona@igssgt.org',
+            'password'=>'$2y$10$sQ9OEXrsqaf5wTs2TxyhIuMZCGDyD0UiNlAzsiRFK71PTiHBJmx/O',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2004613',
+            'name'=>'Angelica Del Rocio',
+            'apellido'=>'Romeno Villatoro','email'=>'angelica.romano@igssgt.org',
+            'password'=>'$2y$10$/DwesAPCl7ooEiZKIrT9xuZxWxpawo9Sbur.uusAL6Pr3ixmXMphK',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'37799',
+            'name'=>'Ana Patricia',
+            'apellido'=>'Sum Escobar','email'=>'ana.sum@igssgt.org',
+            'password'=>'$2y$10$Ekb0DhVrkZoEOBoO0PLjO.5JK2utRiJUTCji0zgtgocyt7jG5XAj6',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2007751',
+            'name'=>'Evelyn Johanna',
+            'apellido'=>'De Leon','email'=>'evelyn.deleon@igssgt.org',
+            'password'=>'$2y$10$kV9RptPDgWfYgQpTs0vzcO/vS2aZk7EmRmCUpNNu0hla4wto9m4MO',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2003466',
+            'name'=>'Jesnee Mishilck',
+            'apellido'=>'Cifuentes Maldonado','email'=>'jesnee.cifuentes@igssgt.org',
+            'password'=>'$2y$10$5aisWFufw38ao0AhsflbxuoiEy3lNI27jg1yr/cetjfpRdLFnY3dq',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'38686',
+            'name'=>'Rosa Patricia',
+            'apellido'=>'Gonzalez de Vidal','email'=>'rosa.gonzalez@igssgt.org',
+            'password'=>'$2y$10$IDyg7PdEKVYrDt3sqFAJmOBfBaaOTFXIi1qqHzu8qhrOTm/5247py',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'1004237',
+            'name'=>'Beatriz Eugenia',
+            'apellido'=>'Ochoa de León','email'=>'beatriz.ochoa@igssgt.org',
+            'password'=>'$2y$10$H59kYjzfHbMqJNlnx7iYO.UUXVeWkHdEuo.gMVTE.flDh3x.Kzavq',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2004695',
+            'name'=>'Didy Lily',
+            'apellido'=>'Pérez Herrera','email'=>'didy.perez@igssgt.org',
+            'password'=>'$2y$10$qpFKn1ICjSuv67.p8L.sruf49bTh2uweXp466H29nHourG/v24n2G',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'37806',
+            'name'=>'Henrry Wualberto',
+            'apellido'=>'Paz Macario','email'=>'henrry.paz@igssgt.org',
+            'password'=>'$2y$10$bfj.MwtkQyGoUU.UPtCs4OOZTzrgwnAdZe6nE9b.ZFDRh0I/ngVVO',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'37798',
+            'name'=>'Estrella Odili',
+            'apellido'=>'García Reyes','email'=>'estrella.garcia@igssgt.org',
+            'password'=>'$2y$10$EMgz2h10xMvfqZXNDdb15ehwLPYe2sPdq4stP//3JJwWeh18HdkZy',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2005977',
+            'name'=>'Andy Alessandro',
+            'apellido'=>'Quemé Monzóz','email'=>'andy.queme@igssgt.org',
+            'password'=>'$2y$10$ixZJh//S8sBEtx1s958CiuSXgxwUaHdtKccw2EYqRmAJBEtpDSzeC',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'25327',
+            'name'=>'Henly Karina',
+            'apellido'=>'Flores Elias','email'=>'henly.flores@igssgt.org',
+            'password'=>'$2y$10$JWPCm8ygt/hepGBwtMYOV.pcFXOyseh3R062lwhBvDnZDUwXxkdzu',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'38096',
+            'name'=>'Yenny Virginia',
+            'apellido'=>'Osorio Recinos','email'=>'yenny.osorio@igssgt.org',
+            'password'=>'$2y$10$.jg9RHr5zI/C5T5EMpYTkeg.EGDbNPATImOw9woS0U8hZLt4Tf8e2',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+
+        
 
         $role = Role::create(['name' => 'Revisor-Registros Medicos']);
         $permissions = ['19','20','21','22','23','24','25','26','31', '35', '36', '37','38','75','76','77','78','79','80','81','82','84','87','100'];
         $role->syncPermissions($permissions);
 
+        $user = User::create([
+            'ibm'=>'38380',
+            'name'=>'Karla Paola',
+            'apellido'=>'Fuentes Gonzales',
+            'email'=>'karla.fuentes@igssgt.org',
+            'password'=>'$2y$10$MpPZOBAKrQ3hHnFwXcSCTO5JUNOr1e74wdiLzbx.n9fmmkg4yAd5O',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'38563',
+            'name'=>'Luisa Maria',
+            'apellido'=>'Mejicanos Bonilla',
+            'email'=>'luisa.mejicanos@igssgt.org',
+            'password'=>'$2y$10$2tr7RpiIDaIWZwqXr3KWC.PgmzhU74qMo7nkcMgxV.cQ3i.8X.PY6',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'39115',
+            'name'=>'Sulma Roxana',
+            'apellido'=>'Siguantay Cardona',
+            'email'=>'sulma.siguantay@igssgt.org',
+            'password'=>'$2y$10$Ok5gYDJpECG58YxhBal5oOJnjP.38Vty1JnchN5/lws/V7sKk11Yq',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2002447',
+            'name'=>'Elvira Encarnacion',
+            'apellido'=>'Estrada Estrada',
+            'email'=>'elvira.estrada@igssgt.org',
+            'password'=>'$2y$10$1ODyjTwEM2Xv6paOFFwKI.6XGfAPHgvkroiYEa0ti/lxRG9prU4ze',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'38982',
+            'name'=>'Nancy Alejandra',
+            'apellido'=>'Asencio Batz',
+            'email'=>'nancy.asencio@igssgt.org',
+            'password'=>'$2y$10$uuabzBhQXxpEHc8f1X.LyubHRTKT6ijYpKqoVkzbfcDua5rZ08OK.',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+
         $role = Role::create(['name' => 'Registrador-Prestaciones']);
         $permissions = ['19','20','21','22','23','24','25','26','75','76','77','78','79','80','81','82','84','86', '88','89','90','91', '100'];
         $role->syncPermissions($permissions);
+
+        $user = User::create([
+            'ibm'=>'123',
+            'name'=>'Edwin',
+            'apellido'=>'Pretzantzin',
+            'email'=>'edwin.garcia@igssgt.org',
+            'password'=>'$2y$10$hxsyoULxQTLWlcNTgWZRROYDz1sql4hxCFzXomrxe/6IxslRGeOpK',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'28547',
+            'name'=>'Karina Hayne',
+            'apellido'=>'Beletzuy Galicia',
+            'email'=>'karina.beletzuy@igssgt.org',
+            'password'=>'$2y$10$ltPnXlzH9DKXYuPknlsHquxvBzESQd81IS18Dx.1ERIy6QyKxhz/.',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2001293',
+            'name'=>'Roger Otoniel',
+            'apellido'=>'López Escalante',
+            'email'=>'roger.lopez@igssgt.org',
+            'password'=>'$2y$10$ZNEwomQs60hgoRIjrd/K0e9F4JyZI6xA1Sk10cANV.n0edg/5MQ7e',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2005594',
+            'name'=>'Josue Efrain',
+            'apellido'=>'Pérez Itzep',
+            'email'=>'josue.perez@igssgt.org',
+            'password'=>'$2y$10$Og8PwbYAh.WvqMqVxHg0zu1RS25Ta3z5MLbdnNs.H95kuBg6tr8k.',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'49510',
+            'name'=>'Aura Yaneth',
+            'apellido'=>'Garcia Gonzalez',
+            'email'=>'aura.garcia@igssgt.org',
+            'password'=>'$2y$10$sSKpzeEUV.5BX1q4nik5eOGdCncc6z0Pe47AfBnI40qz2YNoxfWRS',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'48395',
+            'name'=>'Miriam Regina',
+            'apellido'=>'Escobedo Ramírez',
+            'email'=>'miriam.escobedo@igssgt.org',
+            'password'=>'$2y$10$6ed3kcOxS73lIK8FbhPMO.a5VwOn4lDBrzhgYK/UsWOQrHxbu5gbu',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+
     }
 }
