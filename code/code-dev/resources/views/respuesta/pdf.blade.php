@@ -74,7 +74,7 @@
             <br>
             <span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Century Gothic;color:#000000">
                 Quetzaltenango,
-                {{ {{ $ldate = date('d')}} }}
+                {{ $ldate = date('d')}}
                 de
                 @switch($ldate = date('m'))
                     @case('01')
@@ -116,7 +116,7 @@
                     @default
                 @endswitch
                 de
-                {{ {{ $ldate = date('Y')}} }}
+                {{ $ldate = date('Y')}}
 
             </span>
         </DIV>

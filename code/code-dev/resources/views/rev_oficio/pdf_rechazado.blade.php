@@ -30,7 +30,7 @@
 
 
     <img style="position:absolute;top:-0.2in;left:-0.18in;width:1.12in;height:1.07in" src="{{ url('img/logo.png')}}" />
-    <div style="position:absolute;top:0.0in;left:25%;width:4.12in;line-height:0.22in;"><span
+        <div style="position:absolute;top:0.0in;left:25%;width:4.12in;line-height:0.22in;"><span
             style="font-style:normal;font-weight:bold;font-size:15pt;font-family:Arial;color:#205784">Instituto
             Guatemalteco de Seguridad Social</span><br />
     </div>
@@ -77,7 +77,7 @@
             <br>
             <span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Century Gothic;color:#000000">
                 Quetzaltenango,
-                {{ {{ $ldate = date('d')}} }}
+                 {{ $ldate = date('d')}} 
                 de
                 @switch($ldate = date('m'))
                     @case('01')
@@ -119,7 +119,7 @@
                     @default
                 @endswitch
                 de
-                {{ {{ $ldate = date('Y')}} }}
+                 {{ $ldate = date('Y')}} 
 
             </span>
         </DIV>

@@ -8,6 +8,12 @@
     <div class="col-lg-12 col-md-12 col-xs-12">
         <div class="card mb-4">
             <div class="card-header">
+                <div class="">
+                    <h4>Verificar PDF del oficio</h4> 
+                    <a href="{{ route('oficios.edit', $oficios->id_oficio) }}" class="btn btn-primary"><i class="fas fa-check-circle"></i> PDF</a>
+                </div>
+            </div>
+            <div class="card-header">
                 <div class="row justify-content-between">
                     <h4>Listado de Suspensiones</h4>
                 </div>
