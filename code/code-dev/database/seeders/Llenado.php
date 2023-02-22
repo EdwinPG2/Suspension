@@ -316,351 +316,209 @@ class Llenado extends Seeder
 
 
         $medicos = [
-            ['37913','Cristina Ileana Racancoj Alonzo'],
-        ['37914','Ana Lucía Palomo Leppe'],
-        ['38011','Andrea Patricia Vital Acosta'],
-        ['38025','Diana Gabriela Aguilar Soto'],
-        ['38175','Benigno Hernández Marín'],
-        ['38220','Paola Mercedes De León'],
-        ['38388','Rocio Iveth García Piedrasanta'],
-        ['38967','Tania Paola Rodas Aceituno'],
-        ['39344','Amelia Isabel Leiva Anderson'],
-        ['39372','Geny Kiomara Gómez Cotom'],
-        ['39941','María Paola Durini Mérida'],
-        ['1000252','Lisbeth Magaly Maldonado Barrios'],
-        ['1000455','Carlos Eduardo Gutiérrez López'],
-        ['39716','Robinson Vinicio Hidalgo Herrera'],
-        ['1002046','Sergio Roberto Villatoro Amézquita'],
-        ['2003036','Juan Alberto Quemé Maldonado'],
-        ['1001719','Vasthy BriseiraOrozco Fuentes'],
-        ['2004397','Esteban RafaelArriola Quiñonez'],
-        ['1003510','Estefania Jackeline MaríaBarrera de León'],
-        ['2002771','Ericka PatriciaCapriel Chiroy'],
-        ['2005922','Angélica del RosarioMaldonado de León'],
-        ['1003524','Kevin ArmandoTzum Zelada'],
-        ['1003220','Karin MarissaChampet Soto '],
-        ['1003555','Ericka PatriciaCapriel Chiroy'],
-        ['1003560','José RicardoGuzmán Villatoro'],
-        ['2006934','Astrid AngélicaDe León Ronquillo'],
-        ['1004280','Astrid AngélicaDe León Ronquillo'],
-        ['24749','Edgar Vinicio Molina De León'],
-        ['25342','Danilo Bosbely De León Valdez'],
-        ['29919','Enrique Ottoniel Aguilar Toc'],
-        ['30427','Héctor Eduardo Lacán De León'],
-        ['31793','Edwin Raul Manrique Alvarado'],
-        ['38065','Carlos Arnulfo Gonzalez Juachín'],
-        ['38083','Luis Alberto Galo Hernandez'],
-        ['38141','Saira Patricia De León Santizo'],
-        ['38193','Juan Luis Vasquez Comparini'],
-        ['38249','José Fernando De León Laparra'],
-        ['38251','Shary Roldán Mejía'],
-        ['38252','Yesenia Sarahí Valdéz Bautista'],
-        ['38330','Lesly Nineth Velásquez Monterroso'],
-        ['38383','José Raúl Ordóñez Villatoro'],
-        ['38411','Fernando Rodrigo Xet Monzón'],
-        ['38418','Rudy Amílcar Estrada Lux'],
-        ['38427','Luis Emilio Bucaro Echeverria'],
-        ['38430','Fausto Alberto Chan Cux'],
-        ['38432','Mercy Margoth Herrera Coyoy'],
-        ['38478','Felix Noé Cojom Quijivix'],
-        ['38479','Aura Madeleine Ramírez Calderón'],
-        ['38480','María Regina Solares Azpurú'],
-        ['38502','Elisa Liliana Xiap Satey'],
-        ['38533','Gustavo Adolfo Xec Zacarías'],
-        ['38552','Gloria Nancy Yolanda Rosales Fernández'],
-        ['38561','Zaira Lucia Mejía Díaz'],
-        ['38610','Lucía Alejandra Delgado Orózco'],
-        ['38717','Alejandra Sofía Quemé Figueroa'],
-        ['38718','Marco Vinicio Alvarez Maldonado'],
-        ['38720','Ruben Alejandro Morales De Leon'],
-        ['38897','Aura Violeta Boj Cotom'],
-        ['38898','Evelin Lisseth López Granados'],
-        ['38968','Patrick Kenny Hernández De León'],
-        ['39141','Jorge Adalberto Pum Santiago'],
-        ['39718','Rosalba Rosemary Rivas Herrera'],
-        ['39752','Carlos Rodolfo Monterroso Bolaños'],
-        ['39753','Evelyn Dinorah Vásquez Barrios'],
-        ['39767','Kevin Josué Del Valle Rivas'],
-        ['39890','Carlos Eduardo Molina Samayoa'],
-        ['39896','Wendy Eugenia Canel Román'],
-        ['39940','Rosa Elena Galindo Díaz'],
-        ['39942','Javier Orlando Sim López'],
-        ['39968','Mynor Renato Portillo Aragón'],
-        ['39997','Edgar Ricardo López Osorio'],
-        ['1000016','Walfred Abel Escobar Calderón'],
-        ['1000017','Oscar Daniel Sum Quijivix'],
-        ['1000070','Allan Andre Rodríguez Molina'],
-        ['1000160','Shirley Jeanette López Marroquín'],
-        ['1000275','Williams Josué Chamorro Talé'],
-        ['1000453','Ana Mariela Montenegro Solares'],
-        ['1000454','Johannán Adin Tajtaj Veliz'],
-        ['1000458','Hilda María Perez Montalván'],
-        ['1000459','José Manuel Silvestre Loarca'],
-        ['1000460','Antonia González Alvarez'],
-        ['1000589','Heidi Tatiana Fuentes Canales'],
-        ['1000618','Héctor Mesala Escobar Rodríguez'],
-        ['1002084','Gloria Lissette Villela De León'],
-        ['1001033','María GabrielaAncheta González'],
-        ['2002689','Luis Francisco Herrera Aquino'],
-        ['1002526','Patrick Rolando Robles Diaz'],
-        ['1001868','José RobertoTay'],
-        ['1002013','Eusebia BeatrizGonzález Espinoza'],
-        ['2004418','Mónica Lizeth García Ramírez'],
-        ['1002201','Angela SofíaOvalle de León'],
-        ['1001117','Luis Francisco Herrera Aquino'],
-        ['2004070','Nancy Melina IvetteMendoza Calmo'],
-        ['2004069','Eduardo AlbertoRamos Pérez'],
-        ['1003174','Luis DavidGómez Moscoso'],
-        ['1002657','Efraín IsaíMazariegos Cottom'],
-        ['1003318','Lucy SuramaPeñate Rangel '],
-        ['2006009','Giezy GerardineGarcía Guerra'],
-        ['2006191','Gustavo AdolfoRamos Yax'],
-        ['1004349','Jorge NoeDe Leon Colop'],
-        ['31518','ASP-Gabriela Noemi Mejia Say'],
-        ['2006788','Aywin AudelioPerez Arreaga'],
-        ['1003214','Ana BernardaHernández Poz'],
-        ['79526','Róbinson StuardoDe león Rodas'],
-        ['48566','Mireytt LizettCalderón Pérez'],
-        ['2007027','Valeska IvetteHernandez Sao'],
-        ['2007028','Ivonne María IvetteArgueta Cifuentes'],
-        ['1003942','Camilo QuicabTiu Grijalva'],
-        ['1004124','Diego AlejandroMorales Alcázar'],
-        ['2007602','Antulio JosuéRequena Velásquez'],
-        ['1004265','Estela MaríaHerrera Medina '],
-        ['1004266','Lucrecia LorenaQuixtan Pon'],
-        ['1004344','Rossana IbetheBarrios Osorio'],
-        ['1004405','Wilmar RafaelLopez Monterroso'],
-        ['1004452','Giezy GerardineGarcía Guerra'],
-        ['2008058','María AzucenaGarcía Bautista'],
-        ['33365','ASP Gabriela María BelénHernández Palacios'],
-        ['1004587','Joellyn JeminaReyes Villagrán'],
-        ['35788','Vivian Natalia Gómez García'],
-        ['37734','Edgar Rolando Chún Pelicó'],
-        ['38288','María Alejandra Tucux López'],
-        ['38531','Henry Oswaldo Pisquiy Quixtan'],
-        ['38535','Mariela Teresa Del Rosario Yax Escobedo'],
-        ['38584','Alvaro Israel Hernández López'],
-        ['38299','Sulmy Paola De Paz Chávez'],
-        ['38428','Adolfo Antonio Ochoa Cabrera'],
-        ['2001426','Juan HeberCastellaños Quiñónez'],
-        ['1001403','María del CármenCastillo Villatoro'],
-        ['1001851','Diana IvettePérez Baten'],
-        ['38439','Celly Anayté Rodríguez Arango'],
-        ['37716','Julio César Aguilar Rosales'],
-        ['37918','Selvin Francisco Gonón Chan'],
-        ['38127','Julio Herolde León Natareno'],
-        ['38501','Aida Modesta Barreno Citalán'],
-        ['38528','Juan De Dios Morales Ralda'],
-        ['38529','Ana Guisela Monzón Guzmán'],
-        ['38970','Orlando Ayerdi Mazariegos'],
-        ['39109','Jeniffer Marizza López Morales'],
-        ['39161','Lucrecia Leonor Guerrero Saso'],
-        ['39373','Reina Antonieta Maldonado Barrios'],
-        ['39717','Miguel Francisco Silvestre Vela'],
-        ['1000451','Lesly Gabriela Gutiérrez Dávila'],
-        ['38725','José Roberto Loarca Hernández'],
-        ['33009','Ingrid Janelorén Santiago Maldonado'],
-        ['33771','Claudia Carolina Acevedo Montes'],
-        ['39594','Lucía Alejandra García De León'],
-        ['1002604','José Francisco Alvarado Estrada'],
-        ['1001435','Juan Francisco Rios Bucaro'],
-        ['1000960','Andrea EvicelaZamora Argueta'],
-        ['1000957','Juana MaríaXuruc Batz'],
-        ['2003780','Aldo HumbertoMejía Macario'],
-        ['75194','Walter Alexander Jimenez Ramírez'],
-        ['2004452','Ingrid PatriciaToyom Zapeta'],
-        ['2006154','Edwyn JhowanyPol Ceto'],
-        ['2006628','Wilder OsvelyBautista Arango'],
-        ['2006935','Kimberly María CristinaHerwing Alfaro'],
-        ['49085','Pablo JoséFuentes Díaz'],
-        ['38719','Ana Isabel Chivalan Castro'],
-        ['1000251','Yadira Lisbeth Mérida Escobedo'],
-        ['1000452','Marilogi Alvarez Xuruc'],
-        ['33632','José Manuel Benavente Larios'],
-        ['35593','Eloisa Del Carmen Lopez Morales'],
-        ['37906','Tito Belizario Ixcot Mejía'],
-        ['37904','Victor Gustavo García Bautista'],
-        ['37916','Manuel De Jesús Ro Gómez'],
-        ['38076','Aldo Juancarlos Calderón Contreras'],
-        ['38132','Heydi Marisol De León Villagrán'],
-        ['38168','Kévin Esaú Soch Tohóm'],
-        ['38170','Carlos Herberth Méndez Sandoval'],
-        ['38192','Juan José Deyet Arévalo'],
-        ['38481','Marcos Davíd González Mazariegos'],
-        ['38532','Iliana María Cifuentes Díaz'],
-        ['38606','Gover Stev Sánchez Morales'],
-        ['39960','Héctor Rocael Laparra Cifuentes'],
-        ['1000254','Glenda Vanessa Gómez Aceytuno'],
-        ['1000450','Deisy Carolina Elizabeth Ixcaquic Son'],
-        ['1000591','Walter Albino Quiejnay González'],
-        ['1001870','Christian DagobertoLópez Santos'],
-        ['34404','Miriam SucellyMaaz Rodríguez'],
-        ['1002616','Carmen MariaOsoy Colop'],
-        ['1004387','Katherine Madelyn RocíoRodríguez Fuentes'],
-        ['1003561','Eduardo AlbertoRamos Pérez'],
-        ['2007209','Leonel JoséGonzález De León'],
-        ['2007280','German RodolfoSac López'],
-        ['2007398','Marlon EsaúIllescas Ruano'],
-        ['1004388','Edwyn JhowanyPol Ceto'],
-        ['2007163','Erick DanielQuijivix Gonzalez'],
-        ['2007397','Jorge EstuardoHerrera Palacios'],
-        ['39897','María RoselinaPerussina Méndez'],
-        ['38274','Nathaly Mishell Alonzo García'],
-        ['38281','Jorge Luis Gutierrez Loarca'],
-        ['38290','Ruby Julieta Pisquiy MontesDe Oca'],
-        ['2003345','Mayra Surama Tistoj Villagrán'],
-        ['2004571','Karen ElizabethLópez Reyna'],
-        ['2004615','Luis ManuelLópez Ramos'],
-        ['2004569','Sindy RosalbaRamírez Sanchez'],
-        ['2004619','Sandra Paola Mishel Sac Toc'],
-        ['2004620','Edith OneliaDe León Vásquez'],
-        ['2004622','Hugo AlexanderIxcopal Xitumul'],
-        ['2004687','María FernandaZacarías Sigüenza'],
-        ['2004616','Mieily PaolaAlva Velásquez'],
-        ['2004572','Yecenia del RosarioSabaj Citalán'],
-        ['2004609','MichelleAguilar Quijivíx'],
-        ['2004614','Nancy PaolaCotom Chávez'],
-        ['2004610','Wendy YomaraCifuentes Mijangos'],
-        ['2004570','Edna Angélica EmperatrizAguilar Cotom'],
-        ['2004611','Vera AracelyMenchú García'],
-        ['2004685','David EstuardoNavarro Loarca'],
-        ['2004660','Diego ManuelLoarca Navarro'],
-        ['2004665','Lida FrinéCruz Aguirre'],
-        ['2004835','William RobertoSuchite Raxtún'],
-        ['2004863','Byron RobertoMiranda Orozco'],
-        ['2004834','Denis RenéCuc Vásquez'],
-        ['2004740','Roxana MilagrosAlvarez Navarro'],
-        ['2004742','Eleazar MahelyCastañon Díaz'],
-        ['2004661','Glendy LorenaHernández de León'],
-        ['2004739','Cármen SofíaCifuentes Rodas'],
-        ['2004866','Sara ElizabethReyes Gómez'],
-        ['2005061','Luis MoisésCoyoy Yax'],
-        ['2005000','Olga RocíoCurruchiche Cigarroa'],
-        ['2004981','Marco AntonioRoblero Velásquez'],
-        ['2004897','Josselyn IvonnePérez Chan'],
-        ['2004895','Marvin Joel LeonelChan Hernández'],
-        ['2005162','Johanna LucreciaGutiérrez Ixquiac'],
-        ['2005232','Ruth AlejandraShiloj Barrera'],
-        ['2003748','Alfredo EnriqueRubio Herrera'],
-        ['2004095','María JoséMorfin Oroxon'],
-        ['2004390','Vera LuciaTurnil Ramos'],
-        ['2005357','Gabriela Yanneth García López'],
-        ['78584','Gabriela Aracely Guzmán López'],
-        ['2005271','Erick AlfonsoMolina Abadía'],
-        ['2005678','Lucrecia LorenaQuixtan Pon'],
-        ['2005676','Karen Mary GabrielaYax Toyom'],
-        ['2005675','Delia Sophía del Cid Castillo'],
-        ['2005677','Karla Yesenia Miranda Sandoval'],
-        ['2005679','Julio César Castillo Pac'],
-        ['2005782','Rossana Ibethe Barrios Osorio'],
-        ['2005937','Jorge RobertoRíos Zambrano'],
-        ['2005958','Hugo AldoTzoc Lacán'],
-        ['2006028','Massiel AlejandraMéndez López'],
-        ['2006066','Rodrigo AndrésBautista Rodas'],
-        ['2006064','Kevin ErnestoEstrada González'],
-        ['2006144','Jesus EstuardoEscobar Castillo'],
-        ['2006186','Gloria SucelySoch Pacheco'],
-        ['2006382','Luis AdanRodas Santos '],
-        ['2006529','Manuel AlbertoEstrada Taracena'],
-        ['2006789','Milvia Walhescka Cano Flores'],
-        ['2006790','Bélsida LeonorBaten Lucas'],
-        ['2006936','Mirna AbelinaRamos Pérez'],
-        ['2007046','Isabel de LourdesAjutun Pelico'],
-        ['2007050','Elisa RosmeryMartínez Martínez'],
-        ['2007049','Rafael VinicioGonzález Gil'],
-        ['2007504',' Evelyn YazminOlivia Gutiérrez'],
-        ['2004278','José IsraelMacario Velásquez'],
-        ['2007886','Margarita del RosarioChan Vicente'],
-        ['38295','Irma Lizet Ovalle Darodes'],
-        ['2008059','José FerlandyEscobar Portillo'],
-        ['24731','Hania Veronica Chavez Alonzo'],
-        ['38482','Ana Iris Vásquez Cifuentes'],
-        ['39352','Victor Yax Leiva'],
-        ['1001402','Yeimi DennisseMorales Rodas'],
-        ['1001731','Monica Lucia Castillo López'],
-        ['1001433','José FélixZarat Méndez'],
-        ['1001432','Alba BenitaJimenez Xum'],
-        ['1002026','Gary AlbertoRamírez Rubio'],
-        ['2004666','Lesly ClaireMárquez Arreaga'],
-        ['1003213','Taryn YuririaDíaz de León'],
-        ['2006291','María GabrielaArgüello Serrano'],
-        ['2006791','Camilo QuicabTiu Grijalva'],
-        ['2007710','Maritza Elodia Marina EulaliaCupil Barrios'],
-        ['38215','Pedro Antonio Bautista Dominguez'],
-        ['1002590','Seidy Lisbeth Monterroso González'],
-        ['1001436','Luis AugustoPérez Orozco'],
-        ['1001400','Floridalma Isabel Quijivix Ixquiac'],
-        ['1001399','Emerson NoéCalderón Barrios'],
-        ['1001437','Pablo Efraín Velásquez Castañeda'],
-        ['2003038','Beggli YeseniaCastro Rivas'],
-        ['2004621','Paula MaríaGutiérrez de León'],
-        ['78196','Aura MichelleHerrera Flores'],
-        ['2004101','Cristian ManuelVásquez Velásquez'],
-        ['2004097','Laura RocíoRuíz Amézquita'],
-        ['1003851','Marlee Walesska Gramajo Ambrosio'],
-        ['2004103','Ingrid PaolaGómez Cortéz'],
-        ['35613','Gustavo RamiroMérida Reina Amaya'],
-        ['2006100','Bladimir Wilmer FranciscoAguaré Gómez'],
-        ['2006937','Mérari AndreínaCastillo De León'],
-        ['2007116','Astrid AnalisseMendoza Molina'],
-        ['33312','ASP Laura YesseniaAlvarado Marín'],
-        ['33230','ASP Karenn AntonioPérez Ortega'],
-        ['1001741','María FernandaMérida Luna'],
-        ['1003935','José IsraelMacario Velásquez'],
-        ['1003840','Samanta YazmínUlín Pérez'],
-        ['1003841','Alba María Rosal Díaz'],
-        ['1001737','Hansel Roberto Argueta García'],
-        ['1003836','César ArmandoXec Ixcamparij'],
-        ['1003838','Jenifer Zoé De León Ruíz'],
-        ['32055','Heidy KarinaMorales Chuc'],
-        ['1003850','María XimenaMaldonado Higueros'],
-        ['32024','ASP-Shirley AlejandraMolina Gordon'],
-        ['1003837','Cynthia CorinaCastillo Villatoro'],
-        ['1004323','Adria GennineGodínez Zepeda'],
-        ['1004367','Delia MaríaReyes Escobar'],
-        ['2004617','Ana BernardaHernández Poz'],
-        ['2004618','Carlos GiovanniAlvarez Godinez'],
-        ['2004894','Juana GriceldaLópez Martínez'],
-        ['2006116','José RicardoGuzmán Villatoro'],
-        ['2006340','Wilmar RafaelLopez Monterroso'],
-        ['2007047','Hilda LeonorDíaz Mora'],
-        ['2007125','Alejandra AnalíMazariegos Flores'],
-        ['2007279','José  AndréBarraza Gomez'],
-        ['2003636','Darío EstuardoMencos Ariza'],
-        ['2005734','Joellyn JeminaReyes Villagrán'],
-        ['2007045','Nestor EmanuelLara García'],
-        ['2007162','Estela MaríaHerrera Medina '],
-        ['2007601','Alexia YomaraTacam Son'],
-        ['1001738','María AlejandraBarrios de León'],
-        ['1002640','RolandoRo Gómez'],
-        ['1002411','Jorge Daniel Castillo Solis'],
-        ['1002416','Maya LauraMonterroso Fuentes'],
-        ['1001736','Claudia Lucrecia López Castillo'],
-        ['1001740','Kristy María Solares Rodríguez'],
-        ['1002410','Otto René Samayoa Natareno'],
-        ['39281','Jackelinne Kimberly Cum Mis'],
-        ['1002409','Lizbeth Analy Cifuentes Mazariegos'],
-        ['1003346','Dulce María ConcepciónFuentes Najarro'],
-        ['1002413','Marilyn Nohemy Galicia Juárez'],
-        ['1002420','Margarita del RocíoFuentes Figueroa'],
-        ['1002421','Oscar FernandoLópez Rodas'],
-        ['1002417','María Mercedes Ralón'],
-        ['1002419','Andrea María Yllescas Molina'],
-        ['1002423','Cindy Paulita EstefanyGómez Ramírez'],
-        ['1002418','Katherinne Paola Najera Reyes'],
-        ['1002422','Yoselin YaritzaMorales Velásco'],
-        ['1002412','Andrea CoraliaLoarca Chávez'],
-        ['1003408','Silvana EstefaniaCháves Torres'],
-        ['1001725','Cristian LorenzoChávez Zamora'],
-        ['1001726','Edgar FernandoSum Racancoj'],
-        ['1001727','Juan SantiagoZapeta Ávila'],
-        ['1001728','Bryan José Hidalgo Gil'],
-        ['1001729','María Cristina Del Carmen Monterroso Sosa'],
-        ['1001730','Andrea del Carmen Ruano Díaz'],
-        ['1001739','Anyee Gabriela De León Miranda'],
-        ['1001742','Edgar Estuardo Nimatuj Ca '],
-        ['1001998','Howard Romeo Bradley Vásquez'],
-        ['1001999','Claudia Carolina Guillén Rivera'],
+        ['16933','Nery Josué Hernández Martínez'],
+        ['15242','Rudy Amílcar Estrada Lux'],
+        ['13597','Carlos Arnulfo González Juachín'],
+        ['12824','Gover Stev Sánchez Morales'],
+        ['16367','José Fernando De León Laparra'],
+        ['12847','Ana Isabel Chivalán Castro'],
+        ['14924','Carlos Herberth Méndez Sandoval'],
+        ['10801','Aldo Juancarlos Calderón Contreras'],
+        ['10618','Orlando Ayerdi Mazariegos'],
+        ['13196','Celly Anayté Rodríguez Arango'],
+        ['15371','Carlos Rodolfo Monterroso Bolaños'],
+        ['10504','Hector Eduardo Lacan De León'],
+        ['12626','Mynor Renato Portillo Aragón'],
+        ['11602','Oscar Daniel Sum Quijivix'],
+        ['17123','Juan Francisco Ríos Bucaro'],
+        ['14462','Héctor Mesala Escobar Rodríguez '],
+        ['16311','Vasthy Briseira Orozco Fuentes'],
+        ['15175','Gary Alberto Ramírez Rubio'],
+        ['19366','José Ricardo Guzmán Villatoro'],
+        ['18216','Ecner Morel Hidalgo Díaz '],
+        ['18521','Esteban Rafael Arriola Quiñonez'],
+        ['25033','Kelly Melissa Díaz Maldonado '],
+        ['24843','Inés Esthefany Corado Carrillo '],
+        ['20673','Tess Kirstin Godo Simon '],
+        ['14848','Jose Pablo Fuentes Díaz '],
+        ['19675','José André Barraza Gómez '],
+        ['15797','Rodolfo German Sac López  '],
+        ['13327','Carmen María Osoy Colop'],
+        ['3320','Sucely Rosario Soto '],
+        ['18071','Lynda Michelle Méndez Carranza '],
+        ['21088','Nancy Paola Girón López'],
+        ['18358','Brenda Jazmin Soch Chiche'],
+        ['84010','Enrique Otoniel Aguilar Toc'],
+        ['9487','Edwin Raúl Manrique Alvarado'],
+        ['7996','Walda Francisca Hoffens Alfaro'],
+        ['11020','Cristina Ileana Racancoj Alonzo'],
+        ['6075','Benigno Hernández Marín '],
+        ['17066','María Alejandra Tucux López'],
+        ['14519','Orfa Zucelí Gómez de León'],
+        ['14305','Alfonso Rigoberto Velasquez Orozco'],
+        ['17710','José Raúl Ordoñez Villatoro'],
+        ['14292','Fausto Alberto Chan Cux'],
+        ['8946','Aida Modesta Barreno Citalán'],
+        ['14518','Gustavo Adolfo Xec Zacarias'],
+        ['9879','Miguel Francisco Silvestre Vela'],
+        ['16530','Allan Andre Rodriguez Molina'],
+        ['18215','Andrea Evicela Zamora Argueta'],
+        ['15370','Monica Lucia Castillo López'],
+        ['15266','Diana Ivette Pérez Baten'],
+        ['14498','José Roberto Tay'],
+        ['19389','Angela Sofía Ovalle de León'],
+        ['18098','Taryn Yuririda Diaz de León '],
+        ['18953','Jorge Noe de León Colop'],
+        ['17302','Valeska Ivette Hernandez Sao'],
+        ['19696','Ivone María Ivette Argueta Cifuentes'],
+        ['19753','Hilda Leonor Díaz Mora'],
+        ['19954','Alejandra Anali Mazariegos Flores'],
+        ['18068','Jorge Estuardo Herrera Palacios'],
+        ['17285','Gabriela María Belén Hernandez Palacios'],
+        ['23965','Abner Alexis Alvarado Tzul '],
+        ['24136','Adria Gennine Godinez Zepeda'],
+        ['16035','Alba Benita Jimenez  Xum'],
+        ['22941','Alba María Rosal Diaz'],
+        ['13117','Alberto Fernando Axt Mull'],
+        ['14345','Albin Francisco Castro Fernández'],
+        ['20422','Alfredo Enrique Rubio Herrera'],
+        ['14025','Amelia Isabel Leiva Anderson'],
+        ['18852','Ana Iris Vásquez Cifuentes'],
+        ['22193','Andrea Coralia Loarca Chavez'],
+        ['22343','Andrea Del Carmen Ruano Diaz'],
+        ['24996','Andrea Gabriela Celada Ramirez'],
+        ['13768','Andrea Patricia Vital Acosta'],
+        ['13463','Angel Enrique De Leon Salazar'],
+        ['16925','Antonia Gonzalez Alvarez'],
+        ['14441','Aura Michelle Herrera Flores'],
+        ['20322','Beggli Yesenia Castro Rivas'],
+        ['19739','Bélsida Leonor Baten '],
+        ['23743','Bladimir Wilmer Francisco Aguare Gomez'],
+        ['22446','Bryan Jose Hidalgo Gil'],
+        ['21644','Carlos Raul Aquino Morales'],
+        ['18796','Carmen Sofia Cifuentes Rodas'],
+        ['24203','Cynthia Corina Castillo Villatoro'],
+        ['15212','Dario Estuardo Mencos Ariza'],
+        ['16457','Deisy Carolina Elizabeth Ixcaquic Son'],
+        ['23184','Delia Maria Reyes Escobar'],
+        ['23521','Dulce Maria Concepcion Fuentes Najarro'],
+        ['17090','Edwyn Jhowany Pol Ceto'],
+        ['17078','Efrain Isai Mazariegos Cottom'],
+        ['14501','Elisa Liliana Xiap Satey'],
+        ['14558','Eloisa Del Cármen López Mórales'],
+        ['15684','Emerson Noé Calderón Barrios'],
+        ['14687','Erick Alfonso Molina Abadia'],
+        ['18816','Erick Daniel Quijivix Gonzalez'],
+        ['16099','Floridalma Isabel Quijivix Ixquiac'],
+        ['19437','Francisco Antonio López Cos'],
+        ['15777','Gabriela Aracely Guzmán López'],
+        ['17888','Gabriela Yanneth García López'],
+        ['19448','Giezy Gerardine García Guerra'],
+        ['21705','Glendy Lorena Hernandez De León'],
+        ['13574','Gloria Nancy Yolanda Rosales Fernandez'],
+        ['22263','Ingrid Paola Gómez Cortéz '],
+        ['18091','Ingrid Patricia Toyom Zapeta'],
+        ['8532','Irma Lizet Ovalle Darodes'],
+        ['18002','Jackelinne Kimberly Cum Mis'],
+        ['12236','Jaime Fernando Alvarez Cotí'],
+        ['24231','Jenifer Zoe De Leon Ruiz'],
+        ['23744','Jesús Estuardo Escobar Castillo'],
+        ['20236','Joellyn Jemina Reyes Villagrán'],
+        ['22503','Johanna Lucrecia Gutiérrez Ixquiac'],
+        ['22521','Jorge Daniel Castillo Solis'],
+        ['20248','Jorge Roberto Ríos Zambrano'],
+        ['18701','José Félix Zarat Méndez'],
+        ['14348','José Francisco Alvarado Estrada'],
+        ['22520','Jose Israel Macario Velasquez'],
+        ['13632','Jose Manuel Benavente Larios'],
+        ['15873','José Manuel Silvestre Loarca'],
+        ['15185','Juan José Deyet Arévalo'],
+        ['16339','Juana María Xuruc Batz '],
+        ['17528','Julio Herol De Leon Natareno'],
+        ['22499','Karen Mary Gabriela Yax Toyom'],
+        ['18721','Karin Andrea Archila Eguizabal'],
+        ['17716','Katherine Madelyn Rocío Rodríguez Fuentes'],
+        ['20752','Kevin Ernesto Estrada González'],
+        ['16533','Kevin Josue Del Valle Rivas'],
+        ['18735','Kimberly María Cristina Herwing Alfaro'],
+        ['20430','Laura Rocio Ruiz Amezquita'],
+        ['14717','Leonel José Gonzalez De León'],
+        ['13491','Lida Frine Cruz Aguirre'],
+        ['22501','Lizbeth Analy Cifuentes Mazariegos'],
+        ['25187','Lucas Rolando Barrera Lux '],
+        ['16592','Lucia Alejandra Garcia De Leon'],
+        ['20292','Luis Augusto Perez Orozco'],
+        ['19392','Luis Manuel Lopez Ramos'],
+        ['24058','Manuel Alberto Estrada Taracena'],
+        ['14413','Manuel De Jesus Rojas Gomez'],
+        ['23372','Marco Antonio Roblero Velasquez'],
+        ['15132','Marco Vinicio  Alvarez Maldonado'],
+        ['13119','Marcos David Gonzalez Mazariegos'],
+        ['20570','Maria Jose Morfin Oroxom'],
+        ['21359','Maria Roselina Perussina Méndez'],
+        ['21540','Marilyn Nohemy Galicia Juarez'],
+        ['23884','Massiel Alejandra Méndez López'],
+        ['22336','Mayra Surama Tistoj Villagran'],
+        ['18781','Merári Andreína Castillo De León '],
+        ['18497','Mirna Abelina Ramos Perez'],
+        ['19414','Mishell Quijivix Aguilar'],
+        ['17939','Nathaly Mishell Alonzo Garcia '],
+        ['23799','Nestor Emanuel Lara Gacoa'],
+        ['22220','Olga Rocío Curruchiche Cigarroa'],
+        ['23589','Otto Rene Samayoa Natareno'],
+        ['20290','Pablo Efrain Velasquez Castañeda'],
+        ['23336','Paula Maria Gutierrez De Leon'],
+        ['15847','Pedro Antonio Bautista Dominguez'],
+        ['21364','Rolando Rojas Gomez'],
+        ['15911','Rosa Elena Galindo Diaz'],
+        ['7149','Ruby Julieta Pisquiy Montes De Oca Zelada'],
+        ['20280','Samanta Yazmin Ulin Perez'],
+        ['12685','Tito Belizario Ixcot Mejía'],
+        ['21951','Vera Lucia Turnil Ramos'],
+        ['12848','Victor Gustavo García Bautista'],
+        ['12801','Victor Yax Leiva'],
+        ['15925','Walter Albino Quiejnay Gonzalez'],
+        ['21542','William Roberto Suchite Raxtun'],
+        ['16534','Wilmar Rafael Lopez Monterroso'],
+        ['12792','Yadira Lisbeth Mérida Escobedo'],
+        ['20326','Yecenia Del Rosario Sabaj Citalan'],
+        ##['1547','Hilda  Verónica Godínez López'],
+        ['1726','Vivian Rosangela Reyes Rodas'],
+        ['1585','Beatriz Albina Yax Coti'],
+        ['3594','Carlos Alexander Mérida Rodas'],
+        ##['1547','Aura Sucely Rosario Soto'],
+        ['4291','Maria del Carmen Rivas Pacheco'],
+        ['19543','Dr. Gustavo Ramiro Mérida Reina Amaya'],
+        ['19402','Dr. Sergio Roberto Villatoro Amézquita'],
+        ['20948','Dra. Daniela Reneé Pérez Castillo'],
+        ['11275','Betzy Alegría Santizo de Mendoza '],
+        ['18119','Alexia Yomara Tacam Son'],
+        ['15810','Menfild Edward López Velasco'],
+        ['12261','Heydi Marisol De Léon Villagrán'],
+        ['13920','Juan de Dios Morales Ralda'],
+        ['11836','Henry Oswaldo Pisquiy Quixtan'],
+        ['15769','Vivian Natalia Gómez García'],
+        ['14169','José Roberto Loarca Hernández'],
+        ##['13930','Mercy Margoth Herrera Coyoy'],
+        ##['13930','Fernando Rodrigo Xet Monzón'],
+        ['14153','Adolfo Antonio Ochoa Cabrera'],
+        ['15738','Luis Emilio Bucaro Echeverría'],
+        ['10622','Evelin Lisseth López Granados'],
+        ['13412','Rosalba Rosemary Rivas Herrera'],
+        ['15823','Walfred Abel Escobar de León'],
+        ['16197','Williams Josué Chamorro Talé'],
+        ['14505','Carlos Eduardo Guitiérrez López '],
+        ['18066','Astrid Analisse Mendoza Molina'],
+        ['18108','Aywin Audelio Perez Arreaga'],
+        ['17786','Diego Alejandro Morales Alcázar'],
+        ['15816','Sammuel Eduardo Maldonado Morales'],
+        ['18538','Kevin Armando Tzum Zelada'],
+        ['16930','Karin Zucele Escobar López'],
+        ['9524','Susy Jacqueline Chang Quezada'],
+        ['11226','Argelia Del Cramen Figueroa Castellanos'],
+        ['11792','Ingrid Janeloren Santiago Maldonado'],
+        ['20534','Silvana Estefania Cháves Torres'],
+        ['23137','Karla Mishelle Mis Garrido'],
         ];
         foreach($medicos as $item)
         {
@@ -671,22 +529,409 @@ class Llenado extends Seeder
         }
 
         $role = Role::create(['name' => 'Administrador']);
+
+        $user = User::create([
+            'ibm'=>'38271',
+            'name'=>'Bethzabe Berenice',
+            'apellido'=>'Cardona Torres',
+            'email'=>'bethzabe.cardona@igssgt.org',
+            'password'=>'$2y$10$2RqFpH6s9g2DNrZO/XRNree0My378Jk3cCLxHOYBe1N1AJ0YRTbNi',
+            'role_id' => $role->id,
+        ]);
+
         $permissions = ['1','2','3','4','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27',
         '28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57',
         '58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87',
         '88','89','90','91','92','93','94','95','96','97','98','99','100'];
         $role->syncPermissions($permissions);
+        $user->givePermissionTo($permissions);
+
+        $user = User::create([
+            'ibm'=>'1000269',
+            'name'=>'Francisco Isaac',
+            'apellido'=>'López Martinez',
+            'email'=>'francisco.lopez@igssgt.org',
+            'password'=>'$2y$10$BEQEUIV6B8FfV5ZYzcxPZ.S7RVvRZAE/0rLrXFyJFURVX2b5sTP.q',
+            'role_id' => $role->id,
+        ]);
+        $user->givePermissionTo($permissions);
+
 
         $role = Role::create(['name' => 'Registrador-Registros Medicos']);
         $permissions = ['10','11','12','13','14','15','16','17','18','39','40','41','42','83','100'];
         $role->syncPermissions($permissions);
+        $user = User::create([
+            'ibm'=>'10042',
+            'name'=>'Martha Isabel',
+            'apellido'=>'Ardiano Fuentes',
+            'email'=>'martha.ardiano@igssgt.org',
+            'password'=>'$2y$10$IpAW7ZTTqwLDDLTXaEE.0eOGSNl2Q5CccYqL/Z4Qiu4jrNiR5XtS.',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'20070',
+            'name'=>'Cindy Yasmin',
+            'apellido'=>'Morales Villagran','email'=>'cindy.morales@igssgt.org',
+            'password'=>'$2y$10$UCCTdgYCirZMfI7Om.5XWeZWeJhsuFrigaLxbnvWUtwwLOKlZNuU2',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2006452',
+            'name'=>'Carolina Edith',
+            'apellido'=>'Hernandez Perez','email'=>'caroline.hernandez@igssgt.org',
+            'password'=>'$2y$10$QaJCkYTACw0TgphKKEK4SOLSj9hLiNJoJLvncqNsIEdWecRlsCIjK',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'1002145',
+            'name'=>'Jeaqueline Maribel',
+            'apellido'=>'Mazariegos','email'=>'jeaqueline.mazariego@igssgt.org',
+            'password'=>'$2y$10$g6YX4JLjJd/6Ol69P5ioteMvVeLgYhzYu6e1/bsp0Bcds8My7qBc6',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'38690',
+            'name'=>'Luis Roberto',
+            'apellido'=>'Escobar Perez','email'=>'luis.escobar@igssgt.org',
+            'password'=>'$2y$10$E9F7TVLurw9D8gdXaI06eOn0PpkR9p9zoBJ4tReut86nG9A2ftaPm',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'39007',
+            'name'=>'Raul',
+            'apellido'=>'De Leon','email'=>'raul.deleon@igssgt.org',
+            'password'=>'$2y$10$Zm5oYit3TRhRLKo8O.7UCOUrQPJ4WXqNUh5gX2XUlE2ySNOq1k/Va',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'37142',
+            'name'=>'Susana Ines',
+            'apellido'=>'Vega Lopez','email'=>'susana.vega@igssgt.org',
+            'password'=>'$2y$10$R3svcKEtmfUi1z7g073f7eLYWEw5P9GTwGY7TTd3Eyzp1Ue9.jXZO',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'39263',
+            'name'=>'Vera',
+            'apellido'=>'Barrios Ruiz','email'=>'vera.barrios@igssgt.org',
+            'password'=>'$2y$10$Lkj9Y1yhOTeyv7gojhsvxuwdkknnWZyyGYOJyQCT8aX8KpOvwXxVS',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'1001850',
+            'name'=>'Walter Florencio',
+            'apellido'=>'Yax Chaclan','email'=>'walter.yax@igssgt.org',
+            'password'=>'$2y$10$n6oPwti1UfrY/EhHvr3lTe3mQHd5ixW6NmH9aakxwY83i4QEGNooW',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'39119',
+            'name'=>'Absalon Benjamin',
+            'apellido'=>'Lemus Samayoa','email'=>'absalon.lemus@igssgt.org',
+            'password'=>'$2y$10$/tw9eK7Zv34F//v81Irfpun.MZoXMM13R9aPSy83lfcB37RcDtmu6',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'39125',
+            'name'=>'Adriana Daniela',
+            'apellido'=>'Sanchez','email'=>'adriana.sanchez@igssgt.org',
+            'password'=>'$2y$10$xU..DAn6H9JDXBby9QB6F.6bBNQlOU1wIBwq69KbpnprFNNB9YUBa',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'38300',
+            'name'=>'Lilian Marleny',
+            'apellido'=>'Castillo y Castillo','email'=>'lilian.castillo@igssgt.org',
+            'password'=>'$2y$10$k6El3lk1tp8g9U5jHLCcnOqoIj/aZN4lnUU9ZAQiHZEWUzlXYTv.C',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2007067',
+            'name'=>'Skarleth Dayanara',
+            'apellido'=>'Dubon Aguilar','email'=>'skarleth.dubon@igssgt.org',
+            'password'=>'$2y$10$KypK.9Namgsa0.6/alElsOybU3d5trXODzaFjETSnwX1R3H8KdXbe',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'38978',
+            'name'=>'Andrea Alejandra',
+            'apellido'=>'Arauz Medrano','email'=>'andrea.arauz@igssgt.org',
+            'password'=>'$2y$10$osg0mfQIwlNr7jfOuNGBeOk/FducC/9tH2ULh/JecMCFaqJQX5lW2',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'1004249',
+            'name'=>'Maria Paola',
+            'apellido'=>'Archila','email'=>'maria.archila@igssgt.org',
+            'password'=>'$2y$10$urTe9dCk0.QV.w2cJDA3yO74QQh.9CGZNwqiTZQl2blTxZBrt5BzS',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'37837',
+            'name'=>'Maria',
+            'apellido'=>'Cardona Lopez','email'=>'mariad.cardona@igssgt.org',
+            'password'=>'$2y$10$sQ9OEXrsqaf5wTs2TxyhIuMZCGDyD0UiNlAzsiRFK71PTiHBJmx/O',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2004613',
+            'name'=>'Angelica Del Rocio',
+            'apellido'=>'Romeno Villatoro','email'=>'angelica.romano@igssgt.org',
+            'password'=>'$2y$10$/DwesAPCl7ooEiZKIrT9xuZxWxpawo9Sbur.uusAL6Pr3ixmXMphK',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'37799',
+            'name'=>'Ana Patricia',
+            'apellido'=>'Sum Escobar','email'=>'ana.sum@igssgt.org',
+            'password'=>'$2y$10$Ekb0DhVrkZoEOBoO0PLjO.5JK2utRiJUTCji0zgtgocyt7jG5XAj6',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2007751',
+            'name'=>'Evelyn Johanna',
+            'apellido'=>'De Leon','email'=>'evelyn.deleon@igssgt.org',
+            'password'=>'$2y$10$kV9RptPDgWfYgQpTs0vzcO/vS2aZk7EmRmCUpNNu0hla4wto9m4MO',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2003466',
+            'name'=>'Jesnee Mishilck',
+            'apellido'=>'Cifuentes Maldonado','email'=>'jesnee.cifuentes@igssgt.org',
+            'password'=>'$2y$10$5aisWFufw38ao0AhsflbxuoiEy3lNI27jg1yr/cetjfpRdLFnY3dq',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'38686',
+            'name'=>'Rosa Patricia',
+            'apellido'=>'Gonzalez de Vidal','email'=>'rosa.gonzalez@igssgt.org',
+            'password'=>'$2y$10$IDyg7PdEKVYrDt3sqFAJmOBfBaaOTFXIi1qqHzu8qhrOTm/5247py',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'1004237',
+            'name'=>'Beatriz Eugenia',
+            'apellido'=>'Ochoa de León','email'=>'beatriz.ochoa@igssgt.org',
+            'password'=>'$2y$10$H59kYjzfHbMqJNlnx7iYO.UUXVeWkHdEuo.gMVTE.flDh3x.Kzavq',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2004695',
+            'name'=>'Didy Lily',
+            'apellido'=>'Pérez Herrera','email'=>'didy.perez@igssgt.org',
+            'password'=>'$2y$10$qpFKn1ICjSuv67.p8L.sruf49bTh2uweXp466H29nHourG/v24n2G',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'37806',
+            'name'=>'Henrry Wualberto',
+            'apellido'=>'Paz Macario','email'=>'henrry.paz@igssgt.org',
+            'password'=>'$2y$10$bfj.MwtkQyGoUU.UPtCs4OOZTzrgwnAdZe6nE9b.ZFDRh0I/ngVVO',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'37798',
+            'name'=>'Estrella Odili',
+            'apellido'=>'García Reyes','email'=>'estrella.garcia@igssgt.org',
+            'password'=>'$2y$10$EMgz2h10xMvfqZXNDdb15ehwLPYe2sPdq4stP//3JJwWeh18HdkZy',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2005977',
+            'name'=>'Andy Alessandro',
+            'apellido'=>'Quemé Monzóz','email'=>'andy.queme@igssgt.org',
+            'password'=>'$2y$10$ixZJh//S8sBEtx1s958CiuSXgxwUaHdtKccw2EYqRmAJBEtpDSzeC',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'25327',
+            'name'=>'Henly Karina',
+            'apellido'=>'Flores Elias','email'=>'henly.flores@igssgt.org',
+            'password'=>'$2y$10$JWPCm8ygt/hepGBwtMYOV.pcFXOyseh3R062lwhBvDnZDUwXxkdzu',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'38096',
+            'name'=>'Yenny Virginia',
+            'apellido'=>'Osorio Recinos','email'=>'yenny.osorio@igssgt.org',
+            'password'=>'$2y$10$.jg9RHr5zI/C5T5EMpYTkeg.EGDbNPATImOw9woS0U8hZLt4Tf8e2',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+
+        
 
         $role = Role::create(['name' => 'Revisor-Registros Medicos']);
         $permissions = ['19','20','21','22','23','24','25','26','31', '35', '36', '37','38','75','76','77','78','79','80','81','82','84','87','100'];
         $role->syncPermissions($permissions);
 
+        $user = User::create([
+            'ibm'=>'38380',
+            'name'=>'Karla Paola',
+            'apellido'=>'Fuentes Gonzales',
+            'email'=>'karla.fuentes@igssgt.org',
+            'password'=>'$2y$10$MpPZOBAKrQ3hHnFwXcSCTO5JUNOr1e74wdiLzbx.n9fmmkg4yAd5O',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'38563',
+            'name'=>'Luisa Maria',
+            'apellido'=>'Mejicanos Bonilla',
+            'email'=>'luisa.mejicanos@igssgt.org',
+            'password'=>'$2y$10$2tr7RpiIDaIWZwqXr3KWC.PgmzhU74qMo7nkcMgxV.cQ3i.8X.PY6',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'39115',
+            'name'=>'Sulma Roxana',
+            'apellido'=>'Siguantay Cardona',
+            'email'=>'sulma.siguantay@igssgt.org',
+            'password'=>'$2y$10$Ok5gYDJpECG58YxhBal5oOJnjP.38Vty1JnchN5/lws/V7sKk11Yq',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2002447',
+            'name'=>'Elvira Encarnacion',
+            'apellido'=>'Estrada Estrada',
+            'email'=>'elvira.estrada@igssgt.org',
+            'password'=>'$2y$10$1ODyjTwEM2Xv6paOFFwKI.6XGfAPHgvkroiYEa0ti/lxRG9prU4ze',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'38982',
+            'name'=>'Nancy Alejandra',
+            'apellido'=>'Asencio Batz',
+            'email'=>'nancy.asencio@igssgt.org',
+            'password'=>'$2y$10$uuabzBhQXxpEHc8f1X.LyubHRTKT6ijYpKqoVkzbfcDua5rZ08OK.',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+
         $role = Role::create(['name' => 'Registrador-Prestaciones']);
         $permissions = ['19','20','21','22','23','24','25','26','75','76','77','78','79','80','81','82','84','86', '88','89','90','91', '100'];
         $role->syncPermissions($permissions);
+
+        $user = User::create([
+            'ibm'=>'123',
+            'name'=>'Edwin',
+            'apellido'=>'Pretzantzin',
+            'email'=>'edwin.garcia@igssgt.org',
+            'password'=>'$2y$10$hxsyoULxQTLWlcNTgWZRROYDz1sql4hxCFzXomrxe/6IxslRGeOpK',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'28547',
+            'name'=>'Karina Hayne',
+            'apellido'=>'Beletzuy Galicia',
+            'email'=>'karina.beletzuy@igssgt.org',
+            'password'=>'$2y$10$ltPnXlzH9DKXYuPknlsHquxvBzESQd81IS18Dx.1ERIy6QyKxhz/.',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2001293',
+            'name'=>'Roger Otoniel',
+            'apellido'=>'López Escalante',
+            'email'=>'roger.lopez@igssgt.org',
+            'password'=>'$2y$10$ZNEwomQs60hgoRIjrd/K0e9F4JyZI6xA1Sk10cANV.n0edg/5MQ7e',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'2005594',
+            'name'=>'Josue Efrain',
+            'apellido'=>'Pérez Itzep',
+            'email'=>'josue.perez@igssgt.org',
+            'password'=>'$2y$10$Og8PwbYAh.WvqMqVxHg0zu1RS25Ta3z5MLbdnNs.H95kuBg6tr8k.',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'49510',
+            'name'=>'Aura Yaneth',
+            'apellido'=>'Garcia Gonzalez',
+            'email'=>'aura.garcia@igssgt.org',
+            'password'=>'$2y$10$sSKpzeEUV.5BX1q4nik5eOGdCncc6z0Pe47AfBnI40qz2YNoxfWRS',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+        
+        $user = User::create([
+            'ibm'=>'48395',
+            'name'=>'Miriam Regina',
+            'apellido'=>'Escobedo Ramírez',
+            'email'=>'miriam.escobedo@igssgt.org',
+            'password'=>'$2y$10$6ed3kcOxS73lIK8FbhPMO.a5VwOn4lDBrzhgYK/UsWOQrHxbu5gbu',
+            'role_id' => $role->id,
+            ]);
+        $user->givePermissionTo($permissions);
+
     }
 }
