@@ -77,10 +77,18 @@
                                             <td>{{ $item->desuspension->afiliado->nombre }}
                                                 {{ $item->desuspension->afiliado->apellidos }}</td>
                                             <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_inicio_caso)) }}</td>
+                                            @if (date('d-m-Y', strtotime($item->desuspension->fecha_inicio_suspension)) != '31-12-1969')
                                             <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_inicio_suspension)) }}
                                             </td>
+                                            @else
+                                                <td></td>
+                                            @endif
+                                            @if (date('d-m-Y', strtotime($item->desuspension->fecha_fin_suspension)) != '31-12-1969')
                                             <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_fin_suspension)) }}
                                             </td>
+                                            @else
+                                                <td></td>
+                                            @endif
                                             @if (date('d-m-Y', strtotime($item->desuspension->fecha_alta)) != '31-12-1969')
                                                 <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_alta)) }}</td>
                                             @else

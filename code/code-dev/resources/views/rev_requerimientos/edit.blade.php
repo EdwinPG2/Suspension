@@ -41,9 +41,9 @@
                                 <th scope="row">{{ $item->desuspension->no_afiliado}}</th>
                                 <th>{{ $item->desuspension->afiliado->nombre}} {{ $item->desuspension->afiliado->apellidos}}</th>
                                 <td>{{ $item->desuspension->estado }}</td>
-                                <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_inicio_suspension))}}</td>
+                                <td>@if(date('d-m-Y', strtotime($item->desuspension->fecha_inicio_suspension)) != '31-12-1969') {{ date('d-m-Y', strtotime($item->desuspension->fecha_inicio_suspension))}} @endif</td>
                                 <td>{{ $item->desuspension->fecha_registro }}</td>  
-                                <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_fin_suspension))}}</td> 
+                                <td>@if(date('d-m-Y', strtotime($item->desuspension->fecha_fin_suspension)) != '31-12-1969'){{ date('d-m-Y', strtotime($item->desuspension->fecha_fin_suspension))}}@endif</td> 
                                 <td>{{ $item->desuspension->clinica_servicio->nombre}}</td>                            
                                 <td>{{ $item->desuspension->medico->nombres}}</td>
                                 

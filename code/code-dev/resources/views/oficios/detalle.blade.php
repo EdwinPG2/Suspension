@@ -31,9 +31,14 @@
                         <tr class="table-active">
                             <th scope="row">{{ $item->desuspension->no_afiliado}}</th>
                             <th scope="row">{{$item->desuspension->afiliado->nombre}} {{$item->desuspension->afiliado->apellidos}}</th>
-                            <td>{{ date('d-M-y', strtotime($item->desuspension->fecha_inicio_caso)) }}</td>
+                            @if(date('d-m-Y', strtotime($item->desuspension->fecha_accidente)) != '31-12-1969')
                             <td>{{ date('d-M-y', strtotime($item->desuspension->fecha_accidente)) }}</td>
-                            <td>{{ date('d-M-y', strtotime($item->desuspension->fecha_inicio_suspension))}} --- {{date('d-M-y', strtotime($item->desuspension->fecha_fin_suspension)) }}</td>
+                            @else
+                            <td></td>
+                            @endif
+                            <td>{{ date('d-M-y', strtotime($item->desuspension->fecha_inicio_caso)) }}</td>
+                            <td>@if(date('d-m-Y', strtotime($item->desuspension->fecha_inicio_suspension)) != '31-12-1969') {{ date('d-M-y', strtotime($item->desuspension->fecha_inicio_suspension))}} @endif--- 
+                                @if(date('d-m-Y', strtotime($item->desuspension->fecha_fin_suspension)) != '31-12-1969'){{date('d-M-y', strtotime($item->desuspension->fecha_fin_suspension)) }} @endif</td>
                             <th scope="row">
                                 @foreach ($formularios as $item2 )
                                     @if ($item2->id_suspension == $item->id_suspension)
