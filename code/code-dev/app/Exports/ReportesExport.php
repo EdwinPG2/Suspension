@@ -7,11 +7,12 @@ use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Maatwebsite\Excel\Concerns\WithCustomValueBinder;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Collection;
 
-class ReportesExport implements FromView, ShouldAutoSize
+class ReportesExport extends \PhpOffice\PhpSpreadsheet\Cell\StringValueBinder implements FromView, ShouldAutoSize, WithCustomValueBinder
 {
 
     protected $data;
