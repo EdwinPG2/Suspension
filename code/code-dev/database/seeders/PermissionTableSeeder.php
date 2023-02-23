@@ -143,6 +143,9 @@ class PermissionTableSeeder extends Seeder
             'slidebar-admin',
 
             'historial-afiliado',
+
+            'reportes-delegacion',
+            'reportes-registros-medicos',
         ];
 
         foreach ($permissions as $permission) {

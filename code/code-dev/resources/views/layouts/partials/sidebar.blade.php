@@ -134,6 +134,10 @@
                     <i class="fas fa-money-check-alt"></i> Requerimientos
                 </a>
                 
+                <a class="collapse-item" href="{{ url('reportes') }}">
+                    <i class="fas fa-id-card fa-fw"></i> Reportes
+                </a>
+                
             </div>
         </div>  
     </li>

@@ -9,13 +9,18 @@
             <label for="reporte">Seleccione reporte</label>
             <select class="form-control" name="reporte" id="reporte" onchange="javascript:showContent()">
                 <option value="0" selected>-- Seleccione reporte --</option>
-                <option value="1">Suspensiones por área, especialidad, clínica/servicio</option>
+                @can('reportes-delegacion')
+                    <option value="1">Suspensiones por área, especialidad, clínica/servicio</option>
+                    <option value="5">Suspensiones rechazadas por área, especialidad, clínica/servicio</option>
+                    <option value="6">Requerimientos generados, en espera y respondidos</option>
+                @endcan
+                @can('reportes-registros-medicos')
                 <option value="2">Suspensiones de colaboradores</option>
                 <option value="3">Suspensiones rechazadas de registradores</option>
                 <option value="4">Suspensiones rechazadas de revisores</option>
-                <option value="5">Suspensiones rechazadas por área, especialidad, clínica/servicio</option>
-                <option value="6">Requerimientos generados, en espera y respondidos</option>
                 <option value="7">Requerimientos de pago de suspensiones</option>
+                @endcan
+                
 
             </select>
         </div>
