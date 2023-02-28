@@ -191,7 +191,7 @@
                         <td></td>
                     @endif
                     <td>@if (date('d-m-Y', strtotime($item->desuspension->fecha_inicio_suspension)) != '31-12-1969') {{ date('d-m-Y', strtotime($item->desuspension->fecha_inicio_suspension)) }}@endif /
-                        @if @if (date('d-m-Y', strtotime($item->desuspension->fecha_fin_suspension)) != '31-12-1969'){{ date('d-m-Y', strtotime($item->desuspension->fecha_fin_suspension)) }}@endif</td>
+                        @if(date('d-m-Y', strtotime($item->desuspension->fecha_fin_suspension)) != '31-12-1969'){{ date('d-m-Y', strtotime($item->desuspension->fecha_fin_suspension)) }}@endif</td>
                     @if (date('d-m-Y', strtotime($item->desuspension->fecha_alta)) != '31-12-1969')
                     <td>{{ date('d-m-Y', strtotime($item->desuspension->fecha_alta)) }}</td>
                     @else
