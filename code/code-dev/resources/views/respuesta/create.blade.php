@@ -133,7 +133,7 @@
                                 <div class="form-group">
                                     <label for="archivo_respuesta">Adjunte archivo</label>
                                     <input type="file" name="archivo_respuesta" id="archivo_respuesta" class="form-control-file"
-                                        accept=".pdf">
+                                        accept=".pdf" files="true">
                                 </div>
                             </div>
                         </div>
