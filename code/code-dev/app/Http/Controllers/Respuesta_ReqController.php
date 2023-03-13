@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 
 class Respuesta_ReqController extends Controller
 {
@@ -42,6 +43,9 @@ class Respuesta_ReqController extends Controller
      */
     public function store(Request $request)
     {
+        Cache::forget('requerimiento');
+        Cache::forget('respuesta');
+
         validator::make($request->except('_token'), [
             'desino_nombre' => 'required|max:50',
             'destino_area' => 'required|max:50',

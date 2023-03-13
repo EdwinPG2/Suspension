@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Cache;
 
 class RequerimientoController extends Controller
 {
@@ -45,6 +46,8 @@ class RequerimientoController extends Controller
 
     public function store(Request $request)
     {
+        Cache::forget('requerimiento');
+        Cache::forget('respuesta');
         $date = Carbon::now();
         $fecha_env = $date->toDateString();
 
