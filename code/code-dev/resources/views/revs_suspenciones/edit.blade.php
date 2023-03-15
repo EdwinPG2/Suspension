@@ -28,9 +28,17 @@
                         <tr class="table-active">
                             <th scope="row">{{ $suspension->id_suspension}}</th>
                             <td>{{ $suspension->estado }}</td>
-                            <td>{{  date('d-m-Y', strtotime($suspension->fecha_inicio_suspension)) }}</td>
-                            <td>{{ $suspension->fecha_registro }}</td>  
-                            <td>{{  date('d-m-Y', strtotime($suspension->fecha_fin_suspension))}}</td> 
+                            @if(date('d-m-Y', strtotime($suspension->fecha_inicio_suspension)) != '31-12-1969')
+                            <td>{{ date('d-m-Y', strtotime($suspension->fecha_inicio_suspension)) }}</td>
+                            @else
+                            <td>No registrado</td>
+                            @endif
+                            <td>{{ $suspension->fecha_registro }}</td>
+                            @if(date('d-m-Y', strtotime($suspension->fecha_fin_suspension)) != '31-12-1969')
+                            <td>{{ date('d-m-Y', strtotime($suspension->fecha_fin_suspension)) }}</td>
+                            @else
+                            <td>No registrado</td>
+                            @endif
                             <td>{{ $suspension->clinica_servicio->nombre}}</td>                            
                             <td>{{ $suspension->medico->nombres}}</td>
                         </tr>              
