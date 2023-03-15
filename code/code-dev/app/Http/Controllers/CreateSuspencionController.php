@@ -158,8 +158,6 @@ class CreateSuspencionController extends Controller
     {
         try{
         $request->validate([
-            'fecha_inicio_suspension' => 'date:d/m/Y',
-            'fecha_fin_suspension' => 'date:d/m/Y',
             'fecha_registro' => 'date:d/m/Y H:i:s',
             'estado' => 'required|max:20',
             'no_afiliado' => 'required',
@@ -171,8 +169,16 @@ class CreateSuspencionController extends Controller
         ]);
 
         $Suspension = Suspension::find($id);
-        $Suspension->fecha_inicio_suspension = $request->get('fecha_inicio_suspension');
-        $Suspension->fecha_fin_suspension = $request->get('fecha_fin_suspension');
+        if($request->get('fecha_inicio_suspension')!=null)
+        {
+            $Suspension->fecha_inicio_suspension = $request->get('fecha_inicio_suspension');
+        }
+        if($request->get('fecha_fin_suspension')!=null)
+        {
+            $Suspension->fecha_fin_suspension = $request->get('fecha_fin_suspension');
+        }
+        //$Suspension->fecha_inicio_suspension = $request->get('fecha_inicio_suspension');
+        //$Suspension->fecha_fin_suspension = $request->get('fecha_fin_suspension');
         if($request->get('fecha_alta')!=null)
         {
         $Suspension->fecha_alta = $request->get('fecha_alta');

@@ -70,9 +70,12 @@
                                 <div class="form-group">
                                     <label for="fecha_accidente">Fecha de accidente</label>
                                     <input type="date" name="fecha_accidente" id="fecha_accidente" class="form-control"
-                                    @if(date('d-m-Y', strtotime($item->fecha_alta)) != '31-12-1969')
-                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_accidente)) }}"
-                                        @endif
+                                   
+                                    @if(date('d-m-Y', strtotime($suspencion->fecha_accidente)) == '31-12-1969')
+                                        value = {{null}}
+                                    @else
+                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_accidente))}}"
+                                    @endif
                                         >
                                 </div>
                             </div>
@@ -83,7 +86,7 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_inicio_caso">Fecha de inicio caso (*)</label>
+                                    <label for="fecha_inicio_caso">Fecha de inicio caso</label>
                                     <input type="date" name="fecha_inicio_caso" id="fecha_inicio_caso"
                                         class="form-control"
                                         value="{{ date('Y-m-d', strtotime($suspencion->fecha_inicio_caso)) }}" required>
@@ -91,26 +94,38 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_inicio_suspension">Fecha de inicio de suspensión (*)</label>
+                                    <label for="fecha_inicio_suspension">Fecha de inicio de suspensión</label>
                                     <input type="date" name="fecha_inicio_suspension" id="fecha_inicio_suspension"
                                         class="form-control"
-                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_inicio_suspension)) }}" required>
+                                        @if(date('d-m-Y', strtotime($suspencion->fecha_inicio_suspension)) == '31-12-1969')
+                                        value = {{null}}
+                                        @else 
+                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_inicio_suspension))}}"
+                                        @endif
+                                        >
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                    <label for="fecha_fin_suspension">Fecha de finalizacion de suspensión (*)</label>
+                                    <label for="fecha_fin_suspension">Fecha de finalizacion de suspensión</label>
                                     <input type="date" name="fecha_fin_suspension" id="fecha_fin_suspension"
                                         class="form-control"
-                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_fin_suspension)) }}" required>
+                                        @if(date('d-m-Y', strtotime($suspencion->fecha_fin_suspension)) == '31-12-1969')
+                                        value = {{null}}
+                                        @else
+                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_fin_suspension))}}"
+                                        @endif
+                                        >
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                     <label for="fecha_alta">Fecha de alta</label>
                                     <input type="date" name="fecha_alta" id="fecha_alta" class="form-control"
-                                    @if(date('d-m-Y', strtotime($item->fecha_alta)) != '31-12-1969')
-                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_alta)) }}"
+                                    @if(date('d-m-Y', strtotime($suspencion->fecha_alta)) == '31-12-1969')
+                                        value = {{null}}
+                                    @else
+                                        value="{{ date('Y-m-d', strtotime($suspencion->fecha_alta))}}"
                                     @endif
                                         >
                                 </div>

@@ -47,20 +47,20 @@
                             <td>{{$item->afiliado->no_afiliado}}</td>
                             <td>{{$item->afiliado->nombre}} {{$item->afiliado->apellidos}}</td>
                             <td>{{ date('d-m-Y', strtotime($item->fecha_inicio_caso)) }}</td>
-                            @if(date('d-m-Y', strtotime($item->inicio_suspension)) != '31-12-1969')
+                            @if(date('d-m-Y', strtotime($item->fecha_inicio_suspension)) != '31-12-1969')
                             <td>{{ date('d-m-Y', strtotime($item->fecha_inicio_suspension)) }}</td>
                             @else
-                            <td></td>
+                            <td>No registrado</td>
                             @endif
-                            @if(date('d-m-Y', strtotime($item->inicio_suspension)) != '31-12-1969')
+                            @if(date('d-m-Y', strtotime($item->fecha_fin_suspension)) != '31-12-1969')
                             <td>{{ date('d-m-Y', strtotime($item->fecha_fin_suspension)) }}</td>
                             @else
-                            <td></td>
+                            <td>No registrado</td>
                             @endif
                             @if(date('d-m-Y', strtotime($item->fecha_alta)) != '31-12-1969')
                             <td>{{ date('d-m-Y', strtotime($item->fecha_alta)) }}</td>
                             @else
-                            <td></td>
+                            <td>No registrado</td>
                             @endif
                             <td>{{$item->clinica_servicio->nombre}}</td>
                             <td>{{ $item->observacion }}</td>
