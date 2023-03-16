@@ -33,7 +33,7 @@
                             <td>{{ $item->estado }}</td>
                             <td>{{ $item->observaciones }}</td>
                             <td><a href="archivos/{{$item->archivo}}" target="blank_">Ver documento</a></td>
-                            @if($item->estado=='En espera')
+                            @if($item->estado=='En espera'||$item->estado=='Resuelto')
                             <td><a href="archivos/{{ $item->archivo_respuesta }}" target="blank_">Ver documento</a></td>
                             @else
                             <td>Respuesta no generada</td>
@@ -42,7 +42,7 @@
                                 @if($item->estado=='Generado')
                                 <a href="{{ route ('respuesta.show', $item->id_requerimiento) }}"
                                 class="btn btn-warning" >Generar respuesta</a>
-                                @elseif($item->estado=='En espera')
+                                @elseif($item->estado=='En espera'||$item->estado=='Resuelto')
                                 <a href="{{ route('respuesta.edit', $item->id_requerimiento) }}"
                                     class="btn btn-primary" target="_blank"><i class=""></i>PDF</a>
                                 @endif
