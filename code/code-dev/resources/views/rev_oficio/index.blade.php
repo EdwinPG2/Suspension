@@ -85,8 +85,12 @@
                                 
                                 @endif
                                 @if($item->estado == 'Congelado')
-                                    <!--PDF de suspensiones aceptadas-->
+                                <!--PDF Original-->
+                                <a href="{{ route('oficios.edit', $item->id_oficio) }}" class="btn btn-primary"><i class='fas fa-paperclip'></i> PDF</a>
+                                
+                                <!--PDF de suspensiones aceptadas-->
                                 <a href="{{ route('ofi.edit', $item->id_oficio) }}" class="btn btn-success" target="_blank"><i class="fas fa-check-circle"></i> PDF</a>
+
                                 <!--PDF de suspensiones rechazadas-->
                                 <a type="button" class="btn btn-danger" href="{{ route('gen.show', $item->id_oficio) }}" target="_blank"><i class="fas fa-times-circle"></i> PDF</a>
                                 @endif
