@@ -128,11 +128,11 @@
             style="font-style:normal;font-weight:bold;font-size:11pt;font-family:Century Gothic;color:#000000">Señores
             (as)
             <br>
-            Analistas de Suspensiones
-            <br>
-            Registros Médicos
+            Prestaciones en dinero
             <br>
             {{ $oficio->lugar }}
+            <br>
+            
         </span>
 
     </div>
@@ -221,7 +221,7 @@
     <br>
 
     <div style="position:absolute;width:100%; top:8.3in;line-height:0.20in;text-align:center">
-        {{ Auth::user()->name }}, {{ Auth::user()->apellido }},<br>
+        {{ $oficio->cusuario->name}}, {{ $oficio->cusuario->apellido}},<br>
         Registros Médicos
         <br>IGSS, Hospital General de Quetzaltenango <br>
     </div>

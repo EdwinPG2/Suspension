@@ -25,7 +25,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id_usuario_creador
  * @property int $id_usuario_revisor
  * 
- * @property Usuario $usuario
+ * @property User $usuario
  * @property Collection|OficioSuspencion[] $oficio_suspencions
  * @property Collection|Requerimiento[] $requerimientos
  * @property Collection|RevisionOficio[] $revision_oficios
@@ -67,12 +67,12 @@ class Oficio extends Model
 
 	public function cusuario()
 	{
-		return $this->belongsTo(Usuario::class, 'users_id_creador');
+		return $this->belongsTo(User::class, 'users_id_creador');
 	}
 
 	public function usuario()
 	{
-		return $this->belongsTo(Usuario::class, 'users_id_revisor');
+		return $this->belongsTo(User::class, 'users_id_revisor');
 	}
 
 	public function oficio_suspencions()
