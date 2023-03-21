@@ -12,6 +12,8 @@
             <th>Clinica/Servicio</th>
             <th>Formularios</th>
             <th>Pago</th>
+            <th>Registrador</th>
+            <th>Revisor</th>
         </tr>
     </thead>
     <tbody>
@@ -28,6 +30,8 @@
                 <td>{{ $item->nombre_clinica_servicio }}</td>
                 <td>{{ $item->Formularios }}</td>
                 <td>{{isset($item->pago)?$item->pago:''}}</td>
+                <td>{{isset($item->registrador)?$item->registrador:''}}</td>
+                <td>{{isset($item->revisor)?$item->revisor:''}}</td>
             </tr>
         @endforeach
     </tbody>

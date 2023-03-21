@@ -17,7 +17,7 @@ drop procedure if exists suspenciones_general;
 DELIMITER $$
 CREATE PROCEDURE `suspenciones_general`(in fechai datetime ,in fechaf datetime)
 begin
-	select formulario_suspencion.id_suspension, suspension.no_afiliado,afiliado.nombre as nombre_afiliado ,afiliado.apellidos, suspension.fecha_registro, suspension.fecha_accidente,suspension.fecha_inicio_caso, riesgo.nombre as nombre_riesgo,area.nombre as nombre_area ,especialidad.nombre_especialidad,clinica_servicio.nombre as nombre_clinica_servicio, GROUP_CONCAT(formulario.nombre SEPARATOR ', ') as Formularios
+	select formulario_suspencion.id_suspension, suspension.no_afiliado,afiliado.nombre as nombre_afiliado ,afiliado.apellidos, suspension.fecha_registro, suspension.fecha_accidente,suspension.fecha_inicio_caso, riesgo.nombre as nombre_riesgo,area.nombre as nombre_area ,especialidad.nombre_especialidad,clinica_servicio.nombre as nombre_clinica_servicio, GROUP_CONCAT(formulario.nombre SEPARATOR ', ') as Formularios, concat(registrador.name,' ', registrador.apellido) as registrador, concat(revisor.name,' ',revisor.apellido) as revisor
 from formulario_suspencion inner join formulario on formulario_suspencion.id_formulario = formulario.id_formulario 
 inner join suspension on formulario_suspencion.id_suspension =suspension.id_suspension
 inner join afiliado on suspension.no_afiliado = afiliado.no_afiliado
@@ -25,6 +25,8 @@ inner join clinica_servicio on clinica_servicio.id_clinica_servicio = suspension
 inner join area on area.id_area = clinica_servicio.id_area
 inner join especialidad on especialidad.id_especialidad = clinica_servicio.id_especialidad
 inner join riesgo on riesgo.id = suspension.id_riesgo
+inner join users as registrador on registrador.id = suspension.users_id_registrador
+inner join users as revisor on revisor.id = suspension.users_id_revisor
 WHERE suspension.fecha_registro BETWEEN fechai AND fechaf
 group by id_suspension;
 end
@@ -34,7 +36,7 @@ drop procedure if exists suspenciones_especialidades;
 DELIMITER $$
 CREATE PROCEDURE `suspenciones_especialidades`(in fechai datetime ,in fechaf datetime, in idespecialidad int)
 begin
-	select formulario_suspencion.id_suspension, suspension.no_afiliado,afiliado.nombre as nombre_afiliado ,afiliado.apellidos, suspension.fecha_registro, suspension.fecha_accidente,suspension.fecha_inicio_caso, riesgo.nombre as nombre_riesgo,area.nombre as nombre_area ,especialidad.nombre_especialidad,clinica_servicio.nombre as nombre_clinica_servicio, GROUP_CONCAT(formulario.nombre SEPARATOR ', ') as Formularios
+	select formulario_suspencion.id_suspension, suspension.no_afiliado,afiliado.nombre as nombre_afiliado ,afiliado.apellidos, suspension.fecha_registro, suspension.fecha_accidente,suspension.fecha_inicio_caso, riesgo.nombre as nombre_riesgo,area.nombre as nombre_area ,especialidad.nombre_especialidad,clinica_servicio.nombre as nombre_clinica_servicio, GROUP_CONCAT(formulario.nombre SEPARATOR ', ') as Formularios, concat(registrador.name,' ', registrador.apellido) as registrador, concat(revisor.name,' ',revisor.apellido) as revisor
 from formulario_suspencion inner join formulario on formulario_suspencion.id_formulario = formulario.id_formulario 
 inner join suspension on formulario_suspencion.id_suspension =suspension.id_suspension
 inner join afiliado on suspension.no_afiliado = afiliado.no_afiliado
@@ -42,6 +44,8 @@ inner join clinica_servicio on clinica_servicio.id_clinica_servicio = suspension
 inner join area on area.id_area = clinica_servicio.id_area
 inner join especialidad on especialidad.id_especialidad = clinica_servicio.id_especialidad
 inner join riesgo on riesgo.id = suspension.id_riesgo
+inner join users as registrador on registrador.id = suspension.users_id_registrador
+inner join users as revisor on revisor.id = suspension.users_id_revisor
 WHERE suspension.fecha_registro BETWEEN fechai AND fechaf
 and especialidad.id_especialidad=idespecialidad
 group by id_suspension;
@@ -53,7 +57,7 @@ drop procedure if exists suspenciones_clinicas_servicios;
 DELIMITER $$
 CREATE PROCEDURE `suspenciones_clinicas_servicios`(in fechai datetime ,in fechaf datetime, in idclinicas_servicios int)
 begin
-	select formulario_suspencion.id_suspension, suspension.no_afiliado,afiliado.nombre as nombre_afiliado ,afiliado.apellidos, suspension.fecha_registro, suspension.fecha_accidente,suspension.fecha_inicio_caso, riesgo.nombre as nombre_riesgo,area.nombre as nombre_area ,especialidad.nombre_especialidad,clinica_servicio.nombre as nombre_clinica_servicio, GROUP_CONCAT(formulario.nombre SEPARATOR ', ') as Formularios
+	select formulario_suspencion.id_suspension, suspension.no_afiliado,afiliado.nombre as nombre_afiliado ,afiliado.apellidos, suspension.fecha_registro, suspension.fecha_accidente,suspension.fecha_inicio_caso, riesgo.nombre as nombre_riesgo,area.nombre as nombre_area ,especialidad.nombre_especialidad,clinica_servicio.nombre as nombre_clinica_servicio, GROUP_CONCAT(formulario.nombre SEPARATOR ', ') as Formularios, concat(registrador.name,' ', registrador.apellido) as registrador, concat(revisor.name,' ',revisor.apellido) as revisor
 from formulario_suspencion inner join formulario on formulario_suspencion.id_formulario = formulario.id_formulario 
 inner join suspension on formulario_suspencion.id_suspension =suspension.id_suspension
 inner join afiliado on suspension.no_afiliado = afiliado.no_afiliado
@@ -61,6 +65,8 @@ inner join clinica_servicio on clinica_servicio.id_clinica_servicio = suspension
 inner join area on area.id_area = clinica_servicio.id_area
 inner join especialidad on especialidad.id_especialidad = clinica_servicio.id_especialidad
 inner join riesgo on riesgo.id = suspension.id_riesgo
+inner join users as registrador on registrador.id = suspension.users_id_registrador
+inner join users as revisor on revisor.id = suspension.users_id_revisor
 WHERE suspension.fecha_registro BETWEEN fechai AND fechaf
 and clinica_servicio.id_clinica_servicio=idclinicas_servicios
 group by id_suspension;
@@ -72,7 +78,7 @@ drop procedure if exists suspenciones_areas;
 DELIMITER $$
 CREATE PROCEDURE `suspenciones_areas`(in fechai datetime ,in fechaf datetime, in idarea int)
 begin
-	select formulario_suspencion.id_suspension, suspension.no_afiliado,afiliado.nombre as nombre_afiliado ,afiliado.apellidos, suspension.fecha_registro, suspension.fecha_accidente,suspension.fecha_inicio_caso, riesgo.nombre as nombre_riesgo,area.nombre as nombre_area ,especialidad.nombre_especialidad,clinica_servicio.nombre as nombre_clinica_servicio, GROUP_CONCAT(formulario.nombre SEPARATOR ', ') as Formularios
+	select formulario_suspencion.id_suspension, suspension.no_afiliado,afiliado.nombre as nombre_afiliado ,afiliado.apellidos, suspension.fecha_registro, suspension.fecha_accidente,suspension.fecha_inicio_caso, riesgo.nombre as nombre_riesgo,area.nombre as nombre_area ,especialidad.nombre_especialidad,clinica_servicio.nombre as nombre_clinica_servicio, GROUP_CONCAT(formulario.nombre SEPARATOR ', ') as Formularios, concat(registrador.name,' ', registrador.apellido) as registrador, concat(revisor.name,' ',revisor.apellido) as revisor
 from formulario_suspencion inner join formulario on formulario_suspencion.id_formulario = formulario.id_formulario 
 inner join suspension on formulario_suspencion.id_suspension =suspension.id_suspension
 inner join afiliado on suspension.no_afiliado = afiliado.no_afiliado
@@ -80,6 +86,8 @@ inner join clinica_servicio on clinica_servicio.id_clinica_servicio = suspension
 inner join area on area.id_area = clinica_servicio.id_area
 inner join especialidad on especialidad.id_especialidad = clinica_servicio.id_especialidad
 inner join riesgo on riesgo.id = suspension.id_riesgo
+inner join users as registrador on registrador.id = suspension.users_id_registrador
+inner join users as revisor on revisor.id = suspension.users_id_revisor
 WHERE suspension.fecha_registro BETWEEN fechai AND fechaf
 and area.id_area=idarea
 group by id_suspension;
