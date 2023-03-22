@@ -29,8 +29,8 @@
 <body>
 
 
-    <img style="position:absolute;top:-0.2in;left:-0.18in;width:1.12in;height:1.07in" src="{{ url('img/logo.png')}}" />
-      <div style="position:absolute;top:0.0in;left:25%;width:4.12in;line-height:0.22in;"><span
+   <!-- <img style="position:absolute;top:-0.2in;left:-0.18in;width:1.12in;height:1.07in" src="{{ url('img/logo.png')}}" />
+   --><div style="position:absolute;top:0.0in;left:25%;width:4.12in;line-height:0.22in;"><span
             style="font-style:normal;font-weight:bold;font-size:15pt;font-family:Arial;color:#205784">Instituto
             Guatemalteco de Seguridad Social</span><br />
     </div>
@@ -128,9 +128,10 @@
             style="font-style:normal;font-weight:bold;font-size:11pt;font-family:Century Gothic;color:#000000">Señores
             (as)
             <br>
-            Prestaciones en dinero
+            Prestaciones en Dinero
             <br>
-            {{ $oficio->lugar }}
+            Delegación, IGSS Quetzaltenango
+            <!--{{ $oficio->lugar }}-->
             <br>
             
         </span>
@@ -224,14 +225,14 @@
     <br>
 
     <div style="position:absolute;width:100%; top:8.3in;line-height:0.20in;text-align:center">
-        {{ $oficio->cusuario->name}}, {{ $oficio->cusuario->apellido}},<br>
+        {{ $oficio->usuario->name}} {{ $oficio->usuario->apellido}},<br>
         Registros Médicos
         <br>IGSS, Hospital General de Quetzaltenango <br>
     </div>
 
-       <img style="position:absolute;top:9.7in;left:-0.5in;width:9.32in;height:0.69in;display: inline-block"
+       <!--<img style="position:absolute;top:9.7in;left:-0.5in;width:9.32in;height:0.69in;display: inline-block"
             src="{{ url('img/pie.png')}}"/>
-        <div style="position:absolute;top:9.6in;width:100%;line-height:0.20in;text-align:center"><span
+       --><div style="position:absolute;top:9.6in;width:100%;line-height:0.20in;text-align:center"><span
                 style="font-style:normal;font-weight:Normal;font-size:11pt;font-family:Century Gothic;color:#000000">
                 5ta. Avenida 1-79 zona 5 Quetzaltenango
                 <br>Tel. 7829 1200

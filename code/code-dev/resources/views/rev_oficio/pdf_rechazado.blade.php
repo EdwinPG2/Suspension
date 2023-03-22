@@ -129,9 +129,10 @@
             style="font-style:normal;font-weight:bold;font-size:11pt;font-family:Century Gothic;color:#000000">Señores
             (as)
             <br>
-            Prestaciones en dinero
+            Prestaciones en Dinero
             <br>
-            {{ $oficio->lugar }}
+            Delegación, IGSS Quetzaltenango
+            <!--{{ $oficio->lugar }}-->
             <br>
             
         </span>
@@ -225,7 +226,7 @@
     <br>
 
     <div style="position:absolute;width:100%; top:8.3in;line-height:0.20in;text-align:center">
-        {{ $oficio->cusuario->name}}, {{ $oficio->cusuario->apellido}},<br>
+        {{ $oficio->usuario->name}} {{ $oficio->usuario->apellido}},<br>
         Registros Médicos
         <br>IGSS, Hospital General de Quetzaltenango <br>
     </div>
