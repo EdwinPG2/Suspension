@@ -35,7 +35,7 @@
             Guatemalteco de Seguridad Social</span><br />
     </div>
     <div style="position:absolute;top:0.2in;width:100%;line-height:0.25in;text-align:center;"><span
-            style="font-style:normal;font-weight:normal;font-size:12pt;font-family:CG Omega;color:#000000">HOSPITAL
+            style="font-style:normal;font-weight:normal;font-size:12pt;font-family:CGAnalistas de SuspensionesHOSPITAL
             GENERAL QUETZALTENANGO</span><span
             style="font-style:normal;font-weight:normal;font-size:12pt;font-family:CG Omega;color:#000000">
         </span><br />
@@ -128,7 +128,7 @@
             style="font-style:normal;font-weight:bold;font-size:11pt;font-family:Century Gothic;color:#000000">Señores
             (as)
             <br>
-            Prestaciones en dinero
+            Analistas de Suspensiones
             <br>
             {{ $oficio->lugar }}
             <br>
