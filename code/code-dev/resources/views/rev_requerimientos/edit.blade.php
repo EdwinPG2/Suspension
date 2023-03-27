@@ -10,8 +10,8 @@
             <div class="card-header">
                 <div class="">
                     <h4>Verificar PDF del oficio</h4> 
-                    <a href="{{ route('oficios.edit', $oficios->id_oficio) }}" class="btn btn-primary"><i class="fas fa-check-circle"></i> PDF</a>
-                </div>
+                   <a href="{{ route('ofi.edit', $oficios->id_oficio) }}" class="btn btn-success" target="_blank"><i class="fas fa-check-circle"></i> PDF</a>
+</div>
             </div>
             <div class="card-header">
                 <div class="row justify-content-between">
